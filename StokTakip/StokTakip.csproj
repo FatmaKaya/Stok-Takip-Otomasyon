@@ -108,6 +108,12 @@
     <Compile Include="frmOdaBilgileriGuncelle.Designer.cs">
       <DependentUpon>frmOdaBilgileriGuncelle.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmOdalaraDemirbasleriEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOdalaraDemirbasleriEkle.Designer.cs">
+      <DependentUpon>frmOdalaraDemirbasleriEkle.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmOdaSil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmOdaBilgileriGuncelle.resx">
       <DependentUpon>frmOdaBilgileriGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOdalaraDemirbasleriEkle.resx">
+      <DependentUpon>frmOdalaraDemirbasleriEkle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmOdaSil.resx">
       <DependentUpon>frmOdaSil.cs</DependentUpon>

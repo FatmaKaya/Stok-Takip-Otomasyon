@@ -53,9 +53,9 @@ namespace StokTakip
 
         private void OdalaraDemirbaslarıEkle_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string temp;
-            temp = "değişken";
-            temp = "deneme";
+            frmOdalaraDemirbasleriEkle frm = new frmOdalaraDemirbasleriEkle();
+            frm.MdiParent = this;
+            frm.Show();
         }
 
         private void DemirbasGuncelle_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
