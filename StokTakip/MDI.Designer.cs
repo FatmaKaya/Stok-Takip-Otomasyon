@@ -131,6 +131,7 @@
             // 
             this.DemirbasEkle.Caption = "Demirbaş Ekle";
             this.DemirbasEkle.Id = 7;
+            this.DemirbasEkle.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DemirbasEkle.ImageOptions.LargeImage")));
             this.DemirbasEkle.Name = "DemirbasEkle";
             this.DemirbasEkle.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DemirbasEkle_ItemClick);
             // 
@@ -138,6 +139,7 @@
             // 
             this.DemirbasSil.Caption = "Demirbaş Sil";
             this.DemirbasSil.Id = 8;
+            this.DemirbasSil.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DemirbasSil.ImageOptions.LargeImage")));
             this.DemirbasSil.Name = "DemirbasSil";
             this.DemirbasSil.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DemirbasSil_ItemClick);
             // 
@@ -145,6 +147,8 @@
             // 
             this.OdalaraDemirbaslarıEkle.Caption = "Odalara Demirbaşları Ekle";
             this.OdalaraDemirbaslarıEkle.Id = 9;
+            this.OdalaraDemirbaslarıEkle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("OdalaraDemirbaslarıEkle.ImageOptions.Image")));
+            this.OdalaraDemirbaslarıEkle.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("OdalaraDemirbaslarıEkle.ImageOptions.LargeImage")));
             this.OdalaraDemirbaslarıEkle.Name = "OdalaraDemirbaslarıEkle";
             this.OdalaraDemirbaslarıEkle.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.OdalaraDemirbaslarıEkle_ItemClick);
             // 
@@ -152,6 +156,8 @@
             // 
             this.DemirbaslariOdadanKaldirma.Caption = "Demirbaşları Odadan Kaldırma";
             this.DemirbaslariOdadanKaldirma.Id = 10;
+            this.DemirbaslariOdadanKaldirma.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DemirbaslariOdadanKaldirma.ImageOptions.Image")));
+            this.DemirbaslariOdadanKaldirma.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DemirbaslariOdadanKaldirma.ImageOptions.LargeImage")));
             this.DemirbaslariOdadanKaldirma.Name = "DemirbaslariOdadanKaldirma";
             this.DemirbaslariOdadanKaldirma.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DemirbaslariOdadanKaldirma_ItemClick);
             // 
@@ -166,6 +172,8 @@
             // 
             this.DemirbasGuncelle.Caption = "Demirbaş Güncelle";
             this.DemirbasGuncelle.Id = 12;
+            this.DemirbasGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DemirbasGuncelle.ImageOptions.Image")));
+            this.DemirbasGuncelle.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DemirbasGuncelle.ImageOptions.LargeImage")));
             this.DemirbasGuncelle.Name = "DemirbasGuncelle";
             this.DemirbasGuncelle.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DemirbasGuncelle_ItemClick);
             // 
