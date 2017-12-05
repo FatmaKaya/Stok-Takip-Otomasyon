@@ -28,25 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOdaDemirbasListesi));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.textEditODLOdaAdi = new DevExpress.XtraEditors.TextEdit();
-            this.OdaAdi = new DevExpress.XtraLayout.LayoutControlItem();
+            this.simpleButtonODLRapor = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonODLArama = new DevExpress.XtraEditors.SimpleButton();
             this.gridControlOdaDemirbasListesi = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.textEditODLOdaAdi = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.OdaAdi = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButtonODLArama = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButtonODLRapor = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditODLOdaAdi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OdaAdi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlOdaDemirbasListesi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditODLOdaAdi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OdaAdi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
@@ -66,6 +65,47 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // simpleButtonODLRapor
+            // 
+            this.simpleButtonODLRapor.Location = new System.Drawing.Point(12, 454);
+            this.simpleButtonODLRapor.Name = "simpleButtonODLRapor";
+            this.simpleButtonODLRapor.Size = new System.Drawing.Size(559, 22);
+            this.simpleButtonODLRapor.StyleController = this.layoutControl1;
+            this.simpleButtonODLRapor.TabIndex = 7;
+            this.simpleButtonODLRapor.Text = "Rapor Al";
+            // 
+            // simpleButtonODLArama
+            // 
+            this.simpleButtonODLArama.Location = new System.Drawing.Point(431, 12);
+            this.simpleButtonODLArama.Name = "simpleButtonODLArama";
+            this.simpleButtonODLArama.Size = new System.Drawing.Size(140, 22);
+            this.simpleButtonODLArama.StyleController = this.layoutControl1;
+            this.simpleButtonODLArama.TabIndex = 6;
+            this.simpleButtonODLArama.Text = "Ara";
+            // 
+            // gridControlOdaDemirbasListesi
+            // 
+            this.gridControlOdaDemirbasListesi.Location = new System.Drawing.Point(12, 38);
+            this.gridControlOdaDemirbasListesi.MainView = this.gridView1;
+            this.gridControlOdaDemirbasListesi.Name = "gridControlOdaDemirbasListesi";
+            this.gridControlOdaDemirbasListesi.Size = new System.Drawing.Size(559, 412);
+            this.gridControlOdaDemirbasListesi.TabIndex = 5;
+            this.gridControlOdaDemirbasListesi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControlOdaDemirbasListesi;
+            this.gridView1.Name = "gridView1";
+            // 
+            // textEditODLOdaAdi
+            // 
+            this.textEditODLOdaAdi.Location = new System.Drawing.Point(60, 12);
+            this.textEditODLOdaAdi.Name = "textEditODLOdaAdi";
+            this.textEditODLOdaAdi.Size = new System.Drawing.Size(367, 20);
+            this.textEditODLOdaAdi.StyleController = this.layoutControl1;
+            this.textEditODLOdaAdi.TabIndex = 4;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -80,14 +120,6 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(583, 488);
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // textEditODLOdaAdi
-            // 
-            this.textEditODLOdaAdi.Location = new System.Drawing.Point(61, 12);
-            this.textEditODLOdaAdi.Name = "textEditODLOdaAdi";
-            this.textEditODLOdaAdi.Size = new System.Drawing.Size(366, 20);
-            this.textEditODLOdaAdi.StyleController = this.layoutControl1;
-            this.textEditODLOdaAdi.TabIndex = 4;
-            // 
             // OdaAdi
             // 
             this.OdaAdi.Control = this.textEditODLOdaAdi;
@@ -97,38 +129,14 @@
             this.OdaAdi.Text = "Oda Adı: ";
             this.OdaAdi.TextSize = new System.Drawing.Size(45, 13);
             // 
-            // gridControlOdaDemirbasListesi
-            // 
-            this.gridControlOdaDemirbasListesi.Location = new System.Drawing.Point(12, 38);
-            this.gridControlOdaDemirbasListesi.MainView = this.gridView1;
-            this.gridControlOdaDemirbasListesi.Name = "gridControlOdaDemirbasListesi";
-            this.gridControlOdaDemirbasListesi.Size = new System.Drawing.Size(559, 396);
-            this.gridControlOdaDemirbasListesi.TabIndex = 5;
-            this.gridControlOdaDemirbasListesi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gridControlOdaDemirbasListesi;
-            this.gridView1.Name = "gridView1";
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.gridControlOdaDemirbasListesi;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(563, 400);
+            this.layoutControlItem1.Size = new System.Drawing.Size(563, 416);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // simpleButtonODLArama
-            // 
-            this.simpleButtonODLArama.Location = new System.Drawing.Point(431, 12);
-            this.simpleButtonODLArama.Name = "simpleButtonODLArama";
-            this.simpleButtonODLArama.Size = new System.Drawing.Size(140, 22);
-            this.simpleButtonODLArama.StyleController = this.layoutControl1;
-            this.simpleButtonODLArama.TabIndex = 6;
-            this.simpleButtonODLArama.Text = "Ara";
             // 
             // layoutControlItem2
             // 
@@ -139,22 +147,12 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
-            // simpleButtonODLRapor
-            // 
-            //this.simpleButtonODLRapor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButtonODLRapor.Location = new System.Drawing.Point(12, 438);
-            this.simpleButtonODLRapor.Name = "simpleButtonODLRapor";
-            this.simpleButtonODLRapor.Size = new System.Drawing.Size(559, 38);
-            this.simpleButtonODLRapor.StyleController = this.layoutControl1;
-            this.simpleButtonODLRapor.TabIndex = 7;
-            this.simpleButtonODLRapor.Text = "Rapor Al";
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.simpleButtonODLRapor;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 426);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 442);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(563, 42);
+            this.layoutControlItem3.Size = new System.Drawing.Size(563, 26);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -168,11 +166,11 @@
             this.Text = "Oda Demirbaş Listesi";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditODLOdaAdi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OdaAdi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlOdaDemirbasListesi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditODLOdaAdi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OdaAdi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
