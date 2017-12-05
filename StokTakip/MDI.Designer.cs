@@ -55,6 +55,7 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             ((System.ComponentModel.ISupportInitialize)(this.rCMDI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -89,6 +90,7 @@
             this.ribbonPage3});
             this.rCMDI.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.rCMDI.Size = new System.Drawing.Size(849, 147);
+            this.rCMDI.StatusBar = this.ribbonStatusBar1;
             this.rCMDI.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // PersonelUzeindekiDemirbas
@@ -274,11 +276,19 @@
             // 
             this.tabbedView1.RootContainer.Element = null;
             // 
+            // ribbonStatusBar1
+            // 
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 586);
+            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
+            this.ribbonStatusBar1.Ribbon = this.rCMDI;
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(849, 20);
+            // 
             // MDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(849, 606);
+            this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.rCMDI);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
@@ -321,5 +331,6 @@
         private DevExpress.XtraBars.BarButtonItem OdaGuncelle;
         private DevExpress.XtraBars.BarButtonItem OdaSilme;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
     }
 }

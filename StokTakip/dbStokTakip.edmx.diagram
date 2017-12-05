@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4bc193385ee54bc98d8d84f839ce870f" Name="Diagram1">
+        <EntityTypeShape EntityType="stokTakipModel.Demirbaslar" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="stokTakipModel.DemirbasTurleri" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="stokTakipModel.Departmanlar" Width="1.5" PointX="8" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="stokTakipModel.Fakulteler" Width="1.5" PointX="5.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="stokTakipModel.OdaDemirbasTablosu" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="stokTakipModel.Odalar" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="stokTakipModel.Personeller" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="stokTakipModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="stokTakipModel.FK_Demirbaslar_DemirbasTurleri1" ManuallyRouted="false" />
+        <AssociationConnector Association="stokTakipModel.FK_OdaDemirbasTablosu_Demirbaslar1" ManuallyRouted="false" />
+        <AssociationConnector Association="stokTakipModel.FK_Departmanlar_Fakulteler" ManuallyRouted="false" />
+        <AssociationConnector Association="stokTakipModel.FK_OdaDemirbasTablosu_Odalar1" ManuallyRouted="false" />
+        <AssociationConnector Association="stokTakipModel.FK_Odalar_Personeller" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -21,7 +21,7 @@ namespace StokTakip
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            UserLookAndFeel.Default.SetSkinStyle("McSkin");
+            UserLookAndFeel.Default.SetSkinStyle("Whiteprint");
             Application.Run(new FRMGiris());
         }
     }
