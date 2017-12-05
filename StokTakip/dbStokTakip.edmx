@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="stokTakipModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Demirbaslar">
+          <Key>
+            <PropertyRef Name="DemirbasID" />
+          </Key>
+          <Property Name="DemirbasID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DemirbasAdi" Type="nvarchar" MaxLength="250" />
+          <Property Name="DemirbasAdet" Type="int" />
+          <Property Name="AlimTarihi" Type="datetime" />
+          <Property Name="DemirbasTurID" Type="int" />
+          <Property Name="DemirbasKodu" Type="nvarchar" MaxLength="250" />
+          <Property Name="Fiyat" Type="float" />
+        </EntityType>
+        <EntityType Name="DemirbasTurleri">
+          <Key>
+            <PropertyRef Name="DemirbasTurID" />
+          </Key>
+          <Property Name="DemirbasTurID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DemirbasTurAdi" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Departmanlar">
+          <Key>
+            <PropertyRef Name="DepartmanID" />
+          </Key>
+          <Property Name="DepartmanID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepartmanAdi" Type="nvarchar" MaxLength="250" />
+          <Property Name="FakulteID" Type="int" />
+        </EntityType>
+        <EntityType Name="Fakulteler">
+          <Key>
+            <PropertyRef Name="FakulteID" />
+          </Key>
+          <Property Name="FakulteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FakulteAdi" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="OdaDemirbasTablosu">
+          <Key>
+            <PropertyRef Name="OdaDemirbasID" />
+          </Key>
+          <Property Name="OdaDemirbasID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OdaID" Type="int" />
+          <Property Name="DemirbasID" Type="int" />
+          <Property Name="Adet" Type="int" />
+        </EntityType>
+        <EntityType Name="Odalar">
+          <Key>
+            <PropertyRef Name="OdaID" />
+          </Key>
+          <Property Name="OdaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OdaAdi" Type="nvarchar" MaxLength="250" />
+          <Property Name="PersonelID" Type="int" />
+        </EntityType>
+        <EntityType Name="Personeller">
+          <Key>
+            <PropertyRef Name="PersonelID" />
+          </Key>
+          <Property Name="PersonelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonelAdi" Type="nvarchar" MaxLength="250" />
+          <Property Name="YetkiID" Type="int" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Demirbaslar_DemirbasTurleri1">
+          <End Role="DemirbasTurleri" Type="Self.DemirbasTurleri" Multiplicity="0..1" />
+          <End Role="Demirbaslar" Type="Self.Demirbaslar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DemirbasTurleri">
+              <PropertyRef Name="DemirbasTurID" />
+            </Principal>
+            <Dependent Role="Demirbaslar">
+              <PropertyRef Name="DemirbasTurID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Departmanlar_Fakulteler">
+          <End Role="Fakulteler" Type="Self.Fakulteler" Multiplicity="0..1" />
+          <End Role="Departmanlar" Type="Self.Departmanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fakulteler">
+              <PropertyRef Name="FakulteID" />
+            </Principal>
+            <Dependent Role="Departmanlar">
+              <PropertyRef Name="FakulteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OdaDemirbasTablosu_Demirbaslar1">
+          <End Role="Demirbaslar" Type="Self.Demirbaslar" Multiplicity="0..1" />
+          <End Role="OdaDemirbasTablosu" Type="Self.OdaDemirbasTablosu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Demirbaslar">
+              <PropertyRef Name="DemirbasID" />
+            </Principal>
+            <Dependent Role="OdaDemirbasTablosu">
+              <PropertyRef Name="DemirbasID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OdaDemirbasTablosu_Odalar1">
+          <End Role="Odalar" Type="Self.Odalar" Multiplicity="0..1" />
+          <End Role="OdaDemirbasTablosu" Type="Self.OdaDemirbasTablosu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Odalar">
+              <PropertyRef Name="OdaID" />
+            </Principal>
+            <Dependent Role="OdaDemirbasTablosu">
+              <PropertyRef Name="OdaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Odalar_Personeller">
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="0..1" />
+          <End Role="Odalar" Type="Self.Odalar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personeller">
+              <PropertyRef Name="PersonelID" />
+            </Principal>
+            <Dependent Role="Odalar">
+              <PropertyRef Name="PersonelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="stokTakipModelStoreContainer">
+          <EntitySet Name="Demirbaslar" EntityType="Self.Demirbaslar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DemirbasTurleri" EntityType="Self.DemirbasTurleri" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Departmanlar" EntityType="Self.Departmanlar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fakulteler" EntityType="Self.Fakulteler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OdaDemirbasTablosu" EntityType="Self.OdaDemirbasTablosu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Odalar" EntityType="Self.Odalar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personeller" EntityType="Self.Personeller" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Demirbaslar_DemirbasTurleri1" Association="Self.FK_Demirbaslar_DemirbasTurleri1">
+            <End Role="DemirbasTurleri" EntitySet="DemirbasTurleri" />
+            <End Role="Demirbaslar" EntitySet="Demirbaslar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Departmanlar_Fakulteler" Association="Self.FK_Departmanlar_Fakulteler">
+            <End Role="Fakulteler" EntitySet="Fakulteler" />
+            <End Role="Departmanlar" EntitySet="Departmanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OdaDemirbasTablosu_Demirbaslar1" Association="Self.FK_OdaDemirbasTablosu_Demirbaslar1">
+            <End Role="Demirbaslar" EntitySet="Demirbaslar" />
+            <End Role="OdaDemirbasTablosu" EntitySet="OdaDemirbasTablosu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OdaDemirbasTablosu_Odalar1" Association="Self.FK_OdaDemirbasTablosu_Odalar1">
+            <End Role="Odalar" EntitySet="Odalar" />
+            <End Role="OdaDemirbasTablosu" EntitySet="OdaDemirbasTablosu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Odalar_Personeller" Association="Self.FK_Odalar_Personeller">
+            <End Role="Personeller" EntitySet="Personeller" />
+            <End Role="Odalar" EntitySet="Odalar" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="stokTakipModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Demirbaslar">
+          <Key>
+            <PropertyRef Name="DemirbasID" />
+          </Key>
+          <Property Name="DemirbasID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DemirbasAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DemirbasAdet" Type="Int32" />
+          <Property Name="AlimTarihi" Type="DateTime" Precision="3" />
+          <Property Name="DemirbasTurID" Type="Int32" />
+          <Property Name="DemirbasKodu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Fiyat" Type="Double" />
+          <NavigationProperty Name="DemirbasTurleri" Relationship="Self.FK_Demirbaslar_DemirbasTurleri1" FromRole="Demirbaslar" ToRole="DemirbasTurleri" />
+          <NavigationProperty Name="OdaDemirbasTablosus" Relationship="Self.FK_OdaDemirbasTablosu_Demirbaslar1" FromRole="Demirbaslar" ToRole="OdaDemirbasTablosu" />
+        </EntityType>
+        <EntityType Name="DemirbasTurleri">
+          <Key>
+            <PropertyRef Name="DemirbasTurID" />
+          </Key>
+          <Property Name="DemirbasTurID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DemirbasTurAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Demirbaslars" Relationship="Self.FK_Demirbaslar_DemirbasTurleri1" FromRole="DemirbasTurleri" ToRole="Demirbaslar" />
+        </EntityType>
+        <EntityType Name="Departmanlar">
+          <Key>
+            <PropertyRef Name="DepartmanID" />
+          </Key>
+          <Property Name="DepartmanID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmanAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FakulteID" Type="Int32" />
+          <NavigationProperty Name="Fakulteler" Relationship="Self.FK_Departmanlar_Fakulteler" FromRole="Departmanlar" ToRole="Fakulteler" />
+        </EntityType>
+        <EntityType Name="Fakulteler">
+          <Key>
+            <PropertyRef Name="FakulteID" />
+          </Key>
+          <Property Name="FakulteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FakulteAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Departmanlars" Relationship="Self.FK_Departmanlar_Fakulteler" FromRole="Fakulteler" ToRole="Departmanlar" />
+        </EntityType>
+        <EntityType Name="OdaDemirbasTablosu">
+          <Key>
+            <PropertyRef Name="OdaDemirbasID" />
+          </Key>
+          <Property Name="OdaDemirbasID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OdaID" Type="Int32" />
+          <Property Name="DemirbasID" Type="Int32" />
+          <Property Name="Adet" Type="Int32" />
+          <NavigationProperty Name="Demirbaslar" Relationship="Self.FK_OdaDemirbasTablosu_Demirbaslar1" FromRole="OdaDemirbasTablosu" ToRole="Demirbaslar" />
+          <NavigationProperty Name="Odalar" Relationship="Self.FK_OdaDemirbasTablosu_Odalar1" FromRole="OdaDemirbasTablosu" ToRole="Odalar" />
+        </EntityType>
+        <EntityType Name="Odalar">
+          <Key>
+            <PropertyRef Name="OdaID" />
+          </Key>
+          <Property Name="OdaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OdaAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PersonelID" Type="Int32" />
+          <NavigationProperty Name="OdaDemirbasTablosus" Relationship="Self.FK_OdaDemirbasTablosu_Odalar1" FromRole="Odalar" ToRole="OdaDemirbasTablosu" />
+          <NavigationProperty Name="Personeller" Relationship="Self.FK_Odalar_Personeller" FromRole="Odalar" ToRole="Personeller" />
+        </EntityType>
+        <EntityType Name="Personeller">
+          <Key>
+            <PropertyRef Name="PersonelID" />
+          </Key>
+          <Property Name="PersonelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonelAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="YetkiID" Type="Int32" />
+          <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Odalars" Relationship="Self.FK_Odalar_Personeller" FromRole="Personeller" ToRole="Odalar" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Demirbaslar_DemirbasTurleri1">
+          <End Role="DemirbasTurleri" Type="Self.DemirbasTurleri" Multiplicity="0..1" />
+          <End Role="Demirbaslar" Type="Self.Demirbaslar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DemirbasTurleri">
+              <PropertyRef Name="DemirbasTurID" />
+            </Principal>
+            <Dependent Role="Demirbaslar">
+              <PropertyRef Name="DemirbasTurID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OdaDemirbasTablosu_Demirbaslar1">
+          <End Role="Demirbaslar" Type="Self.Demirbaslar" Multiplicity="0..1" />
+          <End Role="OdaDemirbasTablosu" Type="Self.OdaDemirbasTablosu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Demirbaslar">
+              <PropertyRef Name="DemirbasID" />
+            </Principal>
+            <Dependent Role="OdaDemirbasTablosu">
+              <PropertyRef Name="DemirbasID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Departmanlar_Fakulteler">
+          <End Role="Fakulteler" Type="Self.Fakulteler" Multiplicity="0..1" />
+          <End Role="Departmanlar" Type="Self.Departmanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fakulteler">
+              <PropertyRef Name="FakulteID" />
+            </Principal>
+            <Dependent Role="Departmanlar">
+              <PropertyRef Name="FakulteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OdaDemirbasTablosu_Odalar1">
+          <End Role="Odalar" Type="Self.Odalar" Multiplicity="0..1" />
+          <End Role="OdaDemirbasTablosu" Type="Self.OdaDemirbasTablosu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Odalar">
+              <PropertyRef Name="OdaID" />
+            </Principal>
+            <Dependent Role="OdaDemirbasTablosu">
+              <PropertyRef Name="OdaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Odalar_Personeller">
+          <End Role="Personeller" Type="Self.Personeller" Multiplicity="0..1" />
+          <End Role="Odalar" Type="Self.Odalar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personeller">
+              <PropertyRef Name="PersonelID" />
+            </Principal>
+            <Dependent Role="Odalar">
+              <PropertyRef Name="PersonelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="stokTakipEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Demirbaslars" EntityType="Self.Demirbaslar" />
+          <EntitySet Name="DemirbasTurleris" EntityType="Self.DemirbasTurleri" />
+          <EntitySet Name="Departmanlars" EntityType="Self.Departmanlar" />
+          <EntitySet Name="Fakultelers" EntityType="Self.Fakulteler" />
+          <EntitySet Name="OdaDemirbasTablosus" EntityType="Self.OdaDemirbasTablosu" />
+          <EntitySet Name="Odalars" EntityType="Self.Odalar" />
+          <EntitySet Name="Personellers" EntityType="Self.Personeller" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <AssociationSet Name="FK_Demirbaslar_DemirbasTurleri1" Association="Self.FK_Demirbaslar_DemirbasTurleri1">
+            <End Role="DemirbasTurleri" EntitySet="DemirbasTurleris" />
+            <End Role="Demirbaslar" EntitySet="Demirbaslars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OdaDemirbasTablosu_Demirbaslar1" Association="Self.FK_OdaDemirbasTablosu_Demirbaslar1">
+            <End Role="Demirbaslar" EntitySet="Demirbaslars" />
+            <End Role="OdaDemirbasTablosu" EntitySet="OdaDemirbasTablosus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Departmanlar_Fakulteler" Association="Self.FK_Departmanlar_Fakulteler">
+            <End Role="Fakulteler" EntitySet="Fakultelers" />
+            <End Role="Departmanlar" EntitySet="Departmanlars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OdaDemirbasTablosu_Odalar1" Association="Self.FK_OdaDemirbasTablosu_Odalar1">
+            <End Role="Odalar" EntitySet="Odalars" />
+            <End Role="OdaDemirbasTablosu" EntitySet="OdaDemirbasTablosus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Odalar_Personeller" Association="Self.FK_Odalar_Personeller">
+            <End Role="Personeller" EntitySet="Personellers" />
+            <End Role="Odalar" EntitySet="Odalars" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="stokTakipModelStoreContainer" CdmEntityContainer="stokTakipEntities">
+          <EntitySetMapping Name="Demirbaslars">
+            <EntityTypeMapping TypeName="stokTakipModel.Demirbaslar">
+              <MappingFragment StoreEntitySet="Demirbaslar">
+                <ScalarProperty Name="DemirbasID" ColumnName="DemirbasID" />
+                <ScalarProperty Name="DemirbasAdi" ColumnName="DemirbasAdi" />
+                <ScalarProperty Name="DemirbasAdet" ColumnName="DemirbasAdet" />
+                <ScalarProperty Name="AlimTarihi" ColumnName="AlimTarihi" />
+                <ScalarProperty Name="DemirbasTurID" ColumnName="DemirbasTurID" />
+                <ScalarProperty Name="DemirbasKodu" ColumnName="DemirbasKodu" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DemirbasTurleris">
+            <EntityTypeMapping TypeName="stokTakipModel.DemirbasTurleri">
+              <MappingFragment StoreEntitySet="DemirbasTurleri">
+                <ScalarProperty Name="DemirbasTurID" ColumnName="DemirbasTurID" />
+                <ScalarProperty Name="DemirbasTurAdi" ColumnName="DemirbasTurAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departmanlars">
+            <EntityTypeMapping TypeName="stokTakipModel.Departmanlar">
+              <MappingFragment StoreEntitySet="Departmanlar">
+                <ScalarProperty Name="DepartmanID" ColumnName="DepartmanID" />
+                <ScalarProperty Name="DepartmanAdi" ColumnName="DepartmanAdi" />
+                <ScalarProperty Name="FakulteID" ColumnName="FakulteID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fakultelers">
+            <EntityTypeMapping TypeName="stokTakipModel.Fakulteler">
+              <MappingFragment StoreEntitySet="Fakulteler">
+                <ScalarProperty Name="FakulteID" ColumnName="FakulteID" />
+                <ScalarProperty Name="FakulteAdi" ColumnName="FakulteAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OdaDemirbasTablosus">
+            <EntityTypeMapping TypeName="stokTakipModel.OdaDemirbasTablosu">
+              <MappingFragment StoreEntitySet="OdaDemirbasTablosu">
+                <ScalarProperty Name="OdaDemirbasID" ColumnName="OdaDemirbasID" />
+                <ScalarProperty Name="OdaID" ColumnName="OdaID" />
+                <ScalarProperty Name="DemirbasID" ColumnName="DemirbasID" />
+                <ScalarProperty Name="Adet" ColumnName="Adet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Odalars">
+            <EntityTypeMapping TypeName="stokTakipModel.Odalar">
+              <MappingFragment StoreEntitySet="Odalar">
+                <ScalarProperty Name="OdaID" ColumnName="OdaID" />
+                <ScalarProperty Name="OdaAdi" ColumnName="OdaAdi" />
+                <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personellers">
+            <EntityTypeMapping TypeName="stokTakipModel.Personeller">
+              <MappingFragment StoreEntitySet="Personeller">
+                <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+                <ScalarProperty Name="PersonelAdi" ColumnName="PersonelAdi" />
+                <ScalarProperty Name="YetkiID" ColumnName="YetkiID" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="stokTakipModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
