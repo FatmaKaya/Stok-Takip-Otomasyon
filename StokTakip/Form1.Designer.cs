@@ -79,9 +79,12 @@
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
             this.pictureEdit1.Location = new System.Drawing.Point(52, 38);
             this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
             this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.ZoomAccelerationFactor = 1D;
+            this.pictureEdit1.Properties.ZoomPercent = 20D;
             this.pictureEdit1.Size = new System.Drawing.Size(167, 110);
             this.pictureEdit1.TabIndex = 5;
             // 
