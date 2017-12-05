@@ -92,5 +92,12 @@ namespace StokTakip
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void DemirbaslariOdadanKaldirma_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmDemirbaslariOdalardanKaldirma frm = new frmDemirbaslariOdalardanKaldirma();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

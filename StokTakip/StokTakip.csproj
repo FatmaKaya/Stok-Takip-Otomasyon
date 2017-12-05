@@ -84,6 +84,12 @@
     <Compile Include="frmDemirbasGuncelle.Designer.cs">
       <DependentUpon>frmDemirbasGuncelle.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDemirbaslariOdalardanKaldirma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDemirbaslariOdalardanKaldirma.Designer.cs">
+      <DependentUpon>frmDemirbaslariOdalardanKaldirma.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDemirbasSayisiniArama.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDemirbasGuncelle.resx">
       <DependentUpon>frmDemirbasGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDemirbaslariOdalardanKaldirma.resx">
+      <DependentUpon>frmDemirbaslariOdalardanKaldirma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDemirbasSayisiniArama.resx">
       <DependentUpon>frmDemirbasSayisiniArama.cs</DependentUpon>

@@ -141,7 +141,7 @@
             // 
             // simpleButtonODLRapor
             // 
-            this.simpleButtonODLRapor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            //this.simpleButtonODLRapor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButtonODLRapor.Location = new System.Drawing.Point(12, 438);
             this.simpleButtonODLRapor.Name = "simpleButtonODLRapor";
             this.simpleButtonODLRapor.Size = new System.Drawing.Size(559, 38);
