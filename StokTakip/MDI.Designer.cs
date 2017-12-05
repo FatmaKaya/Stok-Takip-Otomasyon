@@ -95,7 +95,6 @@
             // 
             this.PersonelUzeindekiDemirbas.Caption = "Personelin Üzerindeki Demirbaşı Arama ";
             this.PersonelUzeindekiDemirbas.Id = 1;
-            this.PersonelUzeindekiDemirbas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("PersonelUzeindekiDemirbas.ImageOptions.Image")));
             this.PersonelUzeindekiDemirbas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("PersonelUzeindekiDemirbas.ImageOptions.LargeImage")));
             this.PersonelUzeindekiDemirbas.Name = "PersonelUzeindekiDemirbas";
             this.PersonelUzeindekiDemirbas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.PersonelUzeindekiDemirbas_ItemClick);
@@ -104,7 +103,6 @@
             // 
             this.DemirbasSayisi.Caption = "Demirbaş Sayısını Arama ";
             this.DemirbasSayisi.Id = 2;
-            this.DemirbasSayisi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DemirbasSayisi.ImageOptions.Image")));
             this.DemirbasSayisi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DemirbasSayisi.ImageOptions.LargeImage")));
             this.DemirbasSayisi.Name = "DemirbasSayisi";
             this.DemirbasSayisi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DemirbasSayisi_ItemClick);
@@ -158,6 +156,8 @@
             // 
             this.OdaDemirbasListesi.Caption = "Oda Demirbaş Listesi";
             this.OdaDemirbasListesi.Id = 11;
+            this.OdaDemirbasListesi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("OdaDemirbasListesi.ImageOptions.Image")));
+            this.OdaDemirbasListesi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("OdaDemirbasListesi.ImageOptions.LargeImage")));
             this.OdaDemirbasListesi.Name = "OdaDemirbasListesi";
             this.OdaDemirbasListesi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.OdaDemirbasListesi_ItemClick);
             // 
@@ -172,6 +172,7 @@
             // 
             this.OdaEkle.Caption = "Oda Bilgileri Ekle";
             this.OdaEkle.Id = 14;
+            this.OdaEkle.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("OdaEkle.ImageOptions.LargeImage")));
             this.OdaEkle.Name = "OdaEkle";
             this.OdaEkle.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.OdaEkle_ItemClick);
             // 
@@ -179,6 +180,8 @@
             // 
             this.OdaGuncelle.Caption = "Oda Bilgileri Güncelle";
             this.OdaGuncelle.Id = 15;
+            this.OdaGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("OdaGuncelle.ImageOptions.Image")));
+            this.OdaGuncelle.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("OdaGuncelle.ImageOptions.LargeImage")));
             this.OdaGuncelle.Name = "OdaGuncelle";
             this.OdaGuncelle.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.OdaGuncelle_ItemClick);
             // 
@@ -186,6 +189,8 @@
             // 
             this.OdaSilme.Caption = "Oda Silme";
             this.OdaSilme.Id = 16;
+            this.OdaSilme.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("OdaSilme.ImageOptions.Image")));
+            this.OdaSilme.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("OdaSilme.ImageOptions.LargeImage")));
             this.OdaSilme.Name = "OdaSilme";
             this.OdaSilme.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.OdaSilme_ItemClick);
             // 
