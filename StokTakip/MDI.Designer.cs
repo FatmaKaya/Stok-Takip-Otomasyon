@@ -153,6 +153,7 @@
             this.DemirbaslariOdadanKaldirma.Caption = "Demirbaşları Odadan Kaldırma";
             this.DemirbaslariOdadanKaldirma.Id = 10;
             this.DemirbaslariOdadanKaldirma.Name = "DemirbaslariOdadanKaldirma";
+            this.DemirbaslariOdadanKaldirma.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DemirbaslariOdadanKaldirma_ItemClick);
             // 
             // OdaDemirbasListesi
             // 
