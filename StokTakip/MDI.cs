@@ -85,5 +85,12 @@ namespace StokTakip
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void OdaDemirbasListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmOdaDemirbasListesi frm = new frmOdaDemirbasListesi();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
