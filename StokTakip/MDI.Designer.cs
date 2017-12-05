@@ -159,6 +159,7 @@
             this.OdaDemirbasListesi.Caption = "Oda Demirbaş Listesi";
             this.OdaDemirbasListesi.Id = 11;
             this.OdaDemirbasListesi.Name = "OdaDemirbasListesi";
+            this.OdaDemirbasListesi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.OdaDemirbasListesi_ItemClick);
             // 
             // DemirbasGuncelle
             // 
