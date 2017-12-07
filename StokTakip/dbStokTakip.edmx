@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="stokTakipModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="stokTakipModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Demirbaslar">
           <Key>
             <PropertyRef Name="DemirbasID" />
@@ -16,6 +16,7 @@
           <Property Name="DemirbasTurID" Type="int" />
           <Property Name="DemirbasKodu" Type="nvarchar" MaxLength="250" />
           <Property Name="Fiyat" Type="float" />
+          <Property Name="Durum" Type="bit" />
         </EntityType>
         <EntityType Name="DemirbasTurleri">
           <Key>
@@ -165,8 +166,7 @@
             <End Role="Odalar" EntitySet="Odalar" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="stokTakipModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -183,6 +183,7 @@
           <Property Name="Fiyat" Type="Double" />
           <NavigationProperty Name="DemirbasTurleri" Relationship="Self.FK_Demirbaslar_DemirbasTurleri1" FromRole="Demirbaslar" ToRole="DemirbasTurleri" />
           <NavigationProperty Name="OdaDemirbasTablosus" Relationship="Self.FK_OdaDemirbasTablosu_Demirbaslar1" FromRole="Demirbaslar" ToRole="OdaDemirbasTablosu" />
+          <Property Name="Durum" Type="Boolean" />
         </EntityType>
         <EntityType Name="DemirbasTurleri">
           <Key>
@@ -349,6 +350,7 @@
           <EntitySetMapping Name="Demirbaslars">
             <EntityTypeMapping TypeName="stokTakipModel.Demirbaslar">
               <MappingFragment StoreEntitySet="Demirbaslar">
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
                 <ScalarProperty Name="DemirbasID" ColumnName="DemirbasID" />
                 <ScalarProperty Name="DemirbasAdi" ColumnName="DemirbasAdi" />
                 <ScalarProperty Name="DemirbasAdet" ColumnName="DemirbasAdet" />

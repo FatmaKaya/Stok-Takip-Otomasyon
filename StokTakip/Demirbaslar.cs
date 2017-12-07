@@ -27,6 +27,7 @@ namespace StokTakip
         public Nullable<int> DemirbasTurID { get; set; }
         public string DemirbasKodu { get; set; }
         public Nullable<double> Fiyat { get; set; }
+        public Nullable<bool> Durum { get; set; }
     
         public virtual DemirbasTurleri DemirbasTurleri { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
