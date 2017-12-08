@@ -17,6 +17,8 @@
           <Property Name="DemirbasKodu" Type="nvarchar" MaxLength="250" />
           <Property Name="Fiyat" Type="float" />
           <Property Name="Durum" Type="bit" />
+          <Property Name="FakulteID" Type="int" Nullable="false" />
+          <Property Name="DepartmanID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="DemirbasTurleri">
           <Key>
@@ -56,6 +58,8 @@
           <Property Name="OdaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OdaAdi" Type="nvarchar" MaxLength="250" />
           <Property Name="PersonelID" Type="int" />
+          <Property Name="FakulteID" Type="int" Nullable="false" />
+          <Property Name="DepartmanID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Personeller">
           <Key>
@@ -85,6 +89,30 @@
             </Principal>
             <Dependent Role="Demirbaslar">
               <PropertyRef Name="DemirbasTurID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Demirbaslar_Departmanlar">
+          <End Role="Departmanlar" Type="Self.Departmanlar" Multiplicity="1" />
+          <End Role="Demirbaslar" Type="Self.Demirbaslar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departmanlar">
+              <PropertyRef Name="DepartmanID" />
+            </Principal>
+            <Dependent Role="Demirbaslar">
+              <PropertyRef Name="DepartmanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Demirbaslar_Fakulteler">
+          <End Role="Fakulteler" Type="Self.Fakulteler" Multiplicity="1" />
+          <End Role="Demirbaslar" Type="Self.Demirbaslar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fakulteler">
+              <PropertyRef Name="FakulteID" />
+            </Principal>
+            <Dependent Role="Demirbaslar">
+              <PropertyRef Name="FakulteID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -124,6 +152,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Odalar_Departmanlar">
+          <End Role="Departmanlar" Type="Self.Departmanlar" Multiplicity="1" />
+          <End Role="Odalar" Type="Self.Odalar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departmanlar">
+              <PropertyRef Name="DepartmanID" />
+            </Principal>
+            <Dependent Role="Odalar">
+              <PropertyRef Name="DepartmanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Odalar_Fakulteler">
+          <End Role="Fakulteler" Type="Self.Fakulteler" Multiplicity="1" />
+          <End Role="Odalar" Type="Self.Odalar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fakulteler">
+              <PropertyRef Name="FakulteID" />
+            </Principal>
+            <Dependent Role="Odalar">
+              <PropertyRef Name="FakulteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Odalar_Personeller">
           <End Role="Personeller" Type="Self.Personeller" Multiplicity="0..1" />
           <End Role="Odalar" Type="Self.Odalar" Multiplicity="*" />
@@ -149,6 +201,14 @@
             <End Role="DemirbasTurleri" EntitySet="DemirbasTurleri" />
             <End Role="Demirbaslar" EntitySet="Demirbaslar" />
           </AssociationSet>
+          <AssociationSet Name="FK_Demirbaslar_Departmanlar" Association="Self.FK_Demirbaslar_Departmanlar">
+            <End Role="Departmanlar" EntitySet="Departmanlar" />
+            <End Role="Demirbaslar" EntitySet="Demirbaslar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Demirbaslar_Fakulteler" Association="Self.FK_Demirbaslar_Fakulteler">
+            <End Role="Fakulteler" EntitySet="Fakulteler" />
+            <End Role="Demirbaslar" EntitySet="Demirbaslar" />
+          </AssociationSet>
           <AssociationSet Name="FK_Departmanlar_Fakulteler" Association="Self.FK_Departmanlar_Fakulteler">
             <End Role="Fakulteler" EntitySet="Fakulteler" />
             <End Role="Departmanlar" EntitySet="Departmanlar" />
@@ -160,6 +220,14 @@
           <AssociationSet Name="FK_OdaDemirbasTablosu_Odalar1" Association="Self.FK_OdaDemirbasTablosu_Odalar1">
             <End Role="Odalar" EntitySet="Odalar" />
             <End Role="OdaDemirbasTablosu" EntitySet="OdaDemirbasTablosu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Odalar_Departmanlar" Association="Self.FK_Odalar_Departmanlar">
+            <End Role="Departmanlar" EntitySet="Departmanlar" />
+            <End Role="Odalar" EntitySet="Odalar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Odalar_Fakulteler" Association="Self.FK_Odalar_Fakulteler">
+            <End Role="Fakulteler" EntitySet="Fakulteler" />
+            <End Role="Odalar" EntitySet="Odalar" />
           </AssociationSet>
           <AssociationSet Name="FK_Odalar_Personeller" Association="Self.FK_Odalar_Personeller">
             <End Role="Personeller" EntitySet="Personeller" />
@@ -184,6 +252,10 @@
           <NavigationProperty Name="DemirbasTurleri" Relationship="Self.FK_Demirbaslar_DemirbasTurleri1" FromRole="Demirbaslar" ToRole="DemirbasTurleri" />
           <NavigationProperty Name="OdaDemirbasTablosus" Relationship="Self.FK_OdaDemirbasTablosu_Demirbaslar1" FromRole="Demirbaslar" ToRole="OdaDemirbasTablosu" />
           <Property Name="Durum" Type="Boolean" />
+          <Property Name="FakulteID" Type="Int32" Nullable="false" />
+          <Property Name="DepartmanID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Departmanlar" Relationship="stokTakipModel.FK_Demirbaslar_Departmanlar" FromRole="Demirbaslar" ToRole="Departmanlar" />
+          <NavigationProperty Name="Fakulteler" Relationship="stokTakipModel.FK_Demirbaslar_Fakulteler" FromRole="Demirbaslar" ToRole="Fakulteler" />
         </EntityType>
         <EntityType Name="DemirbasTurleri">
           <Key>
@@ -201,6 +273,8 @@
           <Property Name="DepartmanAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="FakulteID" Type="Int32" />
           <NavigationProperty Name="Fakulteler" Relationship="Self.FK_Departmanlar_Fakulteler" FromRole="Departmanlar" ToRole="Fakulteler" />
+          <NavigationProperty Name="Demirbaslars" Relationship="stokTakipModel.FK_Demirbaslar_Departmanlar" FromRole="Departmanlar" ToRole="Demirbaslar" />
+          <NavigationProperty Name="Odalars" Relationship="stokTakipModel.FK_Odalar_Departmanlar" FromRole="Departmanlar" ToRole="Odalar" />
         </EntityType>
         <EntityType Name="Fakulteler">
           <Key>
@@ -209,6 +283,8 @@
           <Property Name="FakulteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FakulteAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Departmanlars" Relationship="Self.FK_Departmanlar_Fakulteler" FromRole="Fakulteler" ToRole="Departmanlar" />
+          <NavigationProperty Name="Demirbaslars" Relationship="stokTakipModel.FK_Demirbaslar_Fakulteler" FromRole="Fakulteler" ToRole="Demirbaslar" />
+          <NavigationProperty Name="Odalars" Relationship="stokTakipModel.FK_Odalar_Fakulteler" FromRole="Fakulteler" ToRole="Odalar" />
         </EntityType>
         <EntityType Name="OdaDemirbasTablosu">
           <Key>
@@ -230,6 +306,10 @@
           <Property Name="PersonelID" Type="Int32" />
           <NavigationProperty Name="OdaDemirbasTablosus" Relationship="Self.FK_OdaDemirbasTablosu_Odalar1" FromRole="Odalar" ToRole="OdaDemirbasTablosu" />
           <NavigationProperty Name="Personeller" Relationship="Self.FK_Odalar_Personeller" FromRole="Odalar" ToRole="Personeller" />
+          <Property Name="FakulteID" Type="Int32" Nullable="false" />
+          <Property Name="DepartmanID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Departmanlar" Relationship="stokTakipModel.FK_Odalar_Departmanlar" FromRole="Odalar" ToRole="Departmanlar" />
+          <NavigationProperty Name="Fakulteler" Relationship="stokTakipModel.FK_Odalar_Fakulteler" FromRole="Odalar" ToRole="Fakulteler" />
         </EntityType>
         <EntityType Name="Personeller">
           <Key>
@@ -340,7 +420,71 @@
             <End Role="Personeller" EntitySet="Personellers" />
             <End Role="Odalar" EntitySet="Odalars" />
           </AssociationSet>
+          <AssociationSet Name="FK_Demirbaslar_Departmanlar" Association="stokTakipModel.FK_Demirbaslar_Departmanlar">
+            <End Role="Departmanlar" EntitySet="Departmanlars" />
+            <End Role="Demirbaslar" EntitySet="Demirbaslars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Demirbaslar_Fakulteler" Association="stokTakipModel.FK_Demirbaslar_Fakulteler">
+            <End Role="Fakulteler" EntitySet="Fakultelers" />
+            <End Role="Demirbaslar" EntitySet="Demirbaslars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Odalar_Departmanlar" Association="stokTakipModel.FK_Odalar_Departmanlar">
+            <End Role="Departmanlar" EntitySet="Departmanlars" />
+            <End Role="Odalar" EntitySet="Odalars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Odalar_Fakulteler" Association="stokTakipModel.FK_Odalar_Fakulteler">
+            <End Role="Fakulteler" EntitySet="Fakultelers" />
+            <End Role="Odalar" EntitySet="Odalars" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_Demirbaslar_Departmanlar">
+          <End Type="stokTakipModel.Departmanlar" Role="Departmanlar" Multiplicity="1" />
+          <End Type="stokTakipModel.Demirbaslar" Role="Demirbaslar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departmanlar">
+              <PropertyRef Name="DepartmanID" />
+            </Principal>
+            <Dependent Role="Demirbaslar">
+              <PropertyRef Name="DepartmanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Demirbaslar_Fakulteler">
+          <End Type="stokTakipModel.Fakulteler" Role="Fakulteler" Multiplicity="1" />
+          <End Type="stokTakipModel.Demirbaslar" Role="Demirbaslar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fakulteler">
+              <PropertyRef Name="FakulteID" />
+            </Principal>
+            <Dependent Role="Demirbaslar">
+              <PropertyRef Name="FakulteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Odalar_Departmanlar">
+          <End Type="stokTakipModel.Departmanlar" Role="Departmanlar" Multiplicity="1" />
+          <End Type="stokTakipModel.Odalar" Role="Odalar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departmanlar">
+              <PropertyRef Name="DepartmanID" />
+            </Principal>
+            <Dependent Role="Odalar">
+              <PropertyRef Name="DepartmanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Odalar_Fakulteler">
+          <End Type="stokTakipModel.Fakulteler" Role="Fakulteler" Multiplicity="1" />
+          <End Type="stokTakipModel.Odalar" Role="Odalar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fakulteler">
+              <PropertyRef Name="FakulteID" />
+            </Principal>
+            <Dependent Role="Odalar">
+              <PropertyRef Name="FakulteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -350,6 +494,8 @@
           <EntitySetMapping Name="Demirbaslars">
             <EntityTypeMapping TypeName="stokTakipModel.Demirbaslar">
               <MappingFragment StoreEntitySet="Demirbaslar">
+                <ScalarProperty Name="DepartmanID" ColumnName="DepartmanID" />
+                <ScalarProperty Name="FakulteID" ColumnName="FakulteID" />
                 <ScalarProperty Name="Durum" ColumnName="Durum" />
                 <ScalarProperty Name="DemirbasID" ColumnName="DemirbasID" />
                 <ScalarProperty Name="DemirbasAdi" ColumnName="DemirbasAdi" />
@@ -399,6 +545,8 @@
           <EntitySetMapping Name="Odalars">
             <EntityTypeMapping TypeName="stokTakipModel.Odalar">
               <MappingFragment StoreEntitySet="Odalar">
+                <ScalarProperty Name="DepartmanID" ColumnName="DepartmanID" />
+                <ScalarProperty Name="FakulteID" ColumnName="FakulteID" />
                 <ScalarProperty Name="OdaID" ColumnName="OdaID" />
                 <ScalarProperty Name="OdaAdi" ColumnName="OdaAdi" />
                 <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />

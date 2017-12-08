@@ -18,6 +18,10 @@
         <AssociationConnector Association="stokTakipModel.FK_Departmanlar_Fakulteler" ManuallyRouted="false" />
         <AssociationConnector Association="stokTakipModel.FK_OdaDemirbasTablosu_Odalar1" ManuallyRouted="false" />
         <AssociationConnector Association="stokTakipModel.FK_Odalar_Personeller" ManuallyRouted="false" />
+        <AssociationConnector Association="stokTakipModel.FK_Demirbaslar_Departmanlar" />
+        <AssociationConnector Association="stokTakipModel.FK_Demirbaslar_Fakulteler" />
+        <AssociationConnector Association="stokTakipModel.FK_Odalar_Departmanlar" />
+        <AssociationConnector Association="stokTakipModel.FK_Odalar_Fakulteler" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

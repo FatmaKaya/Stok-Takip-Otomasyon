@@ -28,9 +28,13 @@ namespace StokTakip
         public string DemirbasKodu { get; set; }
         public Nullable<double> Fiyat { get; set; }
         public Nullable<bool> Durum { get; set; }
+        public int FakulteID { get; set; }
+        public int DepartmanID { get; set; }
     
         public virtual DemirbasTurleri DemirbasTurleri { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OdaDemirbasTablosu> OdaDemirbasTablosus { get; set; }
+        public virtual Departmanlar Departmanlar { get; set; }
+        public virtual Fakulteler Fakulteler { get; set; }
     }
 }

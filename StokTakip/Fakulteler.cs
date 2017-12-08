@@ -18,6 +18,8 @@ namespace StokTakip
         public Fakulteler()
         {
             this.Departmanlars = new HashSet<Departmanlar>();
+            this.Demirbaslars = new HashSet<Demirbaslar>();
+            this.Odalars = new HashSet<Odalar>();
         }
     
         public int FakulteID { get; set; }
@@ -25,5 +27,9 @@ namespace StokTakip
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Departmanlar> Departmanlars { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Demirbaslar> Demirbaslars { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Odalar> Odalars { get; set; }
     }
 }

@@ -23,9 +23,13 @@ namespace StokTakip
         public int OdaID { get; set; }
         public string OdaAdi { get; set; }
         public Nullable<int> PersonelID { get; set; }
+        public int FakulteID { get; set; }
+        public int DepartmanID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OdaDemirbasTablosu> OdaDemirbasTablosus { get; set; }
         public virtual Personeller Personeller { get; set; }
+        public virtual Departmanlar Departmanlar { get; set; }
+        public virtual Fakulteler Fakulteler { get; set; }
     }
 }
