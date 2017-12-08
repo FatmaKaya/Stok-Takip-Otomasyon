@@ -20,10 +20,12 @@ namespace StokTakip
         stokTakipEntities db = new stokTakipEntities();
         int fakulteID;
         int departmanID;
-       
+        int demirbasTurID;
         private void frmDemirbasEkle_Load(object sender, EventArgs e)
         {      
             lookUpEditDemirbasEkleFakulteAdi.Properties.DataSource = db.Fakultelers.ToList();
+            lookUpEditDemirbasTur.Properties.DataSource = db.DemirbasTurleris.ToList();
+          
         }
         private void lookUpEditDemirbasEkleFakulteAdi_EditValueChanged(object sender, EventArgs e)
         {
@@ -35,6 +37,11 @@ namespace StokTakip
         {
             departmanID = Convert.ToInt32(lookUpEditDemirbasEkleDepartmanAdi.EditValue);
             MessageBox.Show(departmanID.ToString());
+        }
+        private void lookUpEditDemirbasTur_EditValueChanged(object sender, EventArgs e)
+        {
+            demirbasTurID = Convert.ToInt32(lookUpEditDemirbasTur.EditValue);
+            MessageBox.Show(demirbasTurID.ToString());
         }
         private void SimpleButtonEkle_Click(object sender, EventArgs e)
         {
