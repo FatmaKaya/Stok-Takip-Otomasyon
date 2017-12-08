@@ -36,10 +36,22 @@ namespace StokTakip
         {
 
         }
-
+        stokTakipEntities se = new stokTakipEntities();
         private void simpleButtonGuncelleAra_Click(object sender, EventArgs e)
         {
 
+            //Personeller p = new Personeller();
+            //p.PersonelAdi = "fK"; 
+            //p.Sifre = "jhkj";
+            //p.YetkiID = 2;
+            //se.Personellers.Add(p);
+            //Personeller pl = se.Personellers.First(x => x.PersonelID == 10);
+            //se.Personellers.Remove(pl);
+
+            //Personeller pp = se.Personellers.First(x => x.PersonelID== 1003);
+            //pp.PersonelAdi = "fatma";
+            //se.SaveChanges();
+            //gridControlGuncelleDemirbaslar.DataSource = se.Personellers.ToList();
         }
     }
 }

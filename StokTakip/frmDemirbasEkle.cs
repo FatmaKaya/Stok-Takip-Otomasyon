@@ -17,10 +17,11 @@ namespace StokTakip
         {
             InitializeComponent();
         }
-
+        stokTakipEntities db = new stokTakipEntities();
         private void frmDemirbasEkle_Load(object sender, EventArgs e)
-        {
-
+        {      
+            lookUpEditDemirbasEkleFakulteAdi.Properties.DataSource = db.Fakultelers.ToList();
+           
         }
 
         private void SimpleButtonEkle_Click(object sender, EventArgs e)

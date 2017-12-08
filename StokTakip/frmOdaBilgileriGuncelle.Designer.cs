@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.simpleButtonGuncelleOdaAra = new DevExpress.XtraEditors.SimpleButton();
             this.gridControlGuncelleOdaBilgileri = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.textEditGuncelleAramaOdaAdi = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.OdaAdi = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.textEditGuncelleOdaAdi = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButtonGuncelleOdaBilgileri = new DevExpress.XtraEditors.SimpleButton();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.simpleButtonGuncelleOdaBilgileri = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.GuncelleOdaAdi = new DevExpress.XtraLayout.LayoutControlItem();
             this.GuncelleOdaSorumlusu = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButtonGuncelleOdaAra = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlGuncelleOdaBilgileri)).BeginInit();
@@ -53,15 +53,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OdaAdi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditGuncelleOdaAdi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GuncelleOdaAdi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GuncelleOdaSorumlusu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -76,6 +76,15 @@
             this.layoutControl1.Size = new System.Drawing.Size(443, 297);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // simpleButtonGuncelleOdaAra
+            // 
+            this.simpleButtonGuncelleOdaAra.Location = new System.Drawing.Point(325, 12);
+            this.simpleButtonGuncelleOdaAra.Name = "simpleButtonGuncelleOdaAra";
+            this.simpleButtonGuncelleOdaAra.Size = new System.Drawing.Size(106, 22);
+            this.simpleButtonGuncelleOdaAra.StyleController = this.layoutControl1;
+            this.simpleButtonGuncelleOdaAra.TabIndex = 7;
+            this.simpleButtonGuncelleOdaAra.Text = "Ara";
             // 
             // gridControlGuncelleOdaBilgileri
             // 
@@ -131,6 +140,15 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.simpleButtonGuncelleOdaAra;
+            this.layoutControlItem1.Location = new System.Drawing.Point(313, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(110, 26);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
             // layoutControl2
             // 
             this.layoutControl2.Controls.Add(this.textEditGuncelleOdaAdi);
@@ -144,6 +162,33 @@
             this.layoutControl2.TabIndex = 1;
             this.layoutControl2.Text = "layoutControl2";
             // 
+            // textEditGuncelleOdaAdi
+            // 
+            this.textEditGuncelleOdaAdi.Location = new System.Drawing.Point(94, 12);
+            this.textEditGuncelleOdaAdi.Name = "textEditGuncelleOdaAdi";
+            this.textEditGuncelleOdaAdi.Size = new System.Drawing.Size(129, 20);
+            this.textEditGuncelleOdaAdi.StyleController = this.layoutControl2;
+            this.textEditGuncelleOdaAdi.TabIndex = 4;
+            // 
+            // comboBoxEdit1
+            // 
+            this.comboBoxEdit1.Location = new System.Drawing.Point(94, 36);
+            this.comboBoxEdit1.Name = "comboBoxEdit1";
+            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit1.Size = new System.Drawing.Size(129, 20);
+            this.comboBoxEdit1.StyleController = this.layoutControl2;
+            this.comboBoxEdit1.TabIndex = 5;
+            // 
+            // simpleButtonGuncelleOdaBilgileri
+            // 
+            this.simpleButtonGuncelleOdaBilgileri.Location = new System.Drawing.Point(12, 60);
+            this.simpleButtonGuncelleOdaBilgileri.Name = "simpleButtonGuncelleOdaBilgileri";
+            this.simpleButtonGuncelleOdaBilgileri.Size = new System.Drawing.Size(211, 22);
+            this.simpleButtonGuncelleOdaBilgileri.StyleController = this.layoutControl2;
+            this.simpleButtonGuncelleOdaBilgileri.TabIndex = 6;
+            this.simpleButtonGuncelleOdaBilgileri.Text = "Güncelle";
+            // 
             // layoutControlGroup2
             // 
             this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -156,33 +201,6 @@
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(235, 297);
             this.layoutControlGroup2.TextVisible = false;
-            // 
-            // textEditGuncelleOdaAdi
-            // 
-            this.textEditGuncelleOdaAdi.Location = new System.Drawing.Point(95, 12);
-            this.textEditGuncelleOdaAdi.Name = "textEditGuncelleOdaAdi";
-            this.textEditGuncelleOdaAdi.Size = new System.Drawing.Size(128, 20);
-            this.textEditGuncelleOdaAdi.StyleController = this.layoutControl2;
-            this.textEditGuncelleOdaAdi.TabIndex = 4;
-            // 
-            // simpleButtonGuncelleOdaBilgileri
-            // 
-            this.simpleButtonGuncelleOdaBilgileri.Location = new System.Drawing.Point(12, 60);
-            this.simpleButtonGuncelleOdaBilgileri.Name = "simpleButtonGuncelleOdaBilgileri";
-            this.simpleButtonGuncelleOdaBilgileri.Size = new System.Drawing.Size(211, 22);
-            this.simpleButtonGuncelleOdaBilgileri.StyleController = this.layoutControl2;
-            this.simpleButtonGuncelleOdaBilgileri.TabIndex = 6;
-            this.simpleButtonGuncelleOdaBilgileri.Text = "Güncelle";
-            // 
-            // comboBoxEdit1
-            // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(95, 36);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(128, 20);
-            this.comboBoxEdit1.StyleController = this.layoutControl2;
-            this.comboBoxEdit1.TabIndex = 5;
             // 
             // GuncelleOdaAdi
             // 
@@ -211,27 +229,8 @@
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(215, 229);
-            this.layoutControlItem3.Text = "layoutControlItem3";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
-            // 
-            // simpleButtonGuncelleOdaAra
-            // 
-            this.simpleButtonGuncelleOdaAra.Location = new System.Drawing.Point(325, 12);
-            this.simpleButtonGuncelleOdaAra.Name = "simpleButtonGuncelleOdaAra";
-            this.simpleButtonGuncelleOdaAra.Size = new System.Drawing.Size(106, 22);
-            this.simpleButtonGuncelleOdaAra.StyleController = this.layoutControl1;
-            this.simpleButtonGuncelleOdaAra.TabIndex = 7;
-            this.simpleButtonGuncelleOdaAra.Text = "Ara";
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.simpleButtonGuncelleOdaAra;
-            this.layoutControlItem1.Location = new System.Drawing.Point(313, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(110, 26);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
             // 
             // frmOdaBilgileriGuncelle
             // 
@@ -242,6 +241,7 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmOdaBilgileriGuncelle";
             this.Text = "Oda Bilgileri Güncelle";
+            this.Load += new System.EventHandler(this.frmOdaBilgileriGuncelle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlGuncelleOdaBilgileri)).EndInit();
@@ -250,15 +250,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OdaAdi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditGuncelleOdaAdi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GuncelleOdaAdi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GuncelleOdaSorumlusu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
 
         }

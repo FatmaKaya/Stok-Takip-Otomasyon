@@ -17,5 +17,10 @@ namespace StokTakip
         {
             InitializeComponent();
         }
+
+        private void frmOdaBilgileriGuncelle_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

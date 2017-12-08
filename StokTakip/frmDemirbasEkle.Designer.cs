@@ -35,18 +35,18 @@
             this.TextEditEkleDemirbasFiyat = new DevExpress.XtraEditors.TextEdit();
             this.TextEditEkleDemirbasTur = new DevExpress.XtraEditors.TextEdit();
             this.TextEditEkleDemirbasAd = new DevExpress.XtraEditors.TextEdit();
-            this.ComboBoxEditEkleDemirbasDepartman = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.ComboboxEditEkleDemirbasFakulte = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.fakulteAdi = new DevExpress.XtraLayout.LayoutControlItem();
-            this.departmanAdi = new DevExpress.XtraLayout.LayoutControlItem();
             this.demirbasAdi = new DevExpress.XtraLayout.LayoutControlItem();
             this.demirbasTuru = new DevExpress.XtraLayout.LayoutControlItem();
             this.demirbasFiyati = new DevExpress.XtraLayout.LayoutControlItem();
             this.demirbasAlimTarihi = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.DemirbasAdet = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lookUpEditDemirbasEkleFakulteAdi = new DevExpress.XtraEditors.LookUpEdit();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lookUpEditDemirbasEkleDepartmanAdi = new DevExpress.XtraEditors.LookUpEdit();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SpinEditEkleDemirbasAdet.Properties)).BeginInit();
@@ -55,30 +55,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.TextEditEkleDemirbasFiyat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextEditEkleDemirbasTur.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextEditEkleDemirbasAd.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxEditEkleDemirbasDepartman.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboboxEditEkleDemirbasFakulte.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fakulteAdi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmanAdi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.demirbasAdi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.demirbasTuru)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.demirbasFiyati)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.demirbasAlimTarihi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DemirbasAdet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDemirbasEkleFakulteAdi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDemirbasEkleDepartmanAdi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.lookUpEditDemirbasEkleDepartmanAdi);
+            this.layoutControl1.Controls.Add(this.lookUpEditDemirbasEkleFakulteAdi);
             this.layoutControl1.Controls.Add(this.SpinEditEkleDemirbasAdet);
             this.layoutControl1.Controls.Add(this.SimpleButtonEkle);
             this.layoutControl1.Controls.Add(this.DateTimePickerEkleDemirbasAlimTarih);
             this.layoutControl1.Controls.Add(this.TextEditEkleDemirbasFiyat);
             this.layoutControl1.Controls.Add(this.TextEditEkleDemirbasTur);
             this.layoutControl1.Controls.Add(this.TextEditEkleDemirbasAd);
-            this.layoutControl1.Controls.Add(this.ComboBoxEditEkleDemirbasDepartman);
-            this.layoutControl1.Controls.Add(this.ComboboxEditEkleDemirbasFakulte);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -94,7 +94,7 @@
             0,
             0,
             0});
-            this.SpinEditEkleDemirbasAdet.Location = new System.Drawing.Point(88, 156);
+            this.SpinEditEkleDemirbasAdet.Location = new System.Drawing.Point(90, 156);
             this.SpinEditEkleDemirbasAdet.Name = "SpinEditEkleDemirbasAdet";
             this.SpinEditEkleDemirbasAdet.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -103,7 +103,7 @@
             0,
             0,
             0});
-            this.SpinEditEkleDemirbasAdet.Size = new System.Drawing.Size(264, 20);
+            this.SpinEditEkleDemirbasAdet.Size = new System.Drawing.Size(262, 20);
             this.SpinEditEkleDemirbasAdet.StyleController = this.layoutControl1;
             this.SpinEditEkleDemirbasAdet.TabIndex = 10;
             // 
@@ -120,64 +120,40 @@
             // DateTimePickerEkleDemirbasAlimTarih
             // 
             this.DateTimePickerEkleDemirbasAlimTarih.EditValue = null;
-            this.DateTimePickerEkleDemirbasAlimTarih.Location = new System.Drawing.Point(88, 132);
+            this.DateTimePickerEkleDemirbasAlimTarih.Location = new System.Drawing.Point(90, 132);
             this.DateTimePickerEkleDemirbasAlimTarih.Name = "DateTimePickerEkleDemirbasAlimTarih";
             this.DateTimePickerEkleDemirbasAlimTarih.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.DateTimePickerEkleDemirbasAlimTarih.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.DateTimePickerEkleDemirbasAlimTarih.Size = new System.Drawing.Size(264, 20);
+            this.DateTimePickerEkleDemirbasAlimTarih.Size = new System.Drawing.Size(262, 20);
             this.DateTimePickerEkleDemirbasAlimTarih.StyleController = this.layoutControl1;
             this.DateTimePickerEkleDemirbasAlimTarih.TabIndex = 9;
             // 
             // TextEditEkleDemirbasFiyat
             // 
-            this.TextEditEkleDemirbasFiyat.Location = new System.Drawing.Point(88, 108);
+            this.TextEditEkleDemirbasFiyat.Location = new System.Drawing.Point(90, 108);
             this.TextEditEkleDemirbasFiyat.Name = "TextEditEkleDemirbasFiyat";
             this.TextEditEkleDemirbasFiyat.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.TextEditEkleDemirbasFiyat.Size = new System.Drawing.Size(264, 20);
+            this.TextEditEkleDemirbasFiyat.Size = new System.Drawing.Size(262, 20);
             this.TextEditEkleDemirbasFiyat.StyleController = this.layoutControl1;
             this.TextEditEkleDemirbasFiyat.TabIndex = 8;
             // 
             // TextEditEkleDemirbasTur
             // 
-            this.TextEditEkleDemirbasTur.Location = new System.Drawing.Point(88, 84);
+            this.TextEditEkleDemirbasTur.Location = new System.Drawing.Point(90, 84);
             this.TextEditEkleDemirbasTur.Name = "TextEditEkleDemirbasTur";
-            this.TextEditEkleDemirbasTur.Size = new System.Drawing.Size(264, 20);
+            this.TextEditEkleDemirbasTur.Size = new System.Drawing.Size(262, 20);
             this.TextEditEkleDemirbasTur.StyleController = this.layoutControl1;
             this.TextEditEkleDemirbasTur.TabIndex = 7;
             // 
             // TextEditEkleDemirbasAd
             // 
-            this.TextEditEkleDemirbasAd.Location = new System.Drawing.Point(88, 60);
+            this.TextEditEkleDemirbasAd.Location = new System.Drawing.Point(90, 60);
             this.TextEditEkleDemirbasAd.Name = "TextEditEkleDemirbasAd";
-            this.TextEditEkleDemirbasAd.Size = new System.Drawing.Size(264, 20);
+            this.TextEditEkleDemirbasAd.Size = new System.Drawing.Size(262, 20);
             this.TextEditEkleDemirbasAd.StyleController = this.layoutControl1;
             this.TextEditEkleDemirbasAd.TabIndex = 6;
-            // 
-            // ComboBoxEditEkleDemirbasDepartman
-            // 
-            this.ComboBoxEditEkleDemirbasDepartman.EditValue = "";
-            this.ComboBoxEditEkleDemirbasDepartman.Location = new System.Drawing.Point(88, 36);
-            this.ComboBoxEditEkleDemirbasDepartman.Name = "ComboBoxEditEkleDemirbasDepartman";
-            this.ComboBoxEditEkleDemirbasDepartman.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ComboBoxEditEkleDemirbasDepartman.Size = new System.Drawing.Size(264, 20);
-            this.ComboBoxEditEkleDemirbasDepartman.StyleController = this.layoutControl1;
-            this.ComboBoxEditEkleDemirbasDepartman.TabIndex = 5;
-            // 
-            // ComboboxEditEkleDemirbasFakulte
-            // 
-            this.ComboboxEditEkleDemirbasFakulte.Location = new System.Drawing.Point(88, 12);
-            this.ComboboxEditEkleDemirbasFakulte.Name = "ComboboxEditEkleDemirbasFakulte";
-            this.ComboboxEditEkleDemirbasFakulte.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ComboboxEditEkleDemirbasFakulte.Properties.Items.AddRange(new object[] {
-            "Hasan Ferdi Turgutlu Teknoloji Fakültesi",
-            "Mühendislik Fakültesi"});
-            this.ComboboxEditEkleDemirbasFakulte.Size = new System.Drawing.Size(264, 20);
-            this.ComboboxEditEkleDemirbasFakulte.StyleController = this.layoutControl1;
-            this.ComboboxEditEkleDemirbasFakulte.TabIndex = 4;
             // 
             // layoutControlGroup1
             // 
@@ -185,14 +161,14 @@
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.emptySpaceItem1,
-            this.fakulteAdi,
-            this.departmanAdi,
             this.demirbasAdi,
             this.demirbasTuru,
             this.demirbasFiyati,
             this.demirbasAlimTarihi,
             this.layoutControlItem1,
-            this.DemirbasAdet});
+            this.DemirbasAdet,
+            this.layoutControlItem2,
+            this.layoutControlItem3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(364, 470);
@@ -206,24 +182,6 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(344, 256);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // fakulteAdi
-            // 
-            this.fakulteAdi.Control = this.ComboboxEditEkleDemirbasFakulte;
-            this.fakulteAdi.Location = new System.Drawing.Point(0, 0);
-            this.fakulteAdi.Name = "fakulteAdi";
-            this.fakulteAdi.Size = new System.Drawing.Size(344, 24);
-            this.fakulteAdi.Text = "Fakülte";
-            this.fakulteAdi.TextSize = new System.Drawing.Size(73, 13);
-            // 
-            // departmanAdi
-            // 
-            this.departmanAdi.Control = this.ComboBoxEditEkleDemirbasDepartman;
-            this.departmanAdi.Location = new System.Drawing.Point(0, 24);
-            this.departmanAdi.Name = "departmanAdi";
-            this.departmanAdi.Size = new System.Drawing.Size(344, 24);
-            this.departmanAdi.Text = "Departman";
-            this.departmanAdi.TextSize = new System.Drawing.Size(73, 13);
-            // 
             // demirbasAdi
             // 
             this.demirbasAdi.Control = this.TextEditEkleDemirbasAd;
@@ -231,7 +189,7 @@
             this.demirbasAdi.Name = "demirbasAdi";
             this.demirbasAdi.Size = new System.Drawing.Size(344, 24);
             this.demirbasAdi.Text = "Demirbaş Adı:";
-            this.demirbasAdi.TextSize = new System.Drawing.Size(73, 13);
+            this.demirbasAdi.TextSize = new System.Drawing.Size(75, 13);
             // 
             // demirbasTuru
             // 
@@ -240,7 +198,7 @@
             this.demirbasTuru.Name = "demirbasTuru";
             this.demirbasTuru.Size = new System.Drawing.Size(344, 24);
             this.demirbasTuru.Text = "Demirbaş Türü:";
-            this.demirbasTuru.TextSize = new System.Drawing.Size(73, 13);
+            this.demirbasTuru.TextSize = new System.Drawing.Size(75, 13);
             // 
             // demirbasFiyati
             // 
@@ -249,7 +207,7 @@
             this.demirbasFiyati.Name = "demirbasFiyati";
             this.demirbasFiyati.Size = new System.Drawing.Size(344, 24);
             this.demirbasFiyati.Text = "Fiyat:";
-            this.demirbasFiyati.TextSize = new System.Drawing.Size(73, 13);
+            this.demirbasFiyati.TextSize = new System.Drawing.Size(75, 13);
             // 
             // demirbasAlimTarihi
             // 
@@ -258,7 +216,7 @@
             this.demirbasAlimTarihi.Name = "demirbasAlimTarihi";
             this.demirbasAlimTarihi.Size = new System.Drawing.Size(344, 24);
             this.demirbasAlimTarihi.Text = "Alım Tarihi";
-            this.demirbasAlimTarihi.TextSize = new System.Drawing.Size(73, 13);
+            this.demirbasAlimTarihi.TextSize = new System.Drawing.Size(75, 13);
             // 
             // layoutControlItem1
             // 
@@ -276,7 +234,49 @@
             this.DemirbasAdet.Name = "DemirbasAdet";
             this.DemirbasAdet.Size = new System.Drawing.Size(344, 24);
             this.DemirbasAdet.Text = "Demirbaş Adet";
-            this.DemirbasAdet.TextSize = new System.Drawing.Size(73, 13);
+            this.DemirbasAdet.TextSize = new System.Drawing.Size(75, 13);
+            // 
+            // lookUpEditDemirbasEkleFakulteAdi
+            // 
+            this.lookUpEditDemirbasEkleFakulteAdi.Location = new System.Drawing.Point(90, 12);
+            this.lookUpEditDemirbasEkleFakulteAdi.Name = "lookUpEditDemirbasEkleFakulteAdi";
+            this.lookUpEditDemirbasEkleFakulteAdi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEditDemirbasEkleFakulteAdi.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("FakulteAdi", "Fakülte")});
+            this.lookUpEditDemirbasEkleFakulteAdi.Properties.DisplayMember = "FakulteAdi";
+            this.lookUpEditDemirbasEkleFakulteAdi.Properties.ValueMember = "FakulteID";
+            this.lookUpEditDemirbasEkleFakulteAdi.Size = new System.Drawing.Size(262, 20);
+            this.lookUpEditDemirbasEkleFakulteAdi.StyleController = this.layoutControl1;
+            this.lookUpEditDemirbasEkleFakulteAdi.TabIndex = 11;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.lookUpEditDemirbasEkleFakulteAdi;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(344, 24);
+            this.layoutControlItem2.Text = "Fakülte Adı:";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(75, 13);
+            // 
+            // lookUpEditDemirbasEkleDepartmanAdi
+            // 
+            this.lookUpEditDemirbasEkleDepartmanAdi.Location = new System.Drawing.Point(90, 36);
+            this.lookUpEditDemirbasEkleDepartmanAdi.Name = "lookUpEditDemirbasEkleDepartmanAdi";
+            this.lookUpEditDemirbasEkleDepartmanAdi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEditDemirbasEkleDepartmanAdi.Size = new System.Drawing.Size(262, 20);
+            this.lookUpEditDemirbasEkleDepartmanAdi.StyleController = this.layoutControl1;
+            this.lookUpEditDemirbasEkleDepartmanAdi.TabIndex = 12;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.lookUpEditDemirbasEkleDepartmanAdi;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(344, 24);
+            this.layoutControlItem3.Text = "Departman Adı:";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(75, 13);
             // 
             // frmDemirbasEkle
             // 
@@ -295,18 +295,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.TextEditEkleDemirbasFiyat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextEditEkleDemirbasTur.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextEditEkleDemirbasAd.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxEditEkleDemirbasDepartman.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboboxEditEkleDemirbasFakulte.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fakulteAdi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmanAdi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.demirbasAdi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.demirbasTuru)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.demirbasFiyati)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.demirbasAlimTarihi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DemirbasAdet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDemirbasEkleFakulteAdi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDemirbasEkleDepartmanAdi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -315,11 +315,7 @@
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraEditors.ComboBoxEdit ComboboxEditEkleDemirbasFakulte;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraLayout.LayoutControlItem fakulteAdi;
-        private DevExpress.XtraEditors.ComboBoxEdit ComboBoxEditEkleDemirbasDepartman;
-        private DevExpress.XtraLayout.LayoutControlItem departmanAdi;
         private DevExpress.XtraEditors.TextEdit TextEditEkleDemirbasAd;
         private DevExpress.XtraLayout.LayoutControlItem demirbasAdi;
         private DevExpress.XtraEditors.TextEdit TextEditEkleDemirbasTur;
@@ -332,5 +328,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraEditors.SpinEdit SpinEditEkleDemirbasAdet;
         private DevExpress.XtraLayout.LayoutControlItem DemirbasAdet;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEditDemirbasEkleDepartmanAdi;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEditDemirbasEkleFakulteAdi;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
     }
 }
