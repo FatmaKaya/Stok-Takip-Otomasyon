@@ -18,7 +18,21 @@ namespace StokTakip
             InitializeComponent();
         }
 
+        stokTakipEntities db = new stokTakipEntities();
         private void simpleButtonOdaKaydet_Click(object sender, EventArgs e)
+        {
+            Odalar oda = new Odalar();
+           
+        }
+
+        private void frmOdaBilgileriEkle_Load(object sender, EventArgs e)
+        {
+           
+            lookUpEditOdaSorumlusuEkle.Properties.DataSource = db.Personellers.Where(x => x.YetkiID == 2 || x.YetkiID == 1 ).ToList();
+            
+        }
+
+        private void lookUpEditOdaSorumlusuEkle_EditValueChanged(object sender, EventArgs e)
         {
 
         }
