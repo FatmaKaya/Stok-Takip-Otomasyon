@@ -50,6 +50,7 @@ namespace StokTakip
 
             //Personeller pp = se.Personellers.First(x => x.PersonelID== 1003);
             //pp.PersonelAdi = "fatma";
+
             //se.SaveChanges();
             //gridControlGuncelleDemirbaslar.DataSource = se.Personellers.ToList();
         }

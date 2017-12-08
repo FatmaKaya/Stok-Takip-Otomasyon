@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.lookUpEditDemirbasTur = new DevExpress.XtraEditors.LookUpEdit();
             this.lookUpEditDemirbasEkleDepartmanAdi = new DevExpress.XtraEditors.LookUpEdit();
             this.lookUpEditDemirbasEkleFakulteAdi = new DevExpress.XtraEditors.LookUpEdit();
             this.SpinEditEkleDemirbasAdet = new DevExpress.XtraEditors.SpinEdit();
@@ -43,10 +44,10 @@
             this.DemirbasAdet = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lookUpEditDemirbasTur = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDemirbasTur.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDemirbasEkleDepartmanAdi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDemirbasEkleFakulteAdi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpinEditEkleDemirbasAdet.Properties)).BeginInit();
@@ -60,7 +61,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.DemirbasAdet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDemirbasTur.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,6 +80,22 @@
             this.layoutControl1.Size = new System.Drawing.Size(364, 470);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // lookUpEditDemirbasTur
+            // 
+            this.lookUpEditDemirbasTur.Location = new System.Drawing.Point(90, 60);
+            this.lookUpEditDemirbasTur.Name = "lookUpEditDemirbasTur";
+            this.lookUpEditDemirbasTur.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEditDemirbasTur.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DemirbasTurAdi", "Tür")});
+            this.lookUpEditDemirbasTur.Properties.DisplayMember = "DemirbasTurID";
+            this.lookUpEditDemirbasTur.Properties.NullText = "";
+            this.lookUpEditDemirbasTur.Properties.ValueMember = "DemirbasTurID";
+            this.lookUpEditDemirbasTur.Size = new System.Drawing.Size(262, 20);
+            this.lookUpEditDemirbasTur.StyleController = this.layoutControl1;
+            this.lookUpEditDemirbasTur.TabIndex = 13;
+            this.lookUpEditDemirbasTur.EditValueChanged += new System.EventHandler(this.lookUpEditDemirbasTur_EditValueChanged);
             // 
             // lookUpEditDemirbasEkleDepartmanAdi
             // 
@@ -161,7 +177,7 @@
             // 
             // TextEditEkleDemirbasAd
             // 
-            this.TextEditEkleDemirbasAd.Location = new System.Drawing.Point(90, 60);
+            this.TextEditEkleDemirbasAd.Location = new System.Drawing.Point(90, 84);
             this.TextEditEkleDemirbasAd.Name = "TextEditEkleDemirbasAd";
             this.TextEditEkleDemirbasAd.Size = new System.Drawing.Size(262, 20);
             this.TextEditEkleDemirbasAd.StyleController = this.layoutControl1;
@@ -196,7 +212,7 @@
             // demirbasAdi
             // 
             this.demirbasAdi.Control = this.TextEditEkleDemirbasAd;
-            this.demirbasAdi.Location = new System.Drawing.Point(0, 48);
+            this.demirbasAdi.Location = new System.Drawing.Point(0, 72);
             this.demirbasAdi.Name = "demirbasAdi";
             this.demirbasAdi.Size = new System.Drawing.Size(344, 24);
             this.demirbasAdi.Text = "Demirbaş Adı:";
@@ -247,26 +263,10 @@
             this.layoutControlItem3.Text = "Departman Adı:";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(75, 13);
             // 
-            // lookUpEditDemirbasTur
-            // 
-            this.lookUpEditDemirbasTur.Location = new System.Drawing.Point(90, 84);
-            this.lookUpEditDemirbasTur.Name = "lookUpEditDemirbasTur";
-            this.lookUpEditDemirbasTur.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEditDemirbasTur.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DemirbasTurAdi", "Tür")});
-            this.lookUpEditDemirbasTur.Properties.DisplayMember = "DemirbasTurID";
-            this.lookUpEditDemirbasTur.Properties.NullText = "hjj";
-            this.lookUpEditDemirbasTur.Properties.ValueMember = "DemirbasTurID";
-            this.lookUpEditDemirbasTur.Size = new System.Drawing.Size(262, 20);
-            this.lookUpEditDemirbasTur.StyleController = this.layoutControl1;
-            this.lookUpEditDemirbasTur.TabIndex = 13;
-            this.lookUpEditDemirbasTur.EditValueChanged += new System.EventHandler(this.lookUpEditDemirbasTur_EditValueChanged);
-            // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.lookUpEditDemirbasTur;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(344, 24);
             this.layoutControlItem4.Text = "Demirbaş Türü";
@@ -283,6 +283,7 @@
             this.Load += new System.EventHandler(this.frmDemirbasEkle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDemirbasTur.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDemirbasEkleDepartmanAdi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDemirbasEkleFakulteAdi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpinEditEkleDemirbasAdet.Properties)).EndInit();
@@ -296,7 +297,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.DemirbasAdet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDemirbasTur.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
