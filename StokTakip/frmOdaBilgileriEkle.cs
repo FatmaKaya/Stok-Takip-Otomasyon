@@ -19,22 +19,49 @@ namespace StokTakip
         }
 
         stokTakipEntities db = new stokTakipEntities();
+        Odalar oda = new Odalar();
         private void simpleButtonOdaKaydet_Click(object sender, EventArgs e)
         {
-            Odalar oda = new Odalar();
-           
+            using (db = new stokTakipEntities())
+            {
+                oda.OdaAdi = textEditOdaAdiEkle.Text;
+                db.Odalars.Add(oda);
+                db.SaveChanges();
+                textEditOdaAdiEkle.Text = null;
+          
+                MessageBox.Show("Oda eklendi");
+
+    
+            }
         }
 
         private void frmOdaBilgileriEkle_Load(object sender, EventArgs e)
         {
-           
-            lookUpEditOdaSorumlusuEkle.Properties.DataSource = db.Personellers.Where(x => x.YetkiID == 2 || x.YetkiID == 1 ).ToList();
-            
+            lookUpEditFakulteAdiEkle.Properties.DataSource = db.Fakultelers.ToList();
+            lookUpEditOdaSorumlusuEkle.Properties.DataSource = db.Personellers.Where(x => x.YetkiID == 2 || x.YetkiID == 1).ToList();
+        }
+
+        private void lookUpEditFakulteAdiEkle_EditValueChanged(object sender, EventArgs e)
+        {
+            int fakulteID = Convert.ToInt32(lookUpEditFakulteAdiEkle.EditValue);
+            lookUpEditBolumAdiEkle.Properties.DataSource = db.Departmanlars.Where(x => x.FakulteID == fakulteID).ToList();
+            oda.FakulteID = fakulteID;
+        }
+
+
+        private void lookUpEditBolumAdiEkle_EditValueChanged(object sender, EventArgs e)
+        {
+            int departmanID = Convert.ToInt32(lookUpEditBolumAdiEkle.EditValue);
+            lookUpEditOdaSorumlusuEkle.Properties.DataSource = db.Personellers.Where(x => x.DepartmanID == departmanID).ToList();
+            oda.DepartmanID = departmanID;
         }
 
         private void lookUpEditOdaSorumlusuEkle_EditValueChanged(object sender, EventArgs e)
         {
-
+            int personelID = Convert.ToInt32(lookUpEditOdaSorumlusuEkle.EditValue);
+            oda.PersonelID = personelID;
         }
+
+        
     }
 }
