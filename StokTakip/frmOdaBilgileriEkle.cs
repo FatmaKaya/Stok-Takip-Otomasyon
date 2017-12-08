@@ -20,6 +20,7 @@ namespace StokTakip
 
         stokTakipEntities db = new stokTakipEntities();
         Odalar oda = new Odalar();
+        
         private void simpleButtonOdaKaydet_Click(object sender, EventArgs e)
         {
             using (db = new stokTakipEntities())
