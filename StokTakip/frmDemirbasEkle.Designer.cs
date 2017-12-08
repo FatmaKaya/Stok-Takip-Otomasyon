@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.lookUpEditDemirbasEkleDepartmanAdi = new DevExpress.XtraEditors.LookUpEdit();
+            this.lookUpEditDemirbasEkleFakulteAdi = new DevExpress.XtraEditors.LookUpEdit();
             this.SpinEditEkleDemirbasAdet = new DevExpress.XtraEditors.SpinEdit();
             this.SimpleButtonEkle = new DevExpress.XtraEditors.SimpleButton();
-            this.DateTimePickerEkleDemirbasAlimTarih = new DevExpress.XtraEditors.DateEdit();
             this.TextEditEkleDemirbasFiyat = new DevExpress.XtraEditors.TextEdit();
             this.TextEditEkleDemirbasTur = new DevExpress.XtraEditors.TextEdit();
             this.TextEditEkleDemirbasAd = new DevExpress.XtraEditors.TextEdit();
@@ -40,18 +41,15 @@
             this.demirbasAdi = new DevExpress.XtraLayout.LayoutControlItem();
             this.demirbasTuru = new DevExpress.XtraLayout.LayoutControlItem();
             this.demirbasFiyati = new DevExpress.XtraLayout.LayoutControlItem();
-            this.demirbasAlimTarihi = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.DemirbasAdet = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lookUpEditDemirbasEkleFakulteAdi = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lookUpEditDemirbasEkleDepartmanAdi = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDemirbasEkleDepartmanAdi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDemirbasEkleFakulteAdi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpinEditEkleDemirbasAdet.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DateTimePickerEkleDemirbasAlimTarih.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DateTimePickerEkleDemirbasAlimTarih.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextEditEkleDemirbasFiyat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextEditEkleDemirbasTur.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextEditEkleDemirbasAd.Properties)).BeginInit();
@@ -60,12 +58,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.demirbasAdi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.demirbasTuru)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.demirbasFiyati)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.demirbasAlimTarihi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DemirbasAdet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDemirbasEkleFakulteAdi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDemirbasEkleDepartmanAdi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,7 +70,6 @@
             this.layoutControl1.Controls.Add(this.lookUpEditDemirbasEkleFakulteAdi);
             this.layoutControl1.Controls.Add(this.SpinEditEkleDemirbasAdet);
             this.layoutControl1.Controls.Add(this.SimpleButtonEkle);
-            this.layoutControl1.Controls.Add(this.DateTimePickerEkleDemirbasAlimTarih);
             this.layoutControl1.Controls.Add(this.TextEditEkleDemirbasFiyat);
             this.layoutControl1.Controls.Add(this.TextEditEkleDemirbasTur);
             this.layoutControl1.Controls.Add(this.TextEditEkleDemirbasAd);
@@ -87,19 +81,58 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // lookUpEditDemirbasEkleDepartmanAdi
+            // 
+            this.lookUpEditDemirbasEkleDepartmanAdi.Location = new System.Drawing.Point(90, 36);
+            this.lookUpEditDemirbasEkleDepartmanAdi.Name = "lookUpEditDemirbasEkleDepartmanAdi";
+            this.lookUpEditDemirbasEkleDepartmanAdi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEditDemirbasEkleDepartmanAdi.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DepartmanAdi", "Departman")});
+            this.lookUpEditDemirbasEkleDepartmanAdi.Properties.DisplayMember = "DepartmanAdi";
+            this.lookUpEditDemirbasEkleDepartmanAdi.Properties.DropDownRows = 5;
+            this.lookUpEditDemirbasEkleDepartmanAdi.Properties.NullText = "";
+            this.lookUpEditDemirbasEkleDepartmanAdi.Properties.ValueMember = "DepartmanID";
+            this.lookUpEditDemirbasEkleDepartmanAdi.Size = new System.Drawing.Size(262, 20);
+            this.lookUpEditDemirbasEkleDepartmanAdi.StyleController = this.layoutControl1;
+            this.lookUpEditDemirbasEkleDepartmanAdi.TabIndex = 12;
+            this.lookUpEditDemirbasEkleDepartmanAdi.EditValueChanged += new System.EventHandler(this.lookUpEditDemirbasEkleDepartmanAdi_EditValueChanged);
+            // 
+            // lookUpEditDemirbasEkleFakulteAdi
+            // 
+            this.lookUpEditDemirbasEkleFakulteAdi.Location = new System.Drawing.Point(90, 12);
+            this.lookUpEditDemirbasEkleFakulteAdi.Name = "lookUpEditDemirbasEkleFakulteAdi";
+            this.lookUpEditDemirbasEkleFakulteAdi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEditDemirbasEkleFakulteAdi.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("FakulteAdi", "Fakülte")});
+            this.lookUpEditDemirbasEkleFakulteAdi.Properties.DisplayMember = "FakulteAdi";
+            this.lookUpEditDemirbasEkleFakulteAdi.Properties.DropDownRows = 5;
+            this.lookUpEditDemirbasEkleFakulteAdi.Properties.NullText = "";
+            this.lookUpEditDemirbasEkleFakulteAdi.Properties.ValueMember = "FakulteID";
+            this.lookUpEditDemirbasEkleFakulteAdi.Size = new System.Drawing.Size(262, 20);
+            this.lookUpEditDemirbasEkleFakulteAdi.StyleController = this.layoutControl1;
+            this.lookUpEditDemirbasEkleFakulteAdi.TabIndex = 11;
+            this.lookUpEditDemirbasEkleFakulteAdi.EditValueChanged += new System.EventHandler(this.lookUpEditDemirbasEkleFakulteAdi_EditValueChanged);
+            // 
             // SpinEditEkleDemirbasAdet
             // 
             this.SpinEditEkleDemirbasAdet.EditValue = new decimal(new int[] {
-            0,
+            1,
             0,
             0,
             0});
-            this.SpinEditEkleDemirbasAdet.Location = new System.Drawing.Point(90, 156);
+            this.SpinEditEkleDemirbasAdet.Location = new System.Drawing.Point(90, 132);
             this.SpinEditEkleDemirbasAdet.Name = "SpinEditEkleDemirbasAdet";
             this.SpinEditEkleDemirbasAdet.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.SpinEditEkleDemirbasAdet.Properties.MaxValue = new decimal(new int[] {
             9999,
+            0,
+            0,
+            0});
+            this.SpinEditEkleDemirbasAdet.Properties.MinValue = new decimal(new int[] {
+            1,
             0,
             0,
             0});
@@ -109,26 +142,13 @@
             // 
             // SimpleButtonEkle
             // 
-            this.SimpleButtonEkle.Location = new System.Drawing.Point(12, 180);
+            this.SimpleButtonEkle.Location = new System.Drawing.Point(12, 156);
             this.SimpleButtonEkle.Name = "SimpleButtonEkle";
             this.SimpleButtonEkle.Size = new System.Drawing.Size(340, 22);
             this.SimpleButtonEkle.StyleController = this.layoutControl1;
             this.SimpleButtonEkle.TabIndex = 1;
             this.SimpleButtonEkle.Text = "Ekle";
             this.SimpleButtonEkle.Click += new System.EventHandler(this.SimpleButtonEkle_Click);
-            // 
-            // DateTimePickerEkleDemirbasAlimTarih
-            // 
-            this.DateTimePickerEkleDemirbasAlimTarih.EditValue = null;
-            this.DateTimePickerEkleDemirbasAlimTarih.Location = new System.Drawing.Point(90, 132);
-            this.DateTimePickerEkleDemirbasAlimTarih.Name = "DateTimePickerEkleDemirbasAlimTarih";
-            this.DateTimePickerEkleDemirbasAlimTarih.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.DateTimePickerEkleDemirbasAlimTarih.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.DateTimePickerEkleDemirbasAlimTarih.Size = new System.Drawing.Size(262, 20);
-            this.DateTimePickerEkleDemirbasAlimTarih.StyleController = this.layoutControl1;
-            this.DateTimePickerEkleDemirbasAlimTarih.TabIndex = 9;
             // 
             // TextEditEkleDemirbasFiyat
             // 
@@ -164,7 +184,6 @@
             this.demirbasAdi,
             this.demirbasTuru,
             this.demirbasFiyati,
-            this.demirbasAlimTarihi,
             this.layoutControlItem1,
             this.DemirbasAdet,
             this.layoutControlItem2,
@@ -177,9 +196,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 194);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 170);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(344, 256);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(344, 280);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // demirbasAdi
@@ -209,19 +228,10 @@
             this.demirbasFiyati.Text = "Fiyat:";
             this.demirbasFiyati.TextSize = new System.Drawing.Size(75, 13);
             // 
-            // demirbasAlimTarihi
-            // 
-            this.demirbasAlimTarihi.Control = this.DateTimePickerEkleDemirbasAlimTarih;
-            this.demirbasAlimTarihi.Location = new System.Drawing.Point(0, 120);
-            this.demirbasAlimTarihi.Name = "demirbasAlimTarihi";
-            this.demirbasAlimTarihi.Size = new System.Drawing.Size(344, 24);
-            this.demirbasAlimTarihi.Text = "Alım Tarihi";
-            this.demirbasAlimTarihi.TextSize = new System.Drawing.Size(75, 13);
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.SimpleButtonEkle;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 168);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 144);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(344, 26);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
@@ -230,25 +240,11 @@
             // DemirbasAdet
             // 
             this.DemirbasAdet.Control = this.SpinEditEkleDemirbasAdet;
-            this.DemirbasAdet.Location = new System.Drawing.Point(0, 144);
+            this.DemirbasAdet.Location = new System.Drawing.Point(0, 120);
             this.DemirbasAdet.Name = "DemirbasAdet";
             this.DemirbasAdet.Size = new System.Drawing.Size(344, 24);
             this.DemirbasAdet.Text = "Demirbaş Adet";
             this.DemirbasAdet.TextSize = new System.Drawing.Size(75, 13);
-            // 
-            // lookUpEditDemirbasEkleFakulteAdi
-            // 
-            this.lookUpEditDemirbasEkleFakulteAdi.Location = new System.Drawing.Point(90, 12);
-            this.lookUpEditDemirbasEkleFakulteAdi.Name = "lookUpEditDemirbasEkleFakulteAdi";
-            this.lookUpEditDemirbasEkleFakulteAdi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEditDemirbasEkleFakulteAdi.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("FakulteAdi", "Fakülte")});
-            this.lookUpEditDemirbasEkleFakulteAdi.Properties.DisplayMember = "FakulteAdi";
-            this.lookUpEditDemirbasEkleFakulteAdi.Properties.ValueMember = "FakulteID";
-            this.lookUpEditDemirbasEkleFakulteAdi.Size = new System.Drawing.Size(262, 20);
-            this.lookUpEditDemirbasEkleFakulteAdi.StyleController = this.layoutControl1;
-            this.lookUpEditDemirbasEkleFakulteAdi.TabIndex = 11;
             // 
             // layoutControlItem2
             // 
@@ -258,16 +254,6 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(344, 24);
             this.layoutControlItem2.Text = "Fakülte Adı:";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(75, 13);
-            // 
-            // lookUpEditDemirbasEkleDepartmanAdi
-            // 
-            this.lookUpEditDemirbasEkleDepartmanAdi.Location = new System.Drawing.Point(90, 36);
-            this.lookUpEditDemirbasEkleDepartmanAdi.Name = "lookUpEditDemirbasEkleDepartmanAdi";
-            this.lookUpEditDemirbasEkleDepartmanAdi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEditDemirbasEkleDepartmanAdi.Size = new System.Drawing.Size(262, 20);
-            this.lookUpEditDemirbasEkleDepartmanAdi.StyleController = this.layoutControl1;
-            this.lookUpEditDemirbasEkleDepartmanAdi.TabIndex = 12;
             // 
             // layoutControlItem3
             // 
@@ -289,9 +275,9 @@
             this.Load += new System.EventHandler(this.frmDemirbasEkle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDemirbasEkleDepartmanAdi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDemirbasEkleFakulteAdi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpinEditEkleDemirbasAdet.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DateTimePickerEkleDemirbasAlimTarih.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DateTimePickerEkleDemirbasAlimTarih.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextEditEkleDemirbasFiyat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextEditEkleDemirbasTur.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextEditEkleDemirbasAd.Properties)).EndInit();
@@ -300,12 +286,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.demirbasAdi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.demirbasTuru)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.demirbasFiyati)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.demirbasAlimTarihi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DemirbasAdet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDemirbasEkleFakulteAdi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDemirbasEkleDepartmanAdi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
 
@@ -322,8 +305,6 @@
         private DevExpress.XtraLayout.LayoutControlItem demirbasTuru;
         private DevExpress.XtraEditors.TextEdit TextEditEkleDemirbasFiyat;
         private DevExpress.XtraLayout.LayoutControlItem demirbasFiyati;
-        private DevExpress.XtraEditors.DateEdit DateTimePickerEkleDemirbasAlimTarih;
-        private DevExpress.XtraLayout.LayoutControlItem demirbasAlimTarihi;
         private DevExpress.XtraEditors.SimpleButton SimpleButtonEkle;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraEditors.SpinEdit SpinEditEkleDemirbasAdet;

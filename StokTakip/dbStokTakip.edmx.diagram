@@ -22,6 +22,8 @@
         <AssociationConnector Association="stokTakipModel.FK_Demirbaslar_Fakulteler" />
         <AssociationConnector Association="stokTakipModel.FK_Odalar_Departmanlar" />
         <AssociationConnector Association="stokTakipModel.FK_Odalar_Fakulteler" />
+        <AssociationConnector Association="stokTakipModel.FK_Personeller_Departmanlar" />
+        <AssociationConnector Association="stokTakipModel.FK_Personeller_Fakulteler" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
