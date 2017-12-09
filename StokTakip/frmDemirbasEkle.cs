@@ -63,9 +63,9 @@ namespace StokTakip
                         db.Demirbaslars.Add(demirbas);
                         db.SaveChanges();
 
-                        demirbas.DemirbasKodu = "" + demirbas.FakulteID.ToString() + "." + demirbas.DepartmanID.ToString() + "." + demirbas.DemirbasTurID.ToString() + "." + demirbas.DemirbasID.ToString();
+                        Demirbaslar demirbasUpdate = db.Demirbaslars.First(x => x.DemirbasID == demirbas.DemirbasID);
+                        demirbasUpdate.DemirbasKodu = "" + demirbas.FakulteID.ToString() + "." + demirbas.DepartmanID.ToString() + "." + demirbas.DemirbasTurID.ToString() + "." + demirbas.DemirbasID.ToString();
 
-                        db.Demirbaslars.Add(demirbas);
                         db.SaveChanges();
 
                         XtraMessageBox.Show("Demirbaş Stoğa eklendi. Yeniden Demirbaş ekleyebilirsiniz..");
