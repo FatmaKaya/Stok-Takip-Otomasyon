@@ -18,8 +18,9 @@ namespace StokTakip
             InitializeComponent();
         }
         stokTakipEntities db = new stokTakipEntities();
-        Demirbaslar demirbas = new Demirbaslar();
-
+        int fakulteID;
+        int departmanID;
+        int demirbasTurID;
         private void frmDemirbasEkle_Load(object sender, EventArgs e)
         {      
             lookUpEditDemirbasEkleFakulteAdi.Properties.DataSource = db.Fakultelers.ToList();
@@ -27,19 +28,16 @@ namespace StokTakip
         }
         private void lookUpEditDemirbasEkleFakulteAdi_EditValueChanged(object sender, EventArgs e)
         {
-            int fakulteID = Convert.ToInt32(lookUpEditDemirbasEkleFakulteAdi.EditValue);
+            fakulteID = Convert.ToInt32(lookUpEditDemirbasEkleFakulteAdi.EditValue);
             lookUpEditDemirbasEkleDepartmanAdi.Properties.DataSource = db.Departmanlars.Where(x => x.FakulteID == fakulteID).ToList();
-            demirbas.FakulteID = fakulteID;
         }
         private void lookUpEditDemirbasEkleDepartmanAdi_EditValueChanged(object sender, EventArgs e)
         {
-            int departmanID = Convert.ToInt32(lookUpEditDemirbasEkleDepartmanAdi.EditValue);
-            demirbas.DepartmanID = departmanID;
+            departmanID = Convert.ToInt32(lookUpEditDemirbasEkleDepartmanAdi.EditValue);          
         }
         private void lookUpEditDemirbasTur_EditValueChanged(object sender, EventArgs e)
         {
-            int demirbasTurID = Convert.ToInt32(lookUpEditDemirbasTur.EditValue);
-            demirbas.DemirbasTurID = demirbasTurID;
+            demirbasTurID = Convert.ToInt32(lookUpEditDemirbasTur.EditValue);         
         }
         private void SimpleButtonEkle_Click(object sender, EventArgs e)
         {
@@ -48,25 +46,41 @@ namespace StokTakip
                 {
                 try
                 {
-                    demirbas.DemirbasAdi = TextEditEkleDemirbasAd.Text;
-                    demirbas.DemirbasAdet = Convert.ToInt32(SpinEditEkleDemirbasAdet.Value);
-                    demirbas.AlimTarihi = Convert.ToDateTime(DateTime.Today.ToLongDateString());
-                    demirbas.Fiyat = float.Parse(TextEditEkleDemirbasFiyat.Text);
-                    demirbas.Durum = false;
 
-                    db.Demirbaslars.Add(demirbas);
-                    db.SaveChanges();
 
-                    demirbas.DemirbasKodu = "" + demirbas.FakulteID.ToString() + "." + demirbas.DepartmanID.ToString() + "." + demirbas.DemirbasTurID.ToString() + "." + demirbas.DemirbasID.ToString();
+                    if (TextEditEkleDemirbasAd.Text.Length != 0)
+                    {
+                        Demirbaslar demirbas = new Demirbaslar();
+                        demirbas.DemirbasAdi = TextEditEkleDemirbasAd.Text;
+                        demirbas.DemirbasAdet = Convert.ToInt32(SpinEditEkleDemirbasAdet.Value);
+                        demirbas.AlimTarihi = Convert.ToDateTime(DateTime.Today.ToLongDateString());
+                        demirbas.Fiyat = float.Parse(TextEditEkleDemirbasFiyat.Text);
+                        demirbas.Durum = false;
+                        demirbas.FakulteID = fakulteID;
+                        demirbas.DepartmanID = departmanID;
+                        demirbas.DemirbasTurID = demirbasTurID;
 
-                    db.Demirbaslars.Add(demirbas);
-                    db.SaveChanges();
+                        db.Demirbaslars.Add(demirbas);
+                        db.SaveChanges();
 
-                    MessageBox.Show("Demirbaş Stoğa eklendi. Yeni Demirbaş ekleyebilirsiniz..");
+                        demirbas.DemirbasKodu = "" + demirbas.FakulteID.ToString() + "." + demirbas.DepartmanID.ToString() + "." + demirbas.DemirbasTurID.ToString() + "." + demirbas.DemirbasID.ToString();
+
+                        db.Demirbaslars.Add(demirbas);
+                        db.SaveChanges();
+
+                        XtraMessageBox.Show("Demirbaş Stoğa eklendi. Yeniden Demirbaş ekleyebilirsiniz..");
+                        this.Close();
+                    }
+                    else
+                    {
+                         XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar ekleyiniz..");
+                    this.Close();
+                    }
                 }
                 catch
                 {
-                    MessageBox.Show("Lütfen alanları kontrol ediniz.");
+                    XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar ekleyiniz..");
+                    this.Close();
                 }
             }
 

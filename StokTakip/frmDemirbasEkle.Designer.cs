@@ -89,7 +89,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lookUpEditDemirbasTur.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DemirbasTurAdi", "Tür")});
-            this.lookUpEditDemirbasTur.Properties.DisplayMember = "DemirbasTurID";
+            this.lookUpEditDemirbasTur.Properties.DisplayMember = "DemirbasTurAdi";
             this.lookUpEditDemirbasTur.Properties.NullText = "";
             this.lookUpEditDemirbasTur.Properties.ValueMember = "DemirbasTurID";
             this.lookUpEditDemirbasTur.Size = new System.Drawing.Size(262, 20);
@@ -179,6 +179,8 @@
             // 
             this.TextEditEkleDemirbasAd.Location = new System.Drawing.Point(90, 84);
             this.TextEditEkleDemirbasAd.Name = "TextEditEkleDemirbasAd";
+            this.TextEditEkleDemirbasAd.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.TextEditEkleDemirbasAd.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.TextEditEkleDemirbasAd.Size = new System.Drawing.Size(262, 20);
             this.TextEditEkleDemirbasAd.StyleController = this.layoutControl1;
             this.TextEditEkleDemirbasAd.TabIndex = 6;
