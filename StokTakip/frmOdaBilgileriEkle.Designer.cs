@@ -33,36 +33,36 @@
             this.lookUpEditFakulteAdiEkle = new DevExpress.XtraEditors.LookUpEdit();
             this.lookUpEditOdaSorumlusuEkle = new DevExpress.XtraEditors.LookUpEdit();
             this.simpleButtonOdaKaydet = new DevExpress.XtraEditors.SimpleButton();
-            this.textEditOdaAdiEkle = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.OdaSorumlusu = new DevExpress.XtraLayout.LayoutControlItem();
             this.FakulteAdi = new DevExpress.XtraLayout.LayoutControlItem();
             this.DepartmanAdi = new DevExpress.XtraLayout.LayoutControlItem();
+            this.textEditOdaAdiEkle = new DevExpress.XtraEditors.TextEdit();
             this.OdaAdi = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditBolumAdiEkle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditFakulteAdiEkle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditOdaSorumlusuEkle.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditOdaAdiEkle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OdaSorumlusu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FakulteAdi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DepartmanAdi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditOdaAdiEkle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OdaAdi)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.textEditOdaAdiEkle);
             this.layoutControl1.Controls.Add(this.lookUpEditBolumAdiEkle);
             this.layoutControl1.Controls.Add(this.lookUpEditFakulteAdiEkle);
             this.layoutControl1.Controls.Add(this.lookUpEditOdaSorumlusuEkle);
             this.layoutControl1.Controls.Add(this.simpleButtonOdaKaydet);
-            this.layoutControl1.Controls.Add(this.textEditOdaAdiEkle);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -132,16 +132,6 @@
             this.simpleButtonOdaKaydet.Text = "Kaydet";
             this.simpleButtonOdaKaydet.Click += new System.EventHandler(this.simpleButtonOdaKaydet_Click);
             // 
-            // textEditOdaAdiEkle
-            // 
-            this.textEditOdaAdiEkle.Location = new System.Drawing.Point(94, 84);
-            this.textEditOdaAdiEkle.Name = "textEditOdaAdiEkle";
-            this.textEditOdaAdiEkle.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.textEditOdaAdiEkle.Properties.Mask.IgnoreMaskBlank = false;
-            this.textEditOdaAdiEkle.Size = new System.Drawing.Size(234, 20);
-            this.textEditOdaAdiEkle.StyleController = this.layoutControl1;
-            this.textEditOdaAdiEkle.TabIndex = 4;
-            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -202,13 +192,22 @@
             this.DepartmanAdi.Text = "Departman Adı: ";
             this.DepartmanAdi.TextSize = new System.Drawing.Size(79, 13);
             // 
+            // textEditOdaAdiEkle
+            // 
+            this.textEditOdaAdiEkle.Location = new System.Drawing.Point(94, 84);
+            this.textEditOdaAdiEkle.Name = "textEditOdaAdiEkle";
+            this.textEditOdaAdiEkle.Size = new System.Drawing.Size(234, 20);
+            this.textEditOdaAdiEkle.StyleController = this.layoutControl1;
+            this.textEditOdaAdiEkle.TabIndex = 10;
+            this.textEditOdaAdiEkle.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.textEditOdaAdiEkle_EditValueChanging);
+            // 
             // OdaAdi
             // 
             this.OdaAdi.Control = this.textEditOdaAdiEkle;
             this.OdaAdi.Location = new System.Drawing.Point(0, 72);
             this.OdaAdi.Name = "OdaAdi";
             this.OdaAdi.Size = new System.Drawing.Size(320, 24);
-            this.OdaAdi.Text = "Oda Adı:";
+            this.OdaAdi.Text = "Oda Adı: ";
             this.OdaAdi.TextSize = new System.Drawing.Size(79, 13);
             // 
             // frmOdaBilgileriEkle
@@ -225,13 +224,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditBolumAdiEkle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditFakulteAdiEkle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditOdaSorumlusuEkle.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditOdaAdiEkle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OdaSorumlusu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FakulteAdi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DepartmanAdi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditOdaAdiEkle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OdaAdi)).EndInit();
             this.ResumeLayout(false);
 
@@ -241,10 +240,8 @@
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraEditors.SimpleButton simpleButtonOdaKaydet;
-        private DevExpress.XtraEditors.TextEdit textEditOdaAdiEkle;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraLayout.LayoutControlItem OdaAdi;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraEditors.LookUpEdit lookUpEditOdaSorumlusuEkle;
         private DevExpress.XtraLayout.LayoutControlItem OdaSorumlusu;
@@ -252,5 +249,7 @@
         private DevExpress.XtraEditors.LookUpEdit lookUpEditFakulteAdiEkle;
         private DevExpress.XtraLayout.LayoutControlItem FakulteAdi;
         private DevExpress.XtraLayout.LayoutControlItem DepartmanAdi;
+        private DevExpress.XtraEditors.TextEdit textEditOdaAdiEkle;
+        private DevExpress.XtraLayout.LayoutControlItem OdaAdi;
     }
 }

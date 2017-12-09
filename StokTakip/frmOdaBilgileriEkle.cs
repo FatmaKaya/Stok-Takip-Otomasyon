@@ -30,11 +30,20 @@ namespace StokTakip
                     if (textEditOdaAdiEkle.Text.Length != 0)
                     {
                         oda.OdaAdi = textEditOdaAdiEkle.Text;
-                        db.Odalars.Add(oda);
-                        db.SaveChanges();
+                        var yenioda = new Odalar { OdaAdi = oda.OdaAdi };
+                        if (db.Odalars.Any(x => x.OdaAdi == yenioda.OdaAdi))
+                        {
+                            XtraMessageBox.Show("Bu oda zaten var. Güncelleme yapmak için yan sekmeye gidiniz..");
+                            this.Close();
+                        }
+                        else
+                        {
+                            db.Odalars.Add(oda);
+                            db.SaveChanges();
 
-                        XtraMessageBox.Show("Oda Bilgileri eklendi.");
-                        this.Close();
+                            XtraMessageBox.Show("Oda Bilgileri eklendi.");
+                            this.Close();
+                        }
                     }
                     else
                     {
@@ -76,5 +85,16 @@ namespace StokTakip
             oda.PersonelID = personelID;
         }
 
+        private void textEditOdaAdiEkle_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            if (e.NewValue.ToString().Length > 25)
+            {
+                e.Cancel = true;
+                XtraMessageBox.Show("Oda Adının uzunluğunu 10 karakterden fazla giremezsiniz..");
+                this.Close();
+            }
+                
+
+        }
     }
 }
