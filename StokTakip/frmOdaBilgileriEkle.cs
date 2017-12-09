@@ -20,26 +20,39 @@ namespace StokTakip
 
         stokTakipEntities db = new stokTakipEntities();
         Odalar oda = new Odalar();
-        
+
         private void simpleButtonOdaKaydet_Click(object sender, EventArgs e)
         {
             using (db = new stokTakipEntities())
             {
-                oda.OdaAdi = textEditOdaAdiEkle.Text;
-                db.Odalars.Add(oda);
-                db.SaveChanges();
-                textEditOdaAdiEkle.Text = null;
-          
-                MessageBox.Show("Oda eklendi");
+                try
+                {
+                    if (textEditOdaAdiEkle.Text.Length != 0)
+                    {
+                        oda.OdaAdi = textEditOdaAdiEkle.Text;
+                        db.Odalars.Add(oda);
+                        db.SaveChanges();
 
-    
+                        XtraMessageBox.Show("Oda Bilgileri eklendi.");
+                        this.Close();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar ekleyiniz..");
+                        this.Close();
+                    }
+                }
+                catch
+                {
+
+                    XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar ekleyiniz..");
+                    this.Close();
+                }
             }
         }
-
         private void frmOdaBilgileriEkle_Load(object sender, EventArgs e)
         {
             lookUpEditFakulteAdiEkle.Properties.DataSource = db.Fakultelers.ToList();
-            lookUpEditOdaSorumlusuEkle.Properties.DataSource = db.Personellers.Where(x => x.YetkiID == 2 || x.YetkiID == 1).ToList();
         }
 
         private void lookUpEditFakulteAdiEkle_EditValueChanged(object sender, EventArgs e)
@@ -63,6 +76,5 @@ namespace StokTakip
             oda.PersonelID = personelID;
         }
 
-        
     }
 }
