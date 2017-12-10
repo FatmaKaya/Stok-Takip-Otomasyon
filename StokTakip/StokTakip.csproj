@@ -192,12 +192,6 @@
     <Compile Include="frmOdalaraDemirbasleriEkle.Designer.cs">
       <DependentUpon>frmOdalaraDemirbasleriEkle.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmOdaSil.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmOdaSil.Designer.cs">
-      <DependentUpon>frmOdaSil.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmPersonelUzerindekiDemirbasArama.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,9 +244,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmOdaDemirbasListesi.resx">
       <DependentUpon>frmOdaDemirbasListesi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmOdaSil.resx">
-      <DependentUpon>frmOdaSil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPersonelUzerindekiDemirbasArama.resx">
       <DependentUpon>frmPersonelUzerindekiDemirbasArama.cs</DependentUpon>
