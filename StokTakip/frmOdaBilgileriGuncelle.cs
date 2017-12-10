@@ -64,12 +64,13 @@ namespace StokTakip
                         }
                         else
                             guncellenecekOda.PersonelID = PersonelID;
-                        db.SaveChanges();
-                        lookUpEditOdaBilgileriGuncelle.Properties.DataSource = db.Odalars.ToList();
+                        db.SaveChanges();                       
                         lookUpEditOdaSorumlusuGuncelle.Properties.NullText = "Oda sorumlusu seçiniz.";
                         textEditDepartmanAdiGuncelle.Text = null;
                         textEditFakulteAdiGuncelle.Text = null;
                         textEditOdaAdiGuncelle.Text = null;
+                        lookUpEditOdaBilgileriGuncelle.EditValue = null;
+                        lookUpEditOdaBilgileriGuncelle.Properties.DataSource = db.Odalars.ToList();
                         XtraMessageBox.Show("Oda bilgileri güncellendi.");
                     }
                     else

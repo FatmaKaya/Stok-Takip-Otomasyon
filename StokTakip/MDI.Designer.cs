@@ -44,7 +44,6 @@
             this.DemirbasGuncelle = new DevExpress.XtraBars.BarButtonItem();
             this.OdaEkle = new DevExpress.XtraBars.BarButtonItem();
             this.OdaGuncelle = new DevExpress.XtraBars.BarButtonItem();
-            this.OdaSilme = new DevExpress.XtraBars.BarButtonItem();
             this.Aramalar = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rPStokIslemleri = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -53,9 +52,9 @@
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
-            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             ((System.ComponentModel.ISupportInitialize)(this.rCMDI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -78,8 +77,7 @@
             this.OdaDemirbasListesi,
             this.DemirbasGuncelle,
             this.OdaEkle,
-            this.OdaGuncelle,
-            this.OdaSilme});
+            this.OdaGuncelle});
             this.rCMDI.Location = new System.Drawing.Point(0, 0);
             this.rCMDI.MaxItemId = 17;
             this.rCMDI.Name = "rCMDI";
@@ -196,15 +194,6 @@
             this.OdaGuncelle.Name = "OdaGuncelle";
             this.OdaGuncelle.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.OdaGuncelle_ItemClick);
             // 
-            // OdaSilme
-            // 
-            this.OdaSilme.Caption = "Oda Silme";
-            this.OdaSilme.Id = 16;
-            this.OdaSilme.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("OdaSilme.ImageOptions.Image")));
-            this.OdaSilme.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("OdaSilme.ImageOptions.LargeImage")));
-            this.OdaSilme.Name = "OdaSilme";
-            this.OdaSilme.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.OdaSilme_ItemClick);
-            // 
             // Aramalar
             // 
             this.Aramalar.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -246,7 +235,6 @@
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.OdaEkle, true);
             this.ribbonPageGroup4.ItemLinks.Add(this.OdaGuncelle, true);
-            this.ribbonPageGroup4.ItemLinks.Add(this.OdaSilme, true);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 
             // ribbonPage3
@@ -264,6 +252,13 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.OdaDemirbasListesi, true);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
+            // ribbonStatusBar1
+            // 
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 579);
+            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
+            this.ribbonStatusBar1.Ribbon = this.rCMDI;
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(849, 27);
+            // 
             // documentManager1
             // 
             this.documentManager1.MdiParent = this;
@@ -275,13 +270,6 @@
             // tabbedView1
             // 
             this.tabbedView1.RootContainer.Element = null;
-            // 
-            // ribbonStatusBar1
-            // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 586);
-            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
-            this.ribbonStatusBar1.Ribbon = this.rCMDI;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(849, 20);
             // 
             // MDI
             // 
@@ -329,7 +317,6 @@
         private DevExpress.XtraBars.BarButtonItem DemirbasGuncelle;
         private DevExpress.XtraBars.BarButtonItem OdaEkle;
         private DevExpress.XtraBars.BarButtonItem OdaGuncelle;
-        private DevExpress.XtraBars.BarButtonItem OdaSilme;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
     }
