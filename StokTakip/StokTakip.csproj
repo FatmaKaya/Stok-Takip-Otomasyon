@@ -245,6 +245,9 @@
     <EmbeddedResource Include="frmOdaDemirbasListesi.resx">
       <DependentUpon>frmOdaDemirbasListesi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmOdalaraDemirbasleriEkle.resx">
+      <DependentUpon>frmOdalaraDemirbasleriEkle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPersonelUzerindekiDemirbasArama.resx">
       <DependentUpon>frmPersonelUzerindekiDemirbasArama.cs</DependentUpon>
     </EmbeddedResource>
