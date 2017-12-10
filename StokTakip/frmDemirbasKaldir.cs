@@ -39,8 +39,8 @@ namespace StokTakip
         }
 
         private void simpleButtonKaldır_Click_1(object sender, EventArgs e)
-        {         
-            
+        {
+           
             using (db = new stokTakipEntities())
             {
                 try
@@ -48,41 +48,59 @@ namespace StokTakip
                     if (lookUpEditKaldirDemirbas.EditValue != null)
                     {
                         Demirbaslar demirbas = db.Demirbaslars.First(x => x.DemirbasID == demirbasID);
-                      //  MessageBox.Show(spinEditKaldirDemirbasAdet.EditValue.ToString()+"  "+ demirbas.DemirbasAdet);
+                        //  MessageBox.Show(spinEditKaldirDemirbasAdet.EditValue.ToString()+"  "+ demirbas.DemirbasAdet);
 
-                        if(Convert.ToInt32(spinEditKaldirDemirbasAdet.EditValue)==0)
+                        if (Convert.ToInt32(spinEditKaldirDemirbasAdet.EditValue) == 0)
                         {
                             XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar deneyiniz..");
                         }
                         else if (Convert.ToInt32(spinEditKaldirDemirbasAdet.EditValue) != Convert.ToInt32(demirbas.DemirbasAdet))
                         {
+                            DialogResult rs = DevExpress.XtraEditors.XtraMessageBox.Show("Bu Demirbaşlar stoktan kaldırılacak EMİN MİSİNİZ ?", "Kaldırma Bilgisi", MessageBoxButtons.YesNo);
+                            if (rs == DialogResult.Yes)//Yes butonunu tıklar isek
+                            {
+                                int eskiAdet = Convert.ToInt32(demirbas.DemirbasAdet);
 
-                            int eskiAdet = Convert.ToInt32(demirbas.DemirbasAdet);
+                                demirbas.DemirbasAdet -= Convert.ToInt32(spinEditKaldirDemirbasAdet.EditValue);
+                                db.SaveChanges();
 
-                            demirbas.DemirbasAdet -= Convert.ToInt32(spinEditKaldirDemirbasAdet.EditValue);
-                            db.SaveChanges();
+                                XtraMessageBox.Show("Stokta bulunan " + demirbas.DemirbasAdi + " demirbaşı sayısı= " + eskiAdet.ToString() + "\n" +
+                                                    "Stoktan kaldırılmak istenen " + demirbas.DemirbasAdi + " demirbaşı sayısı= " + spinEditKaldirDemirbasAdet.EditValue + "\n" +
+                                                    "Stokta Kalan " + demirbas.DemirbasAdi + " demirbaşı sayısı= " + demirbas.DemirbasAdet);
 
-                            XtraMessageBox.Show("Stokta bulunan " + demirbas.DemirbasAdi + " demirbaşı sayısı= " + eskiAdet.ToString() + "\n" +
-                                                "Stoktan kaldırılmak istenen " + demirbas.DemirbasAdi + " demirbaşı sayısı= " + spinEditKaldirDemirbasAdet.EditValue + "\n" +
-                                                "Stokta Kalan " + demirbas.DemirbasAdi + " demirbaşı sayısı= " + demirbas.DemirbasAdet);
+                                lookUpEditKaldirDemirbas.Properties.DataSource = db.Demirbaslars.Where(x => x.Durum == false).ToList();
+                                spinEditKaldirDemirbasAdet.EditValue = 0;
 
-                            lookUpEditKaldirDemirbas.Properties.DataSource = db.Demirbaslars.Where(x => x.Durum == false).ToList();
-                            spinEditKaldirDemirbasAdet.EditValue = 0;
-                          
+                            }
+                            else//No butonuna tıklar isek
+                            {
+                                lookUpEditKaldirDemirbas.Properties.DataSource = db.Demirbaslars.Where(x => x.Durum == false).ToList();
+                                spinEditKaldirDemirbasAdet.EditValue = 0;
+                            }
+                            
+
                         }
                         else
                         {
-                            db.Demirbaslars.Remove(demirbas);
-                            db.SaveChanges();
-                            XtraMessageBox.Show("Tüm " + demirbas.DemirbasAdi + " demirbaşları stoktan kaldırıldı..");
+                            DialogResult rs = DevExpress.XtraEditors.XtraMessageBox.Show("Bu Demirbaşlar stoktan kaldırılacak EMİN MİSİNİZ ?", "Kaldırma Bilgisi", MessageBoxButtons.YesNo);
+                            if (rs == DialogResult.Yes)//Yes butonunu tıklar isek
+                            {
+                                db.Demirbaslars.Remove(demirbas);
+                                db.SaveChanges();
+                                XtraMessageBox.Show("Tüm " + demirbas.DemirbasAdi + " demirbaşları stoktan kaldırıldı..");
 
-                            lookUpEditKaldirDemirbas.Properties.DataSource = db.Demirbaslars.Where(x => x.Durum == false).ToList();
-                            spinEditKaldirDemirbasAdet.EditValue = 0;
-                         //   spinEditKaldirDemirbasAdet.Properties.MaxValue = 9999;
+                                lookUpEditKaldirDemirbas.Properties.DataSource = db.Demirbaslars.Where(x => x.Durum == false).ToList();
+                                spinEditKaldirDemirbasAdet.EditValue = 0;
+                                //   spinEditKaldirDemirbasAdet.Properties.MaxValue = 9999;
 
-
+                            }
+                            else//No butonuna tıklar isek
+                            {
+                                lookUpEditKaldirDemirbas.Properties.DataSource = db.Demirbaslars.Where(x => x.Durum == false).ToList();
+                                spinEditKaldirDemirbasAdet.EditValue = 0;
+                            }
+                          
                         }
-
 
                     }
                     else
@@ -93,6 +111,7 @@ namespace StokTakip
                     XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar deneyiniz..");
                 }
             }
+
         }
     }
 }
