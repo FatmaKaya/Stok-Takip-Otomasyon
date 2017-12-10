@@ -30,7 +30,7 @@ namespace StokTakip
             using (db = new stokTakipEntities())
             {
                 OdaID = Convert.ToInt32(lookUpEditOdaBilgileriGuncelle.EditValue);
-                Odalar oda = db.Odalars.FirstOrDefault(x => x.OdaID == OdaID);
+                Odalar oda = db.Odalars.First(x => x.OdaID == OdaID);
                 textEditOdaAdiGuncelle.Text = oda.OdaAdi;
                 lookUpEditOdaSorumlusuGuncelle.Properties.DataSource = db.Personellers.Where(x => x.FakulteID == oda.FakulteID).ToList();
                 Fakulteler f = db.Fakultelers.First(x => x.FakulteID == oda.FakulteID);
@@ -52,8 +52,8 @@ namespace StokTakip
             using (db = new stokTakipEntities())
             {
                 try
-                {   
-                    if(textEditOdaAdiGuncelle.Text.Length!=0)
+                {
+                    if (textEditOdaAdiGuncelle.Text.Length!=0)
                     {
                         Odalar guncellenecekOda = db.Odalars.First(x => x.OdaID == OdaID);
                         guncellenecekOda.OdaAdi = textEditOdaAdiGuncelle.Text;
@@ -64,23 +64,23 @@ namespace StokTakip
                         }
                         else
                             guncellenecekOda.PersonelID = PersonelID;
-                        db.SaveChanges();                       
+                        db.SaveChanges();
+                        XtraMessageBox.Show("Oda bilgileri güncellendi.");
                         lookUpEditOdaSorumlusuGuncelle.Properties.NullText = "Oda sorumlusu seçiniz.";
                         textEditDepartmanAdiGuncelle.Text = null;
                         textEditFakulteAdiGuncelle.Text = null;
                         textEditOdaAdiGuncelle.Text = null;
-                        lookUpEditOdaBilgileriGuncelle.EditValue = null;
                         lookUpEditOdaBilgileriGuncelle.Properties.DataSource = db.Odalars.ToList();
-                        XtraMessageBox.Show("Oda bilgileri güncellendi.");
+                        
                     }
                     else
                     {
                         XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar ekleyiniz..");
                     }
-                   
+
                 }
 
-                catch 
+                catch
                 {
                     XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar ekleyiniz..");
                 }
