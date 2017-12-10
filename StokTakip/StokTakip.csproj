@@ -138,11 +138,11 @@
     <Compile Include="frmDemirbasEkle.Designer.cs">
       <DependentUpon>frmDemirbasEkle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmKullanıcıGiris.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmKullanıcıGiris.Designer.cs">
+      <DependentUpon>frmKullanıcıGiris.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDemirbasGuncelle.cs">
       <SubType>Form</SubType>
@@ -227,8 +227,8 @@
     <EmbeddedResource Include="frmDemirbasEkle.resx">
       <DependentUpon>frmDemirbasEkle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmKullanıcıGiris.resx">
+      <DependentUpon>frmKullanıcıGiris.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDemirbasGuncelle.resx">
       <DependentUpon>frmDemirbasGuncelle.cs</DependentUpon>

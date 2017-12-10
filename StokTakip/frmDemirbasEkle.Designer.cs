@@ -91,6 +91,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DemirbasTurAdi", "Tür")});
             this.lookUpEditDemirbasTur.Properties.DisplayMember = "DemirbasTurAdi";
             this.lookUpEditDemirbasTur.Properties.NullText = "";
+            this.lookUpEditDemirbasTur.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lookUpEditDemirbasTur.Properties.ValueMember = "DemirbasTurID";
             this.lookUpEditDemirbasTur.Size = new System.Drawing.Size(262, 20);
             this.lookUpEditDemirbasTur.StyleController = this.layoutControl1;
@@ -108,6 +109,7 @@
             this.lookUpEditDemirbasEkleDepartmanAdi.Properties.DisplayMember = "DepartmanAdi";
             this.lookUpEditDemirbasEkleDepartmanAdi.Properties.DropDownRows = 5;
             this.lookUpEditDemirbasEkleDepartmanAdi.Properties.NullText = "";
+            this.lookUpEditDemirbasEkleDepartmanAdi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lookUpEditDemirbasEkleDepartmanAdi.Properties.ValueMember = "DepartmanID";
             this.lookUpEditDemirbasEkleDepartmanAdi.Size = new System.Drawing.Size(262, 20);
             this.lookUpEditDemirbasEkleDepartmanAdi.StyleController = this.layoutControl1;
@@ -125,6 +127,7 @@
             this.lookUpEditDemirbasEkleFakulteAdi.Properties.DisplayMember = "FakulteAdi";
             this.lookUpEditDemirbasEkleFakulteAdi.Properties.DropDownRows = 5;
             this.lookUpEditDemirbasEkleFakulteAdi.Properties.NullText = "";
+            this.lookUpEditDemirbasEkleFakulteAdi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lookUpEditDemirbasEkleFakulteAdi.Properties.ValueMember = "FakulteID";
             this.lookUpEditDemirbasEkleFakulteAdi.Size = new System.Drawing.Size(262, 20);
             this.lookUpEditDemirbasEkleFakulteAdi.StyleController = this.layoutControl1;
@@ -181,6 +184,7 @@
             this.TextEditEkleDemirbasAd.Name = "TextEditEkleDemirbasAd";
             this.TextEditEkleDemirbasAd.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.TextEditEkleDemirbasAd.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.TextEditEkleDemirbasAd.Properties.MaxLength = 25;
             this.TextEditEkleDemirbasAd.Size = new System.Drawing.Size(262, 20);
             this.TextEditEkleDemirbasAd.StyleController = this.layoutControl1;
             this.TextEditEkleDemirbasAd.TabIndex = 6;

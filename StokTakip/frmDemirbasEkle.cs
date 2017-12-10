@@ -41,7 +41,6 @@ namespace StokTakip
         }
         private void SimpleButtonEkle_Click(object sender, EventArgs e)
         {
-
                 using (db = new stokTakipEntities())
                 {
                 try
