@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.textEditOdaAdiEkle = new DevExpress.XtraEditors.TextEdit();
             this.lookUpEditBolumAdiEkle = new DevExpress.XtraEditors.LookUpEdit();
             this.lookUpEditFakulteAdiEkle = new DevExpress.XtraEditors.LookUpEdit();
             this.lookUpEditOdaSorumlusuEkle = new DevExpress.XtraEditors.LookUpEdit();
@@ -39,10 +40,10 @@
             this.OdaSorumlusu = new DevExpress.XtraLayout.LayoutControlItem();
             this.FakulteAdi = new DevExpress.XtraLayout.LayoutControlItem();
             this.DepartmanAdi = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEditOdaAdiEkle = new DevExpress.XtraEditors.TextEdit();
             this.OdaAdi = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditOdaAdiEkle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditBolumAdiEkle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditFakulteAdiEkle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditOdaSorumlusuEkle.Properties)).BeginInit();
@@ -52,7 +53,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.OdaSorumlusu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FakulteAdi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DepartmanAdi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditOdaAdiEkle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OdaAdi)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,6 +70,15 @@
             this.layoutControl1.Size = new System.Drawing.Size(340, 261);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // textEditOdaAdiEkle
+            // 
+            this.textEditOdaAdiEkle.Location = new System.Drawing.Point(94, 84);
+            this.textEditOdaAdiEkle.Name = "textEditOdaAdiEkle";
+            this.textEditOdaAdiEkle.Properties.MaxLength = 25;
+            this.textEditOdaAdiEkle.Size = new System.Drawing.Size(234, 20);
+            this.textEditOdaAdiEkle.StyleController = this.layoutControl1;
+            this.textEditOdaAdiEkle.TabIndex = 10;
             // 
             // lookUpEditBolumAdiEkle
             // 
@@ -192,15 +201,6 @@
             this.DepartmanAdi.Text = "Departman Adı: ";
             this.DepartmanAdi.TextSize = new System.Drawing.Size(79, 13);
             // 
-            // textEditOdaAdiEkle
-            // 
-            this.textEditOdaAdiEkle.Location = new System.Drawing.Point(94, 84);
-            this.textEditOdaAdiEkle.Name = "textEditOdaAdiEkle";
-            this.textEditOdaAdiEkle.Size = new System.Drawing.Size(234, 20);
-            this.textEditOdaAdiEkle.StyleController = this.layoutControl1;
-            this.textEditOdaAdiEkle.TabIndex = 10;
-            this.textEditOdaAdiEkle.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.textEditOdaAdiEkle_EditValueChanging);
-            // 
             // OdaAdi
             // 
             this.OdaAdi.Control = this.textEditOdaAdiEkle;
@@ -221,6 +221,7 @@
             this.Load += new System.EventHandler(this.frmOdaBilgileriEkle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.textEditOdaAdiEkle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditBolumAdiEkle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditFakulteAdiEkle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditOdaSorumlusuEkle.Properties)).EndInit();
@@ -230,7 +231,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.OdaSorumlusu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FakulteAdi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DepartmanAdi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditOdaAdiEkle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OdaAdi)).EndInit();
             this.ResumeLayout(false);
 
