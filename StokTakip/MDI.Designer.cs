@@ -37,7 +37,7 @@
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.DemirbasEkle = new DevExpress.XtraBars.BarButtonItem();
-            this.DemirbasSil = new DevExpress.XtraBars.BarButtonItem();
+            this.DemirbasKaldir = new DevExpress.XtraBars.BarButtonItem();
             this.OdalaraDemirbaslarıEkle = new DevExpress.XtraBars.BarButtonItem();
             this.DemirbaslariOdadanKaldirma = new DevExpress.XtraBars.BarButtonItem();
             this.OdaDemirbasListesi = new DevExpress.XtraBars.BarButtonItem();
@@ -71,7 +71,7 @@
             this.barButtonItem3,
             this.barButtonItem4,
             this.DemirbasEkle,
-            this.DemirbasSil,
+            this.DemirbasKaldir,
             this.OdalaraDemirbaslarıEkle,
             this.DemirbaslariOdadanKaldirma,
             this.OdaDemirbasListesi,
@@ -133,13 +133,13 @@
             this.DemirbasEkle.Name = "DemirbasEkle";
             this.DemirbasEkle.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DemirbasEkle_ItemClick);
             // 
-            // DemirbasSil
+            // DemirbasKaldir
             // 
-            this.DemirbasSil.Caption = "Demirbaş Sil";
-            this.DemirbasSil.Id = 8;
-            this.DemirbasSil.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DemirbasSil.ImageOptions.LargeImage")));
-            this.DemirbasSil.Name = "DemirbasSil";
-            this.DemirbasSil.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DemirbasSil_ItemClick);
+            this.DemirbasKaldir.Caption = "Demirbaş Kaldır";
+            this.DemirbasKaldir.Id = 8;
+            this.DemirbasKaldir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("DemirbasSil.ImageOptions.LargeImage")));
+            this.DemirbasKaldir.Name = "DemirbasKaldir";
+            this.DemirbasKaldir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DemirbasKaldir_ItemClick);
             // 
             // OdalaraDemirbaslarıEkle
             // 
@@ -220,7 +220,7 @@
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.DemirbasEkle, true);
             this.ribbonPageGroup2.ItemLinks.Add(this.DemirbasGuncelle, true);
-            this.ribbonPageGroup2.ItemLinks.Add(this.DemirbasSil, true);
+            this.ribbonPageGroup2.ItemLinks.Add(this.DemirbasKaldir, true);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             // 
             // ribbonPage2
@@ -308,7 +308,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.BarButtonItem DemirbasEkle;
-        private DevExpress.XtraBars.BarButtonItem DemirbasSil;
+        private DevExpress.XtraBars.BarButtonItem DemirbasKaldir;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem OdalaraDemirbaslarıEkle;
         private DevExpress.XtraBars.BarButtonItem DemirbaslariOdadanKaldirma;

@@ -36,14 +36,12 @@ namespace StokTakip
             frm.MdiParent = this;
             frm.Show();
         }
-
-        private void DemirbasSil_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void DemirbasKaldir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmDemirbasSil frm = new frmDemirbasSil();
+            frmDemirbasKaldir frm = new frmDemirbasKaldir();
             frm.MdiParent = this;
             frm.Show();
         }
-
         private void DemirbasSayisi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmDemirbasSayisiniArama frm = new frmDemirbasSayisiniArama();
@@ -92,5 +90,7 @@ namespace StokTakip
             frm.MdiParent = this;
             frm.Show();
         }
+
+
     }
 }
