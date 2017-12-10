@@ -71,7 +71,6 @@ namespace StokTakip
                         textEditFakulteAdiGuncelle.Text = null;
                         textEditOdaAdiGuncelle.Text = null;
                         lookUpEditOdaBilgileriGuncelle.Properties.DataSource = db.Odalars.ToList();
-                        
                     }
                     else
                     {
