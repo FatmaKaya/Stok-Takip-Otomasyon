@@ -162,11 +162,11 @@
     <Compile Include="frmDemirbasSayisiniArama.Designer.cs">
       <DependentUpon>frmDemirbasSayisiniArama.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDemirbasSil.cs">
+    <Compile Include="frmDemirbasKaldir.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDemirbasSil.Designer.cs">
-      <DependentUpon>frmDemirbasSil.cs</DependentUpon>
+    <Compile Include="frmDemirbasKaldir.Designer.cs">
+      <DependentUpon>frmDemirbasKaldir.cs</DependentUpon>
     </Compile>
     <Compile Include="frmOdaBilgileriEkle.cs">
       <SubType>Form</SubType>
@@ -233,8 +233,8 @@
     <EmbeddedResource Include="frmDemirbasSayisiniArama.resx">
       <DependentUpon>frmDemirbasSayisiniArama.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDemirbasSil.resx">
-      <DependentUpon>frmDemirbasSil.cs</DependentUpon>
+    <EmbeddedResource Include="frmDemirbasKaldir.resx">
+      <DependentUpon>frmDemirbasKaldir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmOdaBilgileriEkle.resx">
       <DependentUpon>frmOdaBilgileriEkle.cs</DependentUpon>
