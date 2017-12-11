@@ -40,7 +40,6 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.simpleButtonOdalaraDemirbasEkleDemirbasSec = new DevExpress.XtraEditors.SimpleButton();
-            this.textEditOdalaraDemirbasEkleDemirbas = new DevExpress.XtraEditors.TextEdit();
             this.simpleButtonOdalaraDemirbasEkle = new DevExpress.XtraEditors.SimpleButton();
             this.spinEditOdalaraDemirbasEkleAdet = new DevExpress.XtraEditors.SpinEdit();
             this.gridControlOdalaraDemirbasEkleDemirbaslar = new DevExpress.XtraGrid.GridControl();
@@ -49,8 +48,9 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.Adet = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.DemirbasAdi = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.textEditOdalaraDemirbasEkleDemirbasAdi = new DevExpress.XtraEditors.TextEdit();
+            this.DemirbasAdi = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlOdalaraDemirbasEkleOdalar)).BeginInit();
@@ -63,7 +63,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditOdalaraDemirbasEkleDemirbas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditOdalaraDemirbasEkleAdet.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlOdalaraDemirbasEkleDemirbaslar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
@@ -71,8 +70,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Adet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DemirbasAdi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditOdalaraDemirbasEkleDemirbasAdi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DemirbasAdi)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -180,8 +180,8 @@
             // 
             // layoutControl2
             // 
+            this.layoutControl2.Controls.Add(this.textEditOdalaraDemirbasEkleDemirbasAdi);
             this.layoutControl2.Controls.Add(this.simpleButtonOdalaraDemirbasEkleDemirbasSec);
-            this.layoutControl2.Controls.Add(this.textEditOdalaraDemirbasEkleDemirbas);
             this.layoutControl2.Controls.Add(this.simpleButtonOdalaraDemirbasEkle);
             this.layoutControl2.Controls.Add(this.spinEditOdalaraDemirbasEkleAdet);
             this.layoutControl2.Controls.Add(this.gridControlOdalaraDemirbasEkleDemirbaslar);
@@ -195,21 +195,13 @@
             // 
             // simpleButtonOdalaraDemirbasEkleDemirbasSec
             // 
-            this.simpleButtonOdalaraDemirbasEkleDemirbasSec.Location = new System.Drawing.Point(469, 12);
+            this.simpleButtonOdalaraDemirbasEkleDemirbasSec.Location = new System.Drawing.Point(452, 12);
             this.simpleButtonOdalaraDemirbasEkleDemirbasSec.Name = "simpleButtonOdalaraDemirbasEkleDemirbasSec";
-            this.simpleButtonOdalaraDemirbasEkleDemirbasSec.Size = new System.Drawing.Size(145, 22);
+            this.simpleButtonOdalaraDemirbasEkleDemirbasSec.Size = new System.Drawing.Size(162, 22);
             this.simpleButtonOdalaraDemirbasEkleDemirbasSec.StyleController = this.layoutControl2;
             this.simpleButtonOdalaraDemirbasEkleDemirbasSec.TabIndex = 5;
             this.simpleButtonOdalaraDemirbasEkleDemirbasSec.Text = "Demirbaş Seç";
             this.simpleButtonOdalaraDemirbasEkleDemirbasSec.Click += new System.EventHandler(this.simpleButtonOdalaraDemirbasEkleDemirbasSec_Click);
-            // 
-            // textEditOdalaraDemirbasEkleDemirbas
-            // 
-            this.textEditOdalaraDemirbasEkleDemirbas.Location = new System.Drawing.Point(81, 12);
-            this.textEditOdalaraDemirbasEkleDemirbas.Name = "textEditOdalaraDemirbasEkleDemirbas";
-            this.textEditOdalaraDemirbasEkleDemirbas.Size = new System.Drawing.Size(384, 20);
-            this.textEditOdalaraDemirbasEkleDemirbas.StyleController = this.layoutControl2;
-            this.textEditOdalaraDemirbasEkleDemirbas.TabIndex = 4;
             // 
             // simpleButtonOdalaraDemirbasEkle
             // 
@@ -228,7 +220,7 @@
             0,
             0,
             0});
-            this.spinEditOdalaraDemirbasEkleAdet.Location = new System.Drawing.Point(81, 450);
+            this.spinEditOdalaraDemirbasEkleAdet.Location = new System.Drawing.Point(84, 450);
             this.spinEditOdalaraDemirbasEkleAdet.Name = "spinEditOdalaraDemirbasEkleAdet";
             this.spinEditOdalaraDemirbasEkleAdet.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -237,7 +229,7 @@
             0,
             0,
             0});
-            this.spinEditOdalaraDemirbasEkleAdet.Size = new System.Drawing.Size(230, 20);
+            this.spinEditOdalaraDemirbasEkleAdet.Size = new System.Drawing.Size(227, 20);
             this.spinEditOdalaraDemirbasEkleAdet.StyleController = this.layoutControl2;
             this.spinEditOdalaraDemirbasEkleAdet.TabIndex = 2;
             // 
@@ -269,8 +261,8 @@
             this.layoutControlItem2,
             this.Adet,
             this.layoutControlItem4,
-            this.DemirbasAdi,
-            this.layoutControlItem6});
+            this.layoutControlItem6,
+            this.DemirbasAdi});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(626, 484);
@@ -292,7 +284,7 @@
             this.Adet.Name = "Adet";
             this.Adet.Size = new System.Drawing.Size(303, 26);
             this.Adet.Text = "Adet: ";
-            this.Adet.TextSize = new System.Drawing.Size(66, 13);
+            this.Adet.TextSize = new System.Drawing.Size(69, 13);
             // 
             // layoutControlItem4
             // 
@@ -303,23 +295,32 @@
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
-            // DemirbasAdi
-            // 
-            this.DemirbasAdi.Control = this.textEditOdalaraDemirbasEkleDemirbas;
-            this.DemirbasAdi.Location = new System.Drawing.Point(0, 0);
-            this.DemirbasAdi.Name = "DemirbasAdi";
-            this.DemirbasAdi.Size = new System.Drawing.Size(457, 26);
-            this.DemirbasAdi.Text = "Demirbaş Adı:";
-            this.DemirbasAdi.TextSize = new System.Drawing.Size(66, 13);
-            // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.simpleButtonOdalaraDemirbasEkleDemirbasSec;
-            this.layoutControlItem6.Location = new System.Drawing.Point(457, 0);
+            this.layoutControlItem6.Location = new System.Drawing.Point(440, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(149, 26);
+            this.layoutControlItem6.Size = new System.Drawing.Size(166, 26);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
+            // 
+            // textEditOdalaraDemirbasEkleDemirbasAdi
+            // 
+            this.textEditOdalaraDemirbasEkleDemirbasAdi.Location = new System.Drawing.Point(84, 12);
+            this.textEditOdalaraDemirbasEkleDemirbasAdi.Name = "textEditOdalaraDemirbasEkleDemirbasAdi";
+            this.textEditOdalaraDemirbasEkleDemirbasAdi.Size = new System.Drawing.Size(364, 20);
+            this.textEditOdalaraDemirbasEkleDemirbasAdi.StyleController = this.layoutControl2;
+            this.textEditOdalaraDemirbasEkleDemirbasAdi.TabIndex = 6;
+            this.textEditOdalaraDemirbasEkleDemirbasAdi.EditValueChanged += new System.EventHandler(this.textEditOdalaraDemirbasEkleDemirbasAdi_EditValueChanged);
+            // 
+            // DemirbasAdi
+            // 
+            this.DemirbasAdi.Control = this.textEditOdalaraDemirbasEkleDemirbasAdi;
+            this.DemirbasAdi.Location = new System.Drawing.Point(0, 0);
+            this.DemirbasAdi.Name = "DemirbasAdi";
+            this.DemirbasAdi.Size = new System.Drawing.Size(440, 26);
+            this.DemirbasAdi.Text = "Demirbaş Adı: ";
+            this.DemirbasAdi.TextSize = new System.Drawing.Size(69, 13);
             // 
             // frmOdalaraDemirbasleriEkle
             // 
@@ -343,7 +344,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.textEditOdalaraDemirbasEkleDemirbas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditOdalaraDemirbasEkleAdet.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlOdalaraDemirbasEkleDemirbaslar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
@@ -351,8 +351,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Adet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DemirbasAdi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditOdalaraDemirbasEkleDemirbasAdi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DemirbasAdi)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -379,8 +380,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraEditors.SimpleButton simpleButtonOdalaraDemirbasEkleDemirbasSec;
-        private DevExpress.XtraEditors.TextEdit textEditOdalaraDemirbasEkleDemirbas;
-        private DevExpress.XtraLayout.LayoutControlItem DemirbasAdi;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraEditors.TextEdit textEditOdalaraDemirbasEkleDemirbasAdi;
+        private DevExpress.XtraLayout.LayoutControlItem DemirbasAdi;
     }
 }
