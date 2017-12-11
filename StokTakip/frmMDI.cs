@@ -17,9 +17,27 @@ namespace StokTakip
         {
             InitializeComponent();
         }
+        Personeller kullanci = frmKullaniciGiris.user;   // Giriş yapan Kullanıcı
+
         private void frmMDI_Load(object sender, EventArgs e)
         {
-
+            if (kullanci.YetkiID==0)  // Yetkisi 0 olan kullanıcaya gelecek sekmelerin ayarlanması
+            {
+                barHeaderItemKullanici.Caption = kullanci.PersonelAdi;
+                ribbonPageStokIslemleri.Visible = false;
+                ribbonPageOdaTanımlama.Visible = false;
+                ribbonPageOdaDemirbasIslemleri.Visible = false;
+            }
+            else if(kullanci.YetkiID==1)  // Yetkisi 0 olan kullanıcaya gelecek sekmelerin ayarlanması
+            {
+                barHeaderItemKullanici.Caption = kullanci.PersonelAdi;
+                ribbonPageStokIslemleri.Visible = false;
+                ribbonPageOdaTanımlama.Visible = false;
+            }
+            else  // Yetkisi 2 olan kullanıcaya gelecek sekmelerin ayarlanması
+            {
+                barHeaderItemKullanici.Caption = kullanci.PersonelAdi;
+            }
         }
         private void PersonelUzeindekiDemirbas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {// Personel üzerindeki demirbaşları Arama işlemleri için
@@ -81,9 +99,23 @@ namespace StokTakip
             frm.MdiParent = this;
             frm.Show();
         }
+        private void barHeaderItemCikis_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {// Çıkış işlemi yapmak istediğinde 
+
+            //Çıkış onay bilgisi
+            DialogResult rs = DevExpress.XtraEditors.XtraMessageBox.Show("Çıkış yapmak istediğinizden EMİN MİSİNİZ ?", "Çıkış Bilgisi", MessageBoxButtons.YesNo);
+            if (rs == DialogResult.Yes)//Yes butonunu tıklar isek
+            {// giriş ekranına tekrar geç
+                frmKullaniciGiris frmGiris = new frmKullaniciGiris();
+                this.Hide();
+                frmGiris.Show();
+            }
+        }
         private void ribbonControl1_Click(object sender, EventArgs e)
         {
 
-        }   
+        }
+
+       
     }
 }

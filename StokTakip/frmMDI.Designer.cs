@@ -46,20 +46,21 @@
             this.OdaGuncelle = new DevExpress.XtraBars.BarButtonItem();
             this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
             this.barHeaderItem2 = new DevExpress.XtraBars.BarHeaderItem();
-            this.barHeaderItem3 = new DevExpress.XtraBars.BarHeaderItem();
+            this.barHeaderItemKullanici = new DevExpress.XtraBars.BarHeaderItem();
             this.barHeaderItem4 = new DevExpress.XtraBars.BarHeaderItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.Aramalar = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.rPStokIslemleri = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageStokIslemleri = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageOdaTanımlama = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageOdaDemirbasIslemleri = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.barHeaderItemCikis = new DevExpress.XtraBars.BarHeaderItem();
             ((System.ComponentModel.ISupportInitialize)(this.rCMDI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -85,19 +86,20 @@
             this.OdaGuncelle,
             this.barHeaderItem1,
             this.barHeaderItem2,
-            this.barHeaderItem3,
+            this.barHeaderItemKullanici,
             this.barHeaderItem4,
-            this.barButtonItem2});
+            this.barButtonItem2,
+            this.barHeaderItemCikis});
             this.rCMDI.Location = new System.Drawing.Point(0, 0);
-            this.rCMDI.MaxItemId = 23;
+            this.rCMDI.MaxItemId = 24;
             this.rCMDI.Name = "rCMDI";
-            this.rCMDI.PageHeaderItemLinks.Add(this.barHeaderItem3);
-            this.rCMDI.PageHeaderItemLinks.Add(this.barButtonItem2);
+            this.rCMDI.PageHeaderItemLinks.Add(this.barHeaderItemKullanici);
+            this.rCMDI.PageHeaderItemLinks.Add(this.barHeaderItemCikis);
             this.rCMDI.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.Aramalar,
-            this.rPStokIslemleri,
-            this.ribbonPage2,
-            this.ribbonPage3});
+            this.ribbonPageStokIslemleri,
+            this.ribbonPageOdaTanımlama,
+            this.ribbonPageOdaDemirbasIslemleri});
             this.rCMDI.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.rCMDI.Size = new System.Drawing.Size(849, 147);
             this.rCMDI.StatusBar = this.ribbonStatusBar1;
@@ -219,11 +221,12 @@
             this.barHeaderItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barHeaderItem2.ImageOptions.Image")));
             this.barHeaderItem2.Name = "barHeaderItem2";
             // 
-            // barHeaderItem3
+            // barHeaderItemKullanici
             // 
-            this.barHeaderItem3.Caption = "User";
-            this.barHeaderItem3.Id = 20;
-            this.barHeaderItem3.Name = "barHeaderItem3";
+            this.barHeaderItemKullanici.Caption = "User";
+            this.barHeaderItemKullanici.Id = 20;
+            this.barHeaderItemKullanici.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barHeaderItemKullanici.ImageOptions.Image")));
+            this.barHeaderItemKullanici.Name = "barHeaderItemKullanici";
             // 
             // barHeaderItem4
             // 
@@ -251,13 +254,13 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.DemirbasSayisi, true);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
-            // rPStokIslemleri
+            // ribbonPageStokIslemleri
             // 
-            this.rPStokIslemleri.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageStokIslemleri.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup2});
-            this.rPStokIslemleri.Image = ((System.Drawing.Image)(resources.GetObject("rPStokIslemleri.Image")));
-            this.rPStokIslemleri.Name = "rPStokIslemleri";
-            this.rPStokIslemleri.Text = "Stok İşlemleri";
+            this.ribbonPageStokIslemleri.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPageStokIslemleri.Image")));
+            this.ribbonPageStokIslemleri.Name = "ribbonPageStokIslemleri";
+            this.ribbonPageStokIslemleri.Text = "Stok İşlemleri";
             // 
             // ribbonPageGroup2
             // 
@@ -266,13 +269,13 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.DemirbasKaldir, true);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             // 
-            // ribbonPage2
+            // ribbonPageOdaTanımlama
             // 
-            this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageOdaTanımlama.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup4});
-            this.ribbonPage2.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage2.Image")));
-            this.ribbonPage2.Name = "ribbonPage2";
-            this.ribbonPage2.Text = "Oda Tanımlama";
+            this.ribbonPageOdaTanımlama.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPageOdaTanımlama.Image")));
+            this.ribbonPageOdaTanımlama.Name = "ribbonPageOdaTanımlama";
+            this.ribbonPageOdaTanımlama.Text = "Oda Tanımlama";
             // 
             // ribbonPageGroup4
             // 
@@ -280,13 +283,13 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.OdaGuncelle, true);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 
-            // ribbonPage3
+            // ribbonPageOdaDemirbasIslemleri
             // 
-            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageOdaDemirbasIslemleri.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup3});
-            this.ribbonPage3.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage3.Image")));
-            this.ribbonPage3.Name = "ribbonPage3";
-            this.ribbonPage3.Text = "Oda Demirbaş İşlemleri";
+            this.ribbonPageOdaDemirbasIslemleri.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPageOdaDemirbasIslemleri.Image")));
+            this.ribbonPageOdaDemirbasIslemleri.Name = "ribbonPageOdaDemirbasIslemleri";
+            this.ribbonPageOdaDemirbasIslemleri.Text = "Oda Demirbaş İşlemleri";
             // 
             // ribbonPageGroup3
             // 
@@ -313,6 +316,14 @@
             // tabbedView1
             // 
             this.tabbedView1.RootContainer.Element = null;
+            // 
+            // barHeaderItemCikis
+            // 
+            this.barHeaderItemCikis.Caption = "Çıkış";
+            this.barHeaderItemCikis.Id = 23;
+            this.barHeaderItemCikis.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barHeaderItemCikis.ImageOptions.Image")));
+            this.barHeaderItemCikis.Name = "barHeaderItemCikis";
+            this.barHeaderItemCikis.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barHeaderItemCikis_ItemClick);
             // 
             // frmMDI
             // 
@@ -347,9 +358,9 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DevExpress.XtraBars.Ribbon.RibbonPage rPStokIslemleri;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageStokIslemleri;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageOdaTanımlama;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageOdaDemirbasIslemleri;
         private DevExpress.XtraBars.BarButtonItem DemirbasEkle;
         private DevExpress.XtraBars.BarButtonItem DemirbasKaldir;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
@@ -364,8 +375,9 @@
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem2;
-        private DevExpress.XtraBars.BarHeaderItem barHeaderItem3;
+        private DevExpress.XtraBars.BarHeaderItem barHeaderItemKullanici;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarHeaderItem barHeaderItemCikis;
     }
 }

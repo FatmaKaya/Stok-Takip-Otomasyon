@@ -35,7 +35,6 @@ namespace StokTakip
                     if (kullanici.Length != 0 && sifre.Length != 0)
                     { // Kullanıcı adı ve şifresinin boş olma durumunun kontrolü
                         Personeller personel = db.Personellers.First(x => x.PersonelAdi == kullanici);
-
                         
                         if (personel.Sifre == sifre)
                         {// kullanıcı adına göre şifrenin doğru olma kontrolü ve doğruysa sisteme giriş.
