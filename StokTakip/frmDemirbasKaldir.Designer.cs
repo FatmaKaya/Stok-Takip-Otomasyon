@@ -71,7 +71,7 @@
             this.lookUpEditKaldirDemirbas.Location = new System.Drawing.Point(59, 12);
             this.lookUpEditKaldirDemirbas.Name = "lookUpEditKaldirDemirbas";
             this.lookUpEditKaldirDemirbas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search)});
             this.lookUpEditKaldirDemirbas.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DemirbasKodu", "Demirbaş Kodu"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DemirbasAdi", "Demirbaş Adı"),

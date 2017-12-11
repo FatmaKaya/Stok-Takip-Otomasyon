@@ -78,7 +78,7 @@ namespace StokTakip
                     odaID = Convert.ToInt32(gridView1.GetRowCellValue(i, gridView1.Columns["OdaID"]));
 
                 }
-                Odalar o = db.Odalars.Find(odaID);
+                Odalar o = db.Odalars.First(x => x.OdaID == odaID);
                 var demirbaslar = db.Demirbaslars.Join(db.DemirbasTurleris,
                     x => x.DemirbasTurID,
                     y => y.DemirbasTurID,
@@ -127,7 +127,7 @@ namespace StokTakip
                         demirbas.FakulteID
                     }).ToList();
 
-                gridControlOdalaraDemirbaslariEkleDemirbaslar.DataSource = demirbaslar.Where(x => x.Durum == false || x.FakulteID == o.FakulteID).ToList();
+                gridControlOdalaraDemirbaslariEkleDemirbaslar.DataSource = demirbaslar.Where(x => x.Durum == false && x.FakulteID == o.FakulteID).ToList();
             }
             
         }

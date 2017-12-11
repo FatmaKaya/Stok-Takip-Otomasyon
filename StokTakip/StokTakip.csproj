@@ -198,11 +198,11 @@
     <Compile Include="frmPersonelUzerindekiDemirbasArama.Designer.cs">
       <DependentUpon>frmPersonelUzerindekiDemirbasArama.cs</DependentUpon>
     </Compile>
-    <Compile Include="MDI.cs">
+    <Compile Include="frmMDI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MDI.Designer.cs">
-      <DependentUpon>MDI.cs</DependentUpon>
+    <Compile Include="frmMDI.Designer.cs">
+      <DependentUpon>frmMDI.cs</DependentUpon>
     </Compile>
     <Compile Include="OdaDemirbasTablosu.cs">
       <DependentUpon>dbStokTakip.tt</DependentUpon>
@@ -251,8 +251,8 @@
     <EmbeddedResource Include="frmPersonelUzerindekiDemirbasArama.resx">
       <DependentUpon>frmPersonelUzerindekiDemirbasArama.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MDI.resx">
-      <DependentUpon>MDI.cs</DependentUpon>
+    <EmbeddedResource Include="frmMDI.resx">
+      <DependentUpon>frmMDI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -23,18 +23,23 @@ namespace StokTakip
 
         private void frmDemirbasGuncelle_Load(object sender, EventArgs e)
         {
-            lookUpEditGuncelleDemirbas.Properties.DataSource = db.Demirbaslars.Where(x => x.Durum == false).ToList();
+            //stoktaki demirbaşların bilgilerinn getirilmesi
+            lookUpEditGuncelleDemirbas.Properties.DataSource = db.Demirbaslars.Where(x => x.Durum == false).ToList();  
         }
 
         private void lookUpEditGuncelleDemirbas_EditValueChanged(object sender, EventArgs e)
         {
             using (db=new stokTakipEntities())
             {
-                demirbasID = Convert.ToInt32(lookUpEditGuncelleDemirbas.EditValue);
-                Demirbaslar demirbas = db.Demirbaslars.First(x => x.DemirbasID == demirbasID);
-                Fakulteler fakulte = db.Fakultelers.First(x => x.FakulteID == demirbas.FakulteID);
+                demirbasID = Convert.ToInt32(lookUpEditGuncelleDemirbas.EditValue);  //seçilen demirbaş id
+
+                //seçilen demirbaş bilgileri
+                Demirbaslar demirbas = db.Demirbaslars.First(x => x.DemirbasID == demirbasID);   
+                Fakulteler fakulte = db.Fakultelers.First(x => x.FakulteID == demirbas.FakulteID);  
                 Departmanlar departman = db.Departmanlars.First(x => x.DepartmanID == demirbas.DepartmanID);
                 DemirbasTurleri demirbasTur = db.DemirbasTurleris.First(x => x.DemirbasTurID == demirbas.DemirbasTurID);
+
+                //Güncellenecek bilgilerin getirilmesi
                 textEditGuncelleDemirbasFakulteAdi.Text = fakulte.FakulteAdi;
                 textEditGuncelleDepartmanAdi.Text = departman.DepartmanAdi;
                 textEditGuncelleDemirbasTuru.Text = demirbasTur.DemirbasTurAdi;
@@ -49,19 +54,22 @@ namespace StokTakip
             {
                 try
                 {
-                    Demirbaslar demirbas = db.Demirbaslars.First(x => x.DemirbasID == demirbasID);
+                    Demirbaslar demirbas = db.Demirbaslars.First(x => x.DemirbasID == demirbasID); //güncellebecek demirbaş
 
                     if(textEditGuncelleDemirbasAdi.Text.Length!=0)
-                    {
+                    {//Demirbaş adının boş bırakılmadığı durumda yapılacak işlenler
+
+                        //Güncel bilgilerin alınması
                         demirbas.DemirbasAdi = textEditGuncelleDemirbasAdi.Text;
                         demirbas.DemirbasAdet = Convert.ToInt32(spinEditGuncelleAdet.Value);
                         demirbas.AlimTarihi = Convert.ToDateTime(DateTime.Today.ToLongDateString());
                         demirbas.Fiyat = float.Parse(textEditGuncelleFiyat.Text);
 
-                        db.SaveChanges();
+                        db.SaveChanges();  //Bilgilerin kaydedilmesi
 
                         XtraMessageBox.Show("Demirbaş bilgileri Güncellendi..");
 
+                        //Yeni işelem için alanların temizlenmesi
                         textEditGuncelleDemirbasFakulteAdi.Text="";
                         textEditGuncelleDepartmanAdi.Text = "";
                         textEditGuncelleDemirbasTuru.Text = "";
@@ -70,11 +78,11 @@ namespace StokTakip
                         textEditGuncelleFiyat.Text = "";
                         lookUpEditGuncelleDemirbas.Properties.DataSource = db.Demirbaslars.Where(x => x.Durum == false).ToList();
                     }
-                    else
+                    else //Alanların boş olması durumu
                         XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar ekleyiniz..");
                 }
                 catch
-                {
+                {//Diğer hatalar için
                     XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar ekleyiniz..");
                 }
             }
