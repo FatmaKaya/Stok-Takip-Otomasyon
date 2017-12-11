@@ -22,7 +22,7 @@ namespace StokTakip
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
             UserLookAndFeel.Default.SetSkinStyle("Whiteprint");
-            Application.Run(new FRMGiris());
+            Application.Run(new frmMDI());
         }
     }
 }

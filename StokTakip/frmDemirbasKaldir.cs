@@ -23,6 +23,7 @@ namespace StokTakip
 
         private void frmDemirbasKaldir_Load(object sender, EventArgs e)
         {
+            //Stoktaki demirbaşların bilgilerinin getirilmesi
             lookUpEditKaldirDemirbas.Properties.DataSource = db.Demirbaslars.Where(x => x.Durum == false).ToList();
         }
 
@@ -30,9 +31,10 @@ namespace StokTakip
         {
             using (db = new stokTakipEntities())
             {
-                demirbasID = Convert.ToInt32(lookUpEditKaldirDemirbas.EditValue);
+                demirbasID = Convert.ToInt32(lookUpEditKaldirDemirbas.EditValue);  // seçilen demirbaş
                 Demirbaslar demirbas = db.Demirbaslars.First(x => x.DemirbasID == demirbasID);
 
+                //Demirbaşa göre kaldırılacak adet sınırlanması
                 spinEditKaldirDemirbasAdet.Properties.MaxValue = Convert.ToInt32(demirbas.DemirbasAdet);
 
             }
@@ -46,34 +48,40 @@ namespace StokTakip
                 try
                 {
                     if (lookUpEditKaldirDemirbas.EditValue != null)
-                    {
-                        Demirbaslar demirbas = db.Demirbaslars.First(x => x.DemirbasID == demirbasID);
+                    {//demirbaş seçilmesi durumunda yapılacak işlemler
+
+                        Demirbaslar demirbas = db.Demirbaslars.First(x => x.DemirbasID == demirbasID);  //seçilen demirbaş
                         //  MessageBox.Show(spinEditKaldirDemirbasAdet.EditValue.ToString()+"  "+ demirbas.DemirbasAdet);
 
                         if (Convert.ToInt32(spinEditKaldirDemirbasAdet.EditValue) == 0)
-                        {
+                        {//Kaldırılacak demirbaşın adetinn girilmemesi durumu
                             XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar deneyiniz..");
                         }
                         else if (Convert.ToInt32(spinEditKaldirDemirbasAdet.EditValue) != Convert.ToInt32(demirbas.DemirbasAdet))
-                        {
+                        { //Demirbaşın tamamı kaldırılmayacaksa
+
+                            //Kaldırmak için onay bilgisi
                             DialogResult rs = DevExpress.XtraEditors.XtraMessageBox.Show("Bu Demirbaşlar stoktan kaldırılacak EMİN MİSİNİZ ?", "Kaldırma Bilgisi", MessageBoxButtons.YesNo);
                             if (rs == DialogResult.Yes)//Yes butonunu tıklar isek
                             {
-                                int eskiAdet = Convert.ToInt32(demirbas.DemirbasAdet);
+                                int eskiAdet = Convert.ToInt32(demirbas.DemirbasAdet);  //stoktadi demirbaş adetinşn ilk hali
 
-                                demirbas.DemirbasAdet -= Convert.ToInt32(spinEditKaldirDemirbasAdet.EditValue);
+                                demirbas.DemirbasAdet -= Convert.ToInt32(spinEditKaldirDemirbasAdet.EditValue);  // Çıkartıldıktan sonraki hali
                                 db.SaveChanges();
 
+                                //Çıkartma bilgisi
                                 XtraMessageBox.Show("Stokta bulunan " + demirbas.DemirbasAdi + " demirbaşı sayısı= " + eskiAdet.ToString() + "\n" +
                                                     "Stoktan kaldırılmak istenen " + demirbas.DemirbasAdi + " demirbaşı sayısı= " + spinEditKaldirDemirbasAdet.EditValue + "\n" +
                                                     "Stokta Kalan " + demirbas.DemirbasAdi + " demirbaşı sayısı= " + demirbas.DemirbasAdet);
 
+                                //Yeni kaldırma işlemi için alanların temizlenmesi ve güncel demirbaşlar
                                 lookUpEditKaldirDemirbas.Properties.DataSource = db.Demirbaslars.Where(x => x.Durum == false).ToList();
                                 spinEditKaldirDemirbasAdet.EditValue = 0;
 
                             }
                             else//No butonuna tıklar isek
-                            {
+                            {//yeni kaldırma işlemi için alanların temizlenmesi
+                                
                                 lookUpEditKaldirDemirbas.Properties.DataSource = db.Demirbaslars.Where(x => x.Durum == false).ToList();
                                 spinEditKaldirDemirbasAdet.EditValue = 0;
                             }
@@ -81,21 +89,25 @@ namespace StokTakip
 
                         }
                         else
-                        {
+                        {//Demirbaşların tamamı kaldırılacaksa 
+
+                            //Kaldrmak için onay bilgisi
                             DialogResult rs = DevExpress.XtraEditors.XtraMessageBox.Show("Bu Demirbaşlar stoktan kaldırılacak EMİN MİSİNİZ ?", "Kaldırma Bilgisi", MessageBoxButtons.YesNo);
                             if (rs == DialogResult.Yes)//Yes butonunu tıklar isek
                             {
-                                db.Demirbaslars.Remove(demirbas);
+                                db.Demirbaslars.Remove(demirbas);  //tamamı silinir
                                 db.SaveChanges();
                                 XtraMessageBox.Show("Tüm " + demirbas.DemirbasAdi + " demirbaşları stoktan kaldırıldı..");
 
+                                //Yeni kaldırma işlemi için alanların temizlenmesi ve güncel demirbaşlar
                                 lookUpEditKaldirDemirbas.Properties.DataSource = db.Demirbaslars.Where(x => x.Durum == false).ToList();
                                 spinEditKaldirDemirbasAdet.EditValue = 0;
                                 //   spinEditKaldirDemirbasAdet.Properties.MaxValue = 9999;
 
                             }
                             else//No butonuna tıklar isek
-                            {
+                            { //yeni kaldırma işlemi için alanların temizlenmesi
+
                                 lookUpEditKaldirDemirbas.Properties.DataSource = db.Demirbaslars.Where(x => x.Durum == false).ToList();
                                 spinEditKaldirDemirbasAdet.EditValue = 0;
                             }
@@ -103,11 +115,11 @@ namespace StokTakip
                         }
 
                     }
-                    else
+                    else // Demirbaş seçilmemesi durumunda yapılması gereken işlemler
                         XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar deneyiniz..");
                 }
                 catch
-                {
+                {//Diğer hatalar için
                     XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar deneyiniz..");
                 }
             }

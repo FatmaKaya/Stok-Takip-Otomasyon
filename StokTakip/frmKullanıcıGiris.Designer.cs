@@ -1,6 +1,6 @@
 ﻿namespace StokTakip
 {
-    partial class FRMGiris
+    partial class frmKullaniciGiris
     {
         /// <summary>
         /// Required designer variable.
@@ -28,50 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMGiris));
-            this.TEKullaniciAdi = new DevExpress.XtraEditors.TextEdit();
-            this.TESifre = new DevExpress.XtraEditors.TextEdit();
-            this.SBGiris = new DevExpress.XtraEditors.SimpleButton();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKullaniciGiris));
+            this.TextEditSifre = new DevExpress.XtraEditors.TextEdit();
+            this.SimpleButtonGiris = new DevExpress.XtraEditors.SimpleButton();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.LCKullaniciAdi = new DevExpress.XtraEditors.LabelControl();
             this.LCSifre = new DevExpress.XtraEditors.LabelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.TEKullaniciAdi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TESifre.Properties)).BeginInit();
+            this.TextEditKullaniciAdi = new DevExpress.XtraEditors.TextEdit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextEditSifre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextEditKullaniciAdi.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // TEKullaniciAdi
+            // TextEditSifre
             // 
-            this.TEKullaniciAdi.EditValue = "";
-            this.TEKullaniciAdi.Location = new System.Drawing.Point(52, 184);
-            this.TEKullaniciAdi.Name = "TEKullaniciAdi";
-            this.TEKullaniciAdi.Properties.Appearance.Font = new System.Drawing.Font("Eras Demi ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TEKullaniciAdi.Properties.Appearance.Options.UseFont = true;
-            this.TEKullaniciAdi.Size = new System.Drawing.Size(167, 22);
-            this.TEKullaniciAdi.TabIndex = 1;
+            this.TextEditSifre.EditValue = "";
+            this.TextEditSifre.Location = new System.Drawing.Point(52, 238);
+            this.TextEditSifre.Name = "TextEditSifre";
+            this.TextEditSifre.Properties.PasswordChar = '*';
+            this.TextEditSifre.Size = new System.Drawing.Size(167, 20);
+            this.TextEditSifre.TabIndex = 3;
             // 
-            // TESifre
+            // SimpleButtonGiris
             // 
-            this.TESifre.EditValue = "";
-            this.TESifre.Location = new System.Drawing.Point(52, 238);
-            this.TESifre.Name = "TESifre";
-            this.TESifre.Properties.PasswordChar = '*';
-            this.TESifre.Size = new System.Drawing.Size(167, 20);
-            this.TESifre.TabIndex = 3;
-            // 
-            // SBGiris
-            // 
-            this.SBGiris.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.SBGiris.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.SBGiris.Appearance.Options.UseFont = true;
-            this.SBGiris.Appearance.Options.UseForeColor = true;
-            this.SBGiris.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.SBGiris.Location = new System.Drawing.Point(82, 280);
-            this.SBGiris.Name = "SBGiris";
-            this.SBGiris.Size = new System.Drawing.Size(105, 23);
-            this.SBGiris.TabIndex = 6;
-            this.SBGiris.Text = "Giriş";
-            this.SBGiris.Click += new System.EventHandler(this.Giriş_Click);
+            this.SimpleButtonGiris.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.SimpleButtonGiris.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.SimpleButtonGiris.Appearance.Options.UseFont = true;
+            this.SimpleButtonGiris.Appearance.Options.UseForeColor = true;
+            this.SimpleButtonGiris.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.SimpleButtonGiris.Location = new System.Drawing.Point(82, 280);
+            this.SimpleButtonGiris.Name = "SimpleButtonGiris";
+            this.SimpleButtonGiris.Size = new System.Drawing.Size(105, 23);
+            this.SimpleButtonGiris.TabIndex = 6;
+            this.SimpleButtonGiris.Text = "Giriş";
+            this.SimpleButtonGiris.Click += new System.EventHandler(this.Giriş_Click);
             // 
             // pictureEdit1
             // 
@@ -104,7 +94,17 @@
             this.LCSifre.TabIndex = 8;
             this.LCSifre.Text = "Şifre";
             // 
-            // FRMGiris
+            // TextEditKullaniciAdi
+            // 
+            this.TextEditKullaniciAdi.EditValue = "";
+            this.TextEditKullaniciAdi.Location = new System.Drawing.Point(52, 184);
+            this.TextEditKullaniciAdi.Name = "TextEditKullaniciAdi";
+            this.TextEditKullaniciAdi.Properties.Appearance.Font = new System.Drawing.Font("Eras Demi ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextEditKullaniciAdi.Properties.Appearance.Options.UseFont = true;
+            this.TextEditKullaniciAdi.Size = new System.Drawing.Size(167, 22);
+            this.TextEditKullaniciAdi.TabIndex = 1;
+            // 
+            // frmKullaniciGiris
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -112,31 +112,32 @@
             this.ClientSize = new System.Drawing.Size(290, 364);
             this.Controls.Add(this.LCSifre);
             this.Controls.Add(this.LCKullaniciAdi);
-            this.Controls.Add(this.SBGiris);
-            this.Controls.Add(this.TESifre);
-            this.Controls.Add(this.TEKullaniciAdi);
+            this.Controls.Add(this.SimpleButtonGiris);
+            this.Controls.Add(this.TextEditSifre);
+            this.Controls.Add(this.TextEditKullaniciAdi);
             this.Controls.Add(this.pictureEdit1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.Name = "FRMGiris";
+            this.Name = "frmKullaniciGiris";
             this.Text = "Stok Takip Sistemi";
-            ((System.ComponentModel.ISupportInitialize)(this.TEKullaniciAdi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TESifre.Properties)).EndInit();
+            this.Load += new System.EventHandler(this.frmKullaniciGiris_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.TextEditSifre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextEditKullaniciAdi.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private DevExpress.XtraEditors.TextEdit TEKullaniciAdi;
-        private DevExpress.XtraEditors.TextEdit TESifre;
-        private DevExpress.XtraEditors.SimpleButton SBGiris;
+        private DevExpress.XtraEditors.TextEdit TextEditSifre;
+        private DevExpress.XtraEditors.SimpleButton SimpleButtonGiris;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private DevExpress.XtraEditors.LabelControl LCKullaniciAdi;
         private DevExpress.XtraEditors.LabelControl LCSifre;
+        private DevExpress.XtraEditors.TextEdit TextEditKullaniciAdi;
     }
 }
 
