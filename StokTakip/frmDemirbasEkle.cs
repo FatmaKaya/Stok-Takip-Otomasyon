@@ -22,22 +22,38 @@ namespace StokTakip
         int departmanID;
         int demirbasTurID;
         private void frmDemirbasEkle_Load(object sender, EventArgs e)
-        {      
-            lookUpEditDemirbasEkleFakulteAdi.Properties.DataSource = db.Fakultelers.ToList();    //Fakültelerin getirilmesi
-            lookUpEditDemirbasTur.Properties.DataSource = db.DemirbasTurleris.ToList();    // Demirbaş türlerinin getirilmesi
+        {
+            using (db = new stokTakipEntities())
+            {
+                lookUpEditDemirbasEkleFakulteAdi.Properties.DataSource = db.Fakultelers.ToList();    //Fakültelerin getirilmesi
+                lookUpEditDemirbasTur.Properties.DataSource = db.DemirbasTurleris.ToList();    // Demirbaş türlerinin getirilmesi
+            }
+               
         }
         private void lookUpEditDemirbasEkleFakulteAdi_EditValueChanged(object sender, EventArgs e)
         {
-            fakulteID = Convert.ToInt32(lookUpEditDemirbasEkleFakulteAdi.EditValue);     //Seçilen fakülte
-            lookUpEditDemirbasEkleDepartmanAdi.Properties.DataSource = db.Departmanlars.Where(x => x.FakulteID == fakulteID).ToList();// Fakülteye göre departmanların getirilmesi
+            using (db = new stokTakipEntities())
+            {
+                fakulteID = Convert.ToInt32(lookUpEditDemirbasEkleFakulteAdi.EditValue);     //Seçilen fakülte
+                lookUpEditDemirbasEkleDepartmanAdi.Properties.DataSource = db.Departmanlars.Where(x => x.FakulteID == fakulteID).ToList();// Fakülteye göre departmanların getirilmesi
+            }
+                
         }
         private void lookUpEditDemirbasEkleDepartmanAdi_EditValueChanged(object sender, EventArgs e)
         {
-            departmanID = Convert.ToInt32(lookUpEditDemirbasEkleDepartmanAdi.EditValue);   //Seçilen Departman       
+            using (db = new stokTakipEntities())
+            {
+                departmanID = Convert.ToInt32(lookUpEditDemirbasEkleDepartmanAdi.EditValue);   //Seçilen Departman       
+            }
+               
         }
         private void lookUpEditDemirbasTur_EditValueChanged(object sender, EventArgs e)
         {
-            demirbasTurID = Convert.ToInt32(lookUpEditDemirbasTur.EditValue);  //Seçilen demirbaş türü       
+            using (db = new stokTakipEntities())
+            {
+                demirbasTurID = Convert.ToInt32(lookUpEditDemirbasTur.EditValue);  //Seçilen demirbaş türü   
+            }
+                   
         }
         private void SimpleButtonEkle_Click(object sender, EventArgs e)
         {
@@ -77,18 +93,17 @@ namespace StokTakip
                     else
                     {// Boş alan bırakılması durumu
                          XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar ekleyiniz..");
-                         this.Close();
+                        this.Close();
                     }
                 }
                 catch
                 {// diğer hataların kontrolü.
                     XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar ekleyiniz..");
-                    this.Close();
+                    this.Close(); this.Close();
                 }
             }
 
         }
-
-       
+  
     }
 }

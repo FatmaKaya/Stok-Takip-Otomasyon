@@ -28,6 +28,8 @@
         <EntityTypeShape EntityType="stokTakipModel.v_odalardanDemirbasKaldirDemirbas" Width="1.5" PointX="7.375" PointY="8.75" />
         <EntityTypeShape EntityType="stokTakipModel.v_odalaraDemirbasEkleOdalar" Width="1.5" PointX="9.375" PointY="8.75" />
         <EntityTypeShape EntityType="stokTakipModel.v_odalaraDemirbasEkleDemirbaslar" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="stokTakipModel.v_odaDemirbas" Width="1.5" PointX="5.375" PointY="8.75" />
+        <EntityTypeShape EntityType="stokTakipModel.v_demirbassayisi" Width="1.5" PointX="7.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
