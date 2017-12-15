@@ -33,5 +33,7 @@ namespace StokTakip
         public virtual DbSet<Odalar> Odalars { get; set; }
         public virtual DbSet<Personeller> Personellers { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<v_odaDemirbas> v_odaDemirbas { get; set; }
+        public virtual DbSet<v_demirbassayisi> v_demirbassayisi { get; set; }
     }
 }

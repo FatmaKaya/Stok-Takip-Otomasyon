@@ -24,6 +24,8 @@
         <AssociationConnector Association="stokTakipModel.FK_Odalar_Fakulteler" />
         <AssociationConnector Association="stokTakipModel.FK_Personeller_Departmanlar" />
         <AssociationConnector Association="stokTakipModel.FK_Personeller_Fakulteler" />
+        <EntityTypeShape EntityType="stokTakipModel.v_odaDemirbas" Width="1.5" PointX="5.375" PointY="8.75" />
+        <EntityTypeShape EntityType="stokTakipModel.v_demirbassayisi" Width="1.5" PointX="7.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

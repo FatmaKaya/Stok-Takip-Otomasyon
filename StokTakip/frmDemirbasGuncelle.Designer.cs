@@ -29,48 +29,48 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.lookUpEditGuncelleDemirbas = new DevExpress.XtraEditors.LookUpEdit();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.simpleButtonGuncelle = new DevExpress.XtraEditors.SimpleButton();
+            this.spinEditGuncelleAdet = new DevExpress.XtraEditors.SpinEdit();
+            this.textEditGuncelleFiyat = new DevExpress.XtraEditors.TextEdit();
+            this.textEditGuncelleDemirbasTuru = new DevExpress.XtraEditors.TextEdit();
+            this.textEditGuncelleDemirbasAdi = new DevExpress.XtraEditors.TextEdit();
+            this.textEditGuncelleDepartmanAdi = new DevExpress.XtraEditors.TextEdit();
+            this.textEditGuncelleDemirbasFakulteAdi = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.textEditGuncelleDemirbasFakulteAdi = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEditGuncelleDepartmanAdi = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEditGuncelleDemirbasAdi = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEditGuncelleDemirbasTuru = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEditGuncelleFiyat = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.spinEditGuncelleAdet = new DevExpress.XtraEditors.SpinEdit();
             this.Adet = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButtonGuncelle = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditGuncelleDemirbas.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEditGuncelleAdet.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditGuncelleFiyat.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditGuncelleDemirbasTuru.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditGuncelleDemirbasAdi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditGuncelleDepartmanAdi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditGuncelleDemirbasFakulteAdi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditGuncelleDemirbasFakulteAdi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditGuncelleDepartmanAdi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditGuncelleDemirbasAdi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditGuncelleDemirbasTuru.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditGuncelleFiyat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEditGuncelleAdet.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Adet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.SuspendLayout();
@@ -86,21 +86,9 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // layoutControlGroup1
-            // 
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.emptySpaceItem1});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(348, 452);
-            this.layoutControlGroup1.TextVisible = false;
-            // 
             // lookUpEditGuncelleDemirbas
             // 
-            this.lookUpEditGuncelleDemirbas.Location = new System.Drawing.Point(60, 12);
+            this.lookUpEditGuncelleDemirbas.Location = new System.Drawing.Point(59, 12);
             this.lookUpEditGuncelleDemirbas.Name = "lookUpEditGuncelleDemirbas";
             this.lookUpEditGuncelleDemirbas.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lookUpEditGuncelleDemirbas.Properties.AppearanceReadOnly.Options.UseFont = true;
@@ -114,10 +102,22 @@
             this.lookUpEditGuncelleDemirbas.Properties.NullText = "";
             this.lookUpEditGuncelleDemirbas.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lookUpEditGuncelleDemirbas.Properties.ValueMember = "DemirbasID";
-            this.lookUpEditGuncelleDemirbas.Size = new System.Drawing.Size(276, 20);
+            this.lookUpEditGuncelleDemirbas.Size = new System.Drawing.Size(277, 20);
             this.lookUpEditGuncelleDemirbas.StyleController = this.layoutControl1;
             this.lookUpEditGuncelleDemirbas.TabIndex = 4;
             this.lookUpEditGuncelleDemirbas.EditValueChanged += new System.EventHandler(this.lookUpEditGuncelleDemirbas_EditValueChanged);
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.emptySpaceItem1});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(348, 452);
+            this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
             // 
@@ -153,6 +153,86 @@
             this.layoutControl2.TabIndex = 1;
             this.layoutControl2.Text = "layoutControl2";
             // 
+            // simpleButtonGuncelle
+            // 
+            this.simpleButtonGuncelle.Location = new System.Drawing.Point(12, 156);
+            this.simpleButtonGuncelle.Name = "simpleButtonGuncelle";
+            this.simpleButtonGuncelle.Size = new System.Drawing.Size(289, 22);
+            this.simpleButtonGuncelle.StyleController = this.layoutControl2;
+            this.simpleButtonGuncelle.TabIndex = 10;
+            this.simpleButtonGuncelle.Text = "Güncelle";
+            this.simpleButtonGuncelle.Click += new System.EventHandler(this.simpleButtonGuncelle_Click_1);
+            // 
+            // spinEditGuncelleAdet
+            // 
+            this.spinEditGuncelleAdet.EditValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.spinEditGuncelleAdet.Location = new System.Drawing.Point(90, 132);
+            this.spinEditGuncelleAdet.Name = "spinEditGuncelleAdet";
+            this.spinEditGuncelleAdet.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinEditGuncelleAdet.Properties.MaxValue = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.spinEditGuncelleAdet.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.spinEditGuncelleAdet.Size = new System.Drawing.Size(211, 20);
+            this.spinEditGuncelleAdet.StyleController = this.layoutControl2;
+            this.spinEditGuncelleAdet.TabIndex = 9;
+            // 
+            // textEditGuncelleFiyat
+            // 
+            this.textEditGuncelleFiyat.Location = new System.Drawing.Point(90, 108);
+            this.textEditGuncelleFiyat.Name = "textEditGuncelleFiyat";
+            this.textEditGuncelleFiyat.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textEditGuncelleFiyat.Size = new System.Drawing.Size(211, 20);
+            this.textEditGuncelleFiyat.StyleController = this.layoutControl2;
+            this.textEditGuncelleFiyat.TabIndex = 8;
+            // 
+            // textEditGuncelleDemirbasTuru
+            // 
+            this.textEditGuncelleDemirbasTuru.Enabled = false;
+            this.textEditGuncelleDemirbasTuru.Location = new System.Drawing.Point(90, 60);
+            this.textEditGuncelleDemirbasTuru.Name = "textEditGuncelleDemirbasTuru";
+            this.textEditGuncelleDemirbasTuru.Size = new System.Drawing.Size(211, 20);
+            this.textEditGuncelleDemirbasTuru.StyleController = this.layoutControl2;
+            this.textEditGuncelleDemirbasTuru.TabIndex = 7;
+            // 
+            // textEditGuncelleDemirbasAdi
+            // 
+            this.textEditGuncelleDemirbasAdi.Location = new System.Drawing.Point(90, 84);
+            this.textEditGuncelleDemirbasAdi.Name = "textEditGuncelleDemirbasAdi";
+            this.textEditGuncelleDemirbasAdi.Properties.MaxLength = 25;
+            this.textEditGuncelleDemirbasAdi.Size = new System.Drawing.Size(211, 20);
+            this.textEditGuncelleDemirbasAdi.StyleController = this.layoutControl2;
+            this.textEditGuncelleDemirbasAdi.TabIndex = 6;
+            // 
+            // textEditGuncelleDepartmanAdi
+            // 
+            this.textEditGuncelleDepartmanAdi.Enabled = false;
+            this.textEditGuncelleDepartmanAdi.Location = new System.Drawing.Point(90, 36);
+            this.textEditGuncelleDepartmanAdi.Name = "textEditGuncelleDepartmanAdi";
+            this.textEditGuncelleDepartmanAdi.Size = new System.Drawing.Size(211, 20);
+            this.textEditGuncelleDepartmanAdi.StyleController = this.layoutControl2;
+            this.textEditGuncelleDepartmanAdi.TabIndex = 5;
+            // 
+            // textEditGuncelleDemirbasFakulteAdi
+            // 
+            this.textEditGuncelleDemirbasFakulteAdi.Enabled = false;
+            this.textEditGuncelleDemirbasFakulteAdi.Location = new System.Drawing.Point(90, 12);
+            this.textEditGuncelleDemirbasFakulteAdi.Name = "textEditGuncelleDemirbasFakulteAdi";
+            this.textEditGuncelleDemirbasFakulteAdi.Size = new System.Drawing.Size(211, 20);
+            this.textEditGuncelleDemirbasFakulteAdi.StyleController = this.layoutControl2;
+            this.textEditGuncelleDemirbasFakulteAdi.TabIndex = 4;
+            // 
             // layoutControlGroup2
             // 
             this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -179,15 +259,6 @@
             this.emptySpaceItem2.Size = new System.Drawing.Size(293, 262);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // textEditGuncelleDemirbasFakulteAdi
-            // 
-            this.textEditGuncelleDemirbasFakulteAdi.Enabled = false;
-            this.textEditGuncelleDemirbasFakulteAdi.Location = new System.Drawing.Point(91, 12);
-            this.textEditGuncelleDemirbasFakulteAdi.Name = "textEditGuncelleDemirbasFakulteAdi";
-            this.textEditGuncelleDemirbasFakulteAdi.Size = new System.Drawing.Size(210, 20);
-            this.textEditGuncelleDemirbasFakulteAdi.StyleController = this.layoutControl2;
-            this.textEditGuncelleDemirbasFakulteAdi.TabIndex = 4;
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.textEditGuncelleDemirbasFakulteAdi;
@@ -196,15 +267,6 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(293, 24);
             this.layoutControlItem2.Text = "Fakülte Adı:";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(75, 13);
-            // 
-            // textEditGuncelleDepartmanAdi
-            // 
-            this.textEditGuncelleDepartmanAdi.Enabled = false;
-            this.textEditGuncelleDepartmanAdi.Location = new System.Drawing.Point(91, 36);
-            this.textEditGuncelleDepartmanAdi.Name = "textEditGuncelleDepartmanAdi";
-            this.textEditGuncelleDepartmanAdi.Size = new System.Drawing.Size(210, 20);
-            this.textEditGuncelleDepartmanAdi.StyleController = this.layoutControl2;
-            this.textEditGuncelleDepartmanAdi.TabIndex = 5;
             // 
             // layoutControlItem3
             // 
@@ -215,15 +277,6 @@
             this.layoutControlItem3.Text = "Departman Adı:";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(75, 13);
             // 
-            // textEditGuncelleDemirbasAdi
-            // 
-            this.textEditGuncelleDemirbasAdi.Location = new System.Drawing.Point(91, 84);
-            this.textEditGuncelleDemirbasAdi.Name = "textEditGuncelleDemirbasAdi";
-            this.textEditGuncelleDemirbasAdi.Properties.MaxLength = 25;
-            this.textEditGuncelleDemirbasAdi.Size = new System.Drawing.Size(210, 20);
-            this.textEditGuncelleDemirbasAdi.StyleController = this.layoutControl2;
-            this.textEditGuncelleDemirbasAdi.TabIndex = 6;
-            // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.textEditGuncelleDemirbasAdi;
@@ -232,15 +285,6 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(293, 24);
             this.layoutControlItem4.Text = "Demirbaş Adı:";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(75, 13);
-            // 
-            // textEditGuncelleDemirbasTuru
-            // 
-            this.textEditGuncelleDemirbasTuru.Enabled = false;
-            this.textEditGuncelleDemirbasTuru.Location = new System.Drawing.Point(91, 60);
-            this.textEditGuncelleDemirbasTuru.Name = "textEditGuncelleDemirbasTuru";
-            this.textEditGuncelleDemirbasTuru.Size = new System.Drawing.Size(210, 20);
-            this.textEditGuncelleDemirbasTuru.StyleController = this.layoutControl2;
-            this.textEditGuncelleDemirbasTuru.TabIndex = 7;
             // 
             // layoutControlItem5
             // 
@@ -251,15 +295,6 @@
             this.layoutControlItem5.Text = "Demirbaş Türü";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(75, 13);
             // 
-            // textEditGuncelleFiyat
-            // 
-            this.textEditGuncelleFiyat.Location = new System.Drawing.Point(91, 108);
-            this.textEditGuncelleFiyat.Name = "textEditGuncelleFiyat";
-            this.textEditGuncelleFiyat.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.textEditGuncelleFiyat.Size = new System.Drawing.Size(210, 20);
-            this.textEditGuncelleFiyat.StyleController = this.layoutControl2;
-            this.textEditGuncelleFiyat.TabIndex = 8;
-            // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.textEditGuncelleFiyat;
@@ -269,31 +304,6 @@
             this.layoutControlItem6.Text = "Fiyat:";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(75, 13);
             // 
-            // spinEditGuncelleAdet
-            // 
-            this.spinEditGuncelleAdet.EditValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.spinEditGuncelleAdet.Location = new System.Drawing.Point(91, 132);
-            this.spinEditGuncelleAdet.Name = "spinEditGuncelleAdet";
-            this.spinEditGuncelleAdet.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinEditGuncelleAdet.Properties.MaxValue = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.spinEditGuncelleAdet.Properties.MinValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.spinEditGuncelleAdet.Size = new System.Drawing.Size(210, 20);
-            this.spinEditGuncelleAdet.StyleController = this.layoutControl2;
-            this.spinEditGuncelleAdet.TabIndex = 9;
-            // 
             // Adet
             // 
             this.Adet.Control = this.spinEditGuncelleAdet;
@@ -301,16 +311,6 @@
             this.Adet.Name = "Adet";
             this.Adet.Size = new System.Drawing.Size(293, 24);
             this.Adet.TextSize = new System.Drawing.Size(75, 13);
-            // 
-            // simpleButtonGuncelle
-            // 
-            this.simpleButtonGuncelle.Location = new System.Drawing.Point(12, 156);
-            this.simpleButtonGuncelle.Name = "simpleButtonGuncelle";
-            this.simpleButtonGuncelle.Size = new System.Drawing.Size(289, 22);
-            this.simpleButtonGuncelle.StyleController = this.layoutControl2;
-            this.simpleButtonGuncelle.TabIndex = 10;
-            this.simpleButtonGuncelle.Text = "Güncelle";
-            this.simpleButtonGuncelle.Click += new System.EventHandler(this.simpleButtonGuncelle_Click_1);
             // 
             // layoutControlItem7
             // 
@@ -333,25 +333,25 @@
             this.Load += new System.EventHandler(this.frmDemirbasGuncelle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditGuncelleDemirbas.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.spinEditGuncelleAdet.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditGuncelleFiyat.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditGuncelleDemirbasTuru.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditGuncelleDemirbasAdi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditGuncelleDepartmanAdi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditGuncelleDemirbasFakulteAdi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditGuncelleDemirbasFakulteAdi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditGuncelleDepartmanAdi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditGuncelleDemirbasAdi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditGuncelleDemirbasTuru.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditGuncelleFiyat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEditGuncelleAdet.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Adet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.ResumeLayout(false);
