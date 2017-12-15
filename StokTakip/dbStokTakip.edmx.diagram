@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="48deeb3e60bd4235a0fbe8c37b846a76" Name="Diagram1">
+      <Diagram DiagramId="48deeb3e60bd4235a0fbe8c37b846a76" Name="Diagram1" ZoomLevel="99">
         <EntityTypeShape EntityType="stokTakipModel.Demirbaslar" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="stokTakipModel.DemirbasTurleri" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="stokTakipModel.Departmanlar" Width="1.5" PointX="8" PointY="4.875" IsExpanded="true" />
@@ -24,6 +24,10 @@
         <AssociationConnector Association="stokTakipModel.FK_Odalar_Fakulteler" />
         <AssociationConnector Association="stokTakipModel.FK_Personeller_Departmanlar" />
         <AssociationConnector Association="stokTakipModel.FK_Personeller_Fakulteler" />
+        <EntityTypeShape EntityType="stokTakipModel.v_odalardanDemirbasKaldir" Width="1.5" PointX="5.375" PointY="8.75" />
+        <EntityTypeShape EntityType="stokTakipModel.v_odalardanDemirbasKaldirDemirbas" Width="1.5" PointX="7.375" PointY="8.75" />
+        <EntityTypeShape EntityType="stokTakipModel.v_odalaraDemirbasEkleOdalar" Width="1.5" PointX="9.375" PointY="8.75" />
+        <EntityTypeShape EntityType="stokTakipModel.v_odalaraDemirbasEkleDemirbaslar" Width="1.5" PointX="10.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

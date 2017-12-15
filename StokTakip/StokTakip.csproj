@@ -218,6 +218,18 @@
     <Compile Include="sysdiagram.cs">
       <DependentUpon>dbStokTakip.tt</DependentUpon>
     </Compile>
+    <Compile Include="v_odalaraDemirbasEkleDemirbaslar.cs">
+      <DependentUpon>dbStokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_odalaraDemirbasEkleOdalar.cs">
+      <DependentUpon>dbStokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_odalardanDemirbasKaldir.cs">
+      <DependentUpon>dbStokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_odalardanDemirbasKaldirDemirbas.cs">
+      <DependentUpon>dbStokTakip.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmDemirbasEkle.resx">
       <DependentUpon>frmDemirbasEkle.cs</DependentUpon>
     </EmbeddedResource>
