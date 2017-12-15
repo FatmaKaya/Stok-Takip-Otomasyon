@@ -22,12 +22,13 @@ namespace StokTakip
         int odaID;
         int demirbasID;
         int demirbasAdet;
+       
    
         private void frmOdalaraDemirbasleriEkle_Load(object sender, EventArgs e)
         {
-
+            textEditOdalaraDemirbasEkleDemirbasAdi.Enabled = false;
             spinEditOdalaraDemirbasEkleAdet.Enabled = false;
-           var odalar = db.Odalars.Join(db.Fakultelers,
+            var odalar = db.Odalars.Join(db.Fakultelers,
                         x => x.FakulteID,
                         y => y.FakulteID,
                         (oda, fakulte) => new
@@ -65,7 +66,7 @@ namespace StokTakip
         {
             using (db = new stokTakipEntities())
             {
-                string ara = textEditOdalaraDemirbasEkleOdaAdi.Text;
+                string ara = textEditOdalaraDemirbasEkleOdaAdi.Text.ToUpper();
  
                  var odalar = db.Odalars.Join(db.Fakultelers,
                         x => x.FakulteID,
@@ -99,7 +100,7 @@ namespace StokTakip
                             oda.DepartmanAdi,
                             personel.PersonelAdi
                         }).ToList();
-                gridControlOdalaraDemirbasEkleOdalar.DataSource = odalar.Where(x => x.OdaAdi.Contains(ara)).ToList();
+                gridControlOdalaraDemirbasEkleOdalar.DataSource = odalar.Where(x => x.OdaAdi.ToUpper().Contains(ara)).ToList();
                
 
             }
@@ -111,6 +112,7 @@ namespace StokTakip
             {
                 try
                 {
+                    
                     int[] RowHandles = gridView1.GetSelectedRows();
                     foreach (int i in RowHandles)
                     {
@@ -123,6 +125,7 @@ namespace StokTakip
                     }
                     else
                     {
+                        textEditOdalaraDemirbasEkleDemirbasAdi.Enabled = true;
                         var demirbaslar = db.Demirbaslars.Join(db.DemirbasTurleris,
                         x => x.DemirbasTurID,
                         y => y.DemirbasTurID,
@@ -226,17 +229,45 @@ namespace StokTakip
                                 odademirbas.Adet = Convert.ToInt32(spinEditOdalaraDemirbasEkleAdet.Text);
                                 odademirbas.OdaID = odaID;
                                 odademirbas.DemirbasID = demirbasID;
-                                db.OdaDemirbasTablosus.Add(odademirbas);
-                                db.SaveChanges();
+                                Demirbaslar d = db.Demirbaslars.First(x => x.DemirbasID == demirbasID);
+                                var yenidemirbas = new OdaDemirbasTablosu { DemirbasID = demirbasID }; 
+                               
+                                d.DemirbasAdet = (d.DemirbasAdet - Convert.ToInt32(spinEditOdalaraDemirbasEkleAdet.EditValue));
+                                if (db.OdaDemirbasTablosus.Any(x => x.DemirbasID == yenidemirbas.DemirbasID))
+                                {
+                                    var guncelle = db.OdaDemirbasTablosus.First(x => x.DemirbasID == yenidemirbas.DemirbasID);
+                                    guncelle.Adet = (guncelle.Adet + Convert.ToInt32(spinEditOdalaraDemirbasEkleAdet.EditValue));
+                                    guncelle.OdaID = odaID;
+                                    guncelle.DemirbasID = demirbasID;
+                                    db.SaveChanges();
+                                }
+                                else
+                                {
+                                    db.OdaDemirbasTablosus.Add(odademirbas);
+                                    db.SaveChanges();
+                                }
+                               
+                                if (d.DemirbasAdet == 0)
+                                {
+                                    var adet = db.OdaDemirbasTablosus.First(x => x.DemirbasID == d.DemirbasID);
+                                    d.DemirbasAdet = adet.Adet;
+                                    d.Durum = true;
+                                    db.SaveChanges();
+                                }
+                                
                                 XtraMessageBox.Show("Demirbaş odaya atandı.");
+                               
+                                
                                 textEditOdalaraDemirbasEkleOdaAdi.Text = null;
                                 if(textEditOdalaraDemirbasEkleOdaAdi.Text.Length!=0)
                                 {
                                     gridView1.Columns.Clear();
                                 }
                                 gridView2.Columns.Clear();
-                                spinEditOdalaraDemirbasEkleAdet.Value = 0;
-                                textEditOdalaraDemirbasEkleDemirbas.Text = null;
+                                spinEditOdalaraDemirbasEkleAdet.Value = 0;  
+                                textEditOdalaraDemirbasEkleDemirbasAdi.Text=null;
+                                textEditOdalaraDemirbasEkleDemirbasAdi.Enabled = false;
+                                spinEditOdalaraDemirbasEkleAdet.Enabled = false;                             
                             }
                             else
                             {
@@ -296,6 +327,7 @@ namespace StokTakip
 
                                 spinEditOdalaraDemirbasEkleAdet.Enabled = true;
                                 spinEditOdalaraDemirbasEkleAdet.Properties.MaxValue = demirbasAdet;
+                                spinEditOdalaraDemirbasEkleAdet.Properties.MinValue = 1;
                                 spinEditOdalaraDemirbasEkleAdet.EditValue = demirbasAdet;
                             }
 
@@ -307,11 +339,73 @@ namespace StokTakip
             catch
             {
                 XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar ekleyiniz..");
+            }          
+        }
+
+        private void textEditOdalaraDemirbasEkleDemirbasAdi_EditValueChanged(object sender, EventArgs e)
+        {
+            using (db = new stokTakipEntities())
+            {
+                   String ara2 = textEditOdalaraDemirbasEkleDemirbasAdi.Text.ToUpper();
+
+                    int[] RowHandles = gridView1.GetSelectedRows();
+                    foreach (int i in RowHandles)
+                    {
+                        odaID = Convert.ToInt32(gridView1.GetRowCellValue(i, gridView1.Columns["OdaID"]));
+                    }
+                    Odalar o = db.Odalars.Find(odaID);
+                    var demirbaslar = db.Demirbaslars.Join(db.DemirbasTurleris,
+                    x => x.DemirbasTurID,
+                    y => y.DemirbasTurID,
+                   (demirbas, tur) => new
+                   {
+                       demirbas.DemirbasID,
+                       demirbas.DemirbasAdi,
+                       demirbas.DemirbasAdet,
+                       demirbas.AlimTarihi,
+                       tur.DemirbasTurAdi,
+                       demirbas.DemirbasKodu,
+                       demirbas.Fiyat,
+                       demirbas.FakulteID,
+                       demirbas.DepartmanID,
+                       demirbas.Durum
+                   }).Join(db.Fakultelers,
+                     z => z.FakulteID,
+                     t => t.FakulteID,
+                     (demirbas, fakulte) => new
+                     {
+                         demirbas.DemirbasID,
+                         demirbas.DemirbasAdi,
+                         demirbas.DemirbasAdet,
+                         demirbas.AlimTarihi,
+                         demirbas.DemirbasTurAdi,
+                         demirbas.DemirbasKodu,
+                         demirbas.Fiyat,
+                         demirbas.DepartmanID,
+                         fakulte.FakulteAdi,
+                         demirbas.Durum,
+                         demirbas.FakulteID,
+                     }).Join(db.Departmanlars,
+                    u => u.DepartmanID,
+                    v => v.DepartmanID,
+               (demirbas, departman) => new
+               {
+                   demirbas.DemirbasID,
+                   demirbas.DemirbasAdi,
+                   demirbas.DemirbasAdet,
+                   demirbas.AlimTarihi,
+                   demirbas.DemirbasTurAdi,
+                   demirbas.DemirbasKodu,
+                   demirbas.Fiyat,
+                   demirbas.DepartmanID,
+                   demirbas.FakulteAdi,
+                   departman.DepartmanAdi,
+                   demirbas.Durum,
+                   demirbas.FakulteID
+               }).ToList();
+                    gridControlOdalaraDemirbasEkleDemirbaslar.DataSource = demirbaslar.Where(x => x.Durum == false && x.FakulteID == o.FakulteID && x.DemirbasAdi.ToUpper().Contains(ara2)).ToList();            
+                }
             }
-           
-               
-               
-            
         }
     }
-}
+    
