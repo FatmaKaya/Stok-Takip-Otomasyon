@@ -26,9 +26,9 @@ namespace StokTakip
         public string DepartmanAdi { get; set; }
         public Nullable<int> FakulteID { get; set; }
     
-        public virtual Fakulteler Fakulteler { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Demirbaslar> Demirbaslars { get; set; }
+        public virtual Fakulteler Fakulteler { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Odalar> Odalars { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -250,6 +250,12 @@
     <Compile Include="sysdiagram.cs">
       <DependentUpon>dbStokTakip.tt</DependentUpon>
     </Compile>
+    <Compile Include="v_demirbassayisi.cs">
+      <DependentUpon>dbStokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_odaDemirbas.cs">
+      <DependentUpon>dbStokTakip.tt</DependentUpon>
+    </Compile>
     <Compile Include="v_OdaDemirbasListesi.cs">
       <DependentUpon>dbStokTakip.tt</DependentUpon>
     </Compile>
@@ -260,6 +266,9 @@
       <DependentUpon>dbStokTakip.tt</DependentUpon>
     </Compile>
     <Compile Include="v_odalaraDemirbasEkleOdalar.cs">
+      <DependentUpon>dbStokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_odalardakiDemirbasSayisi.cs">
       <DependentUpon>dbStokTakip.tt</DependentUpon>
     </Compile>
     <Compile Include="v_odalardanDemirbasKaldir.cs">

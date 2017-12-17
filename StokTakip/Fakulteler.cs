@@ -17,8 +17,8 @@ namespace StokTakip
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Fakulteler()
         {
-            this.Departmanlars = new HashSet<Departmanlar>();
             this.Demirbaslars = new HashSet<Demirbaslar>();
+            this.Departmanlars = new HashSet<Departmanlar>();
             this.Odalars = new HashSet<Odalar>();
             this.Personellers = new HashSet<Personeller>();
         }
@@ -27,9 +27,9 @@ namespace StokTakip
         public string FakulteAdi { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Departmanlar> Departmanlars { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Demirbaslar> Demirbaslars { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Departmanlar> Departmanlars { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Odalar> Odalars { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

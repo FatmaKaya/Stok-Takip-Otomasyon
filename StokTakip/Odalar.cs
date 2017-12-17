@@ -26,10 +26,10 @@ namespace StokTakip
         public int FakulteID { get; set; }
         public int DepartmanID { get; set; }
     
+        public virtual Departmanlar Departmanlar { get; set; }
+        public virtual Fakulteler Fakulteler { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OdaDemirbasTablosu> OdaDemirbasTablosus { get; set; }
         public virtual Personeller Personeller { get; set; }
-        public virtual Departmanlar Departmanlar { get; set; }
-        public virtual Fakulteler Fakulteler { get; set; }
     }
 }
