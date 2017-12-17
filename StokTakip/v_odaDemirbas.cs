@@ -15,11 +15,19 @@ namespace StokTakip
     public partial class v_odaDemirbas
     {
         public int OdaDemirbasID { get; set; }
+        public int DemirbasID { get; set; }
         public string DemirbasKodu { get; set; }
         public string DemirbasAdi { get; set; }
-        public Nullable<int> Adet { get; set; }
-        public string PersonelAdi { get; set; }
+        public Nullable<int> DemirbasAdet { get; set; }
+        public Nullable<int> OdaID { get; set; }
         public string OdaAdi { get; set; }
         public int PersonelID { get; set; }
+        public string PersonelAdi { get; set; }
+        public Nullable<System.DateTime> AlimTarihi { get; set; }
+        public int DemirbasTurID { get; set; }
+        public string DemirbasTurAdi { get; set; }
+        public string FakulteAdi { get; set; }
+        public string DepartmanAdi { get; set; }
+        public Nullable<double> Fiyat { get; set; }
     }
 }

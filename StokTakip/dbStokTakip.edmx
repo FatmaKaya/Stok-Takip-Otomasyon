@@ -83,6 +83,49 @@
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'stokTakip.dbo.v_demirbassayisi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_demirbassayisi">
+          <Key>
+            <PropertyRef Name="DemirbasID" />
+            <PropertyRef Name="DemirbasTurID" />
+          </Key>
+          <Property Name="DemirbasID" Type="int" Nullable="false" />
+          <Property Name="DemirbasKodu" Type="nvarchar" MaxLength="250" />
+          <Property Name="DemirbasAdi" Type="nvarchar" MaxLength="250" />
+          <Property Name="DemirbasAdet" Type="int" />
+          <Property Name="DemirbasTurID" Type="int" Nullable="false" />
+          <Property Name="DemirbasTurAdi" Type="nvarchar" MaxLength="250" />
+          <Property Name="FakulteAdi" Type="nvarchar" MaxLength="250" />
+          <Property Name="DepartmanAdi" Type="nvarchar" MaxLength="250" />
+          <Property Name="AlimTarihi" Type="datetime" />
+          <Property Name="Fiyat" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'stokTakip.dbo.v_odaDemirbas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_odaDemirbas">
+          <Key>
+            <PropertyRef Name="OdaDemirbasID" />
+            <PropertyRef Name="DemirbasID" />
+            <PropertyRef Name="PersonelID" />
+            <PropertyRef Name="DemirbasTurID" />
+          </Key>
+          <Property Name="OdaDemirbasID" Type="int" Nullable="false" />
+          <Property Name="DemirbasID" Type="int" Nullable="false" />
+          <Property Name="DemirbasKodu" Type="nvarchar" MaxLength="250" />
+          <Property Name="DemirbasAdi" Type="nvarchar" MaxLength="250" />
+          <Property Name="DemirbasAdet" Type="int" />
+          <Property Name="OdaID" Type="int" />
+          <Property Name="OdaAdi" Type="nvarchar" MaxLength="250" />
+          <Property Name="PersonelID" Type="int" Nullable="false" />
+          <Property Name="PersonelAdi" Type="nvarchar" MaxLength="250" />
+          <Property Name="AlimTarihi" Type="datetime" />
+          <Property Name="DemirbasTurID" Type="int" Nullable="false" />
+          <Property Name="DemirbasTurAdi" Type="nvarchar" MaxLength="250" />
+          <Property Name="FakulteAdi" Type="nvarchar" MaxLength="250" />
+          <Property Name="DepartmanAdi" Type="nvarchar" MaxLength="250" />
+          <Property Name="Fiyat" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'stokTakip.dbo.v_odalaraDemirbasEkleDemirbaslar' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_odalaraDemirbasEkleDemirbaslar">
           <Key>
@@ -110,6 +153,29 @@ warning 6002: The table/view 'stokTakip.dbo.v_odalaraDemirbasEkleOdalar' does no
           <Property Name="PersonelAdi" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'stokTakip.dbo.v_odalardakiDemirbasSayisi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="v_odalardakiDemirbasSayisi">
+          <Key>
+            <PropertyRef Name="OdaDemirbasID" />
+            <PropertyRef Name="DemirbasID" />
+            <PropertyRef Name="DemirbasTurID" />
+          </Key>
+          <Property Name="OdaDemirbasID" Type="int" Nullable="false" />
+          <Property Name="DemirbasID" Type="int" Nullable="false" />
+          <Property Name="DemirbasKodu" Type="nvarchar" MaxLength="250" />
+          <Property Name="DemirbasAdi" Type="nvarchar" MaxLength="250" />
+          <Property Name="DemirbasAdet" Type="int" />
+          <Property Name="OdaID" Type="int" />
+          <Property Name="OdaAdi" Type="nvarchar" MaxLength="250" />
+          <Property Name="PersonelAdi" Type="nvarchar" MaxLength="250" />
+          <Property Name="AlimTarihi" Type="datetime" />
+          <Property Name="DemirbasTurID" Type="int" Nullable="false" />
+          <Property Name="DemirbasTurAdi" Type="nvarchar" MaxLength="250" />
+          <Property Name="FakulteAdi" Type="nvarchar" MaxLength="250" />
+          <Property Name="DepartmanAdi" Type="nvarchar" MaxLength="250" />
+          <Property Name="Fiyat" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'stokTakip.dbo.v_odalardanDemirbasKaldir' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_odalardanDemirbasKaldir">
           <Key>
@@ -135,38 +201,6 @@ warning 6002: The table/view 'stokTakip.dbo.v_odalardanDemirbasKaldirDemirbas' d
           <Property Name="DemirbasTurAdi" Type="nvarchar" MaxLength="250" />
           <Property Name="Adet" Type="int" />
           <Property Name="Fiyat" Type="float" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'stokTakip.dbo.v_demirbassayisi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="v_demirbassayisi">
-          <Key>
-            <PropertyRef Name="DemirbasID" />
-            <PropertyRef Name="DemirbasTurID" />
-          </Key>
-          <Property Name="DemirbasID" Type="int" Nullable="false" />
-          <Property Name="DemirbasKodu" Type="nvarchar" MaxLength="250" />
-          <Property Name="DemirbasAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="DemirbasAdet" Type="int" />
-          <Property Name="DemirbasTurID" Type="int" Nullable="false" />
-          <Property Name="FakulteAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="DepartmanAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="AlimTarihi" Type="datetime" />
-          <Property Name="Fiyat" Type="float" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'stokTakip.dbo.v_odaDemirbas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="v_odaDemirbas">
-          <Key>
-            <PropertyRef Name="OdaDemirbasID" />
-            <PropertyRef Name="PersonelID" />
-          </Key>
-          <Property Name="OdaDemirbasID" Type="int" Nullable="false" />
-          <Property Name="DemirbasKodu" Type="nvarchar" MaxLength="250" />
-          <Property Name="DemirbasAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="Adet" Type="int" />
-          <Property Name="PersonelAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="OdaAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="PersonelID" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Demirbaslar_DemirbasTurleri1">
           <End Role="DemirbasTurleri" Type="Self.DemirbasTurleri" Multiplicity="0..1" />
@@ -309,6 +343,39 @@ warning 6002: The table/view 'stokTakip.dbo.v_odaDemirbas' does not have a prima
           <EntitySet Name="Odalar" EntityType="Self.Odalar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Personeller" EntityType="Self.Personeller" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="v_demirbassayisi" EntityType="Self.v_demirbassayisi" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_demirbassayisi].[DemirbasID] AS [DemirbasID], 
+    [v_demirbassayisi].[DemirbasKodu] AS [DemirbasKodu], 
+    [v_demirbassayisi].[DemirbasAdi] AS [DemirbasAdi], 
+    [v_demirbassayisi].[DemirbasAdet] AS [DemirbasAdet], 
+    [v_demirbassayisi].[DemirbasTurID] AS [DemirbasTurID], 
+    [v_demirbassayisi].[DemirbasTurAdi] AS [DemirbasTurAdi], 
+    [v_demirbassayisi].[FakulteAdi] AS [FakulteAdi], 
+    [v_demirbassayisi].[DepartmanAdi] AS [DepartmanAdi], 
+    [v_demirbassayisi].[AlimTarihi] AS [AlimTarihi], 
+    [v_demirbassayisi].[Fiyat] AS [Fiyat]
+    FROM [dbo].[v_demirbassayisi] AS [v_demirbassayisi]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="v_odaDemirbas" EntityType="Self.v_odaDemirbas" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_odaDemirbas].[OdaDemirbasID] AS [OdaDemirbasID], 
+    [v_odaDemirbas].[DemirbasID] AS [DemirbasID], 
+    [v_odaDemirbas].[DemirbasKodu] AS [DemirbasKodu], 
+    [v_odaDemirbas].[DemirbasAdi] AS [DemirbasAdi], 
+    [v_odaDemirbas].[DemirbasAdet] AS [DemirbasAdet], 
+    [v_odaDemirbas].[OdaID] AS [OdaID], 
+    [v_odaDemirbas].[OdaAdi] AS [OdaAdi], 
+    [v_odaDemirbas].[PersonelID] AS [PersonelID], 
+    [v_odaDemirbas].[PersonelAdi] AS [PersonelAdi], 
+    [v_odaDemirbas].[AlimTarihi] AS [AlimTarihi], 
+    [v_odaDemirbas].[DemirbasTurID] AS [DemirbasTurID], 
+    [v_odaDemirbas].[DemirbasTurAdi] AS [DemirbasTurAdi], 
+    [v_odaDemirbas].[FakulteAdi] AS [FakulteAdi], 
+    [v_odaDemirbas].[DepartmanAdi] AS [DepartmanAdi], 
+    [v_odaDemirbas].[Fiyat] AS [Fiyat]
+    FROM [dbo].[v_odaDemirbas] AS [v_odaDemirbas]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="v_odalaraDemirbasEkleDemirbaslar" EntityType="Self.v_odalaraDemirbasEkleDemirbaslar" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [v_odalaraDemirbasEkleDemirbaslar].[DemirbasID] AS [DemirbasID], 
@@ -330,6 +397,24 @@ warning 6002: The table/view 'stokTakip.dbo.v_odaDemirbas' does not have a prima
     [v_odalaraDemirbasEkleOdalar].[PersonelAdi] AS [PersonelAdi]
     FROM [dbo].[v_odalaraDemirbasEkleOdalar] AS [v_odalaraDemirbasEkleOdalar]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="v_odalardakiDemirbasSayisi" EntityType="Self.v_odalardakiDemirbasSayisi" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [v_odalardakiDemirbasSayisi].[OdaDemirbasID] AS [OdaDemirbasID], 
+    [v_odalardakiDemirbasSayisi].[DemirbasID] AS [DemirbasID], 
+    [v_odalardakiDemirbasSayisi].[DemirbasKodu] AS [DemirbasKodu], 
+    [v_odalardakiDemirbasSayisi].[DemirbasAdi] AS [DemirbasAdi], 
+    [v_odalardakiDemirbasSayisi].[DemirbasAdet] AS [DemirbasAdet], 
+    [v_odalardakiDemirbasSayisi].[OdaID] AS [OdaID], 
+    [v_odalardakiDemirbasSayisi].[OdaAdi] AS [OdaAdi], 
+    [v_odalardakiDemirbasSayisi].[PersonelAdi] AS [PersonelAdi], 
+    [v_odalardakiDemirbasSayisi].[AlimTarihi] AS [AlimTarihi], 
+    [v_odalardakiDemirbasSayisi].[DemirbasTurID] AS [DemirbasTurID], 
+    [v_odalardakiDemirbasSayisi].[DemirbasTurAdi] AS [DemirbasTurAdi], 
+    [v_odalardakiDemirbasSayisi].[FakulteAdi] AS [FakulteAdi], 
+    [v_odalardakiDemirbasSayisi].[DepartmanAdi] AS [DepartmanAdi], 
+    [v_odalardakiDemirbasSayisi].[Fiyat] AS [Fiyat]
+    FROM [dbo].[v_odalardakiDemirbasSayisi] AS [v_odalardakiDemirbasSayisi]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="v_odalardanDemirbasKaldir" EntityType="Self.v_odalardanDemirbasKaldir" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [v_odalardanDemirbasKaldir].[OdaID] AS [OdaID], 
@@ -350,30 +435,6 @@ warning 6002: The table/view 'stokTakip.dbo.v_odaDemirbas' does not have a prima
     [v_odalardanDemirbasKaldirDemirbas].[Adet] AS [Adet], 
     [v_odalardanDemirbasKaldirDemirbas].[Fiyat] AS [Fiyat]
     FROM [dbo].[v_odalardanDemirbasKaldirDemirbas] AS [v_odalardanDemirbasKaldirDemirbas]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="v_demirbassayisi" EntityType="Self.v_demirbassayisi" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [v_demirbassayisi].[DemirbasID] AS [DemirbasID], 
-    [v_demirbassayisi].[DemirbasKodu] AS [DemirbasKodu], 
-    [v_demirbassayisi].[DemirbasAdi] AS [DemirbasAdi], 
-    [v_demirbassayisi].[DemirbasAdet] AS [DemirbasAdet], 
-    [v_demirbassayisi].[DemirbasTurID] AS [DemirbasTurID], 
-    [v_demirbassayisi].[FakulteAdi] AS [FakulteAdi], 
-    [v_demirbassayisi].[DepartmanAdi] AS [DepartmanAdi], 
-    [v_demirbassayisi].[AlimTarihi] AS [AlimTarihi], 
-    [v_demirbassayisi].[Fiyat] AS [Fiyat]
-    FROM [dbo].[v_demirbassayisi] AS [v_demirbassayisi]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="v_odaDemirbas" EntityType="Self.v_odaDemirbas" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [v_odaDemirbas].[OdaDemirbasID] AS [OdaDemirbasID], 
-    [v_odaDemirbas].[DemirbasKodu] AS [DemirbasKodu], 
-    [v_odaDemirbas].[DemirbasAdi] AS [DemirbasAdi], 
-    [v_odaDemirbas].[Adet] AS [Adet], 
-    [v_odaDemirbas].[PersonelAdi] AS [PersonelAdi], 
-    [v_odaDemirbas].[OdaAdi] AS [OdaAdi], 
-    [v_odaDemirbas].[PersonelID] AS [PersonelID]
-    FROM [dbo].[v_odaDemirbas] AS [v_odaDemirbas]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_Demirbaslar_DemirbasTurleri1" Association="Self.FK_Demirbaslar_DemirbasTurleri1">
             <End Role="DemirbasTurleri" EntitySet="DemirbasTurleri" />
@@ -640,8 +701,9 @@ warning 6002: The table/view 'stokTakip.dbo.v_odaDemirbas' does not have a prima
           <EntitySet Name="v_odalardanDemirbasKaldirDemirbas" EntityType="stokTakipModel.v_odalardanDemirbasKaldirDemirbas" />
           <EntitySet Name="v_odalaraDemirbasEkleOdalar" EntityType="stokTakipModel.v_odalaraDemirbasEkleOdalar" />
           <EntitySet Name="v_odalaraDemirbasEkleDemirbaslar" EntityType="stokTakipModel.v_odalaraDemirbasEkleDemirbaslar" />
-          <EntitySet Name="v_odaDemirbas" EntityType="stokTakipModel.v_odaDemirbas" />
           <EntitySet Name="v_demirbassayisi" EntityType="stokTakipModel.v_demirbassayisi" />
+          <EntitySet Name="v_odalardakiDemirbasSayisi" EntityType="stokTakipModel.v_odalardakiDemirbasSayisi" />
+          <EntitySet Name="v_odaDemirbas" EntityType="stokTakipModel.v_odaDemirbas" />
         </EntityContainer>
         <Association Name="FK_Demirbaslar_Departmanlar">
           <End Type="stokTakipModel.Departmanlar" Role="Departmanlar" Multiplicity="1" />
@@ -761,33 +823,65 @@ warning 6002: The table/view 'stokTakip.dbo.v_odaDemirbas' does not have a prima
           <Property Name="DemirbasAdet" Type="Int32" />
           <Property Name="Fiyat" Type="Double" />
         </EntityType>
-        <EntityType Name="v_odaDemirbas">
-          <Key>
-            <PropertyRef Name="OdaDemirbasID" />
-            <PropertyRef Name="PersonelID" />
-          </Key>
-          <Property Name="OdaDemirbasID" Type="Int32" Nullable="false" />
-          <Property Name="DemirbasKodu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="DemirbasAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="Adet" Type="Int32" />
-          <Property Name="PersonelAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="OdaAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="PersonelID" Type="Int32" Nullable="false" />
-        </EntityType>
         <EntityType Name="v_demirbassayisi">
           <Key>
-            <PropertyRef Name="DemirbasTurID" />
             <PropertyRef Name="DemirbasID" />
+            <PropertyRef Name="DemirbasTurID" />
           </Key>
+          <Property Name="DemirbasID" Type="Int32" Nullable="false" />
           <Property Name="DemirbasKodu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="DemirbasAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="DemirbasAdet" Type="Int32" />
           <Property Name="DemirbasTurID" Type="Int32" Nullable="false" />
+          <Property Name="DemirbasTurAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="FakulteAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="DepartmanAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="AlimTarihi" Type="DateTime" Precision="3" />
           <Property Name="Fiyat" Type="Double" />
+        </EntityType>
+        <EntityType Name="v_odalardakiDemirbasSayisi">
+          <Key>
+            <PropertyRef Name="OdaDemirbasID" />
+            <PropertyRef Name="DemirbasID" />
+            <PropertyRef Name="DemirbasTurID" />
+          </Key>
+          <Property Name="OdaDemirbasID" Type="Int32" Nullable="false" />
           <Property Name="DemirbasID" Type="Int32" Nullable="false" />
+          <Property Name="DemirbasKodu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DemirbasAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DemirbasAdet" Type="Int32" />
+          <Property Name="OdaID" Type="Int32" />
+          <Property Name="OdaAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PersonelAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="AlimTarihi" Type="DateTime" Precision="3" />
+          <Property Name="DemirbasTurID" Type="Int32" Nullable="false" />
+          <Property Name="DemirbasTurAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FakulteAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DepartmanAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Fiyat" Type="Double" />
+        </EntityType>
+        <EntityType Name="v_odaDemirbas">
+          <Key>
+            <PropertyRef Name="OdaDemirbasID" />
+            <PropertyRef Name="DemirbasID" />
+            <PropertyRef Name="PersonelID" />
+            <PropertyRef Name="DemirbasTurID" />
+          </Key>
+          <Property Name="OdaDemirbasID" Type="Int32" Nullable="false" />
+          <Property Name="DemirbasID" Type="Int32" Nullable="false" />
+          <Property Name="DemirbasKodu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DemirbasAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DemirbasAdet" Type="Int32" />
+          <Property Name="OdaID" Type="Int32" />
+          <Property Name="OdaAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PersonelID" Type="Int32" Nullable="false" />
+          <Property Name="PersonelAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="AlimTarihi" Type="DateTime" Precision="3" />
+          <Property Name="DemirbasTurID" Type="Int32" Nullable="false" />
+          <Property Name="DemirbasTurAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FakulteAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DepartmanAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Fiyat" Type="Double" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -930,31 +1024,60 @@ warning 6002: The table/view 'stokTakip.dbo.v_odaDemirbas' does not have a prima
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="v_odaDemirbas">
-            <EntityTypeMapping TypeName="stokTakipModel.v_odaDemirbas">
-              <MappingFragment StoreEntitySet="v_odaDemirbas">
-                <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
-                <ScalarProperty Name="OdaAdi" ColumnName="OdaAdi" />
-                <ScalarProperty Name="PersonelAdi" ColumnName="PersonelAdi" />
-                <ScalarProperty Name="Adet" ColumnName="Adet" />
-                <ScalarProperty Name="DemirbasAdi" ColumnName="DemirbasAdi" />
-                <ScalarProperty Name="DemirbasKodu" ColumnName="DemirbasKodu" />
-                <ScalarProperty Name="OdaDemirbasID" ColumnName="OdaDemirbasID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="v_demirbassayisi">
             <EntityTypeMapping TypeName="stokTakipModel.v_demirbassayisi">
               <MappingFragment StoreEntitySet="v_demirbassayisi">
-                <ScalarProperty Name="DemirbasID" ColumnName="DemirbasID" />
                 <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
                 <ScalarProperty Name="AlimTarihi" ColumnName="AlimTarihi" />
                 <ScalarProperty Name="DepartmanAdi" ColumnName="DepartmanAdi" />
                 <ScalarProperty Name="FakulteAdi" ColumnName="FakulteAdi" />
+                <ScalarProperty Name="DemirbasTurAdi" ColumnName="DemirbasTurAdi" />
                 <ScalarProperty Name="DemirbasTurID" ColumnName="DemirbasTurID" />
                 <ScalarProperty Name="DemirbasAdet" ColumnName="DemirbasAdet" />
                 <ScalarProperty Name="DemirbasAdi" ColumnName="DemirbasAdi" />
                 <ScalarProperty Name="DemirbasKodu" ColumnName="DemirbasKodu" />
+                <ScalarProperty Name="DemirbasID" ColumnName="DemirbasID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_odalardakiDemirbasSayisi">
+            <EntityTypeMapping TypeName="stokTakipModel.v_odalardakiDemirbasSayisi">
+              <MappingFragment StoreEntitySet="v_odalardakiDemirbasSayisi">
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="DepartmanAdi" ColumnName="DepartmanAdi" />
+                <ScalarProperty Name="FakulteAdi" ColumnName="FakulteAdi" />
+                <ScalarProperty Name="DemirbasTurAdi" ColumnName="DemirbasTurAdi" />
+                <ScalarProperty Name="DemirbasTurID" ColumnName="DemirbasTurID" />
+                <ScalarProperty Name="AlimTarihi" ColumnName="AlimTarihi" />
+                <ScalarProperty Name="PersonelAdi" ColumnName="PersonelAdi" />
+                <ScalarProperty Name="OdaAdi" ColumnName="OdaAdi" />
+                <ScalarProperty Name="OdaID" ColumnName="OdaID" />
+                <ScalarProperty Name="DemirbasAdet" ColumnName="DemirbasAdet" />
+                <ScalarProperty Name="DemirbasAdi" ColumnName="DemirbasAdi" />
+                <ScalarProperty Name="DemirbasKodu" ColumnName="DemirbasKodu" />
+                <ScalarProperty Name="DemirbasID" ColumnName="DemirbasID" />
+                <ScalarProperty Name="OdaDemirbasID" ColumnName="OdaDemirbasID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_odaDemirbas">
+            <EntityTypeMapping TypeName="stokTakipModel.v_odaDemirbas">
+              <MappingFragment StoreEntitySet="v_odaDemirbas">
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="DepartmanAdi" ColumnName="DepartmanAdi" />
+                <ScalarProperty Name="FakulteAdi" ColumnName="FakulteAdi" />
+                <ScalarProperty Name="DemirbasTurAdi" ColumnName="DemirbasTurAdi" />
+                <ScalarProperty Name="DemirbasTurID" ColumnName="DemirbasTurID" />
+                <ScalarProperty Name="AlimTarihi" ColumnName="AlimTarihi" />
+                <ScalarProperty Name="PersonelAdi" ColumnName="PersonelAdi" />
+                <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+                <ScalarProperty Name="OdaAdi" ColumnName="OdaAdi" />
+                <ScalarProperty Name="OdaID" ColumnName="OdaID" />
+                <ScalarProperty Name="DemirbasAdet" ColumnName="DemirbasAdet" />
+                <ScalarProperty Name="DemirbasAdi" ColumnName="DemirbasAdi" />
+                <ScalarProperty Name="DemirbasKodu" ColumnName="DemirbasKodu" />
+                <ScalarProperty Name="DemirbasID" ColumnName="DemirbasID" />
+                <ScalarProperty Name="OdaDemirbasID" ColumnName="OdaDemirbasID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
