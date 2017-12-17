@@ -256,6 +256,7 @@
     <Compile Include="v_odaDemirbas.cs">
       <DependentUpon>dbStokTakip.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="v_OdaDemirbasListesi.cs">
       <DependentUpon>dbStokTakip.tt</DependentUpon>
     </Compile>
@@ -271,6 +272,17 @@
     <Compile Include="v_odalardakiDemirbasSayisi.cs">
       <DependentUpon>dbStokTakip.tt</DependentUpon>
     </Compile>
+=======
+    <Compile Include="v_odalaraDemirbasEkleDemirbaslar.cs">
+      <DependentUpon>dbStokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_odalaraDemirbasEkleOdalar.cs">
+      <DependentUpon>dbStokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_odalardakiDemirbasSayisi.cs">
+      <DependentUpon>dbStokTakip.tt</DependentUpon>
+    </Compile>
+>>>>>>> 4fb1415c45cdd6a798beaf78cc71b075ede4a9f8
     <Compile Include="v_odalardanDemirbasKaldir.cs">
       <DependentUpon>dbStokTakip.tt</DependentUpon>
     </Compile>

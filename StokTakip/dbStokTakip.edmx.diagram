@@ -28,11 +28,17 @@
         <EntityTypeShape EntityType="stokTakipModel.v_odalardanDemirbasKaldirDemirbas" Width="1.5" PointX="7.375" PointY="8.75" />
         <EntityTypeShape EntityType="stokTakipModel.v_odalaraDemirbasEkleOdalar" Width="1.5" PointX="9.375" PointY="8.75" />
         <EntityTypeShape EntityType="stokTakipModel.v_odalaraDemirbasEkleDemirbaslar" Width="1.5" PointX="10.375" PointY="0.75" />
+<<<<<<< HEAD
         <EntityTypeShape EntityType="stokTakipModel.v_OdaDemirbasListesi" Width="1.5" PointX="10.375" PointY="4.75" />
         <EntityTypeShape EntityType="stokTakipModel.v_OdaDemirbasListesiOdalar" Width="1.5" PointX="11.375" PointY="8.75" />
         <EntityTypeShape EntityType="stokTakipModel.v_demirbassayisi" Width="1.5" PointX="0.75" PointY="10.75" />
         <EntityTypeShape EntityType="stokTakipModel.v_odaDemirbas" Width="1.5" PointX="2.75" PointY="10.75" />
         <EntityTypeShape EntityType="stokTakipModel.v_odalardakiDemirbasSayisi" Width="1.5" PointX="4.75" PointY="11.75" />
+=======
+        <EntityTypeShape EntityType="stokTakipModel.v_demirbassayisi" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="stokTakipModel.v_odalardakiDemirbasSayisi" Width="1.5" PointX="11.375" PointY="4.75" />
+        <EntityTypeShape EntityType="stokTakipModel.v_odaDemirbas" Width="1.5" PointX="3.375" PointY="11.75" />
+>>>>>>> 4fb1415c45cdd6a798beaf78cc71b075ede4a9f8
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

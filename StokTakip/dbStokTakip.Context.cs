@@ -37,10 +37,16 @@ namespace StokTakip
         public virtual DbSet<v_odalardanDemirbasKaldirDemirbas> v_odalardanDemirbasKaldirDemirbas { get; set; }
         public virtual DbSet<v_odalaraDemirbasEkleOdalar> v_odalaraDemirbasEkleOdalar { get; set; }
         public virtual DbSet<v_odalaraDemirbasEkleDemirbaslar> v_odalaraDemirbasEkleDemirbaslar { get; set; }
+<<<<<<< HEAD
         public virtual DbSet<v_OdaDemirbasListesi> v_OdaDemirbasListesi { get; set; }
         public virtual DbSet<v_OdaDemirbasListesiOdalar> v_OdaDemirbasListesiOdalar { get; set; }
         public virtual DbSet<v_demirbassayisi> v_demirbassayisi { get; set; }
         public virtual DbSet<v_odaDemirbas> v_odaDemirbas { get; set; }
         public virtual DbSet<v_odalardakiDemirbasSayisi> v_odalardakiDemirbasSayisi { get; set; }
+=======
+        public virtual DbSet<v_demirbassayisi> v_demirbassayisi { get; set; }
+        public virtual DbSet<v_odalardakiDemirbasSayisi> v_odalardakiDemirbasSayisi { get; set; }
+        public virtual DbSet<v_odaDemirbas> v_odaDemirbas { get; set; }
+>>>>>>> 4fb1415c45cdd6a798beaf78cc71b075ede4a9f8
     }
 }

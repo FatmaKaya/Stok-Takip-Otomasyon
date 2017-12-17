@@ -37,7 +37,8 @@ namespace StokTakip
                     if(lookUpEditPersonelAdi.EditValue!=null)  // Personel seçilirse yapılacaklar
                         gridControlPersonelUzerindekiDemirbaslar.DataSource = db.v_odaDemirbas.Where(x => x.PersonelID == personelID).ToList();
                     else   //personel seçilmezse yapılacak olan
-                        XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar deneyiniz..");
+                        XtraMessageBox.Show("Lütfen alanları kontrol ederek tekrar deneyiniz..");
+
                 }
                 catch (Exception)
                 {//hatalı durumlar için
