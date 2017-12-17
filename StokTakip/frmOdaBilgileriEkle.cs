@@ -20,28 +20,27 @@ namespace StokTakip
 
         stokTakipEntities db = new stokTakipEntities();
         Odalar oda = new Odalar();
-
-     
+        int fakulteID;
+        int departmanID;
         private void frmOdaBilgileriEkle_Load(object sender, EventArgs e)
         {
+            //stoktaki fakülte bilgilerinin getirilmesi
             lookUpEditFakulteAdiEkle.Properties.DataSource = db.Fakultelers.ToList();
         }
-
         private void lookUpEditFakulteAdiEkle_EditValueChanged(object sender, EventArgs e)
         {
-            int fakulteID = Convert.ToInt32(lookUpEditFakulteAdiEkle.EditValue);
+            fakulteID = Convert.ToInt32(lookUpEditFakulteAdiEkle.EditValue);
+            //stoktaki departman bilgilerinin getirilmesi
             lookUpEditBolumAdiEkle.Properties.DataSource = db.Departmanlars.Where(x => x.FakulteID == fakulteID).ToList();
             oda.FakulteID = fakulteID;
         }
-
-
         private void lookUpEditBolumAdiEkle_EditValueChanged(object sender, EventArgs e)
         {
-            int departmanID = Convert.ToInt32(lookUpEditBolumAdiEkle.EditValue);
+            departmanID = Convert.ToInt32(lookUpEditBolumAdiEkle.EditValue);
+            //stoktaki personel bilgilerinin getirilmesi
             lookUpEditOdaSorumlusuEkle.Properties.DataSource = db.Personellers.Where(x => x.DepartmanID == departmanID).ToList();
             oda.DepartmanID = departmanID;
         }
-
         private void lookUpEditOdaSorumlusuEkle_EditValueChanged(object sender, EventArgs e)
         {
             int personelID = Convert.ToInt32(lookUpEditOdaSorumlusuEkle.EditValue);
@@ -53,17 +52,19 @@ namespace StokTakip
             {
                 try
                 {
-                    if (textEditOdaAdiEkle.Text.Length != 0)
+                    if (textEditOdaAdiEkle.Text.Length != 0)//Oda adının boş bırakılmadığı durumda yapılacak işlemler
                     {
                         oda.OdaAdi = textEditOdaAdiEkle.Text;
                         var yenioda = new Odalar { OdaAdi = oda.OdaAdi };
-                        if (db.Odalars.Any(x => x.OdaAdi == yenioda.OdaAdi))
+                        //aynı odadan eklenmemesinin kontrolü yapılıyor.
+                        if (db.Odalars.Any(x => x.OdaAdi == yenioda.OdaAdi && x.FakulteID==fakulteID && x.DepartmanID==departmanID))
                         {
                             XtraMessageBox.Show("Bu oda zaten var. Güncelleme yapmak için yan sekmeye gidiniz..");
                             this.Close();
                         }
                         else
                         {
+                            //veritabanına ekleme işlemi gerçekleştiriliyor.
                             db.Odalars.Add(oda);
                             db.SaveChanges();
 
@@ -73,13 +74,14 @@ namespace StokTakip
                     }
                     else
                     {
+                        //Alanların boş olması durumu
                         XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar ekleyiniz..");
                         this.Close();
                     }
                 }
                 catch
                 {
-
+                    //Diğer hatalar için
                     XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar ekleyiniz..");
                     this.Close();
                 }

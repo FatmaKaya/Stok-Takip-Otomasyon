@@ -12,16 +12,12 @@ namespace StokTakip
     using System;
     using System.Collections.Generic;
     
-    public partial class v_demirbassayisi
+    public partial class v_OdaDemirbasListesiOdalar
     {
-        public string DemirbasKodu { get; set; }
-        public string DemirbasAdi { get; set; }
-        public Nullable<int> DemirbasAdet { get; set; }
-        public int DemirbasTurID { get; set; }
+        public string OdaAdi { get; set; }
         public string FakulteAdi { get; set; }
         public string DepartmanAdi { get; set; }
-        public Nullable<System.DateTime> AlimTarihi { get; set; }
-        public Nullable<double> Fiyat { get; set; }
-        public int DemirbasID { get; set; }
+        public string PersonelAdi { get; set; }
+        public int OdaID { get; set; }
     }
 }

@@ -24,10 +24,13 @@ namespace StokTakip
         int demirbasID;
         private void frmOdalaraDemirbasleriEkle_Load(object sender, EventArgs e)
         {
-            //view kullanarak kayıtlı olan odalar listelendi.
-            gridControlOdalaraDemirbasEkleOdalar.DataSource = db.v_odalaraDemirbasEkleOdalar.ToList();
-            textEditOdalaraDemirbasEkleDemirbasAdi.Enabled = false;
-            spinEditOdalaraDemirbasEkleAdet.Enabled = false;
+            using (db=new stokTakipEntities())
+            {
+                //view kullanarak kayıtlı olan odalar listelendi.
+                gridControlOdalaraDemirbasEkleOdalar.DataSource = db.v_odalaraDemirbasEkleOdalar.ToList();
+                textEditOdalaraDemirbasEkleDemirbasAdi.Enabled = false;
+                spinEditOdalaraDemirbasEkleAdet.Enabled = false;
+            }
         }
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
@@ -47,13 +50,18 @@ namespace StokTakip
         }
         private void textEditOdalaraDemirbasEkleOdaAdi_EditValueChanged(object sender, EventArgs e)
         {
-            string aranacakoda = textEditOdalaraDemirbasEkleOdaAdi.Text;
-            gridControlOdalaraDemirbasEkleOdalar.DataSource = db.v_odalaraDemirbasEkleOdalar.Where(x => x.OdaAdi.ToLower().Contains(aranacakoda) || x.OdaAdi.ToUpper().Contains(aranacakoda)).ToList();
+            using (db=new stokTakipEntities())
+            {
+                //Oda arama işleminin gerçekleştirilmesi
+                string aranacakoda = textEditOdalaraDemirbasEkleOdaAdi.Text;
+                gridControlOdalaraDemirbasEkleOdalar.DataSource = db.v_odalaraDemirbasEkleOdalar.Where(x => x.OdaAdi.ToLower().Contains(aranacakoda) || x.OdaAdi.ToUpper().Contains(aranacakoda)).ToList();
+            }
         }
         private void textEditOdalaraDemirbasEkleDemirbasAdi_EditValueChanged(object sender, EventArgs e)
         {
             using (db = new stokTakipEntities())
             {
+                //demirbas arama işleminin gerçekleştirilmesi
                 string arademirbas = textEditOdalaraDemirbasEkleDemirbasAdi.Text;
                 gridControlOdalaraDemirbasEkleDemirbaslar.DataSource = db.v_odalaraDemirbasEkleDemirbaslar.Where(x => x.DemirbasAdi.ToLower().Contains(arademirbas) || x.DemirbasAdi.ToUpper().Contains(arademirbas)).ToList();
             }
@@ -62,6 +70,7 @@ namespace StokTakip
         {
             using (db = new stokTakipEntities())
             {
+                //seçilen rowdaki demirbasin idsinin alinmasi
                 int[] RowHandles = gridView2.GetSelectedRows();
                 foreach (int i in RowHandles)
                 {
@@ -69,6 +78,7 @@ namespace StokTakip
                 }
                 Demirbaslar d = db.Demirbaslars.First(x => x.DemirbasID == demirbasID);
                 spinEditOdalaraDemirbasEkleAdet.Enabled = true;
+                //seçilen demirbasa gore spinedit'e adet bilgisi giriliyor.
                 spinEditOdalaraDemirbasEkleAdet.Properties.MaxValue = Convert.ToInt32(d.DemirbasAdet);
                 spinEditOdalaraDemirbasEkleAdet.Properties.MinValue = 1;
                 spinEditOdalaraDemirbasEkleAdet.EditValue = d.DemirbasAdet;
@@ -80,20 +90,23 @@ namespace StokTakip
             {
                 using (db=new stokTakipEntities())
                 {
-                    if (fakulteAdi == null && demirbasID == 0)
+                    if (fakulteAdi == null && demirbasID == 0) 
                     {
+                        //oda ve demirbas seçilmediğinde ekle butonuna basıldığında verilen uyarı.
                         XtraMessageBox.Show("Lütfen oda seçiniz.");
                     }
                     else
                     {
                         if (demirbasID == 0)
                         {
+                            //demirbas seçilmediğinde verilen uyarı.
                             XtraMessageBox.Show("Lütfen demirbaş seçiniz.");
                         }
                         else
                         {
-                            if (Convert.ToInt32(spinEditOdalaraDemirbasEkleAdet.EditValue) != 0)
+                            if (Convert.ToInt32(spinEditOdalaraDemirbasEkleAdet.EditValue) != 0)//adet bilgisinin boş bırakılmaması için.
                             {
+                                //eklenecek demirbas bilgileri alınıyor.
                                 OdaDemirbasTablosu odademirbas = new OdaDemirbasTablosu();
                                 odademirbas.Adet = Convert.ToInt32(spinEditOdalaraDemirbasEkleAdet.Text);
                                 odademirbas.OdaID = odaID;
@@ -101,6 +114,7 @@ namespace StokTakip
                                 Demirbaslar d = db.Demirbaslars.First(x => x.DemirbasID == demirbasID);
                                 var yenidemirbas = new OdaDemirbasTablosu { DemirbasID = demirbasID };
                                 d.DemirbasAdet = (d.DemirbasAdet - Convert.ToInt32(spinEditOdalaraDemirbasEkleAdet.EditValue));
+                                //aynı idye sahip demirbas aktarıldığında demirbasın adet sayısı arttırılıyor.
                                 if (db.OdaDemirbasTablosus.Any(x => x.DemirbasID == yenidemirbas.DemirbasID))
                                 {
                                     var guncelle = db.OdaDemirbasTablosus.First(x => x.DemirbasID == yenidemirbas.DemirbasID);
@@ -111,17 +125,20 @@ namespace StokTakip
                                 }
                                 else
                                 {
+                                    //yeni bir demirbas ekleme işlemi
                                     db.OdaDemirbasTablosus.Add(odademirbas);
                                     db.SaveChanges();
                                 }
                                 if (d.DemirbasAdet == 0)
                                 {
+                                    //demirbaslar talosundaki demirbasın tamamı odaya aktarıldığında demirbas tablosunda durum bilgisi değişir.
                                     var adet = db.OdaDemirbasTablosus.First(x => x.DemirbasID == d.DemirbasID);
                                     d.DemirbasAdet = adet.Adet;
                                     d.Durum = true;
                                     db.SaveChanges();
                                 }
                                 XtraMessageBox.Show("Demirbaş odaya atandı.");
+                                //odaya demirbaş eklendikten sonra yeni işlem için alanların temizlenmesi
                                 textEditOdalaraDemirbasEkleOdaAdi.Text = null;
                                 if (textEditOdalaraDemirbasEkleOdaAdi.Text.Length != 0)
                                 {
@@ -135,6 +152,7 @@ namespace StokTakip
                             }
                             else
                             {
+                                //Alanların boş olması durumu
                                 XtraMessageBox.Show("Lütfen demirbaş seçiniz.");
                             }
                         }
@@ -143,6 +161,7 @@ namespace StokTakip
             }
             catch 
             {
+                //diğer hatalar için
                 XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar ekleyiniz..");
             }
         }

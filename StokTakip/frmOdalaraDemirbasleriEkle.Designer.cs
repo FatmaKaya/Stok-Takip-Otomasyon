@@ -90,6 +90,7 @@
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(419, 236, 450, 400);
             this.layoutControl1.Root = this.layoutControlGroup1;
             this.layoutControl1.Size = new System.Drawing.Size(364, 484);
             this.layoutControl1.TabIndex = 0;
@@ -100,7 +101,7 @@
             this.gridControlOdalaraDemirbasEkleOdalar.Location = new System.Drawing.Point(12, 36);
             this.gridControlOdalaraDemirbasEkleOdalar.MainView = this.gridView1;
             this.gridControlOdalaraDemirbasEkleOdalar.Name = "gridControlOdalaraDemirbasEkleOdalar";
-            this.gridControlOdalaraDemirbasEkleOdalar.Size = new System.Drawing.Size(340, 216);
+            this.gridControlOdalaraDemirbasEkleOdalar.Size = new System.Drawing.Size(340, 426);
             this.gridControlOdalaraDemirbasEkleOdalar.TabIndex = 5;
             this.gridControlOdalaraDemirbasEkleOdalar.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -117,6 +118,7 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsSelection.MultiSelect = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             // 
             // gridColumn1
@@ -176,7 +178,7 @@
             this.emptySpaceItem1,
             this.layoutControlItem1});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(364, 484);
             this.layoutControlGroup1.TextVisible = false;
             // 
@@ -192,9 +194,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 244);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 454);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(344, 220);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(344, 10);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem1
@@ -202,7 +204,7 @@
             this.layoutControlItem1.Control = this.gridControlOdalaraDemirbasEkleOdalar;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(344, 220);
+            this.layoutControlItem1.Size = new System.Drawing.Size(344, 430);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -222,7 +224,7 @@
             // 
             // simpleButtonOdalaraDemirbasEkle
             // 
-            this.simpleButtonOdalaraDemirbasEkle.Location = new System.Drawing.Point(167, 183);
+            this.simpleButtonOdalaraDemirbasEkle.Location = new System.Drawing.Point(167, 440);
             this.simpleButtonOdalaraDemirbasEkle.Name = "simpleButtonOdalaraDemirbasEkle";
             this.simpleButtonOdalaraDemirbasEkle.Size = new System.Drawing.Size(151, 22);
             this.simpleButtonOdalaraDemirbasEkle.StyleController = this.layoutControl2;
@@ -237,7 +239,7 @@
             0,
             0,
             0});
-            this.spinEditOdalaraDemirbasEkleAdet.Location = new System.Drawing.Point(84, 183);
+            this.spinEditOdalaraDemirbasEkleAdet.Location = new System.Drawing.Point(84, 440);
             this.spinEditOdalaraDemirbasEkleAdet.Name = "spinEditOdalaraDemirbasEkleAdet";
             this.spinEditOdalaraDemirbasEkleAdet.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -250,7 +252,7 @@
             this.gridControlOdalaraDemirbasEkleDemirbaslar.Location = new System.Drawing.Point(12, 36);
             this.gridControlOdalaraDemirbasEkleDemirbaslar.MainView = this.gridView2;
             this.gridControlOdalaraDemirbasEkleDemirbaslar.Name = "gridControlOdalaraDemirbasEkleDemirbaslar";
-            this.gridControlOdalaraDemirbasEkleDemirbaslar.Size = new System.Drawing.Size(306, 143);
+            this.gridControlOdalaraDemirbasEkleDemirbaslar.Size = new System.Drawing.Size(306, 400);
             this.gridControlOdalaraDemirbasEkleDemirbaslar.TabIndex = 5;
             this.gridControlOdalaraDemirbasEkleDemirbaslar.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -269,6 +271,7 @@
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsBehavior.Editable = false;
             this.gridView2.OptionsSelection.MultiSelect = true;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView2_RowClick);
             // 
             // gridColumn6
@@ -362,9 +365,9 @@
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 197);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 454);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(310, 267);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(310, 10);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
@@ -372,14 +375,14 @@
             this.layoutControlItem2.Control = this.gridControlOdalaraDemirbasEkleDemirbaslar;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(310, 147);
+            this.layoutControlItem2.Size = new System.Drawing.Size(310, 404);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // Adet
             // 
             this.Adet.Control = this.spinEditOdalaraDemirbasEkleAdet;
-            this.Adet.Location = new System.Drawing.Point(0, 171);
+            this.Adet.Location = new System.Drawing.Point(0, 428);
             this.Adet.Name = "Adet";
             this.Adet.Size = new System.Drawing.Size(155, 26);
             this.Adet.Text = "Adet: ";
@@ -388,7 +391,7 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.simpleButtonOdalaraDemirbasEkle;
-            this.layoutControlItem3.Location = new System.Drawing.Point(155, 171);
+            this.layoutControlItem3.Location = new System.Drawing.Point(155, 428);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(155, 26);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
@@ -402,7 +405,7 @@
             this.Controls.Add(this.layoutControl2);
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmOdalaraDemirbasleriEkle";
-            this.Text = "Odalara Demirbaşlerı Ekle";
+            this.Text = "Odalara Demirbaşları Ekle";
             this.Load += new System.EventHandler(this.frmOdalaraDemirbasleriEkle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

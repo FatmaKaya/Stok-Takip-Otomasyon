@@ -20,6 +20,7 @@ namespace StokTakip
         stokTakipEntities db = new stokTakipEntities();
         private void frmOdaBilgileriGuncelle_Load(object sender, EventArgs e)
         {
+            //stoktaki oda bilgilerinin getirilmesi
             lookUpEditOdaBilgileriGuncelle.Properties.DataSource = db.Odalars.ToList();
         }
         int OdaID;
@@ -29,7 +30,8 @@ namespace StokTakip
         {
             using (db = new stokTakipEntities())
             {
-                OdaID = Convert.ToInt32(lookUpEditOdaBilgileriGuncelle.EditValue);
+                OdaID = Convert.ToInt32(lookUpEditOdaBilgileriGuncelle.EditValue);//seçilen oda id
+                //seçilen oda bilgileri ve güncellenecek bilgilerin getirilmesi
                 Odalar oda = db.Odalars.First(x => x.OdaID == OdaID);
                 textEditOdaAdiGuncelle.Text = oda.OdaAdi;
                 lookUpEditOdaSorumlusuGuncelle.Properties.DataSource = db.Personellers.Where(x => x.FakulteID == oda.FakulteID).ToList();
@@ -53,9 +55,11 @@ namespace StokTakip
             {
                 try
                 {
-                    if (textEditOdaAdiGuncelle.Text.Length!=0)
+                    if (textEditOdaAdiGuncelle.Text.Length!=0)//Oda adının boş bırakılmadığı durumda yapılacak işlemler
                     {
-                        Odalar guncellenecekOda = db.Odalars.First(x => x.OdaID == OdaID);
+                        Odalar guncellenecekOda = db.Odalars.First(x => x.OdaID == OdaID);  //güncellenecek oda
+
+                        //Güncel bilgilerin alınması
                         guncellenecekOda.OdaAdi = textEditOdaAdiGuncelle.Text;
                         if (guncellenecekOda.PersonelID != PersonelID)
                         {
@@ -64,8 +68,9 @@ namespace StokTakip
                         }
                         else
                             guncellenecekOda.PersonelID = PersonelID;
-                        db.SaveChanges();
+                        db.SaveChanges(); //Bilgilerin kaydedilmesi
                         XtraMessageBox.Show("Oda bilgileri güncellendi.");
+                        //Yeni işlem için alanların temizlenmesi
                         lookUpEditOdaSorumlusuGuncelle.Properties.NullText = "Oda sorumlusu seçiniz.";
                         textEditDepartmanAdiGuncelle.Text = null;
                         textEditFakulteAdiGuncelle.Text = null;
@@ -74,6 +79,7 @@ namespace StokTakip
                     }
                     else
                     {
+                        //Alanların boş olması durumu
                         XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar ekleyiniz..");
                     }
 
@@ -81,6 +87,7 @@ namespace StokTakip
 
                 catch
                 {
+                    //Diğer hatalar için
                     XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar ekleyiniz..");
                 }
             }

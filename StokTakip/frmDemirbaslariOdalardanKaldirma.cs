@@ -25,10 +25,13 @@ namespace StokTakip
         int odaID;
         private void frmDemirbaslariOdalardanKaldirma_Load(object sender, EventArgs e)
         {
-            //view kullanarak demirbaşı olan odalar listelendi.
-            gridControlDemirbaslariODalardanKaldirmaOdalar.DataSource = db.v_odalardanDemirbasKaldir.ToList();
-            textEditDemirbaslariOdalardanKaldirmaDemirbasAdi.Enabled = false;
-            spinEditDemirbaslariOdalardanKaldirmaAdet.Enabled = false;
+            using (db=new stokTakipEntities())
+            {
+                //view kullanarak demirbaşı olan odalar listelendi.
+                gridControlDemirbaslariODalardanKaldirmaOdalar.DataSource = db.v_odalardanDemirbasKaldir.ToList();
+                textEditDemirbaslariOdalardanKaldirmaDemirbasAdi.Enabled = false;
+                spinEditDemirbaslariOdalardanKaldirmaAdet.Enabled = false;
+            }
         }
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
@@ -48,18 +51,27 @@ namespace StokTakip
         }
         private void textEditDemirbaslariOdalardanKAldirmaOdaAdi_EditValueChanged(object sender, EventArgs e)
         {
-            string aranacakOda = textEditDemirbaslariOdalardanKAldirmaOdaAdi.Text;
-            gridControlDemirbaslariODalardanKaldirmaOdalar.DataSource = db.v_odalardanDemirbasKaldir.Where(x => x.OdaAdi.ToLower().Contains(aranacakOda) || x.OdaAdi.ToUpper().Contains(aranacakOda)).ToList();
+            using (db=new stokTakipEntities())
+            {
+                //oda adına göre arama işleminin yapılması
+                string aranacakOda = textEditDemirbaslariOdalardanKAldirmaOdaAdi.Text;
+                gridControlDemirbaslariODalardanKaldirmaOdalar.DataSource = db.v_odalardanDemirbasKaldir.Where(x => x.OdaAdi.ToLower().Contains(aranacakOda) || x.OdaAdi.ToUpper().Contains(aranacakOda)).ToList();
+            }
         }
         private void textEditDemirbaslariOdalardanKaldirmaDemirbasAdi_EditValueChanged(object sender, EventArgs e)
         {
-            string aranacakDemirbas = textEditDemirbaslariOdalardanKaldirmaDemirbasAdi.Text;
-            gridControlDemirbaslariOdalardanKaldirmaDemirbaslar.DataSource = db.v_odalardanDemirbasKaldirDemirbas.Where(x => x.DemirbasAdi.ToLower().Contains(aranacakDemirbas) || x.DemirbasAdi.ToUpper().Contains(aranacakDemirbas)).ToList();
+            using (db = new stokTakipEntities())
+            {
+                //demirbas adına göre arama işleminin yapılması
+                string aranacakDemirbas = textEditDemirbaslariOdalardanKaldirmaDemirbasAdi.Text;
+                gridControlDemirbaslariOdalardanKaldirmaDemirbaslar.DataSource = db.v_odalardanDemirbasKaldirDemirbas.Where(x => x.DemirbasAdi.ToLower().Contains(aranacakDemirbas) || x.DemirbasAdi.ToUpper().Contains(aranacakDemirbas)).ToList();
+            }
         }
         private void gridView2_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             using (db=new stokTakipEntities())
             {
+                //seçilen rowun demirbasID bilgisi alınıyor
                 int[] RowHandles = gridView2.GetSelectedRows();
                 foreach (int i in RowHandles)
                 {
@@ -67,6 +79,7 @@ namespace StokTakip
                 }
                 OdaDemirbasTablosu od = db.OdaDemirbasTablosus.First(x => x.DemirbasID == demirbasID);
                 spinEditDemirbaslariOdalardanKaldirmaAdet.Enabled = true;
+                //secilen demirbasa gore spinedit'e adet bilgisi giriliyor.
                 spinEditDemirbaslariOdalardanKaldirmaAdet.Properties.MaxValue =Convert.ToInt32(od.Adet);
                 spinEditDemirbaslariOdalardanKaldirmaAdet.Properties.MinValue = 1;
                 spinEditDemirbaslariOdalardanKaldirmaAdet.EditValue = od.Adet;
@@ -80,17 +93,19 @@ namespace StokTakip
                 {
                     if (fakulteAdi==null && demirbasID==0)
                     {
+                        //oda ve demirbas seçilmediğinde ekle butonuna basıldığında verilen uyarı
                         XtraMessageBox.Show("Lütfen oda seçiniz.");
                     }
                     else
                     {
                         if(demirbasID==0)
                         {
+                            //demirbas seçilmediğinde verilen uyarı.
                             XtraMessageBox.Show("Lütfen demirbaş seçiniz.");
                         }
                         else
                         {
-                            if(Convert.ToInt32(spinEditDemirbaslariOdalardanKaldirmaAdet.EditValue) != 0)
+                            if(Convert.ToInt32(spinEditDemirbaslariOdalardanKaldirmaAdet.EditValue) != 0)//adet bilgisinin boş bırakılmaması için.
                             {
                                 Demirbaslar d = db.Demirbaslars.First(x => x.DemirbasID == demirbasID);
                                 d.DemirbasAdet = (d.DemirbasAdet - Convert.ToInt32(spinEditDemirbaslariOdalardanKaldirmaAdet.EditValue));
@@ -98,6 +113,7 @@ namespace StokTakip
                                 
                                 if (db.OdaDemirbasTablosus.Any(x => x.DemirbasID == yenidemirbas.DemirbasID))
                                 {
+                                    //aynı idye sahip demirbas aktarıldığında demirbasın adet sayısı çıkartılıyor.
                                     var guncelle = db.OdaDemirbasTablosus.First(x => x.DemirbasID == yenidemirbas.DemirbasID);
                                     guncelle.Adet = (guncelle.Adet - Convert.ToInt32(spinEditDemirbaslariOdalardanKaldirmaAdet.EditValue));
                                     guncelle.OdaID = odaID;
@@ -106,11 +122,21 @@ namespace StokTakip
                                 }
                                 if (d.Durum==true)
                                 {
-                                    d.Durum = false;
-                                    d.DemirbasAdet = Convert.ToInt32(spinEditDemirbaslariOdalardanKaldirmaAdet.EditValue);
-                                    OdaDemirbasTablosu odademirbas = db.OdaDemirbasTablosus.First(x => x.DemirbasID == demirbasID);
-                                    db.OdaDemirbasTablosus.Remove(odademirbas);
-                                    db.SaveChanges();
+                                    if(db.Demirbaslars.Any(x=>x.DemirbasID==demirbasID))
+                                    {
+                                        //demirbaslar talosundaki demirbasın tamamı odaya aktarılmıssa demirbas tablosunda durum bilgisi değişir.
+                                        d.Durum = false;
+                                        d.DemirbasAdet = Convert.ToInt32(spinEditDemirbaslariOdalardanKaldirmaAdet.EditValue);
+                                        db.SaveChanges();
+
+                                        //demirbas odademirbas tablosundan silinir
+                                        OdaDemirbasTablosu odademirbas = db.OdaDemirbasTablosus.First(x => x.DemirbasID == demirbasID);
+                                        if (odademirbas.Adet == 0)
+                                        {
+                                            db.OdaDemirbasTablosus.Remove(odademirbas);
+                                            db.SaveChanges();
+                                        }
+                                    }                  
                                 }
                                 else
                                 {
@@ -124,6 +150,7 @@ namespace StokTakip
                                     db.SaveChanges();
                                 }
                                 XtraMessageBox.Show("Demirbaş odadan kaldırıldı.");
+                                //odadan demirbas kaldırıldıktan sonra yeni işlem için alanların temizlenmesi
                                 textEditDemirbaslariOdalardanKAldirmaOdaAdi.Text = null;
                                 if(textEditDemirbaslariOdalardanKAldirmaOdaAdi.Text.Length!=0)
                                 {
@@ -141,6 +168,7 @@ namespace StokTakip
                             }
                             else
                             {
+                                //Alanların boş olması durumu
                                 XtraMessageBox.Show("Lütfen demirbaş seçiniz.");
                             }
                         }
@@ -150,6 +178,7 @@ namespace StokTakip
             }
             catch 
             {
+                //diğer hatalar için
                 XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar ekleyiniz..");
             }
         }
