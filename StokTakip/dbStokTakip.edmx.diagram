@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="48deeb3e60bd4235a0fbe8c37b846a76" Name="Diagram1" ZoomLevel="99">
+      <Diagram DiagramId="48deeb3e60bd4235a0fbe8c37b846a76" Name="Diagram1" ZoomLevel="84">
         <EntityTypeShape EntityType="stokTakipModel.Demirbaslar" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="stokTakipModel.DemirbasTurleri" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="stokTakipModel.Departmanlar" Width="1.5" PointX="8" PointY="4.875" IsExpanded="true" />

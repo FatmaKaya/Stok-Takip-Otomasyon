@@ -101,7 +101,7 @@
             this.gridControlDemirbaslariODalardanKaldirmaOdalar.Location = new System.Drawing.Point(12, 36);
             this.gridControlDemirbaslariODalardanKaldirmaOdalar.MainView = this.gridView1;
             this.gridControlDemirbaslariODalardanKaldirmaOdalar.Name = "gridControlDemirbaslariODalardanKaldirmaOdalar";
-            this.gridControlDemirbaslariODalardanKaldirmaOdalar.Size = new System.Drawing.Size(340, 280);
+            this.gridControlDemirbaslariODalardanKaldirmaOdalar.Size = new System.Drawing.Size(340, 426);
             this.gridControlDemirbaslariODalardanKaldirmaOdalar.TabIndex = 6;
             this.gridControlDemirbaslariODalardanKaldirmaOdalar.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -195,9 +195,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 308);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 454);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(344, 156);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(344, 10);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
@@ -205,7 +205,7 @@
             this.layoutControlItem2.Control = this.gridControlDemirbaslariODalardanKaldirmaOdalar;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(344, 284);
+            this.layoutControlItem2.Size = new System.Drawing.Size(344, 430);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -230,7 +230,7 @@
             0,
             0,
             0});
-            this.spinEditDemirbaslariOdalardanKaldirmaAdet.Location = new System.Drawing.Point(81, 183);
+            this.spinEditDemirbaslariOdalardanKaldirmaAdet.Location = new System.Drawing.Point(81, 440);
             this.spinEditDemirbaslariOdalardanKaldirmaAdet.Name = "spinEditDemirbaslariOdalardanKaldirmaAdet";
             this.spinEditDemirbaslariOdalardanKaldirmaAdet.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -245,7 +245,7 @@
             // 
             // simpleButtonDemirbaslariOdalardanKaldir
             // 
-            this.simpleButtonDemirbaslariOdalardanKaldir.Location = new System.Drawing.Point(167, 183);
+            this.simpleButtonDemirbaslariOdalardanKaldir.Location = new System.Drawing.Point(167, 440);
             this.simpleButtonDemirbaslariOdalardanKaldir.Name = "simpleButtonDemirbaslariOdalardanKaldir";
             this.simpleButtonDemirbaslariOdalardanKaldir.Size = new System.Drawing.Size(151, 22);
             this.simpleButtonDemirbaslariOdalardanKaldir.StyleController = this.layoutControl2;
@@ -258,7 +258,7 @@
             this.gridControlDemirbaslariOdalardanKaldirmaDemirbaslar.Location = new System.Drawing.Point(12, 36);
             this.gridControlDemirbaslariOdalardanKaldirmaDemirbaslar.MainView = this.gridView2;
             this.gridControlDemirbaslariOdalardanKaldirmaDemirbaslar.Name = "gridControlDemirbaslariOdalardanKaldirmaDemirbaslar";
-            this.gridControlDemirbaslariOdalardanKaldirmaDemirbaslar.Size = new System.Drawing.Size(306, 143);
+            this.gridControlDemirbaslariOdalardanKaldirmaDemirbaslar.Size = new System.Drawing.Size(306, 400);
             this.gridControlDemirbaslariOdalardanKaldirmaDemirbaslar.TabIndex = 6;
             this.gridControlDemirbaslariOdalardanKaldirmaDemirbaslar.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -380,9 +380,9 @@
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 197);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 454);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(310, 267);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(310, 10);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem4
@@ -390,14 +390,14 @@
             this.layoutControlItem4.Control = this.gridControlDemirbaslariOdalardanKaldirmaDemirbaslar;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(310, 147);
+            this.layoutControlItem4.Size = new System.Drawing.Size(310, 404);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.simpleButtonDemirbaslariOdalardanKaldir;
-            this.layoutControlItem5.Location = new System.Drawing.Point(155, 171);
+            this.layoutControlItem5.Location = new System.Drawing.Point(155, 428);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(155, 26);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
@@ -406,7 +406,7 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.spinEditDemirbaslariOdalardanKaldirmaAdet;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 171);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 428);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(155, 26);
             this.layoutControlItem1.Text = "Adet: ";
