@@ -263,6 +263,12 @@
     <Compile Include="v_OdaDemirbasListesiOdalar.cs">
       <DependentUpon>dbStokTakip.tt</DependentUpon>
     </Compile>
+    <Compile Include="v_demirbassayisi.cs">
+      <DependentUpon>dbStokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_odaDemirbas.cs">
+      <DependentUpon>dbStokTakip.tt</DependentUpon>
+    </Compile>
     <Compile Include="v_odalaraDemirbasEkleDemirbaslar.cs">
       <DependentUpon>dbStokTakip.tt</DependentUpon>
     </Compile>

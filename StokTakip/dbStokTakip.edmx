@@ -962,6 +962,22 @@ warning 6002: The table/view 'stokTakip.dbo.v_odalardanDemirbasKaldirDemirbas' d
 <<<<<<< HEAD
         <EntityType Name="v_OdaDemirbasListesi">
           <Key>
+            <PropertyRef Name="DemirbasID" />
+            <PropertyRef Name="DemirbasTurID" />
+          </Key>
+          <Property Name="DemirbasID" Type="Int32" Nullable="false" />
+          <Property Name="DemirbasKodu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DemirbasAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DemirbasAdet" Type="Int32" />
+          <Property Name="DemirbasTurID" Type="Int32" Nullable="false" />
+          <Property Name="DemirbasTurAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FakulteAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DepartmanAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="AlimTarihi" Type="DateTime" Precision="3" />
+          <Property Name="Fiyat" Type="Double" />
+        </EntityType>
+        <EntityType Name="v_odalardakiDemirbasSayisi">
+          <Key>
             <PropertyRef Name="OdaDemirbasID" />
 =======
         <EntityType Name="v_demirbassayisi">
