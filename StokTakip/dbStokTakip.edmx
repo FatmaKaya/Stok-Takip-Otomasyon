@@ -545,15 +545,6 @@ warning 6002: The table/view 'stokTakip.dbo.v_odalardanDemirbasKaldirDemirbas' d
           <EntitySet Name="Odalars" EntityType="stokTakipModel.Odalar" />
           <EntitySet Name="Personellers" EntityType="stokTakipModel.Personeller" />
           <EntitySet Name="sysdiagrams" EntityType="stokTakipModel.sysdiagram" />
-          <EntitySet Name="v_demirbassayisi" EntityType="stokTakipModel.v_demirbassayisi" />
-          <EntitySet Name="v_odaDemirbas" EntityType="stokTakipModel.v_odaDemirbas" />
-          <EntitySet Name="v_OdaDemirbasListesi" EntityType="stokTakipModel.v_OdaDemirbasListesi" />
-          <EntitySet Name="v_OdaDemirbasListesiOdalar" EntityType="stokTakipModel.v_OdaDemirbasListesiOdalar" />
-          <EntitySet Name="v_odalaraDemirbasEkleDemirbaslar" EntityType="stokTakipModel.v_odalaraDemirbasEkleDemirbaslar" />
-          <EntitySet Name="v_odalaraDemirbasEkleOdalar" EntityType="stokTakipModel.v_odalaraDemirbasEkleOdalar" />
-          <EntitySet Name="v_odalardakiDemirbasSayisi" EntityType="stokTakipModel.v_odalardakiDemirbasSayisi" />
-          <EntitySet Name="v_odalardanDemirbasKaldir" EntityType="stokTakipModel.v_odalardanDemirbasKaldir" />
-          <EntitySet Name="v_odalardanDemirbasKaldirDemirbas" EntityType="stokTakipModel.v_odalardanDemirbasKaldirDemirbas" />
           <AssociationSet Name="FK_Demirbaslar_DemirbasTurleri1" Association="stokTakipModel.FK_Demirbaslar_DemirbasTurleri1">
             <End Role="DemirbasTurleri" EntitySet="DemirbasTurleris" />
             <End Role="Demirbaslar" EntitySet="Demirbaslars" />
