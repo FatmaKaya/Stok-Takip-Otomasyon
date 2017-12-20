@@ -79,6 +79,7 @@
             this.textEditOdaAdiEkle.Size = new System.Drawing.Size(234, 20);
             this.textEditOdaAdiEkle.StyleController = this.layoutControl1;
             this.textEditOdaAdiEkle.TabIndex = 10;
+            this.textEditOdaAdiEkle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEditOdaAdiEkle_KeyPress);
             // 
             // lookUpEditBolumAdiEkle
             // 

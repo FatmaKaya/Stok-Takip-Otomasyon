@@ -68,7 +68,7 @@
             // 
             // lookUpEditKaldirDemirbas
             // 
-            this.lookUpEditKaldirDemirbas.Location = new System.Drawing.Point(59, 12);
+            this.lookUpEditKaldirDemirbas.Location = new System.Drawing.Point(84, 12);
             this.lookUpEditKaldirDemirbas.Name = "lookUpEditKaldirDemirbas";
             this.lookUpEditKaldirDemirbas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Search)});
@@ -77,13 +77,15 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DemirbasAdi", "Demirbaş Adı"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DemirbasAdet", "Adet")});
             this.lookUpEditKaldirDemirbas.Properties.DisplayMember = "DemirbasAdi";
+            this.lookUpEditKaldirDemirbas.Properties.MaxLength = 25;
             this.lookUpEditKaldirDemirbas.Properties.NullText = "";
             this.lookUpEditKaldirDemirbas.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lookUpEditKaldirDemirbas.Properties.ValueMember = "DemirbasID";
-            this.lookUpEditKaldirDemirbas.Size = new System.Drawing.Size(329, 20);
+            this.lookUpEditKaldirDemirbas.Size = new System.Drawing.Size(304, 20);
             this.lookUpEditKaldirDemirbas.StyleController = this.layoutControl1;
             this.lookUpEditKaldirDemirbas.TabIndex = 4;
             this.lookUpEditKaldirDemirbas.EditValueChanged += new System.EventHandler(this.lookUpEditKaldirDemirbas_EditValueChanged);
+            this.lookUpEditKaldirDemirbas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lookUpEditKaldirDemirbas_KeyPress);
             // 
             // layoutControlGroup1
             // 
@@ -103,8 +105,8 @@
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(380, 24);
-            this.layoutControlItem1.Text = "Demirbas";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(44, 13);
+            this.layoutControlItem1.Text = "Demirbaş Adı: ";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(69, 13);
             // 
             // emptySpaceItem1
             // 

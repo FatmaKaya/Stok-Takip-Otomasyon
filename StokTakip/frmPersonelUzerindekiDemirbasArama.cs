@@ -28,6 +28,10 @@ namespace StokTakip
         {//seçilen personel id alınıyor
             personelID = Convert.ToInt32(lookUpEditPersonelAdi.EditValue);
         }
+        private void lookUpEditPersonelAdi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar);
+        }
         private void simpleButtonpersonelUzerindekiDemirbaslariAra_Click_1(object sender, EventArgs e)
         {//personel üzerindeki demirbaşlar listeleniyor
             using (db = new stokTakipEntities())

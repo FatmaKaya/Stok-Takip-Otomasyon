@@ -45,6 +45,7 @@
             this.TextEditSifre.EditValue = "";
             this.TextEditSifre.Location = new System.Drawing.Point(52, 238);
             this.TextEditSifre.Name = "TextEditSifre";
+            this.TextEditSifre.Properties.MaxLength = 12;
             this.TextEditSifre.Properties.PasswordChar = '*';
             this.TextEditSifre.Size = new System.Drawing.Size(167, 20);
             this.TextEditSifre.TabIndex = 3;
@@ -90,18 +91,17 @@
             // 
             this.LCSifre.Location = new System.Drawing.Point(52, 219);
             this.LCSifre.Name = "LCSifre";
-            this.LCSifre.Size = new System.Drawing.Size(22, 13);
+            this.LCSifre.Size = new System.Drawing.Size(30, 13);
             this.LCSifre.TabIndex = 8;
-            this.LCSifre.Text = "Şifre";
+            this.LCSifre.Text = "Parola";
             // 
             // TextEditKullaniciAdi
             // 
             this.TextEditKullaniciAdi.EditValue = "";
             this.TextEditKullaniciAdi.Location = new System.Drawing.Point(52, 184);
             this.TextEditKullaniciAdi.Name = "TextEditKullaniciAdi";
-            this.TextEditKullaniciAdi.Properties.Appearance.Font = new System.Drawing.Font("Eras Demi ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextEditKullaniciAdi.Properties.Appearance.Options.UseFont = true;
-            this.TextEditKullaniciAdi.Size = new System.Drawing.Size(167, 22);
+            this.TextEditKullaniciAdi.Properties.MaxLength = 25;
+            this.TextEditKullaniciAdi.Size = new System.Drawing.Size(167, 20);
             this.TextEditKullaniciAdi.TabIndex = 1;
             // 
             // frmKullaniciGiris

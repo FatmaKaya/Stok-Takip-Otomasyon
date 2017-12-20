@@ -91,7 +91,6 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DemirbasTurAdi", "Tür")});
             this.lookUpEditDemirbasTur.Properties.DisplayMember = "DemirbasTurAdi";
             this.lookUpEditDemirbasTur.Properties.NullText = "";
-            this.lookUpEditDemirbasTur.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lookUpEditDemirbasTur.Properties.ValueMember = "DemirbasTurID";
             this.lookUpEditDemirbasTur.Size = new System.Drawing.Size(262, 20);
             this.lookUpEditDemirbasTur.StyleController = this.layoutControl1;
@@ -109,7 +108,6 @@
             this.lookUpEditDemirbasEkleDepartmanAdi.Properties.DisplayMember = "DepartmanAdi";
             this.lookUpEditDemirbasEkleDepartmanAdi.Properties.DropDownRows = 5;
             this.lookUpEditDemirbasEkleDepartmanAdi.Properties.NullText = "";
-            this.lookUpEditDemirbasEkleDepartmanAdi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lookUpEditDemirbasEkleDepartmanAdi.Properties.ValueMember = "DepartmanID";
             this.lookUpEditDemirbasEkleDepartmanAdi.Size = new System.Drawing.Size(262, 20);
             this.lookUpEditDemirbasEkleDepartmanAdi.StyleController = this.layoutControl1;
@@ -127,7 +125,6 @@
             this.lookUpEditDemirbasEkleFakulteAdi.Properties.DisplayMember = "FakulteAdi";
             this.lookUpEditDemirbasEkleFakulteAdi.Properties.DropDownRows = 5;
             this.lookUpEditDemirbasEkleFakulteAdi.Properties.NullText = "";
-            this.lookUpEditDemirbasEkleFakulteAdi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lookUpEditDemirbasEkleFakulteAdi.Properties.ValueMember = "FakulteID";
             this.lookUpEditDemirbasEkleFakulteAdi.Size = new System.Drawing.Size(262, 20);
             this.lookUpEditDemirbasEkleFakulteAdi.StyleController = this.layoutControl1;
@@ -174,6 +171,7 @@
             this.TextEditEkleDemirbasFiyat.Location = new System.Drawing.Point(90, 108);
             this.TextEditEkleDemirbasFiyat.Name = "TextEditEkleDemirbasFiyat";
             this.TextEditEkleDemirbasFiyat.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.TextEditEkleDemirbasFiyat.Properties.MaxLength = 10;
             this.TextEditEkleDemirbasFiyat.Size = new System.Drawing.Size(262, 20);
             this.TextEditEkleDemirbasFiyat.StyleController = this.layoutControl1;
             this.TextEditEkleDemirbasFiyat.TabIndex = 8;
@@ -188,6 +186,7 @@
             this.TextEditEkleDemirbasAd.Size = new System.Drawing.Size(262, 20);
             this.TextEditEkleDemirbasAd.StyleController = this.layoutControl1;
             this.TextEditEkleDemirbasAd.TabIndex = 6;
+            this.TextEditEkleDemirbasAd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextEditEkleDemirbasAd_KeyPress);
             // 
             // layoutControlGroup1
             // 

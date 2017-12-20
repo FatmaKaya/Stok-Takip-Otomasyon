@@ -46,6 +46,10 @@ namespace StokTakip
             int personelID = Convert.ToInt32(lookUpEditOdaSorumlusuEkle.EditValue);
             oda.PersonelID = personelID;
         }
+        private void textEditOdaAdiEkle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar) && !char.IsNumber(e.KeyChar) && e.KeyChar != '-';
+        }
         private void simpleButtonOdaKaydet_Click(object sender, EventArgs e)
         {
             using (db = new stokTakipEntities())

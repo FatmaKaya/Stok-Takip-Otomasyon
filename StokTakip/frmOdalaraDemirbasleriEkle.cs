@@ -22,6 +22,7 @@ namespace StokTakip
         string fakulteAdi;
         int odaID;
         int demirbasID;
+        string departmanAdi;
         private void frmOdalaraDemirbasleriEkle_Load(object sender, EventArgs e)
         {
             using (db=new stokTakipEntities())
@@ -42,9 +43,10 @@ namespace StokTakip
                 {
                     fakulteAdi = gridView1.GetRowCellValue(i, gridView1.Columns["FakulteAdi"]).ToString();
                     odaID = Convert.ToInt32(gridView1.GetRowCellValue(i, gridView1.Columns["OdaID"]));
+                    departmanAdi = gridView1.GetRowCellValue(i, gridView1.Columns["DepartmanAdi"]).ToString();
                 }
                 //seçilen odanın fakültesine göre demirbaslar view ile listeletiliyor
-                gridControlOdalaraDemirbasEkleDemirbaslar.DataSource = db.v_odalaraDemirbasEkleDemirbaslar.Where(x => x.FakulteAdi == fakulteAdi).ToList();
+                gridControlOdalaraDemirbasEkleDemirbaslar.DataSource = db.v_odalaraDemirbasEkleDemirbaslar.Where(x => x.FakulteAdi == fakulteAdi && x.DepartmanAdi==departmanAdi).ToList();
                 textEditOdalaraDemirbasEkleDemirbasAdi.Enabled = true;
             }
         }
@@ -57,6 +59,10 @@ namespace StokTakip
                 gridControlOdalaraDemirbasEkleOdalar.DataSource = db.v_odalaraDemirbasEkleOdalar.Where(x => x.OdaAdi.ToLower().Contains(aranacakoda) || x.OdaAdi.ToUpper().Contains(aranacakoda)).ToList();
             }
         }
+        private void textEditOdalaraDemirbasEkleOdaAdi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar) && !char.IsNumber(e.KeyChar);
+        }
         private void textEditOdalaraDemirbasEkleDemirbasAdi_EditValueChanged(object sender, EventArgs e)
         {
             using (db = new stokTakipEntities())
@@ -65,6 +71,10 @@ namespace StokTakip
                 string arademirbas = textEditOdalaraDemirbasEkleDemirbasAdi.Text;
                 gridControlOdalaraDemirbasEkleDemirbaslar.DataSource = db.v_odalaraDemirbasEkleDemirbaslar.Where(x => x.DemirbasAdi.ToLower().Contains(arademirbas) || x.DemirbasAdi.ToUpper().Contains(arademirbas)).ToList();
             }
+        }
+        private void textEditOdalaraDemirbasEkleDemirbasAdi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar);
         }
         private void gridView2_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {

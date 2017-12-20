@@ -55,6 +55,10 @@ namespace StokTakip
             }
                    
         }
+        private void TextEditEkleDemirbasAd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar);
+        }
         private void SimpleButtonEkle_Click(object sender, EventArgs e)
         {
                 using (db = new stokTakipEntities())
@@ -104,6 +108,5 @@ namespace StokTakip
             }
 
         }
-  
     }
 }

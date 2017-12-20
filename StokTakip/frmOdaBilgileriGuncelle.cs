@@ -43,12 +43,18 @@ namespace StokTakip
                 lookUpEditOdaSorumlusuGuncelle.Properties.NullText = p.PersonelAdi;
             }
         }
-
+        private void lookUpEditOdaBilgileriGuncelle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar); 
+        }
         private void lookUpEditOdaSorumlusuGuncelle_EditValueChanged(object sender, EventArgs e)
         {
             PersonelID = Convert.ToInt32(lookUpEditOdaSorumlusuGuncelle.EditValue);
         }
-
+        private void textEditOdaAdiGuncelle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar) && !char.IsNumber(e.KeyChar) && e.KeyChar != '-';
+        }
         private void simpleButtonGuncelle_Click(object sender, EventArgs e)
         {
             using (db = new stokTakipEntities())

@@ -174,6 +174,7 @@
             this.textEditODLOdaAdi.StyleController = this.layoutControl1;
             this.textEditODLOdaAdi.TabIndex = 4;
             this.textEditODLOdaAdi.EditValueChanged += new System.EventHandler(this.textEditODLOdaAdi_EditValueChanged);
+            this.textEditODLOdaAdi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEditODLOdaAdi_KeyPress);
             // 
             // layoutControlGroup1
             // 

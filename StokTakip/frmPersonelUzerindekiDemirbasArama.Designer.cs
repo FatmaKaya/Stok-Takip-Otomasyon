@@ -36,21 +36,21 @@
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.simpleButtonpersonelUzerindekiDemirbaslariAra = new DevExpress.XtraEditors.SimpleButton();
             this.lookUpEditPersonelAdi = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButtonpersonelUzerindekiDemirbaslariAra = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.gridControlPersonelUzerindekiDemirbaslar = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditPersonelAdi.Properties)).BeginInit();
@@ -60,9 +60,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPersonelUzerindekiDemirbaslar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,6 +126,16 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // simpleButtonpersonelUzerindekiDemirbaslariAra
+            // 
+            this.simpleButtonpersonelUzerindekiDemirbaslariAra.Location = new System.Drawing.Point(12, 36);
+            this.simpleButtonpersonelUzerindekiDemirbaslariAra.Name = "simpleButtonpersonelUzerindekiDemirbaslariAra";
+            this.simpleButtonpersonelUzerindekiDemirbaslariAra.Size = new System.Drawing.Size(303, 22);
+            this.simpleButtonpersonelUzerindekiDemirbaslariAra.StyleController = this.layoutControl1;
+            this.simpleButtonpersonelUzerindekiDemirbaslariAra.TabIndex = 5;
+            this.simpleButtonpersonelUzerindekiDemirbaslariAra.Text = "Ara";
+            this.simpleButtonpersonelUzerindekiDemirbaslariAra.Click += new System.EventHandler(this.simpleButtonpersonelUzerindekiDemirbaslariAra_Click_1);
+            // 
             // lookUpEditPersonelAdi
             // 
             this.lookUpEditPersonelAdi.Location = new System.Drawing.Point(74, 12);
@@ -136,6 +146,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PersonelAdi", "Personel Adı")});
             this.lookUpEditPersonelAdi.Properties.DisplayMember = "PersonelAdi";
             this.lookUpEditPersonelAdi.Properties.DropDownRows = 5;
+            this.lookUpEditPersonelAdi.Properties.MaxLength = 25;
             this.lookUpEditPersonelAdi.Properties.NullText = "";
             this.lookUpEditPersonelAdi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lookUpEditPersonelAdi.Properties.ValueMember = "PersonelID";
@@ -143,6 +154,7 @@
             this.lookUpEditPersonelAdi.StyleController = this.layoutControl1;
             this.lookUpEditPersonelAdi.TabIndex = 4;
             this.lookUpEditPersonelAdi.EditValueChanged += new System.EventHandler(this.lookUpEditPersonelAdi_EditValueChanged);
+            this.lookUpEditPersonelAdi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lookUpEditPersonelAdi_KeyPress);
             // 
             // layoutControlGroup1
             // 
@@ -174,16 +186,6 @@
             this.layoutControlItem1.Text = "Personel Adı";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(59, 13);
             // 
-            // simpleButtonpersonelUzerindekiDemirbaslariAra
-            // 
-            this.simpleButtonpersonelUzerindekiDemirbaslariAra.Location = new System.Drawing.Point(12, 36);
-            this.simpleButtonpersonelUzerindekiDemirbaslariAra.Name = "simpleButtonpersonelUzerindekiDemirbaslariAra";
-            this.simpleButtonpersonelUzerindekiDemirbaslariAra.Size = new System.Drawing.Size(303, 22);
-            this.simpleButtonpersonelUzerindekiDemirbaslariAra.StyleController = this.layoutControl1;
-            this.simpleButtonpersonelUzerindekiDemirbaslariAra.TabIndex = 5;
-            this.simpleButtonpersonelUzerindekiDemirbaslariAra.Text = "Ara";
-            this.simpleButtonpersonelUzerindekiDemirbaslariAra.Click += new System.EventHandler(this.simpleButtonpersonelUzerindekiDemirbaslariAra_Click_1);
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.simpleButtonpersonelUzerindekiDemirbaslariAra;
@@ -203,17 +205,6 @@
             this.layoutControl2.Size = new System.Drawing.Size(439, 446);
             this.layoutControl2.TabIndex = 1;
             this.layoutControl2.Text = "layoutControl2";
-            // 
-            // layoutControlGroup2
-            // 
-            this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup2.GroupBordersVisible = false;
-            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem3});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(439, 446);
-            this.layoutControlGroup2.TextVisible = false;
             // 
             // gridControlPersonelUzerindekiDemirbaslar
             // 
@@ -236,15 +227,6 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.gridControlPersonelUzerindekiDemirbaslar;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(419, 426);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
             // 
             // gridColumn1
             // 
@@ -278,6 +260,26 @@
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 3;
             // 
+            // layoutControlGroup2
+            // 
+            this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup2.GroupBordersVisible = false;
+            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem3});
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup2.Name = "layoutControlGroup2";
+            this.layoutControlGroup2.Size = new System.Drawing.Size(439, 446);
+            this.layoutControlGroup2.TextVisible = false;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.gridControlPersonelUzerindekiDemirbaslar;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(419, 426);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
             // frmPersonelUzerindekiDemirbasArama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,9 +299,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPersonelUzerindekiDemirbaslar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
 

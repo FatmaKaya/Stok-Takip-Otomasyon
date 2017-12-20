@@ -20,25 +20,40 @@ namespace StokTakip
         stokTakipEntities db = new stokTakipEntities();
         private void textEditODLOdaAdi_EditValueChanged(object sender, EventArgs e)
         {
+            //oda adına göre arama işleminin yapılması.
             using (db=new stokTakipEntities())
             {
                 string araOda = textEditODLOdaAdi.Text;
                 gridControlOdaDemirbasListesi.DataSource = db.v_OdaDemirbasListesiOdalar.Where(x => x.OdaAdi.ToLower().Contains(araOda) || x.OdaAdi.ToUpper().Contains(araOda)).ToList();
             }
         }
+        private void textEditODLOdaAdi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar) && !char.IsNumber(e.KeyChar);
+        }
         private void frmOdaDemirbasListesi_Load(object sender, EventArgs e)
         {
             gridControlOdaDemirbasListesi.DataSource = db.v_OdaDemirbasListesiOdalar.ToList();
         }
-        v_OdaDemirbasListesi liste = new v_OdaDemirbasListesi();
+        int odaID;
         private void simpleButtonODLRapor_Click(object sender, EventArgs e)
         {
-            using (frmRapor frm=new frmRapor())
+            using (db=new stokTakipEntities())
             {
-                //raporAl Fonksiyonunu çağırıyoruz.
-                frm.raporAl(liste);
-                frm.ShowDialog();
+                //seçilen gridcontroldeki odanın ıdsini alıyoruz.
+                int[] RowHandles = gridView1.GetSelectedRows();
+                foreach (int i in RowHandles)
+                {
+                    odaID = Convert.ToInt32(gridView1.GetRowCellValue(i, gridView1.Columns["OdaID"]));
+                }
+                using (frmRapor frm = new frmRapor())
+                {
+                    //raporAl Fonksiyonunu çağırıyoruz.
+                    frm.raporAl(odaID);
+                    frm.ShowDialog();
+                }
             }
+           
         }
     }
 }

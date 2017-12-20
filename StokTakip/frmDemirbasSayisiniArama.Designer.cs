@@ -56,14 +56,14 @@
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.GridControlDemirbasSayisiAramaDemirbaslar = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditAdetineGore.Properties)).BeginInit();
@@ -221,6 +221,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.DateEditAlimTarihi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.DateEditAlimTarihi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.DateEditAlimTarihi.Size = new System.Drawing.Size(219, 20);
             this.DateEditAlimTarihi.StyleController = this.layoutControl1;
             this.DateEditAlimTarihi.TabIndex = 7;
@@ -230,6 +231,7 @@
             this.dbAFiyat.Location = new System.Drawing.Point(88, 129);
             this.dbAFiyat.Name = "dbAFiyat";
             this.dbAFiyat.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.dbAFiyat.Properties.MaxLength = 10;
             this.dbAFiyat.Size = new System.Drawing.Size(219, 20);
             this.dbAFiyat.StyleController = this.layoutControl1;
             this.dbAFiyat.TabIndex = 6;
@@ -248,6 +250,8 @@
             // 
             this.TextEditDemirbasAdi.Location = new System.Drawing.Point(88, 35);
             this.TextEditDemirbasAdi.Name = "TextEditDemirbasAdi";
+            this.TextEditDemirbasAdi.Properties.MaxLength = 25;
+            this.TextEditDemirbasAdi.Properties.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextEditDemirbasAdi_Properties_KeyPress);
             this.TextEditDemirbasAdi.Size = new System.Drawing.Size(219, 20);
             this.TextEditDemirbasAdi.StyleController = this.layoutControl1;
             this.TextEditDemirbasAdi.TabIndex = 4;
@@ -415,26 +419,6 @@
             this.gridView1.GridControl = this.GridControlDemirbasSayisiAramaDemirbaslar;
             this.gridView1.Name = "gridView1";
             // 
-            // layoutControlGroup2
-            // 
-            this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup2.GroupBordersVisible = false;
-            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem2});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(509, 361);
-            this.layoutControlGroup2.TextVisible = false;
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.GridControlDemirbasSayisiAramaDemirbaslar;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(489, 341);
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextVisible = false;
-            // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Demirbaş Kodu";
@@ -481,6 +465,26 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 3;
+            // 
+            // layoutControlGroup2
+            // 
+            this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup2.GroupBordersVisible = false;
+            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem2});
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup2.Name = "layoutControlGroup2";
+            this.layoutControlGroup2.Size = new System.Drawing.Size(509, 361);
+            this.layoutControlGroup2.TextVisible = false;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.GridControlDemirbasSayisiAramaDemirbaslar;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(489, 341);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
             // 
             // frmDemirbasSayisiniArama
             // 

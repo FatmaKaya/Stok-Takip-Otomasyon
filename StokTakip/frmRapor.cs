@@ -8,6 +8,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Collections;
+using DevExpress.XtraReports.UI;
+using System.Data.SqlClient;
+using DevExpress.DataAccess.Sql;
 
 namespace StokTakip
 {
@@ -17,15 +21,24 @@ namespace StokTakip
         {
             InitializeComponent();
         }
-        public void raporAl(v_OdaDemirbasListesi data)
+        stokTakipEntities db = new stokTakipEntities();
+        //raporAl fonksiyonu ile gridcontrolden tıklanan odanın ıd'sine eşit olan listedeki verileri bulup ekrana yansıtıyoruz.
+        public void raporAl(int odaID)
         {
-            odaDemirbasReport rapor = new odaDemirbasReport();
-            foreach (DevExpress.XtraReports.Parameters.Parameter p in rapor.Parameters)
-                p.Visible = false;
-            //parametrelere gelecek değerleri fonksiyonda belirtiyoruz.
-            rapor.initData(data.FakulteAdi, data.DepartmanAdi, data.OdaAdi, data.PersonelAdi);
-            documentViewer1.DocumentSource = rapor;
-            rapor.CreateDocument();
+            using (db = new stokTakipEntities())
+            {
+                odaDemirbasReport rapor = new odaDemirbasReport();
+                List<v_OdaDemirbasListesi> liste = db.v_OdaDemirbasListesi.Where(x => x.OdaID == odaID).ToList();
+                rapor.DataSource = liste;
+                //odaDemirbasReport'da tanımladığımız fonksiyonu çağrıyoruz.
+                rapor.initData(liste);
+                documentViewer1.DocumentSource = rapor;
+                rapor.CreateDocument();
+            }
+
         }
-    }    
+
+    }
 }
+       
+      

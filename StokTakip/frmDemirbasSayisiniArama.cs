@@ -44,6 +44,10 @@ namespace StokTakip
             Adet.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             checkEditDemirbasAdinaGore.Checked = false;
         }
+        private void TextEditDemirbasAdi_Properties_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar);
+        }
 
         private void checkEditDemirbasTuruneGore_CheckedChanged(object sender, EventArgs e)
         {

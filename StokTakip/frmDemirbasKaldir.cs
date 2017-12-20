@@ -36,10 +36,14 @@ namespace StokTakip
 
                 //Demirbaşa göre kaldırılacak adet sınırlanması
                 spinEditKaldirDemirbasAdet.Properties.MaxValue = Convert.ToInt32(demirbas.DemirbasAdet);
+                spinEditKaldirDemirbasAdet.EditValue= Convert.ToInt32(demirbas.DemirbasAdet);
 
             }
         }
-
+        private void lookUpEditKaldirDemirbas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar);
+        }
         private void simpleButtonKaldır_Click_1(object sender, EventArgs e)
         {
            

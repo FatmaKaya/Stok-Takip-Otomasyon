@@ -129,9 +129,11 @@ warning 6002: The table/view 'stokTakip.dbo.v_odaDemirbas' does not have a prima
 warning 6002: The table/view 'stokTakip.dbo.v_OdaDemirbasListesi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_OdaDemirbasListesi">
           <Key>
+            <PropertyRef Name="OdaID" />
             <PropertyRef Name="OdaDemirbasID" />
           </Key>
           <Property Name="OdaAdi" Type="nvarchar" MaxLength="250" />
+          <Property Name="OdaID" Type="int" Nullable="false" />
           <Property Name="FakulteAdi" Type="nvarchar" MaxLength="250" />
           <Property Name="DepartmanAdi" Type="nvarchar" MaxLength="250" />
           <Property Name="PersonelAdi" Type="nvarchar" MaxLength="250" />
@@ -406,6 +408,7 @@ warning 6002: The table/view 'stokTakip.dbo.v_odalardanDemirbasKaldirDemirbas' d
           <EntitySet Name="v_OdaDemirbasListesi" EntityType="Self.v_OdaDemirbasListesi" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [v_OdaDemirbasListesi].[OdaAdi] AS [OdaAdi], 
+    [v_OdaDemirbasListesi].[OdaID] AS [OdaID], 
     [v_OdaDemirbasListesi].[FakulteAdi] AS [FakulteAdi], 
     [v_OdaDemirbasListesi].[DepartmanAdi] AS [DepartmanAdi], 
     [v_OdaDemirbasListesi].[PersonelAdi] AS [PersonelAdi], 
@@ -736,9 +739,11 @@ warning 6002: The table/view 'stokTakip.dbo.v_odalardanDemirbasKaldirDemirbas' d
         </EntityType>
         <EntityType Name="v_OdaDemirbasListesi">
           <Key>
+            <PropertyRef Name="OdaID" />
             <PropertyRef Name="OdaDemirbasID" />
           </Key>
           <Property Name="OdaAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="OdaID" Type="Int32" Nullable="false" />
           <Property Name="FakulteAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="DepartmanAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="PersonelAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
@@ -1094,6 +1099,7 @@ warning 6002: The table/view 'stokTakip.dbo.v_odalardanDemirbasKaldirDemirbas' d
                 <ScalarProperty Name="PersonelAdi" ColumnName="PersonelAdi" />
                 <ScalarProperty Name="DepartmanAdi" ColumnName="DepartmanAdi" />
                 <ScalarProperty Name="FakulteAdi" ColumnName="FakulteAdi" />
+                <ScalarProperty Name="OdaID" ColumnName="OdaID" />
                 <ScalarProperty Name="OdaAdi" ColumnName="OdaAdi" />
               </MappingFragment>
             </EntityTypeMapping>

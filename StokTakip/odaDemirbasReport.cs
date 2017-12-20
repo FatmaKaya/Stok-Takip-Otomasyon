@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using DevExpress.XtraReports.UI;
+using System.Collections.Generic;
 
 namespace StokTakip
 {
@@ -12,14 +13,11 @@ namespace StokTakip
         {
             InitializeComponent();
         }
-        stokTakipEntities db = new stokTakipEntities();
-        //rapor formunda oluşturan parametelere değer verebilmek için oluşturulan fonksiyon.
-        public void initData(string fakulteAdi, string departmanAdi, string odaAdi, string odaSorumlusu)
+        //raporumuzun veri tabanını tanımlıyoruz.
+        public void initData(List<v_OdaDemirbasListesi> liste)
         {
-            pFakulteAdi.Value = fakulteAdi;
-            pDepartmanAdi.Value = departmanAdi;
-            pOdaAdi.Value = odaAdi;
-            pOdaSorumlusu.Value = odaSorumlusu;
+            this.bindingSource1.DataSource =liste ;
         }
+        
     }
 }

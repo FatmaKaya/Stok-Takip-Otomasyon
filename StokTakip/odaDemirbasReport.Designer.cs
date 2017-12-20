@@ -31,22 +31,21 @@
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary2 = new DevExpress.XtraReports.UI.XRSummary();
-            DevExpress.DataAccess.EntityFramework.EFConnectionParameters efConnectionParameters1 = new DevExpress.DataAccess.EntityFramework.EFConnectionParameters();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell2 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell3 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell8 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCellDemirbasKodu = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCellDemirbasAdi = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCellDemirbasAdet = new DevExpress.XtraReports.UI.XRTableCell();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
-            this.xrLabel9 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabelPersonelAdi = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabelOdaAdi = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabelFakulteAdi = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabelDepartmanAdi = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
@@ -63,20 +62,18 @@
             this.xrTableRow3 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell9 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell10 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.pOdaSorumlusu = new DevExpress.XtraReports.Parameters.Parameter();
-            this.pOdaAdi = new DevExpress.XtraReports.Parameters.Parameter();
-            this.pFakulteAdi = new DevExpress.XtraReports.Parameters.Parameter();
-            this.pDepartmanAdi = new DevExpress.XtraReports.Parameters.Parameter();
-            this.efDataSource1 = new DevExpress.DataAccess.EntityFramework.EFDataSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.efDataSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel4,
             this.xrTable1});
             this.Detail.HeightF = 27.08333F;
             this.Detail.Name = "Detail";
@@ -98,9 +95,9 @@
             // 
             this.xrTableRow1.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
             this.xrTableCell1,
-            this.xrTableCell2,
-            this.xrTableCell3,
-            this.xrTableCell8});
+            this.xrTableCellDemirbasKodu,
+            this.xrTableCellDemirbasAdi,
+            this.xrTableCellDemirbasAdet});
             this.xrTableRow1.Name = "xrTableRow1";
             this.xrTableRow1.Weight = 1D;
             // 
@@ -115,38 +112,36 @@
             this.xrTableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell1.Weight = 1D;
             // 
-            // xrTableCell2
+            // xrTableCellDemirbasKodu
             // 
-            this.xrTableCell2.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "v_OdaDemirbasListesi.DemirbasKodu")});
-            this.xrTableCell2.Name = "xrTableCell2";
-            this.xrTableCell2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 0, 0, 0, 100F);
-            this.xrTableCell2.StylePriority.UsePadding = false;
-            this.xrTableCell2.StylePriority.UseTextAlignment = false;
-            this.xrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell2.Weight = 1.757916259765625D;
+            this.xrTableCellDemirbasKodu.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "DemirbasKodu")});
+            this.xrTableCellDemirbasKodu.Name = "xrTableCellDemirbasKodu";
+            this.xrTableCellDemirbasKodu.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 0, 0, 0, 100F);
+            this.xrTableCellDemirbasKodu.StylePriority.UsePadding = false;
+            this.xrTableCellDemirbasKodu.StylePriority.UseTextAlignment = false;
+            this.xrTableCellDemirbasKodu.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrTableCellDemirbasKodu.Weight = 1.757916259765625D;
             // 
-            // xrTableCell3
+            // xrTableCellDemirbasAdi
             // 
-            this.xrTableCell3.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "v_OdaDemirbasListesi.DemirbasAdi")});
-            this.xrTableCell3.Name = "xrTableCell3";
-            this.xrTableCell3.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 0, 0, 0, 100F);
-            this.xrTableCell3.StylePriority.UsePadding = false;
-            this.xrTableCell3.StylePriority.UseTextAlignment = false;
-            this.xrTableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell3.Weight = 2.6237500000000002D;
+            this.xrTableCellDemirbasAdi.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "DemirbasAdi")});
+            this.xrTableCellDemirbasAdi.Name = "xrTableCellDemirbasAdi";
+            this.xrTableCellDemirbasAdi.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 0, 0, 0, 100F);
+            this.xrTableCellDemirbasAdi.StylePriority.UsePadding = false;
+            this.xrTableCellDemirbasAdi.StylePriority.UseTextAlignment = false;
+            this.xrTableCellDemirbasAdi.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrTableCellDemirbasAdi.Weight = 2.6237500000000002D;
             // 
-            // xrTableCell8
+            // xrTableCellDemirbasAdet
             // 
-            this.xrTableCell8.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "v_OdaDemirbasListesi.Adet")});
-            this.xrTableCell8.Name = "xrTableCell8";
-            this.xrTableCell8.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 0, 0, 0, 100F);
-            this.xrTableCell8.StylePriority.UsePadding = false;
-            this.xrTableCell8.StylePriority.UseTextAlignment = false;
-            this.xrTableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell8.Weight = 1.4883325195312507D;
+            this.xrTableCellDemirbasAdet.Name = "xrTableCellDemirbasAdet";
+            this.xrTableCellDemirbasAdet.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 0, 0, 0, 100F);
+            this.xrTableCellDemirbasAdet.StylePriority.UsePadding = false;
+            this.xrTableCellDemirbasAdet.StylePriority.UseTextAlignment = false;
+            this.xrTableCellDemirbasAdet.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrTableCellDemirbasAdet.Weight = 1.4883325195312507D;
             // 
             // TopMargin
             // 
@@ -178,10 +173,10 @@
             // ReportHeader
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLabel9,
-            this.xrLabel8,
-            this.xrLabel7,
-            this.xrLabel4,
+            this.xrLabelPersonelAdi,
+            this.xrLabelOdaAdi,
+            this.xrLabelFakulteAdi,
+            this.xrLabelDepartmanAdi,
             this.xrLabel6,
             this.xrLabel5,
             this.xrLabel3,
@@ -191,49 +186,49 @@
             this.ReportHeader.HeightF = 164.5833F;
             this.ReportHeader.Name = "ReportHeader";
             // 
-            // xrLabel9
+            // xrLabelPersonelAdi
             // 
-            this.xrLabel9.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "v_OdaDemirbasListesi.PersonelAdi")});
-            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(548.1667F, 71.91664F);
-            this.xrLabel9.Name = "xrLabel9";
-            this.xrLabel9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel9.SizeF = new System.Drawing.SizeF(138.8333F, 23F);
-            this.xrLabel9.StylePriority.UseTextAlignment = false;
-            this.xrLabel9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrLabelPersonelAdi.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "PersonelAdi")});
+            this.xrLabelPersonelAdi.LocationFloat = new DevExpress.Utils.PointFloat(548.1667F, 71.91664F);
+            this.xrLabelPersonelAdi.Name = "xrLabelPersonelAdi";
+            this.xrLabelPersonelAdi.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabelPersonelAdi.SizeF = new System.Drawing.SizeF(138.8333F, 23F);
+            this.xrLabelPersonelAdi.StylePriority.UseTextAlignment = false;
+            this.xrLabelPersonelAdi.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
-            // xrLabel8
+            // xrLabelOdaAdi
             // 
-            this.xrLabel8.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "v_OdaDemirbasListesi.OdaAdi")});
-            this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(548.1667F, 48.91666F);
-            this.xrLabel8.Name = "xrLabel8";
-            this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel8.SizeF = new System.Drawing.SizeF(138.8333F, 23F);
-            this.xrLabel8.StylePriority.UseTextAlignment = false;
-            this.xrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrLabelOdaAdi.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "OdaAdi")});
+            this.xrLabelOdaAdi.LocationFloat = new DevExpress.Utils.PointFloat(548.1667F, 48.91666F);
+            this.xrLabelOdaAdi.Name = "xrLabelOdaAdi";
+            this.xrLabelOdaAdi.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabelOdaAdi.SizeF = new System.Drawing.SizeF(138.8333F, 23F);
+            this.xrLabelOdaAdi.StylePriority.UseTextAlignment = false;
+            this.xrLabelOdaAdi.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
-            // xrLabel7
+            // xrLabelFakulteAdi
             // 
-            this.xrLabel7.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "v_OdaDemirbasListesi.FakulteAdi")});
-            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(110F, 48.91664F);
-            this.xrLabel7.Name = "xrLabel7";
-            this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel7.SizeF = new System.Drawing.SizeF(188.5417F, 23F);
-            this.xrLabel7.StylePriority.UseTextAlignment = false;
-            this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrLabelFakulteAdi.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "FakulteAdi")});
+            this.xrLabelFakulteAdi.LocationFloat = new DevExpress.Utils.PointFloat(110F, 48.91664F);
+            this.xrLabelFakulteAdi.Name = "xrLabelFakulteAdi";
+            this.xrLabelFakulteAdi.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabelFakulteAdi.SizeF = new System.Drawing.SizeF(188.5417F, 23F);
+            this.xrLabelFakulteAdi.StylePriority.UseTextAlignment = false;
+            this.xrLabelFakulteAdi.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
-            // xrLabel4
+            // xrLabelDepartmanAdi
             // 
-            this.xrLabel4.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "v_OdaDemirbasListesi.DepartmanAdi")});
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(110F, 71.91664F);
-            this.xrLabel4.Name = "xrLabel4";
-            this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel4.SizeF = new System.Drawing.SizeF(188.5417F, 23F);
-            this.xrLabel4.StylePriority.UseTextAlignment = false;
-            this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrLabelDepartmanAdi.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "DepartmanAdi")});
+            this.xrLabelDepartmanAdi.LocationFloat = new DevExpress.Utils.PointFloat(110F, 71.91664F);
+            this.xrLabelDepartmanAdi.Name = "xrLabelDepartmanAdi";
+            this.xrLabelDepartmanAdi.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabelDepartmanAdi.SizeF = new System.Drawing.SizeF(188.5417F, 23F);
+            this.xrLabelDepartmanAdi.StylePriority.UseTextAlignment = false;
+            this.xrLabelDepartmanAdi.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrLabel6
             // 
@@ -378,7 +373,7 @@
             // xrTableCell10
             // 
             this.xrTableCell10.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "v_OdaDemirbasListesi.Adet")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Adet")});
             this.xrTableCell10.Name = "xrTableCell10";
             this.xrTableCell10.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 0, 0, 0, 100F);
             this.xrTableCell10.StylePriority.UsePadding = false;
@@ -388,33 +383,19 @@
             this.xrTableCell10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrTableCell10.Weight = 1.4883331298828133D;
             // 
-            // pOdaSorumlusu
+            // bindingSource1
             // 
-            this.pOdaSorumlusu.Description = "Parameter1";
-            this.pOdaSorumlusu.Name = "pOdaSorumlusu";
+            this.bindingSource1.DataSource = typeof(StokTakip.v_OdaDemirbasListesi);
             // 
-            // pOdaAdi
+            // xrLabel4
             // 
-            this.pOdaAdi.Description = "Parameter1";
-            this.pOdaAdi.Name = "pOdaAdi";
-            // 
-            // pFakulteAdi
-            // 
-            this.pFakulteAdi.Description = "Parameter1";
-            this.pFakulteAdi.Name = "pFakulteAdi";
-            // 
-            // pDepartmanAdi
-            // 
-            this.pDepartmanAdi.Description = "Parameter1";
-            this.pDepartmanAdi.Name = "pDepartmanAdi";
-            // 
-            // efDataSource1
-            // 
-            efConnectionParameters1.ConnectionString = "";
-            efConnectionParameters1.ConnectionStringName = "stokTakipEntities";
-            efConnectionParameters1.Source = typeof(StokTakip.stokTakipEntities);
-            this.efDataSource1.ConnectionParameters = efConnectionParameters1;
-            this.efDataSource1.Name = "efDataSource1";
+            this.xrLabel4.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Adet")});
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(548.1667F, 0F);
+            this.xrLabel4.Name = "xrLabel4";
+            this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.xrLabel4.Text = "xrLabel4";
             // 
             // odaDemirbasReport
             // 
@@ -424,65 +405,53 @@
             this.BottomMargin,
             this.ReportHeader,
             this.ReportFooter});
-            this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
-            this.efDataSource1});
-            this.DataMember = "Demirbaslars";
-            this.DataSource = this.efDataSource1;
+            this.DataSource = this.bindingSource1;
             this.Margins = new System.Drawing.Printing.Margins(70, 70, 29, 70);
             this.PageHeight = 1169;
             this.PageWidth = 827;
             this.PaperKind = System.Drawing.Printing.PaperKind.A4;
-            this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
-            this.pFakulteAdi,
-            this.pDepartmanAdi,
-            this.pOdaAdi,
-            this.pOdaSorumlusu});
             this.Version = "17.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.efDataSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
 
         #endregion
-
-        private DevExpress.XtraReports.UI.DetailBand Detail;
-        private DevExpress.XtraReports.UI.TopMarginBand TopMargin;
-        private DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
-        private DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
-        private DevExpress.XtraReports.UI.XRTable xrTable1;
-        private DevExpress.XtraReports.UI.XRTableRow xrTableRow1;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell1;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell2;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell3;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell8;
-        private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo1;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel3;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel1;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel2;
-        private DevExpress.XtraReports.UI.XRTable xrTable2;
-        private DevExpress.XtraReports.UI.XRTableRow xrTableRow2;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell4;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell5;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell6;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell7;
-        private DevExpress.XtraReports.UI.ReportFooterBand ReportFooter;
-        private DevExpress.XtraReports.UI.XRTable xrTable3;
-        private DevExpress.XtraReports.UI.XRTableRow xrTableRow3;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell9;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell10;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel9;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel8;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel7;
+        public DevExpress.XtraReports.UI.XRTableCell xrTableCellDemirbasKodu;
+        public DevExpress.XtraReports.UI.XRTableCell xrTableCellDemirbasAdi;
+        public DevExpress.XtraReports.UI.XRTableCell xrTableCellDemirbasAdet;
+        public DevExpress.XtraReports.UI.XRTableCell xrTableCell10;
+        public DevExpress.XtraReports.UI.XRLabel xrLabelPersonelAdi;
+        public DevExpress.XtraReports.UI.XRLabel xrLabelOdaAdi;
+        public DevExpress.XtraReports.UI.XRLabel xrLabelFakulteAdi;
+        public DevExpress.XtraReports.UI.XRLabel xrLabelDepartmanAdi;
+        public DevExpress.XtraReports.UI.DetailBand Detail;
+        public DevExpress.XtraReports.UI.TopMarginBand TopMargin;
+        public DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
+        public DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
+        public DevExpress.XtraReports.UI.XRTable xrTable1;
+        public DevExpress.XtraReports.UI.XRTableRow xrTableRow1;
+        public DevExpress.XtraReports.UI.XRTableCell xrTableCell1;
+        public DevExpress.XtraReports.UI.XRPageInfo xrPageInfo1;
+        public DevExpress.XtraReports.UI.XRLabel xrLabel3;
+        public DevExpress.XtraReports.UI.XRLabel xrLabel1;
+        public DevExpress.XtraReports.UI.XRLabel xrLabel2;
+        public DevExpress.XtraReports.UI.XRTable xrTable2;
+        public DevExpress.XtraReports.UI.XRTableRow xrTableRow2;
+        public DevExpress.XtraReports.UI.XRTableCell xrTableCell4;
+        public DevExpress.XtraReports.UI.XRTableCell xrTableCell5;
+        public DevExpress.XtraReports.UI.XRTableCell xrTableCell6;
+        public DevExpress.XtraReports.UI.XRTableCell xrTableCell7;
+        public DevExpress.XtraReports.UI.ReportFooterBand ReportFooter;
+        public DevExpress.XtraReports.UI.XRTable xrTable3;
+        public DevExpress.XtraReports.UI.XRTableRow xrTableRow3;
+        public DevExpress.XtraReports.UI.XRTableCell xrTableCell9;
+        public DevExpress.XtraReports.UI.XRLabel xrLabel6;
+        public DevExpress.XtraReports.UI.XRLabel xrLabel5;
+        public System.Windows.Forms.BindingSource bindingSource1;
         private DevExpress.XtraReports.UI.XRLabel xrLabel4;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel6;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel5;
-        private DevExpress.XtraReports.Parameters.Parameter pOdaSorumlusu;
-        private DevExpress.XtraReports.Parameters.Parameter pOdaAdi;
-        private DevExpress.XtraReports.Parameters.Parameter pFakulteAdi;
-        private DevExpress.XtraReports.Parameters.Parameter pDepartmanAdi;
-        private DevExpress.DataAccess.EntityFramework.EFDataSource efDataSource1;
     }
 }

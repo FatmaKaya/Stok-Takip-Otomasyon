@@ -88,7 +88,7 @@
             // 
             // lookUpEditGuncelleDemirbas
             // 
-            this.lookUpEditGuncelleDemirbas.Location = new System.Drawing.Point(59, 12);
+            this.lookUpEditGuncelleDemirbas.Location = new System.Drawing.Point(84, 12);
             this.lookUpEditGuncelleDemirbas.Name = "lookUpEditGuncelleDemirbas";
             this.lookUpEditGuncelleDemirbas.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lookUpEditGuncelleDemirbas.Properties.AppearanceReadOnly.Options.UseFont = true;
@@ -99,13 +99,15 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DemirbasAdi", "Demirbaş Adı")});
             this.lookUpEditGuncelleDemirbas.Properties.DisplayMember = "DemirbasAdi";
             this.lookUpEditGuncelleDemirbas.Properties.DropDownRows = 15;
+            this.lookUpEditGuncelleDemirbas.Properties.MaxLength = 25;
             this.lookUpEditGuncelleDemirbas.Properties.NullText = "";
             this.lookUpEditGuncelleDemirbas.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lookUpEditGuncelleDemirbas.Properties.ValueMember = "DemirbasID";
-            this.lookUpEditGuncelleDemirbas.Size = new System.Drawing.Size(277, 20);
+            this.lookUpEditGuncelleDemirbas.Size = new System.Drawing.Size(252, 20);
             this.lookUpEditGuncelleDemirbas.StyleController = this.layoutControl1;
             this.lookUpEditGuncelleDemirbas.TabIndex = 4;
             this.lookUpEditGuncelleDemirbas.EditValueChanged += new System.EventHandler(this.lookUpEditGuncelleDemirbas_EditValueChanged);
+            this.lookUpEditGuncelleDemirbas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lookUpEditGuncelleDemirbas_KeyPress);
             // 
             // layoutControlGroup1
             // 
@@ -125,8 +127,8 @@
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(328, 24);
-            this.layoutControlItem1.Text = "Demirbaş";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(44, 13);
+            this.layoutControlItem1.Text = "Demirbaş Adı: ";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(69, 13);
             // 
             // emptySpaceItem1
             // 
@@ -193,6 +195,7 @@
             this.textEditGuncelleFiyat.Location = new System.Drawing.Point(90, 108);
             this.textEditGuncelleFiyat.Name = "textEditGuncelleFiyat";
             this.textEditGuncelleFiyat.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textEditGuncelleFiyat.Properties.MaxLength = 10;
             this.textEditGuncelleFiyat.Size = new System.Drawing.Size(211, 20);
             this.textEditGuncelleFiyat.StyleController = this.layoutControl2;
             this.textEditGuncelleFiyat.TabIndex = 8;
@@ -214,6 +217,7 @@
             this.textEditGuncelleDemirbasAdi.Size = new System.Drawing.Size(211, 20);
             this.textEditGuncelleDemirbasAdi.StyleController = this.layoutControl2;
             this.textEditGuncelleDemirbasAdi.TabIndex = 6;
+            this.textEditGuncelleDemirbasAdi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEditGuncelleDemirbasAdi_KeyPress);
             // 
             // textEditGuncelleDepartmanAdi
             // 

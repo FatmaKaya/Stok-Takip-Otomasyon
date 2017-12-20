@@ -48,6 +48,14 @@ namespace StokTakip
                 spinEditGuncelleAdet.Value = Convert.ToInt32(demirbas.DemirbasAdet);
             }  
          }
+        private void lookUpEditGuncelleDemirbas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar);
+        }
+        private void textEditGuncelleDemirbasAdi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar);
+        }
         private void simpleButtonGuncelle_Click_1(object sender, EventArgs e)
         {
             using (db=new stokTakipEntities())
