@@ -45,16 +45,10 @@ namespace StokTakip
             frm.MdiParent = this;
             frm.Show();
         }
-        private void DemirbasSayisi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {// Demirbaş sayılarını öğrenmek için
-            frmDemirbasSayisiniArama frm = new frmDemirbasSayisiniArama();
-            frm.MdiParent = this;
-            frm.Show();
-        }
         private void DemirbasEkle_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {// Stoğa demirbaş eklemek için 
             frmDemirbasEkle frm = new frmDemirbasEkle();
-            frm.MdiParent = this;
+            frm.MdiParent = this;           
             frm.Show();
         }
         private void DemirbasGuncelle_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -88,14 +82,20 @@ namespace StokTakip
             frm.Show();
         }
         private void DemirbaslariOdadanKaldirma_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {// Demirbaşları odalardan kaldırmak için
+        {   // Demirbaşları odalardan kaldırmak için
             frmDemirbaslariOdalardanKaldirma frm = new frmDemirbaslariOdalardanKaldirma();
             frm.MdiParent = this;
             frm.Show();
         }
         private void OdaDemirbasListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {// Oda Demirbaş listesini görmek için
+        {   // Oda Demirbaş listesini görmek için
             frmOdaDemirbasListesi frm = new frmOdaDemirbasListesi();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+        private void DemirbasSayisi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {   // Demirbas Sayisini arama işlemleri için
+            frmDemirbasSayisiniArama frm = new frmDemirbasSayisiniArama();
             frm.MdiParent = this;
             frm.Show();
         }
@@ -111,11 +111,5 @@ namespace StokTakip
                 frmGiris.Show();
             }
         }
-        private void ribbonControl1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-       
     }
 }

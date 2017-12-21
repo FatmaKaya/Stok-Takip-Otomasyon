@@ -14,22 +14,6 @@ namespace StokTakip
     
     public partial class v_OdaDemirbasListesi
     {
-        public v_OdaDemirbasListesi(string odaadi,int odaid,string fakulteadi,string departmanadi,string personel,int ODID,string demirbaskod,string demirbasAd,int adet)
-        {
-            this.OdaAdi = odaadi;
-            this.OdaID = odaid;
-            this.FakulteAdi = fakulteadi;
-            this.DepartmanAdi = departmanadi;
-            this.PersonelAdi = personel;
-            this.OdaDemirbasID = ODID;
-            this.DemirbasKodu = demirbaskod;
-            this.DemirbasAdi = demirbasAd;
-            this.Adet = adet;
-        }
-        public v_OdaDemirbasListesi()
-        {
-
-        }
         public string OdaAdi { get; set; }
         public int OdaID { get; set; }
         public string FakulteAdi { get; set; }
@@ -38,6 +22,6 @@ namespace StokTakip
         public int OdaDemirbasID { get; set; }
         public string DemirbasKodu { get; set; }
         public string DemirbasAdi { get; set; }
-        public int Adet { get; set; }
+        public Nullable<int> Adet { get; set; }
     }
 }

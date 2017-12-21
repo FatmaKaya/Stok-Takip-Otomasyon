@@ -49,6 +49,7 @@
             this.barHeaderItemKullanici = new DevExpress.XtraBars.BarHeaderItem();
             this.barHeaderItem4 = new DevExpress.XtraBars.BarHeaderItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barHeaderItemCikis = new DevExpress.XtraBars.BarHeaderItem();
             this.Aramalar = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageStokIslemleri = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -60,7 +61,6 @@
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
-            this.barHeaderItemCikis = new DevExpress.XtraBars.BarHeaderItem();
             ((System.ComponentModel.ISupportInitialize)(this.rCMDI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -103,7 +103,6 @@
             this.rCMDI.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.rCMDI.Size = new System.Drawing.Size(849, 147);
             this.rCMDI.StatusBar = this.ribbonStatusBar1;
-            this.rCMDI.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // PersonelUzeindekiDemirbas
             // 
@@ -240,6 +239,14 @@
             this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
             this.barButtonItem2.Name = "barButtonItem2";
             // 
+            // barHeaderItemCikis
+            // 
+            this.barHeaderItemCikis.Caption = "Çıkış";
+            this.barHeaderItemCikis.Id = 23;
+            this.barHeaderItemCikis.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barHeaderItemCikis.ImageOptions.Image")));
+            this.barHeaderItemCikis.Name = "barHeaderItemCikis";
+            this.barHeaderItemCikis.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barHeaderItemCikis_ItemClick);
+            // 
             // Aramalar
             // 
             this.Aramalar.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -316,14 +323,6 @@
             // tabbedView1
             // 
             this.tabbedView1.RootContainer.Element = null;
-            // 
-            // barHeaderItemCikis
-            // 
-            this.barHeaderItemCikis.Caption = "Çıkış";
-            this.barHeaderItemCikis.Id = 23;
-            this.barHeaderItemCikis.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barHeaderItemCikis.ImageOptions.Image")));
-            this.barHeaderItemCikis.Name = "barHeaderItemCikis";
-            this.barHeaderItemCikis.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barHeaderItemCikis_ItemClick);
             // 
             // frmMDI
             // 

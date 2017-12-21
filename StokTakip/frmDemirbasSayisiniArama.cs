@@ -17,7 +17,6 @@ namespace StokTakip
         {
             InitializeComponent();
         }
-
         stokTakipEntities db = new stokTakipEntities();
         string demirbasAdi;
         int demirbasTurId, demirbasAdet;
@@ -34,14 +33,15 @@ namespace StokTakip
 
             lookUpEditDemirbasTuru.Properties.DataSource = db.DemirbasTurleris.ToList();
 
-            TextEditDemirbasAdi.Text = "";
-            TextEditFiyat.Text = "0";
+            textEditDemirbasAdi.Text = "";
+            textEditFiyat.Text = "0";
             lookUpEditDemirbasTuru.EditValue = 0;
             demirbasTurId = 0;
-            SpinEditAdet.EditValue = 0;
+            spinEditAdet.EditValue = 0;
             demirbasAdet = 0;
             DateTimePickerAlimTarihi.EditValue = Convert.ToDateTime("01.01.0001");
             demirbasAlimTarihi = Convert.ToDateTime("01.01.0001");
+
         }
         private void checkEditDemirbasAdinaGore_CheckedChanged(object sender, EventArgs e)
         {//Demirbaş adına göre arama yapılacağı zaman toolların durumu
@@ -57,19 +57,19 @@ namespace StokTakip
             checkEditDemirbasAdinaGore.Checked = false;
 
 
-            TextEditFiyat.Text = "0";
+            textEditFiyat.Text = "0";
             lookUpEditDemirbasTuru.EditValue = 0;
             demirbasTurId = 0;
-            SpinEditAdet.EditValue = 0;
+            spinEditAdet.EditValue = 0;
             demirbasAdet = 0;
             DateTimePickerAlimTarihi.EditValue = Convert.ToDateTime("01.01.0001");
             demirbasAlimTarihi = Convert.ToDateTime("01.01.0001");
+
         }
-        private void TextEditDemirbasAdi_Properties_KeyPress(object sender, KeyPressEventArgs e)
+        private void textEditDemirbasAdi_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar);
         }
-
         private void checkEditDemirbasTuruneGore_CheckedChanged(object sender, EventArgs e)
         {//Demirbaş türüne göre arama yapılacağı zaman toolların durumu
             DemirbasTuru.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
@@ -84,14 +84,14 @@ namespace StokTakip
             checkEditDemirbasTuruneGore.Checked = false;
 
 
-            TextEditDemirbasAdi.Text = "";
-            TextEditFiyat.Text = "0";
-            SpinEditAdet.EditValue = 0;
+            textEditDemirbasAdi.Text = "";
+            textEditFiyat.Text = "0";
+            spinEditAdet.EditValue = 0;
             demirbasAdet = 0;
             DateTimePickerAlimTarihi.EditValue = Convert.ToDateTime("01.01.0001");
             demirbasAlimTarihi = Convert.ToDateTime("01.01.0001");
-        }
 
+        }
         private void lookUpEditDemirbasTuru_EditValueChanged(object sender, EventArgs e)
         {//tür seçimi
             demirbasTurId = Convert.ToInt32(lookUpEditDemirbasTuru.EditValue);
@@ -109,13 +109,14 @@ namespace StokTakip
             Adet.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             checkEditFiyatinaGore.Checked = false;
 
-            TextEditDemirbasAdi.Text = "";
+            textEditDemirbasAdi.Text = "";
             lookUpEditDemirbasTuru.EditValue = 0;
             demirbasTurId = 0;
-            SpinEditAdet.EditValue = 0;
+            spinEditAdet.EditValue = 0;
             demirbasAdet = 0;
             DateTimePickerAlimTarihi.EditValue = Convert.ToDateTime("01.01.0001");
             demirbasAlimTarihi = Convert.ToDateTime("01.01.0001");
+
         }
 
         private void checkEditAlimTarihineGore_CheckedChanged(object sender, EventArgs e)
@@ -131,18 +132,20 @@ namespace StokTakip
             Adet.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             checkEditAlimTarihineGore.Checked = false;
 
-            TextEditDemirbasAdi.Text = "";
+            textEditDemirbasAdi.Text = "";
             lookUpEditDemirbasTuru.EditValue = 0;
-            TextEditFiyat.Text = "0";
+            textEditFiyat.Text = "0";
             demirbasTurId = 0;
-            SpinEditAdet.EditValue = 0;
+            spinEditAdet.EditValue = 0;
             demirbasAdet = 0;
-        }
+
+        }    
         private void DateTimePickerAlimTarihi_EditValueChanged(object sender, EventArgs e)
         {//tarih seçimi
             demirbasAlimTarihi = Convert.ToDateTime(DateTimePickerAlimTarihi.EditValue.ToString());
         }
 
+       
         private void checkEditAdetineGore_CheckedChanged(object sender, EventArgs e)
         {//Demirbaş adetine göre arama yapılacağı zaman toolların durumu
             Adet.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
@@ -156,52 +159,56 @@ namespace StokTakip
             AlimTarihi.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             checkEditAdetineGore.Checked = false;
 
-            TextEditDemirbasAdi.Text = "";
-            TextEditFiyat.Text = "0";
+            textEditDemirbasAdi.Text = "";
+            textEditFiyat.Text = "0";
             lookUpEditDemirbasTuru.EditValue = 0;
             demirbasTurId = 0;
-        }
 
-        private void SpinEditAdet_EditValueChanged(object sender, EventArgs e)
+        }
+        private void lookUpEditDemirbasTuru_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar);
+        }
+        private void spinEditAdet_EditValueChanged(object sender, EventArgs e)
         {//adet seçimi
-            demirbasAdet = Convert.ToInt32(SpinEditAdet.EditValue);
+            demirbasAdet = Convert.ToInt32(spinEditAdet.EditValue);
         }
 
-        private void SimpleButtonArama_Click(object sender, EventArgs e)
+        private void simpleButtonArama_Click(object sender, EventArgs e)
         {
             using (db = new stokTakipEntities())
             {
                 try
                 {
-                    if (TextEditDemirbasAdi.Text != "")
+                    if (textEditDemirbasAdi.Text != "")
                     {//demirbas adına göre arama yapıldığında yapılacak işlemler
 
-                        demirbasAdi = TextEditDemirbasAdi.Text;
-                        GridContraolDemirbasSayisiAramaStoktakiDemirbaslar.DataSource = db.v_demirbassayisi.Where(x => x.DemirbasAdi == demirbasAdi).ToList();
-                        GridControlOdalardakiDemirbaslar.DataSource = db.v_odalardakiDemirbasSayisi.Where(x => x.DemirbasAdi == demirbasAdi).ToList();
+                        demirbasAdi = textEditDemirbasAdi.Text;
+                       gridControlDemirbasSayisiAramaStoktakiDemirbaslar.DataSource = db.v_demirbassayisi.Where(x => x.DemirbasAdi == demirbasAdi).ToList();
+                        gridControlOdalardakiDemirbaslar.DataSource = db.v_odalardakiDemirbasSayisi.Where(x => x.DemirbasAdi == demirbasAdi).ToList();
                     }
                     if (demirbasTurId != 0)
                     {//demirbas türüne göre arama yapıldığında yapılacak işlemler
-                        GridContraolDemirbasSayisiAramaStoktakiDemirbaslar.DataSource = db.v_demirbassayisi.Where(x => x.DemirbasTurID == demirbasTurId).ToList();
-                        GridControlOdalardakiDemirbaslar.DataSource = db.v_odalardakiDemirbasSayisi.Where(x => x.DemirbasTurID == demirbasTurId).ToList();
+                        gridControlDemirbasSayisiAramaStoktakiDemirbaslar.DataSource = db.v_demirbassayisi.Where(x => x.DemirbasTurID == demirbasTurId).ToList();
+                        gridControlOdalardakiDemirbaslar.DataSource = db.v_odalardakiDemirbasSayisi.Where(x => x.DemirbasTurID == demirbasTurId).ToList();
                     }
-                    if (TextEditFiyat.Text != "0")
+                    if (textEditFiyat.Text != "0")
                     {//demirbas fiyatına göre arama yapıldığında yapılacak işlemler
-                        demirbasFiyat = float.Parse(TextEditFiyat.Text);
-                        GridContraolDemirbasSayisiAramaStoktakiDemirbaslar.DataSource = db.v_demirbassayisi.Where(x => x.Fiyat == demirbasFiyat).ToList();
-                        GridControlOdalardakiDemirbaslar.DataSource = db.v_odalardakiDemirbasSayisi.Where(x => x.Fiyat == demirbasFiyat).ToList();
+                        demirbasFiyat = float.Parse(textEditFiyat.Text);
+                        gridControlDemirbasSayisiAramaStoktakiDemirbaslar.DataSource = db.v_demirbassayisi.Where(x => x.Fiyat == demirbasFiyat).ToList();
+                        gridControlOdalardakiDemirbaslar.DataSource = db.v_odalardakiDemirbasSayisi.Where(x => x.Fiyat == demirbasFiyat).ToList();
                     }
                     if (demirbasAlimTarihi != Convert.ToDateTime("01.01.0001"))
                     {//demirbas alım tarihine göre arama yapıldığında yapılacak işlemler
-                        GridContraolDemirbasSayisiAramaStoktakiDemirbaslar.DataSource = db.v_demirbassayisi.Where(x => x.AlimTarihi == demirbasAlimTarihi).ToList();
-                        GridControlOdalardakiDemirbaslar.DataSource = db.v_odalardakiDemirbasSayisi.Where(x => x.AlimTarihi == demirbasAlimTarihi).ToList();
+                        gridControlDemirbasSayisiAramaStoktakiDemirbaslar.DataSource = db.v_demirbassayisi.Where(x => x.AlimTarihi == demirbasAlimTarihi).ToList();
+                        gridControlOdalardakiDemirbaslar.DataSource = db.v_odalardakiDemirbasSayisi.Where(x => x.AlimTarihi == demirbasAlimTarihi).ToList();
                     }
                     if (demirbasAdet != 0)
                     {//demirbas adetine göre arama yapıldığında yapılacak işlemler
-                        GridContraolDemirbasSayisiAramaStoktakiDemirbaslar.DataSource = db.v_demirbassayisi.Where(x => x.DemirbasAdet == demirbasAdet).ToList();
-                        GridControlOdalardakiDemirbaslar.DataSource = db.v_odalardakiDemirbasSayisi.Where(x => x.DemirbasAdet == demirbasAdet).ToList();
+                        gridControlDemirbasSayisiAramaStoktakiDemirbaslar.DataSource = db.v_demirbassayisi.Where(x => x.DemirbasAdet == demirbasAdet).ToList();
+                        gridControlOdalardakiDemirbaslar.DataSource = db.v_odalardakiDemirbasSayisi.Where(x => x.Adet == demirbasAdet).ToList();
                     }
-                    if (TextEditDemirbasAdi.Text == "" && demirbasTurId == 0 && TextEditFiyat.Text == "0" && demirbasAlimTarihi == Convert.ToDateTime("01.01.0001") && demirbasAdet == 0)
+                    if (textEditDemirbasAdi.Text == "" && demirbasTurId == 0 && textEditFiyat.Text == "0" && demirbasAlimTarihi == Convert.ToDateTime("01.01.0001") && demirbasAdet == 0)
                     {//bütün alanalar boşsa
                         XtraMessageBox.Show("Lütfen alanları kontrol ederek tekrar deneyiniz..");
                     }
@@ -212,5 +219,6 @@ namespace StokTakip
                 }
             }
         }
+
     }
 }

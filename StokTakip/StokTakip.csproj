@@ -174,6 +174,12 @@
     <Compile Include="frmDemirbasEkle.Designer.cs">
       <DependentUpon>frmDemirbasEkle.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDemirbasSayisiniArama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDemirbasSayisiniArama.Designer.cs">
+      <DependentUpon>frmDemirbasSayisiniArama.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmKullanıcıGiris.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,12 +197,6 @@
     </Compile>
     <Compile Include="frmDemirbaslariOdalardanKaldirma.Designer.cs">
       <DependentUpon>frmDemirbaslariOdalardanKaldirma.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmDemirbasSayisiniArama.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDemirbasSayisiniArama.Designer.cs">
-      <DependentUpon>frmDemirbasSayisiniArama.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDemirbasKaldir.cs">
       <SubType>Form</SubType>
@@ -266,8 +266,38 @@
     <Compile Include="sysdiagram.cs">
       <DependentUpon>dbStokTakip.tt</DependentUpon>
     </Compile>
+    <Compile Include="v_demirbassayisi.cs">
+      <DependentUpon>dbStokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_odaDemirbas.cs">
+      <DependentUpon>dbStokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_OdaDemirbasListesi.cs">
+      <DependentUpon>dbStokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_OdaDemirbasListesiOdalar.cs">
+      <DependentUpon>dbStokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_odalaraDemirbasEkleDemirbaslar.cs">
+      <DependentUpon>dbStokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_odalaraDemirbasEkleOdalar.cs">
+      <DependentUpon>dbStokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_odalardakiDemirbasSayisi.cs">
+      <DependentUpon>dbStokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_odalardanDemirbasKaldir.cs">
+      <DependentUpon>dbStokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_odalardanDemirbasKaldirDemirbas.cs">
+      <DependentUpon>dbStokTakip.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmDemirbasEkle.resx">
       <DependentUpon>frmDemirbasEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDemirbasSayisiniArama.resx">
+      <DependentUpon>frmDemirbasSayisiniArama.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmKullanıcıGiris.resx">
       <DependentUpon>frmKullanıcıGiris.cs</DependentUpon>
@@ -277,9 +307,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDemirbaslariOdalardanKaldirma.resx">
       <DependentUpon>frmDemirbaslariOdalardanKaldirma.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmDemirbasSayisiniArama.resx">
-      <DependentUpon>frmDemirbasSayisiniArama.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDemirbasKaldir.resx">
       <DependentUpon>frmDemirbasKaldir.cs</DependentUpon>
@@ -318,11 +345,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="App.Config" />
     <EntityDeploy Include="dbStokTakip.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>dbStokTakip.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="App.Config" />
     <None Include="dbStokTakip.edmx.diagram">
       <DependentUpon>dbStokTakip.edmx</DependentUpon>
     </None>
@@ -339,6 +366,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="dbStokTakip.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>dbStokTakip.edmx</DependentUpon>
@@ -350,10 +380,6 @@
       <LastGenOutput>dbStokTakip.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
