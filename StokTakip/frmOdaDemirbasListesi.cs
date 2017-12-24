@@ -52,7 +52,7 @@ namespace StokTakip
                 }
                 else
                 {
-                    using (db = new stokTakipEntities())
+                    using (db = new stokTakipEntities1())
                     {
 
                         using (frmRapor frm = new frmRapor())
