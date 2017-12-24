@@ -18,7 +18,7 @@ namespace StokTakip
             InitializeComponent();
         }
 
-        stokTakipEntities db = new stokTakipEntities();
+        stokTakipEntities1 db = new stokTakipEntities1();
         int personelID;
 
         private void frmPersonelUzerindekiDemirbasArama_Load(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace StokTakip
         public int PersonelUzerindekiDemirbaslariAra(string personel)
         { //personel üzerindeki demirbaşlar listeleniyor
             int kontrol = 0;
-            using (db = new stokTakipEntities())
+            using (db = new stokTakipEntities1())
             {
                     if (personel != null)  // Personel seçilirse yapılacaklar
                     {

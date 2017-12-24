@@ -17,7 +17,7 @@ namespace StokTakip
         {
             InitializeComponent();
         }
-        stokTakipEntities db = new stokTakipEntities();
+        stokTakipEntities1 db = new stokTakipEntities1();
         private void frmOdaBilgileriGuncelle_Load(object sender, EventArgs e)
         {
             //stoktaki oda bilgilerinin getirilmesi
@@ -28,7 +28,7 @@ namespace StokTakip
         
         private void lookUpEditOdaBilgileriGuncelle_EditValueChanged(object sender, EventArgs e)
         {
-            using (db = new stokTakipEntities())
+            using (db = new stokTakipEntities1())
             {
                 OdaID = Convert.ToInt32(lookUpEditOdaBilgileriGuncelle.EditValue);//seçilen oda id
                 //seçilen oda bilgileri ve güncellenecek bilgilerin getirilmesi
@@ -57,7 +57,7 @@ namespace StokTakip
         }
         private void simpleButtonGuncelle_Click(object sender, EventArgs e)
         {
-            using (db = new stokTakipEntities())
+            using (db = new stokTakipEntities1())
             {
                 try
                 {

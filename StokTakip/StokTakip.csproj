@@ -141,6 +141,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Demirbaslar.cs">
+      <DependentUpon>StokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DemirbasTurleri.cs">
+      <DependentUpon>StokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Departmanlar.cs">
+      <DependentUpon>StokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fakulteler.cs">
+      <DependentUpon>StokTakip.tt</DependentUpon>
+    </Compile>
     <Compile Include="frmDemirbasEkle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,8 +237,62 @@
     <Compile Include="odaDemirbasReport.Designer.cs">
       <DependentUpon>odaDemirbasReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="OdaDemirbasTablosu.cs">
+      <DependentUpon>StokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Odalar.cs">
+      <DependentUpon>StokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Personeller.cs">
+      <DependentUpon>StokTakip.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StokTakip.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StokTakip.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StokTakip.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StokTakip.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StokTakip.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>StokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_demirbassayisi.cs">
+      <DependentUpon>StokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_odaDemirbas.cs">
+      <DependentUpon>StokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_OdaDemirbasListesi.cs">
+      <DependentUpon>StokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_OdaDemirbasListesiOdalar.cs">
+      <DependentUpon>StokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_odalaraDemirbasEkleDemirbaslar.cs">
+      <DependentUpon>StokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_odalaraDemirbasEkleOdalar.cs">
+      <DependentUpon>StokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_odalardakiDemirbasSayisi.cs">
+      <DependentUpon>StokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_odalardanDemirbasKaldir.cs">
+      <DependentUpon>StokTakip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_odalardanDemirbasKaldirDemirbas.cs">
+      <DependentUpon>StokTakip.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmDemirbasEkle.resx">
       <DependentUpon>frmDemirbasEkle.cs</DependentUpon>
     </EmbeddedResource>
@@ -291,9 +357,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="StokTakip.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StokTakip.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="StokTakip.edmx.diagram">
+      <DependentUpon>StokTakip.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StokTakip.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StokTakip.edmx</DependentUpon>
+      <LastGenOutput>StokTakip.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="StokTakip.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StokTakip.edmx</DependentUpon>
+      <LastGenOutput>StokTakip.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

@@ -18,7 +18,7 @@ namespace StokTakip
             InitializeComponent();
         }
 
-        stokTakipEntities db = new stokTakipEntities();
+        stokTakipEntities1 db = new stokTakipEntities1();
         int demirbasID;
 
         private void frmDemirbasGuncelle_Load(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace StokTakip
 
         private void lookUpEditGuncelleDemirbas_EditValueChanged(object sender, EventArgs e)
         {
-            using (db=new stokTakipEntities())
+            using (db=new stokTakipEntities1())
             {
                 demirbasID = Convert.ToInt32(lookUpEditGuncelleDemirbas.EditValue);  //seçilen demirbaş id
 
@@ -90,7 +90,7 @@ namespace StokTakip
         }
         private void simpleButtonGuncelle_Click_1(object sender, EventArgs e)
         {
-            using (db=new stokTakipEntities())
+            using (db=new stokTakipEntities1())
             {
                 try
                 {

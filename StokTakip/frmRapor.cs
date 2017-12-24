@@ -21,11 +21,11 @@ namespace StokTakip
         {
             InitializeComponent();
         }
-        stokTakipEntities db = new stokTakipEntities();
+        stokTakipEntities1 db = new stokTakipEntities1();
         //raporAl fonksiyonu ile gridcontrolden tıklanan odanın ıd'sine eşit olan listedeki verileri bulup ekrana yansıtıyoruz.
         public void raporAl(int odaID)
         {
-            using (db = new stokTakipEntities())
+            using (db = new stokTakipEntities1())
             {
                 odaDemirbasReport rapor = new odaDemirbasReport();
                 List<v_OdaDemirbasListesi> liste = db.v_OdaDemirbasListesi.Where(x => x.OdaID == odaID).ToList();

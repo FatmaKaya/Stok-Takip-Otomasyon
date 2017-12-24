@@ -18,7 +18,7 @@ namespace StokTakip
             InitializeComponent();
         }
 
-        stokTakipEntities db = new stokTakipEntities();
+        stokTakipEntities1 db = new stokTakipEntities1();
         int demirbasID;
 
         private void frmDemirbasKaldir_Load(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace StokTakip
 
         private void lookUpEditKaldirDemirbas_EditValueChanged(object sender, EventArgs e)
         {
-            using (db = new stokTakipEntities())
+            using (db = new stokTakipEntities1())
             {
                 demirbasID = Convert.ToInt32(lookUpEditKaldirDemirbas.EditValue);  // seçilen demirbaş
                 Demirbaslar demirbas = db.Demirbaslars.First(x => x.DemirbasID == demirbasID);
@@ -63,7 +63,7 @@ namespace StokTakip
         private void simpleButtonKaldır_Click_1(object sender, EventArgs e)
         {
            
-            using (db = new stokTakipEntities())
+            using (db = new stokTakipEntities1())
             {
                 try
                 {

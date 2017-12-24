@@ -18,14 +18,14 @@ namespace StokTakip
             InitializeComponent();
         }
 
-        stokTakipEntities db = new stokTakipEntities();
+        stokTakipEntities1 db = new stokTakipEntities1();
         string fakulteAdi;
         int odaID;
         int demirbasID;
         string departmanAdi;
         private void frmOdalaraDemirbasleriEkle_Load(object sender, EventArgs e)
         {
-            using (db=new stokTakipEntities())
+            using (db=new stokTakipEntities1())
             {
                 //view kullanarak kayıtlı olan odalar listelendi.
                 gridControlOdalaraDemirbasEkleOdalar.DataSource = db.v_odalaraDemirbasEkleOdalar.ToList();
@@ -35,7 +35,7 @@ namespace StokTakip
         }
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            using (db = new stokTakipEntities())
+            using (db = new stokTakipEntities1())
             {
                 //seçilen rowun fakülte adini fakulteAdi değişkenine ve oda IDsini odaID değişkenine atıyoruz.
                 int[] RowHandles = gridView1.GetSelectedRows();
@@ -52,7 +52,7 @@ namespace StokTakip
         }
         private void textEditOdalaraDemirbasEkleOdaAdi_EditValueChanged(object sender, EventArgs e)
         {
-            using (db=new stokTakipEntities())
+            using (db=new stokTakipEntities1())
             {
                 //Oda arama işleminin gerçekleştirilmesi
                 string aranacakoda = textEditOdalaraDemirbasEkleOdaAdi.Text;
@@ -65,7 +65,7 @@ namespace StokTakip
         }
         private void textEditOdalaraDemirbasEkleDemirbasAdi_EditValueChanged(object sender, EventArgs e)
         {
-            using (db = new stokTakipEntities())
+            using (db = new stokTakipEntities1())
             {
                 //demirbas arama işleminin gerçekleştirilmesi
                 string arademirbas = textEditOdalaraDemirbasEkleDemirbasAdi.Text;
@@ -78,7 +78,7 @@ namespace StokTakip
         }
         private void gridView2_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            using (db = new stokTakipEntities())
+            using (db = new stokTakipEntities1())
             {
                 //seçilen rowdaki demirbasin idsinin alinmasi
                 int[] RowHandles = gridView2.GetSelectedRows();
@@ -98,7 +98,7 @@ namespace StokTakip
         {
             try
             {
-                using (db=new stokTakipEntities())
+                using (db=new stokTakipEntities1())
                 {
                     if (fakulteAdi == null && demirbasID == 0) 
                     {

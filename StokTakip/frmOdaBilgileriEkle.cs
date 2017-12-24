@@ -18,7 +18,7 @@ namespace StokTakip
             InitializeComponent();
         }
 
-        stokTakipEntities db = new stokTakipEntities();
+        stokTakipEntities1 db = new stokTakipEntities1();
         Odalar oda = new Odalar();
         int fakulteID;
         int departmanID;
@@ -52,7 +52,7 @@ namespace StokTakip
         }
         private void simpleButtonOdaKaydet_Click(object sender, EventArgs e)
         {
-            using (db = new stokTakipEntities())
+            using (db = new stokTakipEntities1())
             {
                 try
                 {

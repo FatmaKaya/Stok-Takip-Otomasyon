@@ -16,7 +16,7 @@ namespace StokTakip
             InitializeComponent();
         }
 
-        stokTakipEntities db = new stokTakipEntities();
+        stokTakipEntities1 db = new stokTakipEntities1();
         public static Personeller user = new Personeller();//Mdi form'a göndereceğimiz kullanıcı bilgileri
 
         private void TextEditKullaniciAdi_KeyPress(object sender, KeyPressEventArgs e)
@@ -31,7 +31,7 @@ namespace StokTakip
         public int GirisYap(string kullanici, string sifre)
         {//Test için giriş yap fonksiyonu
             int a=0;
-            using (db = new stokTakipEntities())
+            using (db = new stokTakipEntities1())
             {
                 try
                 {
