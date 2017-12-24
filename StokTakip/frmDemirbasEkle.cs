@@ -57,7 +57,7 @@ namespace StokTakip
         }
         private void TextEditEkleDemirbasAd_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar);
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar) && !char.IsNumber(e.KeyChar) && e.KeyChar != '-';
         }
         private void SimpleButtonEkle_Click(object sender, EventArgs e)
         {
@@ -107,6 +107,40 @@ namespace StokTakip
                 }
             }
 
+        }
+
+        private void TextEditEkleDemirbasFiyat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57)
+            {
+                e.Handled = false;//eğer rakamsa  yazdır.
+            }
+
+            else if ((int)e.KeyChar == 8)
+            {
+                e.Handled = false;//eğer basılan tuş backspace ise yazdır.
+            }
+            else
+            {
+                e.Handled = true;//bunların dışındaysa hiçbirisini yazdırma
+            }
+        }
+
+        private void SpinEditEkleDemirbasAdet_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57)
+            {
+                e.Handled = false;//eğer rakamsa  yazdır.
+            }
+
+            else if ((int)e.KeyChar == 8)
+            {
+                e.Handled = false;//eğer basılan tuş backspace ise yazdır.
+            }
+            else
+            {
+                e.Handled = true;//bunların dışındaysa hiçbirisini yazdırma
+            }
         }
     }
 }

@@ -142,6 +142,7 @@
             this.SpinEditEkleDemirbasAdet.Name = "SpinEditEkleDemirbasAdet";
             this.SpinEditEkleDemirbasAdet.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.SpinEditEkleDemirbasAdet.Properties.MaxLength = 5;
             this.SpinEditEkleDemirbasAdet.Properties.MaxValue = new decimal(new int[] {
             9999,
             0,
@@ -155,6 +156,7 @@
             this.SpinEditEkleDemirbasAdet.Size = new System.Drawing.Size(262, 20);
             this.SpinEditEkleDemirbasAdet.StyleController = this.layoutControl1;
             this.SpinEditEkleDemirbasAdet.TabIndex = 10;
+            this.SpinEditEkleDemirbasAdet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SpinEditEkleDemirbasAdet_KeyPress);
             // 
             // SimpleButtonEkle
             // 
@@ -171,10 +173,11 @@
             this.TextEditEkleDemirbasFiyat.Location = new System.Drawing.Point(90, 108);
             this.TextEditEkleDemirbasFiyat.Name = "TextEditEkleDemirbasFiyat";
             this.TextEditEkleDemirbasFiyat.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.TextEditEkleDemirbasFiyat.Properties.MaxLength = 10;
+            this.TextEditEkleDemirbasFiyat.Properties.MaxLength = 6;
             this.TextEditEkleDemirbasFiyat.Size = new System.Drawing.Size(262, 20);
             this.TextEditEkleDemirbasFiyat.StyleController = this.layoutControl1;
             this.TextEditEkleDemirbasFiyat.TabIndex = 8;
+            this.TextEditEkleDemirbasFiyat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextEditEkleDemirbasFiyat_KeyPress);
             // 
             // TextEditEkleDemirbasAd
             // 

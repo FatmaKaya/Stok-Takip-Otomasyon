@@ -76,17 +76,20 @@ namespace StokTakip
                             guncellenecekOda.PersonelID = PersonelID;
                         db.SaveChanges(); //Bilgilerin kaydedilmesi
                         XtraMessageBox.Show("Oda bilgileri güncellendi.");
+                        this.Close();
+
                         //Yeni işlem için alanların temizlenmesi
-                        lookUpEditOdaSorumlusuGuncelle.Properties.NullText = "Oda sorumlusu seçiniz.";
-                        textEditDepartmanAdiGuncelle.Text = null;
-                        textEditFakulteAdiGuncelle.Text = null;
-                        textEditOdaAdiGuncelle.Text = null;
-                        lookUpEditOdaBilgileriGuncelle.Properties.DataSource = db.Odalars.ToList();
+                        //lookUpEditOdaSorumlusuGuncelle.Properties.NullText = "Oda sorumlusu seçiniz.";
+                        //textEditDepartmanAdiGuncelle.Text = null;
+                        //textEditFakulteAdiGuncelle.Text = null;
+                        //textEditOdaAdiGuncelle.Text = null;
+                        //lookUpEditOdaBilgileriGuncelle.Properties.DataSource = db.Odalars.ToList();
                     }
                     else
                     {
                         //Alanların boş olması durumu
                         XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar ekleyiniz..");
+                        this.Close();
                     }
 
                 }
@@ -95,6 +98,7 @@ namespace StokTakip
                 {
                     //Diğer hatalar için
                     XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar ekleyiniz..");
+                    this.Close();
                 }
             }
         }

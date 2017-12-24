@@ -99,17 +99,28 @@ namespace StokTakip
             frm.MdiParent = this;
             frm.Show();
         }
-        private void barHeaderItemCikis_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {// Çıkış işlemi yapmak istediğinde 
-
+        public int CikisYap()
+        {
+            int kontrol = 0;
             //Çıkış onay bilgisi
             DialogResult rs = DevExpress.XtraEditors.XtraMessageBox.Show("Çıkış yapmak istediğinizden EMİN MİSİNİZ ?", "Çıkış Bilgisi", MessageBoxButtons.YesNo);
             if (rs == DialogResult.Yes)//Yes butonunu tıklar isek
             {// giriş ekranına tekrar geç
+                kontrol = 1;
                 frmKullaniciGiris frmGiris = new frmKullaniciGiris();
                 this.Hide();
                 frmGiris.Show();
             }
+            return kontrol;
+        }
+        private void barHeaderItemCikis_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {// Çıkış işlemi yapmak istediğinde 
+            CikisYap();
+        }
+
+        private void frmMDI_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -149,6 +149,7 @@
             this.spinEditKaldirDemirbasAdet.Name = "spinEditKaldirDemirbasAdet";
             this.spinEditKaldirDemirbasAdet.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinEditKaldirDemirbasAdet.Properties.MaxLength = 5;
             this.spinEditKaldirDemirbasAdet.Properties.MaxValue = new decimal(new int[] {
             9999,
             0,
@@ -157,6 +158,7 @@
             this.spinEditKaldirDemirbasAdet.Size = new System.Drawing.Size(240, 20);
             this.spinEditKaldirDemirbasAdet.StyleController = this.layoutControl2;
             this.spinEditKaldirDemirbasAdet.TabIndex = 4;
+            this.spinEditKaldirDemirbasAdet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.spinEditKaldirDemirbasAdet_KeyPress);
             // 
             // layoutControlGroup2
             // 

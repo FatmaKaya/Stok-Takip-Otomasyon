@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StokTakip", "StokTakip\StokTakip.csproj", "{979D10BC-048A-4C47-9A3A-E836F939EEA2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestStokTakip", "UnitTestStokTakip\UnitTestStokTakip.csproj", "{75FDCA5F-3702-4F45-97DB-1EAEF3AA8A21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{979D10BC-048A-4C47-9A3A-E836F939EEA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{979D10BC-048A-4C47-9A3A-E836F939EEA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{979D10BC-048A-4C47-9A3A-E836F939EEA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75FDCA5F-3702-4F45-97DB-1EAEF3AA8A21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75FDCA5F-3702-4F45-97DB-1EAEF3AA8A21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75FDCA5F-3702-4F45-97DB-1EAEF3AA8A21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75FDCA5F-3702-4F45-97DB-1EAEF3AA8A21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -38,24 +38,32 @@ namespace StokTakip
             e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar);
         }
 
-        private void simpleButtonPersonelUzerindekiDemirbaslariAra_Click(object sender, EventArgs e)
-        {
-            //personel üzerindeki demirbaşlar listeleniyor
+        public int PersonelUzerindekiDemirbaslariAra(string personel)
+        { //personel üzerindeki demirbaşlar listeleniyor
+            int kontrol = 0;
             using (db = new stokTakipEntities())
             {
-                try
-                {
-                    if (lookUpEditPersonelAdi.EditValue != null)  // Personel seçilirse yapılacaklar
+                    if (personel != null)  // Personel seçilirse yapılacaklar
+                    {
                         gridControlPersonelUzerindekiDemirbaslar.DataSource = db.v_odaDemirbas.Where(x => x.PersonelID == personelID).ToList();
+                        kontrol = 1;
+                    }                    
                     else   //personel seçilmezse yapılacak olan
                         XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar deneyiniz..");
-                }
-                catch (Exception)
-                {//hatalı durumlar için
-                    XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar deneyiniz..");
-                }
-
+                return kontrol;
             }
+        }
+        private void simpleButtonPersonelUzerindekiDemirbaslariAra_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PersonelUzerindekiDemirbaslariAra((lookUpEditPersonelAdi.EditValue).ToString());
+            }
+            catch (Exception)
+            {
+                XtraMessageBox.Show("Lütfen alanları kontrol ederek tekrar deneyiniz..");
+            }
+            
 
         }
     }
