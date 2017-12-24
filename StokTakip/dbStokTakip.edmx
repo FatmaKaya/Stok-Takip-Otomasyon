@@ -5,217 +5,22 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="stokTakipModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Demirbaslar">
-          <Key>
-            <PropertyRef Name="DemirbasID" />
-          </Key>
-          <Property Name="DemirbasID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="DemirbasAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="DemirbasAdet" Type="int" />
-          <Property Name="AlimTarihi" Type="datetime" />
-          <Property Name="DemirbasTurID" Type="int" />
-          <Property Name="DemirbasKodu" Type="nvarchar" MaxLength="250" />
-          <Property Name="Fiyat" Type="float" />
-          <Property Name="Durum" Type="bit" />
-          <Property Name="FakulteID" Type="int" Nullable="false" />
-          <Property Name="DepartmanID" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="DemirbasTurleri">
-          <Key>
-            <PropertyRef Name="DemirbasTurID" />
-          </Key>
-          <Property Name="DemirbasTurID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="DemirbasTurAdi" Type="nvarchar" MaxLength="250" />
-        </EntityType>
-        <EntityType Name="Departmanlar">
-          <Key>
-            <PropertyRef Name="DepartmanID" />
-          </Key>
-          <Property Name="DepartmanID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="DepartmanAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="FakulteID" Type="int" />
-        </EntityType>
-        <EntityType Name="Fakulteler">
-          <Key>
-            <PropertyRef Name="FakulteID" />
-          </Key>
-          <Property Name="FakulteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FakulteAdi" Type="nvarchar" MaxLength="250" />
-        </EntityType>
-        <EntityType Name="OdaDemirbasTablosu">
-          <Key>
-            <PropertyRef Name="OdaDemirbasID" />
-          </Key>
-          <Property Name="OdaDemirbasID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="OdaID" Type="int" />
-          <Property Name="DemirbasID" Type="int" />
-          <Property Name="Adet" Type="int" />
-        </EntityType>
-        <EntityType Name="Odalar">
-          <Key>
-            <PropertyRef Name="OdaID" />
-          </Key>
-          <Property Name="OdaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="OdaAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="PersonelID" Type="int" />
-          <Property Name="FakulteID" Type="int" Nullable="false" />
-          <Property Name="DepartmanID" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Personeller">
-          <Key>
-            <PropertyRef Name="PersonelID" />
-          </Key>
-          <Property Name="PersonelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="PersonelAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="YetkiID" Type="int" />
-          <Property Name="Sifre" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="FakulteID" Type="int" Nullable="false" />
-          <Property Name="DepartmanID" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'stokTakip.dbo.v_demirbassayisi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="v_demirbassayisi">
-          <Key>
-            <PropertyRef Name="DemirbasID" />
-            <PropertyRef Name="DemirbasTurID" />
-          </Key>
-          <Property Name="DemirbasID" Type="int" Nullable="false" />
-          <Property Name="DemirbasKodu" Type="nvarchar" MaxLength="250" />
-          <Property Name="DemirbasAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="DemirbasAdet" Type="int" />
-          <Property Name="DemirbasTurID" Type="int" Nullable="false" />
-          <Property Name="DemirbasTurAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="FakulteAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="DepartmanAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="AlimTarihi" Type="datetime" />
-          <Property Name="Fiyat" Type="float" />
-        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'stokTakip.dbo.v_odaDemirbas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="v_odaDemirbas">
-          <Key>
-            <PropertyRef Name="OdaDemirbasID" />
-            <PropertyRef Name="DemirbasID" />
-            <PropertyRef Name="PersonelID" />
-            <PropertyRef Name="DemirbasTurID" />
-          </Key>
-          <Property Name="OdaDemirbasID" Type="int" Nullable="false" />
-          <Property Name="DemirbasID" Type="int" Nullable="false" />
-          <Property Name="DemirbasKodu" Type="nvarchar" MaxLength="250" />
-          <Property Name="DemirbasAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="DemirbasAdet" Type="int" />
-          <Property Name="OdaID" Type="int" />
-          <Property Name="OdaAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="PersonelID" Type="int" Nullable="false" />
-          <Property Name="PersonelAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="AlimTarihi" Type="datetime" />
-          <Property Name="DemirbasTurID" Type="int" Nullable="false" />
-          <Property Name="DemirbasTurAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="FakulteAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="DepartmanAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="Fiyat" Type="float" />
-        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'stokTakip.dbo.v_OdaDemirbasListesi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="v_OdaDemirbasListesi">
-          <Key>
-            <PropertyRef Name="OdaID" />
-            <PropertyRef Name="OdaDemirbasID" />
-          </Key>
-          <Property Name="OdaAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="OdaID" Type="int" Nullable="false" />
-          <Property Name="FakulteAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="DepartmanAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="PersonelAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="OdaDemirbasID" Type="int" Nullable="false" />
-          <Property Name="DemirbasKodu" Type="nvarchar" MaxLength="250" />
-          <Property Name="DemirbasAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="Adet" Type="int" />
-        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'stokTakip.dbo.v_OdaDemirbasListesiOdalar' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="v_OdaDemirbasListesiOdalar">
-          <Key>
-            <PropertyRef Name="OdaID" />
-          </Key>
-          <Property Name="OdaAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="FakulteAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="DepartmanAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="PersonelAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="OdaID" Type="int" Nullable="false" />
-        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'stokTakip.dbo.v_odalaraDemirbasEkleDemirbaslar' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="v_odalaraDemirbasEkleDemirbaslar">
-          <Key>
-            <PropertyRef Name="DemirbasID" />
-          </Key>
-          <Property Name="DemirbasID" Type="int" Nullable="false" />
-          <Property Name="FakulteAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="DepartmanAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="DemirbasKodu" Type="nvarchar" MaxLength="250" />
-          <Property Name="DemirbasAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="DemirbasTurAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="DemirbasAdet" Type="int" />
-          <Property Name="Fiyat" Type="float" />
-        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'stokTakip.dbo.v_odalaraDemirbasEkleOdalar' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="v_odalaraDemirbasEkleOdalar">
-          <Key>
-            <PropertyRef Name="OdaID" />
-          </Key>
-          <Property Name="OdaID" Type="int" Nullable="false" />
-          <Property Name="OdaAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="FakulteAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="DepartmanAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="PersonelAdi" Type="nvarchar" MaxLength="250" />
-        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'stokTakip.dbo.v_odalardakiDemirbasSayisi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="v_odalardakiDemirbasSayisi">
-          <Key>
-            <PropertyRef Name="OdaDemirbasID" />
-            <PropertyRef Name="DemirbasID" />
-            <PropertyRef Name="DemirbasTurID" />
-          </Key>
-          <Property Name="OdaDemirbasID" Type="int" Nullable="false" />
-          <Property Name="DemirbasID" Type="int" Nullable="false" />
-          <Property Name="DemirbasKodu" Type="nvarchar" MaxLength="250" />
-          <Property Name="DemirbasAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="Adet" Type="int" />
-          <Property Name="OdaID" Type="int" />
-          <Property Name="OdaAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="PersonelAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="AlimTarihi" Type="datetime" />
-          <Property Name="DemirbasTurID" Type="int" Nullable="false" />
-          <Property Name="DemirbasTurAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="FakulteAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="DepartmanAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="Fiyat" Type="float" />
-        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'stokTakip.dbo.v_odalardanDemirbasKaldir' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="v_odalardanDemirbasKaldir">
-          <Key>
-            <PropertyRef Name="OdaID" />
-          </Key>
-          <Property Name="OdaID" Type="int" Nullable="false" />
-          <Property Name="OdaAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="FakulteAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="DepartmanAdi" Type="nvarchar" MaxLength="250" />
-          <Property Name="PersonelAdi" Type="nvarchar" MaxLength="250" />
-        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'stokTakip.dbo.v_odalardanDemirbasKaldirDemirbas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="v_odalardanDemirbasKaldirDemirbas">
