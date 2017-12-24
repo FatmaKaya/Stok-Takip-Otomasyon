@@ -141,21 +141,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dbStokTakip.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dbStokTakip.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="dbStokTakip.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dbStokTakip.tt</DependentUpon>
-    </Compile>
-    <Compile Include="dbStokTakip.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dbStokTakip.edmx</DependentUpon>
-    </Compile>
     <Compile Include="frmDemirbasEkle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,13 +280,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="App.Config" />
-    <EntityDeploy Include="dbStokTakip.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>dbStokTakip.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="dbStokTakip.edmx.diagram">
-      <DependentUpon>dbStokTakip.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\v_OdaDemirbasListesi.datasource" />
     <None Include="Properties\Settings.settings">
@@ -316,18 +294,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="dbStokTakip.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>dbStokTakip.edmx</DependentUpon>
-      <LastGenOutput>dbStokTakip.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="dbStokTakip.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>dbStokTakip.edmx</DependentUpon>
-      <LastGenOutput>dbStokTakip.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

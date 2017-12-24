@@ -17,13 +17,13 @@ namespace StokTakip
         {
             InitializeComponent();
         }
-        stokTakipEntities db = new stokTakipEntities();
+        stokTakipEntities1 db = new stokTakipEntities1();
         int fakulteID;
         int departmanID;
         int demirbasTurID;
         private void frmDemirbasEkle_Load(object sender, EventArgs e)
         {
-            using (db = new stokTakipEntities())
+            using (db = new stokTakipEntities1())
             {
                 lookUpEditDemirbasEkleFakulteAdi.Properties.DataSource = db.Fakultelers.ToList();    //Fakültelerin getirilmesi
                 lookUpEditDemirbasTur.Properties.DataSource = db.DemirbasTurleris.ToList();    // Demirbaş türlerinin getirilmesi
@@ -32,7 +32,7 @@ namespace StokTakip
         }
         private void lookUpEditDemirbasEkleFakulteAdi_EditValueChanged(object sender, EventArgs e)
         {
-            using (db = new stokTakipEntities())
+            using (db = new stokTakipEntities1())
             {
                 fakulteID = Convert.ToInt32(lookUpEditDemirbasEkleFakulteAdi.EditValue);     //Seçilen fakülte
                 lookUpEditDemirbasEkleDepartmanAdi.Properties.DataSource = db.Departmanlars.Where(x => x.FakulteID == fakulteID).ToList();// Fakülteye göre departmanların getirilmesi
@@ -41,7 +41,7 @@ namespace StokTakip
         }
         private void lookUpEditDemirbasEkleDepartmanAdi_EditValueChanged(object sender, EventArgs e)
         {
-            using (db = new stokTakipEntities())
+            using (db = new stokTakipEntities1())
             {
                 departmanID = Convert.ToInt32(lookUpEditDemirbasEkleDepartmanAdi.EditValue);   //Seçilen Departman       
             }
@@ -49,7 +49,7 @@ namespace StokTakip
         }
         private void lookUpEditDemirbasTur_EditValueChanged(object sender, EventArgs e)
         {
-            using (db = new stokTakipEntities())
+            using (db = new stokTakipEntities1())
             {
                 demirbasTurID = Convert.ToInt32(lookUpEditDemirbasTur.EditValue);  //Seçilen demirbaş türü   
             }
@@ -61,7 +61,7 @@ namespace StokTakip
         }
         private void SimpleButtonEkle_Click(object sender, EventArgs e)
         {
-                using (db = new stokTakipEntities())
+                using (db = new stokTakipEntities1())
                 {
                 try
                 {
