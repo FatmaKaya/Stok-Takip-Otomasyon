@@ -156,18 +156,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbStokTakip.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Demirbaslar.cs">
-      <DependentUpon>dbStokTakip.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DemirbasTurleri.cs">
-      <DependentUpon>dbStokTakip.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Departmanlar.cs">
-      <DependentUpon>dbStokTakip.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Fakulteler.cs">
-      <DependentUpon>dbStokTakip.tt</DependentUpon>
-    </Compile>
     <Compile Include="frmDemirbasEkle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,47 +240,8 @@
     <Compile Include="odaDemirbasReport.Designer.cs">
       <DependentUpon>odaDemirbasReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="OdaDemirbasTablosu.cs">
-      <DependentUpon>dbStokTakip.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Odalar.cs">
-      <DependentUpon>dbStokTakip.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Personeller.cs">
-      <DependentUpon>dbStokTakip.tt</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>dbStokTakip.tt</DependentUpon>
-    </Compile>
-    <Compile Include="v_demirbassayisi.cs">
-      <DependentUpon>dbStokTakip.tt</DependentUpon>
-    </Compile>
-    <Compile Include="v_odaDemirbas.cs">
-      <DependentUpon>dbStokTakip.tt</DependentUpon>
-    </Compile>
-    <Compile Include="v_OdaDemirbasListesi.cs">
-      <DependentUpon>dbStokTakip.tt</DependentUpon>
-    </Compile>
-    <Compile Include="v_OdaDemirbasListesiOdalar.cs">
-      <DependentUpon>dbStokTakip.tt</DependentUpon>
-    </Compile>
-    <Compile Include="v_odalaraDemirbasEkleDemirbaslar.cs">
-      <DependentUpon>dbStokTakip.tt</DependentUpon>
-    </Compile>
-    <Compile Include="v_odalaraDemirbasEkleOdalar.cs">
-      <DependentUpon>dbStokTakip.tt</DependentUpon>
-    </Compile>
-    <Compile Include="v_odalardakiDemirbasSayisi.cs">
-      <DependentUpon>dbStokTakip.tt</DependentUpon>
-    </Compile>
-    <Compile Include="v_odalardanDemirbasKaldir.cs">
-      <DependentUpon>dbStokTakip.tt</DependentUpon>
-    </Compile>
-    <Compile Include="v_odalardanDemirbasKaldirDemirbas.cs">
-      <DependentUpon>dbStokTakip.tt</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="frmDemirbasEkle.resx">
       <DependentUpon>frmDemirbasEkle.cs</DependentUpon>
     </EmbeddedResource>

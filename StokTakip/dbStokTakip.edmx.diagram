@@ -5,35 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="87e61965494347beba1a60233d42125f" Name="Diagram1">
-        <EntityTypeShape EntityType="stokTakipModel.Demirbaslar" Width="1.5" PointX="5.25" PointY="7.125" />
-        <EntityTypeShape EntityType="stokTakipModel.DemirbasTurleri" Width="1.5" PointX="3" PointY="7.25" />
-        <EntityTypeShape EntityType="stokTakipModel.Departmanlar" Width="1.5" PointX="3" PointY="10" />
-        <EntityTypeShape EntityType="stokTakipModel.Fakulteler" Width="1.5" PointX="0.75" PointY="5.625" />
-        <EntityTypeShape EntityType="stokTakipModel.OdaDemirbasTablosu" Width="1.5" PointX="12.75" PointY="7.875" />
-        <EntityTypeShape EntityType="stokTakipModel.Odalar" Width="1.5" PointX="10.5" PointY="7.625" />
-        <EntityTypeShape EntityType="stokTakipModel.Personeller" Width="1.5" PointX="8.25" PointY="7.625" />
-        <EntityTypeShape EntityType="stokTakipModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="stokTakipModel.v_demirbassayisi" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="stokTakipModel.v_odaDemirbas" Width="1.5" PointX="4.75" PointY="0.75" />
-        <EntityTypeShape EntityType="stokTakipModel.v_OdaDemirbasListesi" Width="1.5" PointX="6.75" PointY="0.75" />
-        <EntityTypeShape EntityType="stokTakipModel.v_OdaDemirbasListesiOdalar" Width="1.5" PointX="7.75" PointY="4.75" />
-        <EntityTypeShape EntityType="stokTakipModel.v_odalaraDemirbasEkleDemirbaslar" Width="1.5" PointX="8.75" PointY="0.75" />
-        <EntityTypeShape EntityType="stokTakipModel.v_odalaraDemirbasEkleOdalar" Width="1.5" PointX="9.75" PointY="4.75" />
-        <EntityTypeShape EntityType="stokTakipModel.v_odalardakiDemirbasSayisi" Width="1.5" PointX="11.75" PointY="0.75" />
-        <EntityTypeShape EntityType="stokTakipModel.v_odalardanDemirbasKaldir" Width="1.5" PointX="5.75" PointY="11.75" />
-        <EntityTypeShape EntityType="stokTakipModel.v_odalardanDemirbasKaldirDemirbas" Width="1.5" PointX="7.75" PointY="11.75" />
-        <AssociationConnector Association="stokTakipModel.FK_Demirbaslar_DemirbasTurleri1" />
-        <AssociationConnector Association="stokTakipModel.FK_Demirbaslar_Departmanlar" />
-        <AssociationConnector Association="stokTakipModel.FK_Demirbaslar_Fakulteler" />
-        <AssociationConnector Association="stokTakipModel.FK_OdaDemirbasTablosu_Demirbaslar1" />
-        <AssociationConnector Association="stokTakipModel.FK_Departmanlar_Fakulteler" />
-        <AssociationConnector Association="stokTakipModel.FK_Odalar_Departmanlar" />
-        <AssociationConnector Association="stokTakipModel.FK_Personeller_Departmanlar" />
-        <AssociationConnector Association="stokTakipModel.FK_Odalar_Fakulteler" />
-        <AssociationConnector Association="stokTakipModel.FK_Personeller_Fakulteler" />
-        <AssociationConnector Association="stokTakipModel.FK_OdaDemirbasTablosu_Odalar1" />
-        <AssociationConnector Association="stokTakipModel.FK_Odalar_Personeller" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
