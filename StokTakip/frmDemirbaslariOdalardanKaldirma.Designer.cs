@@ -54,6 +54,7 @@
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.textEditDemirbaslariOdalardanKaldirmaDemirbasAdi = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.DemirbasAdi = new DevExpress.XtraLayout.LayoutControlItem();
@@ -61,6 +62,7 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDemirbaslariODalardanKaldirmaOdalar)).BeginInit();
@@ -243,6 +245,7 @@
             this.spinEditDemirbaslariOdalardanKaldirmaAdet.Size = new System.Drawing.Size(82, 20);
             this.spinEditDemirbaslariOdalardanKaldirmaAdet.StyleController = this.layoutControl2;
             this.spinEditDemirbaslariOdalardanKaldirmaAdet.TabIndex = 9;
+            this.spinEditDemirbaslariOdalardanKaldirmaAdet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.spinEditDemirbaslariOdalardanKaldirmaAdet_KeyPress);
             // 
             // simpleButtonDemirbaslariOdalardanKaldir
             // 
@@ -274,7 +277,9 @@
             this.gridColumn10,
             this.gridColumn11,
             this.gridColumn12,
-            this.gridColumn13});
+            this.gridColumn13,
+            this.gridColumn14,
+            this.gridColumn15});
             this.gridView2.GridControl = this.gridControlDemirbaslariOdalardanKaldirmaDemirbaslar;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsBehavior.Editable = false;
@@ -284,8 +289,8 @@
             // 
             // gridColumn6
             // 
-            this.gridColumn6.Caption = "Demirbaş ID";
-            this.gridColumn6.FieldName = "DemirbasID";
+            this.gridColumn6.Caption = "Oda Demirbaş ID";
+            this.gridColumn6.FieldName = "OdaDemirbasID";
             this.gridColumn6.Name = "gridColumn6";
             // 
             // gridColumn7
@@ -343,6 +348,12 @@
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.Visible = true;
             this.gridColumn13.VisibleIndex = 6;
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Caption = "Oda ID";
+            this.gridColumn14.FieldName = "OdaID";
+            this.gridColumn14.Name = "gridColumn14";
             // 
             // textEditDemirbaslariOdalardanKaldirmaDemirbasAdi
             // 
@@ -414,6 +425,12 @@
             this.layoutControlItem1.Text = "Adet: ";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(66, 13);
             // 
+            // gridColumn15
+            // 
+            this.gridColumn15.Caption = "Demirbaş ID";
+            this.gridColumn15.FieldName = "DemirbasID";
+            this.gridColumn15.Name = "gridColumn15";
+            // 
             // frmDemirbaslariOdalardanKaldirma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -484,5 +501,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraEditors.SpinEdit spinEditDemirbaslariOdalardanKaldirmaAdet;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
     }
 }

@@ -53,6 +53,7 @@
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.textEditOdalaraDemirbasEkleDemirbasAdi = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.DemirbasAdi = new DevExpress.XtraLayout.LayoutControlItem();
@@ -60,7 +61,6 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.Adet = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlOdalaraDemirbasEkleOdalar)).BeginInit();
@@ -248,6 +248,7 @@
             this.spinEditOdalaraDemirbasEkleAdet.Size = new System.Drawing.Size(79, 20);
             this.spinEditOdalaraDemirbasEkleAdet.StyleController = this.layoutControl2;
             this.spinEditOdalaraDemirbasEkleAdet.TabIndex = 6;
+            this.spinEditOdalaraDemirbasEkleAdet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.spinEditOdalaraDemirbasEkleAdet_KeyPress);
             // 
             // gridControlOdalaraDemirbasEkleDemirbaslar
             // 
@@ -337,6 +338,15 @@
             this.gridColumn12.VisibleIndex = 6;
             this.gridColumn12.Width = 49;
             // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "Kodu";
+            this.gridColumn13.FieldName = "DemirbasKodu";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 2;
+            this.gridColumn13.Width = 40;
+            // 
             // textEditOdalaraDemirbasEkleDemirbasAdi
             // 
             this.textEditOdalaraDemirbasEkleDemirbasAdi.Location = new System.Drawing.Point(84, 12);
@@ -406,15 +416,6 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(155, 26);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
-            // 
-            // gridColumn13
-            // 
-            this.gridColumn13.Caption = "Kodu";
-            this.gridColumn13.FieldName = "DemirbasKodu";
-            this.gridColumn13.Name = "gridColumn13";
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 2;
-            this.gridColumn13.Width = 40;
             // 
             // frmOdalaraDemirbasleriEkle
             // 

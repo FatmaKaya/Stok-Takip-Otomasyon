@@ -61,7 +61,7 @@ namespace StokTakip
         }
         private void textEditOdalaraDemirbasEkleOdaAdi_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar) && !char.IsNumber(e.KeyChar);
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar) && !char.IsNumber(e.KeyChar) && e.KeyChar != '-';
         }
         private void textEditOdalaraDemirbasEkleDemirbasAdi_EditValueChanged(object sender, EventArgs e)
         {
@@ -69,12 +69,12 @@ namespace StokTakip
             {
                 //demirbas arama işleminin gerçekleştirilmesi
                 string arademirbas = textEditOdalaraDemirbasEkleDemirbasAdi.Text;
-                gridControlOdalaraDemirbasEkleDemirbaslar.DataSource = db.v_odalaraDemirbasEkleDemirbaslar.Where(x => x.DemirbasAdi.ToLower().Contains(arademirbas) || x.DemirbasAdi.ToUpper().Contains(arademirbas)).ToList();
+                gridControlOdalaraDemirbasEkleDemirbaslar.DataSource = db.v_odalaraDemirbasEkleDemirbaslar.Where(x => (x.DemirbasAdi.ToLower().Contains(arademirbas) || x.DemirbasAdi.ToUpper().Contains(arademirbas)) && x.FakulteAdi == fakulteAdi && x.DepartmanAdi == departmanAdi).ToList();
             }
         }
         private void textEditOdalaraDemirbasEkleDemirbasAdi_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar);
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar) && !char.IsNumber(e.KeyChar) && e.KeyChar != '-';
         }
         private void gridView2_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
@@ -125,7 +125,7 @@ namespace StokTakip
                                 var yenidemirbas = new OdaDemirbasTablosu { DemirbasID = demirbasID };
                                 d.DemirbasAdet = (d.DemirbasAdet - Convert.ToInt32(spinEditOdalaraDemirbasEkleAdet.EditValue));
                                 //aynı idye sahip demirbas aktarıldığında demirbasın adet sayısı arttırılıyor.
-                                if (db.OdaDemirbasTablosus.Any(x => x.DemirbasID == yenidemirbas.DemirbasID))
+                                if (db.OdaDemirbasTablosus.Any(x => x.DemirbasID == yenidemirbas.DemirbasID && x.OdaID== odaID))
                                 {
                                     var guncelle = db.OdaDemirbasTablosus.First(x => x.DemirbasID == yenidemirbas.DemirbasID);
                                     guncelle.Adet = (guncelle.Adet + Convert.ToInt32(spinEditOdalaraDemirbasEkleAdet.EditValue));
@@ -197,6 +197,23 @@ namespace StokTakip
                 }));
             }
 
+        }
+
+        private void spinEditOdalaraDemirbasEkleAdet_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57)
+            {
+                e.Handled = false;//eğer rakamsa  yazdır.
+            }
+
+            else if ((int)e.KeyChar == 8)
+            {
+                e.Handled = false;//eğer basılan tuş backspace ise yazdır.
+            }
+            else
+            {
+                e.Handled = true;//bunların dışındaysa hiçbirisini yazdırma
+            }
         }
     }
 }
