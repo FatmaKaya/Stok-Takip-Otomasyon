@@ -29,7 +29,7 @@ namespace StokTakip
         }
         private void textEditODLOdaAdi_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar) && !char.IsNumber(e.KeyChar);
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar) && !char.IsNumber(e.KeyChar) && e.KeyChar != '-';
         }
         private void frmOdaDemirbasListesi_Load(object sender, EventArgs e)
         {
@@ -38,7 +38,7 @@ namespace StokTakip
         int odaID;
         private void simpleButtonODLRapor_Click(object sender, EventArgs e)
         {
-            using (db=new stokTakipEntities())
+            try
             {
                 //seçilen gridcontroldeki odanın ıdsini alıyoruz.
                 int[] RowHandles = gridView1.GetSelectedRows();
@@ -46,14 +46,39 @@ namespace StokTakip
                 {
                     odaID = Convert.ToInt32(gridView1.GetRowCellValue(i, gridView1.Columns["OdaID"]));
                 }
-                using (frmRapor frm = new frmRapor())
+                if (odaID==0)
                 {
-                    //raporAl Fonksiyonunu çağırıyoruz.
-                    frm.raporAl(odaID);
-                    frm.ShowDialog();
+                    XtraMessageBox.Show("Lütfen oda seçiniz.");
                 }
+                else
+                {
+                    using (db = new stokTakipEntities())
+                    {
+
+                        using (frmRapor frm = new frmRapor())
+                        {
+                            //raporAl Fonksiyonunu çağırıyoruz.
+                            frm.raporAl(odaID);
+                            frm.ShowDialog();
+                        }
+                    }
+                }       
             }
-           
+            catch 
+            {
+                XtraMessageBox.Show("Lütfen alanları kontrol ederek tekrar deneyiniz..");
+            }    
+        }
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            //form yüklendiğinde gridview1'de ilk rowun seçili gelmemesi
+            if (!gridView1.IsRowSelected(e.FocusedRowHandle))
+            {
+                BeginInvoke(new Action(() =>
+                {
+                    gridView1.UnselectRow(e.FocusedRowHandle);
+                }));
+            }
         }
     }
 }

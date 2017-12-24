@@ -14,6 +14,8 @@ namespace StokTakip
     
     public partial class v_odalardanDemirbasKaldirDemirbas
     {
+        public int OdaDemirbasID { get; set; }
+        public Nullable<int> OdaID { get; set; }
         public int DemirbasID { get; set; }
         public string FakulteAdi { get; set; }
         public string DepartmanAdi { get; set; }

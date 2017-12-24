@@ -22,6 +22,7 @@ namespace StokTakip
         stokTakipEntities db = new stokTakipEntities();
         string fakulteAdi;
         int demirbasID;
+        int OdademirbasID;
         int odaID;
         string departmanAdi;
         private void frmDemirbaslariOdalardanKaldirma_Load(object sender, EventArgs e)
@@ -47,7 +48,7 @@ namespace StokTakip
                     departmanAdi= gridView1.GetRowCellValue(i, gridView1.Columns["DepartmanAdi"]).ToString();
                 }
                 //seçilen odanın fakültesine göre demirbaslar view ile listeletiliyor
-                gridControlDemirbaslariOdalardanKaldirmaDemirbaslar.DataSource = db.v_odalardanDemirbasKaldirDemirbas.Where(x => x.FakulteAdi == fakulteAdi && x.DepartmanAdi==departmanAdi).ToList();
+                gridControlDemirbaslariOdalardanKaldirmaDemirbaslar.DataSource = db.v_odalardanDemirbasKaldirDemirbas.Where(x => x.FakulteAdi == fakulteAdi && x.DepartmanAdi==departmanAdi && x.OdaID ==odaID).ToList();
                 textEditDemirbaslariOdalardanKaldirmaDemirbasAdi.Enabled = true;
             }       
         }
@@ -62,7 +63,7 @@ namespace StokTakip
         }
         private void textEditDemirbaslariOdalardanKAldirmaOdaAdi_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar) && !char.IsNumber(e.KeyChar);
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar) && !char.IsNumber(e.KeyChar) && e.KeyChar != '-';
         }
         private void textEditDemirbaslariOdalardanKaldirmaDemirbasAdi_EditValueChanged(object sender, EventArgs e)
         {
@@ -70,12 +71,12 @@ namespace StokTakip
             {
                 //demirbas adına göre arama işleminin yapılması
                 string aranacakDemirbas = textEditDemirbaslariOdalardanKaldirmaDemirbasAdi.Text;
-                gridControlDemirbaslariOdalardanKaldirmaDemirbaslar.DataSource = db.v_odalardanDemirbasKaldirDemirbas.Where(x => x.DemirbasAdi.ToLower().Contains(aranacakDemirbas) || x.DemirbasAdi.ToUpper().Contains(aranacakDemirbas)).ToList();
+                gridControlDemirbaslariOdalardanKaldirmaDemirbaslar.DataSource = db.v_odalardanDemirbasKaldirDemirbas.Where(x => (x.DemirbasAdi.ToLower().Contains(aranacakDemirbas) || x.DemirbasAdi.ToUpper().Contains(aranacakDemirbas)) && x.FakulteAdi ==fakulteAdi && x.DepartmanAdi == departmanAdi).ToList();
             }
         }
         private void textEditDemirbaslariOdalardanKaldirmaDemirbasAdi_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar);
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar) && !char.IsNumber(e.KeyChar) && e.KeyChar != '-';
         }
         private void gridView2_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
@@ -85,14 +86,17 @@ namespace StokTakip
                 int[] RowHandles = gridView2.GetSelectedRows();
                 foreach (int i in RowHandles)
                 {
-                    demirbasID = Convert.ToInt32(gridView2.GetRowCellValue(i, gridView2.Columns["DemirbasID"]));
+                   demirbasID = Convert.ToInt32(gridView2.GetRowCellValue(i, gridView2.Columns["DemirbasID"]));
+                   OdademirbasID = Convert.ToInt32(gridView2.GetRowCellValue(i, gridView2.Columns["OdaDemirbasID"]));
+
                 }
-                OdaDemirbasTablosu od = db.OdaDemirbasTablosus.First(x => x.DemirbasID == demirbasID);
+                OdaDemirbasTablosu od = db.OdaDemirbasTablosus.First(x => x.OdaDemirbasID == OdademirbasID);
                 spinEditDemirbaslariOdalardanKaldirmaAdet.Enabled = true;
                 //secilen demirbasa gore spinedit'e adet bilgisi giriliyor.
-                spinEditDemirbaslariOdalardanKaldirmaAdet.Properties.MaxValue =Convert.ToInt32(od.Adet);
+                spinEditDemirbaslariOdalardanKaldirmaAdet.Properties.MaxValue = Convert.ToInt32(od.Adet);
                 spinEditDemirbaslariOdalardanKaldirmaAdet.Properties.MinValue = 1;
                 spinEditDemirbaslariOdalardanKaldirmaAdet.EditValue = od.Adet;
+
             }
         }
         private void simpleButtonDemirbaslariOdalardanKaldir_Click(object sender, EventArgs e)
@@ -128,6 +132,10 @@ namespace StokTakip
                                     guncelle.Adet = (guncelle.Adet - Convert.ToInt32(spinEditDemirbaslariOdalardanKaldirmaAdet.EditValue));
                                     guncelle.OdaID = odaID;
                                     guncelle.DemirbasID = demirbasID;
+                                    if(guncelle.Adet==0)
+                                    {
+                                        db.OdaDemirbasTablosus.Remove(guncelle);
+                                    }
                                     db.SaveChanges();
                                 }
                                 if (d.Durum==true)
@@ -202,6 +210,23 @@ namespace StokTakip
                 BeginInvoke(new Action(() => {
                     gridView2.UnselectRow(e.FocusedRowHandle);
                 }));
+            }
+        }
+
+        private void spinEditDemirbaslariOdalardanKaldirmaAdet_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57)
+            {
+                e.Handled = false;//eğer rakamsa  yazdır.
+            }
+
+            else if ((int)e.KeyChar == 8)
+            {
+                e.Handled = false;//eğer basılan tuş backspace ise yazdır.
+            }
+            else
+            {
+                e.Handled = true;//bunların dışındaysa hiçbirisini yazdırma
             }
         }
     }

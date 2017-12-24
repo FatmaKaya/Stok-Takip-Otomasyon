@@ -97,7 +97,7 @@ namespace StokTakip
                 catch
                 {
                     //Diğer hatalar için
-                    XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar ekleyiniz..");
+                    XtraMessageBox.Show("Lütfen alanları kontrol ederek tekrar ekleyiniz..");
                     this.Close();
                 }
             }
