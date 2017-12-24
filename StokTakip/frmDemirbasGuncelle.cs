@@ -50,11 +50,43 @@ namespace StokTakip
          }
         private void lookUpEditGuncelleDemirbas_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar);
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar) && !char.IsNumber(e.KeyChar) && e.KeyChar != '-';
         }
         private void textEditGuncelleDemirbasAdi_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar);
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar) && !char.IsNumber(e.KeyChar) && e.KeyChar != '-';
+        }
+        private void textEditGuncelleFiyat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57)
+            {
+                e.Handled = false;//eğer rakamsa  yazdır.
+            }
+
+            else if ((int)e.KeyChar == 8)
+            {
+                e.Handled = false;//eğer basılan tuş backspace ise yazdır.
+            }
+            else
+            {
+                e.Handled = true;//bunların dışındaysa hiçbirisini yazdırma
+            }
+        }
+        private void spinEditGuncelleAdet_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57)
+            {
+                e.Handled = false;//eğer rakamsa  yazdır.
+            }
+
+            else if ((int)e.KeyChar == 8)
+            {
+                e.Handled = false;//eğer basılan tuş backspace ise yazdır.
+            }
+            else
+            {
+                e.Handled = true;//bunların dışındaysa hiçbirisini yazdırma
+            }
         }
         private void simpleButtonGuncelle_Click_1(object sender, EventArgs e)
         {
@@ -76,22 +108,28 @@ namespace StokTakip
                         db.SaveChanges();  //Bilgilerin kaydedilmesi
 
                         XtraMessageBox.Show("Demirbaş bilgileri Güncellendi..");
+                        this.Close();
 
-                        //Yeni işelem için alanların temizlenmesi
-                        textEditGuncelleDemirbasFakulteAdi.Text="";
-                        textEditGuncelleDepartmanAdi.Text = "";
-                        textEditGuncelleDemirbasTuru.Text = "";
-                        textEditGuncelleDemirbasAdi.Text = "";
-                        spinEditGuncelleAdet.Value = 1;
-                        textEditGuncelleFiyat.Text = "";
-                        lookUpEditGuncelleDemirbas.Properties.DataSource = db.Demirbaslars.Where(x => x.Durum == false).ToList();
+                        ////Yeni işelem için alanların temizlenmesi
+                        //textEditGuncelleDemirbasFakulteAdi.Text="";
+                        //textEditGuncelleDepartmanAdi.Text = "";
+                        //textEditGuncelleDemirbasTuru.Text = "";
+                        //textEditGuncelleDemirbasAdi.Text = "";
+                        //spinEditGuncelleAdet.Value = 1;
+                        //textEditGuncelleFiyat.Text = "";
+                        //lookUpEditGuncelleDemirbas.Properties.DataSource = db.Demirbaslars.Where(x => x.Durum == false).ToList();
                     }
                     else //Alanların boş olması durumu
+                    {
                         XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar ekleyiniz..");
+                        this.Close();
+                    }
+                       
                 }
                 catch
                 {//Diğer hatalar için
-                    XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar ekleyiniz..");
+                    XtraMessageBox.Show("Lütfen alanları kontrol ederek tekrar ekleyiniz..");
+                    this.Close();
                 }
             }
         }

@@ -49,6 +49,7 @@
             this.TextEditSifre.Properties.PasswordChar = '*';
             this.TextEditSifre.Size = new System.Drawing.Size(167, 20);
             this.TextEditSifre.TabIndex = 3;
+            this.TextEditSifre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextEditSifre_KeyPress);
             // 
             // SimpleButtonGiris
             // 
@@ -103,6 +104,7 @@
             this.TextEditKullaniciAdi.Properties.MaxLength = 25;
             this.TextEditKullaniciAdi.Size = new System.Drawing.Size(167, 20);
             this.TextEditKullaniciAdi.TabIndex = 1;
+            this.TextEditKullaniciAdi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextEditKullaniciAdi_KeyPress);
             // 
             // frmKullaniciGiris
             // 
@@ -122,7 +124,6 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "frmKullaniciGiris";
             this.Text = "Stok Takip Sistemi";
-            this.Load += new System.EventHandler(this.frmKullaniciGiris_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TextEditSifre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TextEditKullaniciAdi.Properties)).EndInit();

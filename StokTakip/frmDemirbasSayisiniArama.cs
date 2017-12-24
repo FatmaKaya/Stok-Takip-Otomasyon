@@ -68,7 +68,7 @@ namespace StokTakip
         }
         private void textEditDemirbasAdi_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar);
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar) && !char.IsNumber(e.KeyChar) && e.KeyChar != '-';
         }
         private void checkEditDemirbasTuruneGore_CheckedChanged(object sender, EventArgs e)
         {//Demirbaş türüne göre arama yapılacağı zaman toolların durumu
@@ -96,6 +96,10 @@ namespace StokTakip
         {//tür seçimi
             demirbasTurId = Convert.ToInt32(lookUpEditDemirbasTuru.EditValue);
         }
+        private void lookUpEditDemirbasTuru_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar);
+        }
         private void checkEditFiyatinaGore_CheckedChanged(object sender, EventArgs e)
         {//Demirbaş Fiyatına göre arama yapılacağı zaman toolların durumu
             Fiyat.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
@@ -117,6 +121,22 @@ namespace StokTakip
             DateTimePickerAlimTarihi.EditValue = Convert.ToDateTime("01.01.0001");
             demirbasAlimTarihi = Convert.ToDateTime("01.01.0001");
 
+        }
+        private void textEditFiyat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57)
+            {
+                e.Handled = false;//eğer rakamsa  yazdır.
+            }
+
+            else if ((int)e.KeyChar == 8)
+            {
+                e.Handled = false;//eğer basılan tuş backspace ise yazdır.
+            }
+            else
+            {
+                e.Handled = true;//bunların dışındaysa hiçbirisini yazdırma
+            }
         }
 
         private void checkEditAlimTarihineGore_CheckedChanged(object sender, EventArgs e)
@@ -165,13 +185,27 @@ namespace StokTakip
             demirbasTurId = 0;
 
         }
-        private void lookUpEditDemirbasTuru_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar);
-        }
+       
         private void spinEditAdet_EditValueChanged(object sender, EventArgs e)
         {//adet seçimi
             demirbasAdet = Convert.ToInt32(spinEditAdet.EditValue);
+        }
+
+        private void spinEditAdet_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57)
+            {
+                e.Handled = false;//eğer rakamsa  yazdır.
+            }
+
+            else if ((int)e.KeyChar == 8)
+            {
+                e.Handled = false;//eğer basılan tuş backspace ise yazdır.
+            }
+            else
+            {
+                e.Handled = true;//bunların dışındaysa hiçbirisini yazdırma
+            }
         }
 
         private void simpleButtonArama_Click(object sender, EventArgs e)

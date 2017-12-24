@@ -169,6 +169,7 @@
             this.spinEditAdet.Name = "spinEditAdet";
             this.spinEditAdet.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinEditAdet.Properties.MaxLength = 5;
             this.spinEditAdet.Properties.MaxValue = new decimal(new int[] {
             9999,
             0,
@@ -178,6 +179,7 @@
             this.spinEditAdet.StyleController = this.layoutControl1;
             this.spinEditAdet.TabIndex = 10;
             this.spinEditAdet.EditValueChanged += new System.EventHandler(this.spinEditAdet_EditValueChanged);
+            this.spinEditAdet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.spinEditAdet_KeyPress);
             // 
             // checkEditAdetineGore
             // 
@@ -199,6 +201,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.DateTimePickerAlimTarihi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.DateTimePickerAlimTarihi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.DateTimePickerAlimTarihi.Size = new System.Drawing.Size(216, 20);
             this.DateTimePickerAlimTarihi.StyleController = this.layoutControl1;
             this.DateTimePickerAlimTarihi.TabIndex = 8;
@@ -220,10 +223,11 @@
             this.textEditFiyat.Location = new System.Drawing.Point(91, 129);
             this.textEditFiyat.Name = "textEditFiyat";
             this.textEditFiyat.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.textEditFiyat.Properties.MaxLength = 10;
+            this.textEditFiyat.Properties.MaxLength = 6;
             this.textEditFiyat.Size = new System.Drawing.Size(216, 20);
             this.textEditFiyat.StyleController = this.layoutControl1;
             this.textEditFiyat.TabIndex = 6;
+            this.textEditFiyat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEditFiyat_KeyPress);
             // 
             // checkEditFiyatinaGore
             // 

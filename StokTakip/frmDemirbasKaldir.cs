@@ -42,7 +42,23 @@ namespace StokTakip
         }
         private void lookUpEditKaldirDemirbas_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar);
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar) && !char.IsNumber(e.KeyChar) && e.KeyChar != '-';
+        }
+        private void spinEditKaldirDemirbasAdet_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57)
+            {
+                e.Handled = false;//eğer rakamsa  yazdır.
+            }
+
+            else if ((int)e.KeyChar == 8)
+            {
+                e.Handled = false;//eğer basılan tuş backspace ise yazdır.
+            }
+            else
+            {
+                e.Handled = true;//bunların dışındaysa hiçbirisini yazdırma
+            }
         }
         private void simpleButtonKaldır_Click_1(object sender, EventArgs e)
         {
@@ -60,6 +76,7 @@ namespace StokTakip
                         if (Convert.ToInt32(spinEditKaldirDemirbasAdet.EditValue) == 0)
                         {//Kaldırılacak demirbaşın adetinn girilmemesi durumu
                             XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar deneyiniz..");
+                            this.Close();
                         }
                         else if (Convert.ToInt32(spinEditKaldirDemirbasAdet.EditValue) != Convert.ToInt32(demirbas.DemirbasAdet))
                         { //Demirbaşın tamamı kaldırılmayacaksa
@@ -77,17 +94,19 @@ namespace StokTakip
                                 XtraMessageBox.Show("Stokta bulunan " + demirbas.DemirbasAdi + " demirbaşı sayısı= " + eskiAdet.ToString() + "\n" +
                                                     "Stoktan kaldırılmak istenen " + demirbas.DemirbasAdi + " demirbaşı sayısı= " + spinEditKaldirDemirbasAdet.EditValue + "\n" +
                                                     "Stokta Kalan " + demirbas.DemirbasAdi + " demirbaşı sayısı= " + demirbas.DemirbasAdet);
+                                this.Close();
 
                                 //Yeni kaldırma işlemi için alanların temizlenmesi ve güncel demirbaşlar
-                                lookUpEditKaldirDemirbas.Properties.DataSource = db.Demirbaslars.Where(x => x.Durum == false).ToList();
-                                spinEditKaldirDemirbasAdet.EditValue = 0;
+                                //lookUpEditKaldirDemirbas.Properties.DataSource = db.Demirbaslars.Where(x => x.Durum == false).ToList();
+                                //spinEditKaldirDemirbasAdet.EditValue = 0;
 
                             }
                             else//No butonuna tıklar isek
                             {//yeni kaldırma işlemi için alanların temizlenmesi
-                                
-                                lookUpEditKaldirDemirbas.Properties.DataSource = db.Demirbaslars.Where(x => x.Durum == false).ToList();
-                                spinEditKaldirDemirbasAdet.EditValue = 0;
+
+                                //lookUpEditKaldirDemirbas.Properties.DataSource = db.Demirbaslars.Where(x => x.Durum == false).ToList();
+                                //spinEditKaldirDemirbasAdet.EditValue = 0;
+                                this.Close();
                             }
                             
 
@@ -98,36 +117,45 @@ namespace StokTakip
                             //Kaldrmak için onay bilgisi
                             DialogResult rs = DevExpress.XtraEditors.XtraMessageBox.Show("Bu Demirbaşlar stoktan kaldırılacak EMİN MİSİNİZ ?", "Kaldırma Bilgisi", MessageBoxButtons.YesNo);
                             if (rs == DialogResult.Yes)//Yes butonunu tıklar isek
-                            {
-                                db.Demirbaslars.Remove(demirbas);  //tamamı silinir
+                            { //tamamı silinir
+                                demirbas.DemirbasAdet = 0;
+                                demirbas.Durum = true;
                                 db.SaveChanges();
                                 XtraMessageBox.Show("Tüm " + demirbas.DemirbasAdi + " demirbaşları stoktan kaldırıldı..");
+                                this.Close();
 
                                 //Yeni kaldırma işlemi için alanların temizlenmesi ve güncel demirbaşlar
-                                lookUpEditKaldirDemirbas.Properties.DataSource = db.Demirbaslars.Where(x => x.Durum == false).ToList();
-                                spinEditKaldirDemirbasAdet.EditValue = 0;
+                                //lookUpEditKaldirDemirbas.Properties.DataSource = db.Demirbaslars.Where(x => x.Durum == false).ToList();
+                                //spinEditKaldirDemirbasAdet.EditValue = 0;
                                 //   spinEditKaldirDemirbasAdet.Properties.MaxValue = 9999;
 
                             }
                             else//No butonuna tıklar isek
                             { //yeni kaldırma işlemi için alanların temizlenmesi
 
-                                lookUpEditKaldirDemirbas.Properties.DataSource = db.Demirbaslars.Where(x => x.Durum == false).ToList();
-                                spinEditKaldirDemirbasAdet.EditValue = 0;
+                            //lookUpEditKaldirDemirbas.Properties.DataSource = db.Demirbaslars.Where(x => x.Durum == false).ToList();
+                            //spinEditKaldirDemirbasAdet.EditValue = 0;
+                                this.Close();
                             }
                           
                         }
 
                     }
                     else // Demirbaş seçilmemesi durumunda yapılması gereken işlemler
+                    {
                         XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar deneyiniz..");
-                }
-                catch
-                {//Diğer hatalar için
-                    XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar deneyiniz..");
-                }
+                        this.Close();
+                    }
             }
+                catch
+            {//Diğer hatalar için
+                XtraMessageBox.Show("Alanları boş bırakmayınız! Lütfen alanları kontrol ederek tekrar deneyiniz..");
+                this.Close();
+            }
+        }
 
         }
+
+       
     }
 }

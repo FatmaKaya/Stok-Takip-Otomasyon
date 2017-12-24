@@ -176,6 +176,7 @@
             this.spinEditGuncelleAdet.Name = "spinEditGuncelleAdet";
             this.spinEditGuncelleAdet.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinEditGuncelleAdet.Properties.MaxLength = 5;
             this.spinEditGuncelleAdet.Properties.MaxValue = new decimal(new int[] {
             9999,
             0,
@@ -189,16 +190,18 @@
             this.spinEditGuncelleAdet.Size = new System.Drawing.Size(211, 20);
             this.spinEditGuncelleAdet.StyleController = this.layoutControl2;
             this.spinEditGuncelleAdet.TabIndex = 9;
+            this.spinEditGuncelleAdet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.spinEditGuncelleAdet_KeyPress);
             // 
             // textEditGuncelleFiyat
             // 
             this.textEditGuncelleFiyat.Location = new System.Drawing.Point(90, 108);
             this.textEditGuncelleFiyat.Name = "textEditGuncelleFiyat";
             this.textEditGuncelleFiyat.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.textEditGuncelleFiyat.Properties.MaxLength = 10;
+            this.textEditGuncelleFiyat.Properties.MaxLength = 6;
             this.textEditGuncelleFiyat.Size = new System.Drawing.Size(211, 20);
             this.textEditGuncelleFiyat.StyleController = this.layoutControl2;
             this.textEditGuncelleFiyat.TabIndex = 8;
+            this.textEditGuncelleFiyat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEditGuncelleFiyat_KeyPress);
             // 
             // textEditGuncelleDemirbasTuru
             // 

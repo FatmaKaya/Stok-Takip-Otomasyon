@@ -19,15 +19,18 @@ namespace StokTakip
         stokTakipEntities db = new stokTakipEntities();
         public static Personeller user = new Personeller();//Mdi form'a göndereceğimiz kullanıcı bilgileri
 
-        private void frmKullaniciGiris_Load(object sender, EventArgs e)
-        {
-
+        private void TextEditKullaniciAdi_KeyPress(object sender, KeyPressEventArgs e)
+        {//Girilebilecek değerler
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
-        private void Giriş_Click(object sender, EventArgs e)
-        {
-            string kullanici = TextEditKullaniciAdi.Text;
-            string sifre = TextEditSifre.Text;
-          
+        private void TextEditSifre_KeyPress(object sender, KeyPressEventArgs e)
+        {//Girilebilecek değerler
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar) && !char.IsNumber(e.KeyChar) && e.KeyChar != '.';
+        }
+
+        public int GirisYap(string kullanici, string sifre)
+        {//Test için giriş yap fonksiyonu
+            int a=0;
             using (db = new stokTakipEntities())
             {
                 try
@@ -35,13 +38,14 @@ namespace StokTakip
                     if (kullanici.Length != 0 && sifre.Length != 0)
                     { // Kullanıcı adı ve şifresinin boş olma durumunun kontrolü
                         Personeller personel = db.Personellers.First(x => x.PersonelAdi == kullanici);
-                        
+
                         if (personel.Sifre == sifre)
                         {// kullanıcı adına göre şifrenin doğru olma kontrolü ve doğruysa sisteme giriş.
                             user = personel;
                             frmMDI mdi = new frmMDI();
                             this.Hide();
                             mdi.Show();
+                            a = 1;
                             //MessageBox.Show("Başarılı giriş.");
                         }
                         else
@@ -49,7 +53,7 @@ namespace StokTakip
                             MessageBox.Show("Şifre hatalı!.");
                             TextEditSifre.Text = "";
                         }
-                           
+
                     }
                     else
                     {// Alanlar boş ise
@@ -61,9 +65,13 @@ namespace StokTakip
                     MessageBox.Show("Kullanıcı adı veya şifre hatalı!.");
                     TextEditSifre.Text = "";
                 }
-               
+
             }
-  
+            return a;
         }
+        private void Giriş_Click(object sender, EventArgs e)
+        {//giriş yapıldığında
+            GirisYap(TextEditKullaniciAdi.Text, TextEditSifre.Text);  
+        }       
     }
 }
