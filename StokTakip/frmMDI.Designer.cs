@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMDI));
             this.rCMDI = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.PersonelUzeindekiDemirbas = new DevExpress.XtraBars.BarButtonItem();
@@ -59,9 +58,9 @@
             this.ribbonPageOdaDemirbasIslemleri = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
-            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager();
+            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView();
+            this.info = new DevExpress.XtraBars.BarHeaderItem();
             ((System.ComponentModel.ISupportInitialize)(this.rCMDI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -91,7 +90,7 @@
             this.barHeaderItem4,
             this.barButtonItem2,
             this.barHeaderItemCikis,
-            this.barButtonItem5});
+            this.info});
             this.rCMDI.Location = new System.Drawing.Point(0, 0);
             this.rCMDI.MaxItemId = 25;
             this.rCMDI.Name = "rCMDI";
@@ -102,6 +101,7 @@
             this.ribbonPageStokIslemleri,
             this.ribbonPageOdaTanımlama,
             this.ribbonPageOdaDemirbasIslemleri});
+            this.rCMDI.QuickToolbarItemLinks.Add(this.info);
             this.rCMDI.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.rCMDI.Size = new System.Drawing.Size(849, 147);
             this.rCMDI.StatusBar = this.ribbonStatusBar1;
@@ -326,12 +326,13 @@
             // 
             this.tabbedView1.RootContainer.Element = null;
             // 
-            // barButtonItem5
+            // info
             // 
-            this.barButtonItem5.Caption = "barButtonItem5";
-            this.barButtonItem5.Id = 24;
-            this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
-            this.barButtonItem5.Name = "barButtonItem5";
+            this.info.Caption = "Hakkımızda";
+            this.info.Id = 24;
+            this.info.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barHeaderItem3.ImageOptions.Image")));
+            this.info.Name = "info";
+            this.info.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.info_ItemClick);
             // 
             // frmMDI
             // 
@@ -388,6 +389,6 @@
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItemCikis;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarHeaderItem info;
     }
 }

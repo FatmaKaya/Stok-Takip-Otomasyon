@@ -122,5 +122,12 @@ namespace StokTakip
         {
             Application.Exit();
         }
+
+        private void info_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmInfo frm = new frmInfo();
+            //frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
