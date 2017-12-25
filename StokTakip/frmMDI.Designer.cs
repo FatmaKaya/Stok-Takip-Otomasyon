@@ -61,6 +61,7 @@
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.rCMDI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -89,9 +90,10 @@
             this.barHeaderItemKullanici,
             this.barHeaderItem4,
             this.barButtonItem2,
-            this.barHeaderItemCikis});
+            this.barHeaderItemCikis,
+            this.barButtonItem5});
             this.rCMDI.Location = new System.Drawing.Point(0, 0);
-            this.rCMDI.MaxItemId = 24;
+            this.rCMDI.MaxItemId = 25;
             this.rCMDI.Name = "rCMDI";
             this.rCMDI.PageHeaderItemLinks.Add(this.barHeaderItemKullanici);
             this.rCMDI.PageHeaderItemLinks.Add(this.barHeaderItemCikis);
@@ -324,6 +326,13 @@
             // 
             this.tabbedView1.RootContainer.Element = null;
             // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "barButtonItem5";
+            this.barButtonItem5.Id = 24;
+            this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
+            this.barButtonItem5.Name = "barButtonItem5";
+            // 
             // frmMDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -379,5 +388,6 @@
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItemCikis;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
     }
 }
