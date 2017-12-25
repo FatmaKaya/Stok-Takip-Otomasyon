@@ -10,7 +10,7 @@ namespace UnitTestStokTakip
         [TestMethod]
         public void BaglantıStokTakip()
         {
-            stokTakipEntities db = new stokTakipEntities();
+            stokTakipEntities1 db = new stokTakipEntities1();
         }
 
         [TestMethod]
