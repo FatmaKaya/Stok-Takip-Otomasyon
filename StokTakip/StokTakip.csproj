@@ -165,6 +165,12 @@
     <Compile Include="frmDemirbasSayisiniArama.Designer.cs">
       <DependentUpon>frmDemirbasSayisiniArama.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInfo.Designer.cs">
+      <DependentUpon>frmInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmKullanıcıGiris.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDemirbasSayisiniArama.resx">
       <DependentUpon>frmDemirbasSayisiniArama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInfo.resx">
+      <DependentUpon>frmInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmKullanıcıGiris.resx">
       <DependentUpon>frmKullanıcıGiris.cs</DependentUpon>
